@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<%@ page import="Controller.Main"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +9,6 @@
 </head>
 <body>
 <h1>
-<%
-p
- Main crawl = new Main();
-out.println(crawl.hello()
-%>
 	</h1>
 </body>
 </html>

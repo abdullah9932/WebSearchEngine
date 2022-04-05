@@ -1,0 +1,21 @@
+Concepts Used:
+
+Search keywords------- my topic
+Ranking pages ------- my topic
+
+Sorting (Merge Sort)
+Ternary Search Trie
+Hash Maps
+Text Processing (JSoup, String Functions)
+Memory Management (Caching)
+Flow of Execution of the Search Engine:
+
+Use of Python web crawler to crawl the web and recursively retreive around 1500 URLs.
+Each URL is parsed to a text file using JSoup.
+Stop words are removed from the Search String given by the user.
+String is converted to token using Java String Tokenizer.
+All URLs are indexed into a Hash Map.
+TST is generated for each text file and frequency of keywords are extracted.
+To implement page ranking, frequency of these words along with the URL index are stored in the Hash Map.
+The page ranking Hash Map is sorted in decreasing order of frequency words.
+Page ranking Hash Map is stored in memory to implement cache and drastically improve search time.
