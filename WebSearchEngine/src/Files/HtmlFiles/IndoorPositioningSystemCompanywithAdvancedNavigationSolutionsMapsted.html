@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en-US">
+ <head>
+  <link rel="dns-prefetch" href="https://wordpress.mapsted.com">
+  <link rel="preload" as="style" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
+  <link rel="preload" as="style" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
+  <link rel="stylesheet" data-n-g="true" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
+  <link rel="stylesheet" data-n-g="true" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
+  <meta charset="utf-8">
+  <script type="text/javascript">
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TTTZPFC');
+          </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="alternate" href="https://mapsted.com/" hreflang="en-US" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-gb/" hreflang="en-GB" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ca/" hreflang="en-CA" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-sg/" hreflang="en-SG" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-in/" hreflang="en-IN" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-my/" hreflang="en-MY" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-qa/" hreflang="en-QA" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ae/" hreflang="en-AE" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-kr/" hreflang="en-KR" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ru/" hreflang="en-RU" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ar/" hreflang="en-AR" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-de/" hreflang="en-DE" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-pl/" hreflang="en-PL" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-jp/" hreflang="en-JP" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-es/" hreflang="en-ES" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-fr/" hreflang="en-FR" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-au/" hreflang="en-AU" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-za/" hreflang="en-ZA" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-sa/" hreflang="en-SA" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-hk/" hreflang="en-HK" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-nl/" hreflang="en-NL" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-it/" hreflang="en-IT" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ph/" hreflang="en-PH" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-tr/" hreflang="en-TR" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-th/" hreflang="en-TH" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-il/" hreflang="en-IL" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-se/" hreflang="en-SE" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-cn/" hreflang="en-CN" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ua/" hreflang="en-UA" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ch/" hreflang="en-CH" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-mx/" hreflang="en-MX" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-tw/" hreflang="en-TW" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-be/" hreflang="en-BE" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-pt/" hreflang="en-PT" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-no/" hreflang="en-NO" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ie/" hreflang="en-IE" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-dk/" hreflang="en-DK" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-fi/" hreflang="en-FI" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-at/" hreflang="en-AT" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ro/" hreflang="en-RO" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-hu/" hreflang="en-HU" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-gr/" hreflang="en-GR" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-nz/" hreflang="en-NZ" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-bh/" hreflang="en-BH" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-ma/" hreflang="en-MA" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-co/" hreflang="en-CO" class="jsx-8ef770d08a341384">
+  <link rel="alternate" href="https://mapsted.com/en-id/" hreflang="en-ID" class="jsx-8ef770d08a341384">
+  <link rel="canonical" href="https://mapsted.com/" class="jsx-8ef770d08a341384">
+  <title class="jsx-8ef770d08a341384">Indoor Positioning System Company with Advanced Navigation Solutions | Mapsted</title>
+  <script type="application/ld+json" class="jsx-8ef770d08a341384">
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "Organization",
+                                "name": "Mapsted",
+                                "url": "https://mapsted.com/",
+                                "logo":"https://mapsted.com/img/logo.png",
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "streetAddress": "200 Matheson Blvd. West, Suite 200",
+                                    "addressLocality": "Mississauga",
+                                    "addressRegion": "Ontario",
+                                    "postalCode": "L5R 3L7",
+                                    "addressCountry": "Canada"
+                                    },
+                                "contactPoint": {
+                                    "@type": "ContactPoint",
+                                    "telephone": "(647) 929-6381",
+                                    "contactType": "customer service"
+                                }
+                            }
+                        </script>
+  <meta name="description" content="Mapsted is an Indoor Positioning Company that offers advanced location intelligence technology for businesses from various industries." class="jsx-8ef770d08a341384">
+  <meta name="next-head-count" content="55">
+  <link rel="preload" href="/_next/static/css/10f04817e41cef8b.css" as="style">
+  <link rel="stylesheet" href="/_next/static/css/10f04817e41cef8b.css" data-n-g="">
+  <noscript data-n-css=""></noscript>
+  <script defer nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script>
+  <script src="/_next/static/chunks/webpack-c0292b149f8e0522.js" defer></script>
+  <script src="/_next/static/chunks/framework-d9c9992982ceff03.js" defer></script>
+  <script src="/_next/static/chunks/main-6a2477162512672f.js" defer></script>
+  <script src="/_next/static/chunks/pages/_app-2951195be667c5fb.js" defer></script>
+  <script src="/_next/static/chunks/5675-aaa3f09955bb40bc.js" defer></script>
+  <script src="/_next/static/chunks/6066-f81aaccf2df0357e.js" defer></script>
+  <script src="/_next/static/chunks/5406-48f3f326f14de5b3.js" defer></script>
+  <script src="/_next/static/chunks/1752-9d6467aa42659762.js" defer></script>
+  <script src="/_next/static/chunks/6801-3d11cc8c711525b7.js" defer></script>
+  <script src="/_next/static/chunks/pages/index-9b3370cbfee0c883.js" defer></script>
+  <script src="/_next/static/vbrplQYGERaQijVVvBvsP/_buildManifest.js" defer></script>
+  <script src="/_next/static/vbrplQYGERaQijVVvBvsP/_ssgManifest.js" defer></script>
+  <script src="/_next/static/vbrplQYGERaQijVVvBvsP/_middlewareManifest.js" defer></script>
+  <style id="__jsx-8ef770d08a341384">body {padding-top:63px}
+.container {width:100%;
+max-width:1300px}</style>
+ </head>
+ <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTTZPFC" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div id="__next">
+   <div class="mobileHeader">
+    <a class="linkNew" href="/"><img src="/img/logo.svg" alt=""></a><a href="https://hub.mapsted.com" class="linkNew isButton" target="_blank">Sign in</a><button class="buttonToggleMobile"></button>
+    <div class="mobileNavNew" hidden>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Location Positioning Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/indoor-positioning-system">Location Positioning Technology</a><a class="linkItem" href="/indoor-maps">Interactive Map</a><a class="linkItem" href="/inside-maps">Intelligent Search</a><a class="linkItem" href="/indoor-navigation">Indoor Navigation</a><a class="linkItem" href="/indoor-wayfinding">Wayfinding</a><a class="linkItem" href="/accessibility">Accessibility</a><a class="linkItem" href="/indoor-location-sharing">Location Sharing</a><a class="linkItem" href="/indoor-positioning-technology">Outdoor-Indoor Navigation</a><a class="linkItem" href="/indoor-mapping-cms">Content Management System (CMS)</a><a class="linkItem" href="/indoor-positioning-sdk">APIs &amp; SDK Integration</a><a class="linkItem" href="/indoor-localization">Localization</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Location Marketing Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/location-based-marketing">Location Marketing Technology</a><a class="linkItem" href="/contextual-messaging">Contextual Messaging</a><a class="linkItem" href="/audience-segmentation">Audience Segmentation</a><a class="linkItem" href="/location-based-advertising">Location-based Advertising</a><a class="linkItem" href="/marketing-crm-software">Marketing CRM Software</a><a class="linkItem" href="/geofencing">Geofencing</a><a class="linkItem" href="/geoconquesting">Geoconquesting</a><a class="linkItem" href="/proximity-marketing">Proximity Marketing</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Location Analytics Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/location-based-analytics">Location Analytics Technology</a><a class="linkItem" href="/traffic-flow-analysis-tool">Traffic Flow Analysis</a><a class="linkItem" href="/pattern-visualization-tool">Pattern Visualization</a><a class="linkItem" href="/real-time-analytics-tool">Real-time Analytics</a><a class="linkItem" href="/predictive-analytics-tool">Predictive Analytics</a><a class="linkItem" href="/customer-insights-tool">Customer Insights</a><a class="linkItem" href="/location-analytics-tool">Location Analytics Software</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Industries<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/industries">Industries</a><a class="linkItem" href="/industries/higher-education-institutions">Higher Education</a><a class="linkItem" href="/industries/trade-shows-and-exhibitions">Trade Shows &amp; Exhibitions</a><a class="linkItem" href="/industries/shopping-mall">Retail Mall</a><a class="linkItem" href="/industries/museums-and-art-galleries">Museums &amp; Art Galleries</a><a class="linkItem" href="/industries/railways-and-airports">Transportation Hubs</a><a class="linkItem" href="/industries/resorts-and-parks">Resorts &amp; Parks</a><a class="linkItem" href="/industries/healthcare-institutions">Hospitals &amp; Healthcare</a><a class="linkItem" href="/industries/big-box-retailers">Big Box Retail</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/why-mapsted">Why Mapsted?</a><a class="linkItem" href="/our-innovation">Our Innovation</a><a class="linkItem" href="/our-technology">Our Technology</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Resources<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/blog">Blog</a><a class="linkItem" href="https://developer.mapsted.com/mobile-sdk" target="_blank">Developers</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Company<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/about-us">About Us</a><a class="linkItem" href="/career">Careers</a><a class="linkItem" href="/press-room">Press Room</a><a class="linkItem" href="/legal/privacy-policy">Legal</a><a class="linkItem" href="/legal/privacy-policy">Privacy</a><a class="linkItem" href="/legal/privacy-policy">GDPR</a>
+      </div>
+     </div><a class="linkItem" href="/pricing">Pricing</a>
+    </div>
+   </div>
+   <div class="homepageBanner">
+    <div class="homepageBannerContainer">
+     <div class="homepageBannerBody">
+      <h1><span>Experience a better indoor navigation</span>without all the <!-- --> <small>|</small></h1>
+      <p>Mapsted provides scalable location-based services and powerful CMS software to enhance <strong><i>any</i></strong> journey- indoor and out.</p>
+      <div class="homeButtons">
+       <a class="btnBanner" href="/contact-us">Request Demo</a>
+       <div class="buttonBanner buttonBanner2">
+        Watch Video
+       </div>
+      </div>
+      <div class="listObjects">
+       <div class="listObject">
+        <strong>No </strong>Bluetooth Beacons
+       </div>
+       <div class="listObject">
+        <strong>No </strong>External Wi-Fi
+       </div>
+       <div class="listObject">
+        <strong>No </strong>External Hardware
+       </div>
+      </div>
+     </div>
+     <div class="bannerImgMobile">
+      <img src="/img/homepage/banner-homepage-slide1.png">
+     </div>
+    </div>
+   </div>
+   <div class="marqueeSection">
+    <div class="container">
+     <b class="marqueeTitle">We work with some amazing companies</b>
+     <div class="marqueeRow">
+      <div class="marqueeAnimatedWrap">
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo1.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo2.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo3.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo4.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo6.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo7.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo8.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo9.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo10.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo11.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo12.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo13.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo14.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo15.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo16.png" alt="">
+       </div>
+       <div class="logoAnimated">
+        <img src="/img/clients/client-logo17.png" alt="">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section homepage1" style="margin:0">
+    <div class="container">
+     <h2 class="jsx-8ef770d08a341384 heading2">Challenging All Previous Notions About Indoor Navigation</h2>
+     <p class="jsx-8ef770d08a341384 paraContent">We are leaders in the industry, constantly innovating and improving every interaction <!-- --> <span class="jsx-8ef770d08a341384">within indoor and outdoor spaces.</span></p>
+     <div class="jsx-8ef770d08a341384 homepageDetailGroup">
+      <div class="homeChallengeItem">
+       <div class="challengeImg">
+        <img src="/img/homepage/homepage-list-img1.png" alt="">
+       </div>
+       <div class="challengeBox">
+        <p class="jsx-8ef770d08a341384">Mapsted is an innovative location- based technology company in Canada. We are trusted by clients from around the world and serve various industries such as shopping malls, universities, hospitals, railways, resorts, etc.</p>
+       </div>
+      </div>
+      <div class="homeChallengeItem">
+       <div class="challengeImg">
+        <img src="/img/homepage/homepage-list-img2.png" alt="">
+       </div>
+       <div class="challengeBox">
+        <div class="jsx-8ef770d08a341384 challengeTag orange">
+         <strong class="jsx-8ef770d08a341384">500</strong>million sq ft mapped
+        </div>
+        <div class="jsx-8ef770d08a341384 challengeTag">
+         <strong class="jsx-8ef770d08a341384">88</strong>patents awarded
+        </div>
+        <p class="jsx-8ef770d08a341384">Our research team is developing individual solutions and software based on our client’s specific needs. We have over 88 patents published so far and work with clients in more than 15 counties.</p>
+       </div>
+      </div>
+      <div class="homeChallengeItem">
+       <div class="challengeImg">
+        <img src="/img/homepage/homepage-list-img3.png" alt="">
+       </div>
+       <div class="challengeBox">
+        <div class="jsx-8ef770d08a341384 challengeTag">
+         <strong class="jsx-8ef770d08a341384">1-3 m</strong>indoor location accuracy
+        </div>
+        <p class="jsx-8ef770d08a341384">Our indoor blue-dot navigation technology is recognized worldwide as the most advanced on the market with 1-3 meter accuracy indoor and outdoor with millisecond processing speeds.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section homepage2" style="margin:0">
+    <div class="container">
+     <h2 class="jsx-8ef770d08a341384 heading2">The Ultimate Product Lineup</h2>
+     <p class="jsx-8ef770d08a341384 paraContent">We supply businesses with a substantial collection of indoor/outdoor navigation solutions, hyperlocal <!-- --> <span class="jsx-8ef770d08a341384">intelligent marketing and detailed insights into customer behaviour through real-time analytics.</span></p>
+    </div>
+   </div>
+   <div class="section homepage2Mobile" style="margin:0">
+    <div class="container">
+     <div class="videoTabSlider">
+      <div class="slick-slider slick-initialized" dir="ltr">
+       <div class="slick-list">
+        <div class="slick-track" style="width:900%;left:-100%">
+         <div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Advanced Analytics</strong>Access business stuctures, traffic flow and so much more.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/analytics.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline:none;width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Mobile &amp; Browser Apps</strong>Indoor real-time navigation at your fingertips.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/mobile-and-web-browser.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline:none;width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Location Positioning</strong>Maps, real-time positioning, wayfinding, and access to our proprietary CMS.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/manage.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline:none;width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Intelligent Marketing</strong>Market to your customers in a way that creates impact.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/notify-crm.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="3" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline:none;width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Advanced Analytics</strong>Access business stuctures, traffic flow and so much more.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/analytics.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="4" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Mobile &amp; Browser Apps</strong>Indoor real-time navigation at your fingertips.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/mobile-and-web-browser.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="5" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Location Positioning</strong>Maps, real-time positioning, wayfinding, and access to our proprietary CMS.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/manage.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="6" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Intelligent Marketing</strong>Market to your customers in a way that creates impact.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/notify-crm.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div data-index="7" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width:11.11111111111111%">
+          <div>
+           <div class="tabSlideItem">
+            <div class="tabSlideItemHeading">
+             <p><strong>Advanced Analytics</strong>Access business stuctures, traffic flow and so much more.</p>
+            </div>
+            <div class="videoTabBodyMobile">
+             <video class="tabVideo" autoplay="true" muted loop="" playsinline="">
+              <source src="/img/homepage/analytics.mp4" type="video/mp4" class="source-1">
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <ul style="display:block" class="slick-dots">
+        <li class="slick-active"><button>1</button></li>
+        <li class=""><button>2</button></li>
+        <li class=""><button>3</button></li>
+        <li class=""><button>4</button></li>
+       </ul>
+      </div>
+     </div><a class="btnBanner" href="/contact-us">Request Demo</a>
+    </div>
+   </div>
+   <div class="section homepage3" style="margin:0">
+    <div class="container">
+     <div class="seFlexible rightImg">
+      <span class="imgFlexible"><img class="lazy" data-src="/img/homepage/homepage-content-img2.jpg"></span>
+      <div class="bodyFlexible">
+       <h2 class="jsx-8ef770d08a341384 heading2">Tailored Solutions To Boost Any Industry</h2>
+       <p class="jsx-8ef770d08a341384 paraContent">See how our location technology is being used to enhance customer experiences across a large variety of industries:</p>
+       <div class="jsx-8ef770d08a341384 listingHome">
+        <ul class="jsx-8ef770d08a341384">
+         <li><a href="/industries/higher-education-institutions">Higher Education</a></li>
+         <li><a href="/industries/shopping-mall">Retail Mall</a></li>
+         <li><a href="/industries/trade-shows-and-exhibitions">Trade Shows &amp; Exhibitions</a></li>
+         <li><a href="/industries/big-box-retailers">Big Box Retail</a></li>
+         <li><a href="/industries/healthcare-institutions">Hospitals &amp; Healthcare</a></li>
+        </ul>
+        <ul class="jsx-8ef770d08a341384">
+         <li><a href="/industries/railways-and-airports">Transportation Hubs</a></li>
+         <li><a href="/industries/resorts-and-parks">Resorts &amp; Parks</a></li>
+         <li><a href="/industries/museums-and-art-galleries">Museums &amp; Art Galleries</a></li>
+         <li><a href="/industries"><img src="/img/icon-arrow-double-orange.svg" alt="">View All</a></li>
+        </ul>
+       </div><a class="buttonMapsted default inverted" href="/industries">Explore by Industry</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section homepage4" style="margin:0">
+    <div class="container">
+     <h2 class="jsx-8ef770d08a341384 heading2">Here’s What Our Clients Say</h2>
+     <div class="testimonialSection">
+      <div class="testimonialVideo">
+       <div class="">
+        <div></div>
+       </div>
+      </div>
+      <div class="testimonialBody">
+       <p class="testimonialPara">Choosing to work with Mapsted was easily the best decision for our University! A one-stop-shop for all our location-based needs.<span>University of Windsor</span></p>
+       <div class="testimonialLogobox">
+        <span class="imgTestimonialLogo"><img src="/img/homepage/homepage-testimonial-logo1.png" alt=""></span><b>COLIN MCLELLAN<span>Associate Director, Capital Projects, UoW</span></b>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section blogBottomSection" style="margin:0">
+    <div class="container">
+     <h2 class="heading2">Check Out Our Latest Blog Posts</h2>
+     <div class="homeBlogSection">
+      <div class="contentBoxColumn">
+       <div class="imgContentBox">
+        <a href="/blog/bluetooth-indoor-navigation" target="_blank"><img src="https://wordpress.mapsted.com/wp-content/uploads/2022/01/Featured-image-ble.jpg" alt=""></a>
+       </div>
+       <div class="dataContentBox">
+        <h3 class="heading3">Bluetooth Indoor Navigation: Everyone Loves it, But is Love Enough?</h3><span class="arrowLink"><a href="/blog/bluetooth-indoor-navigation" target="_blank">Read more<img src="/img/arrow-link2.png" alt=""></a></span>
+       </div>
+      </div>
+      <div class="contentBoxColumn">
+       <div class="imgContentBox">
+        <a href="/blog/airport-wayfinding" target="_blank"><img src="https://wordpress.mapsted.com/wp-content/uploads/2021/12/Airport.jpg" alt=""></a>
+       </div>
+       <div class="dataContentBox">
+        <h3 class="heading3">Airport Wayfinding – Reasons Airports Need a Passenger Wayfinding Strategy</h3><span class="arrowLink"><a href="/blog/airport-wayfinding" target="_blank">Read more<img src="/img/arrow-link2.png" alt=""></a></span>
+       </div>
+      </div>
+      <div class="contentBoxColumn">
+       <div class="imgContentBox">
+        <a href="/blog/the-future-of-aviation" target="_blank"><img src="https://wordpress.mapsted.com/wp-content/uploads/2021/12/Aviation.jpg" alt=""></a>
+       </div>
+       <div class="dataContentBox">
+        <h3 class="heading3">The Future of Aviation with Indoor Wayfinding</h3><span class="arrowLink"><a href="/blog/the-future-of-aviation" target="_blank">Read more<img src="/img/arrow-link2.png" alt=""></a></span>
+       </div>
+      </div>
+      <div class="contentBoxColumn">
+       <div class="imgContentBox">
+        <a href="/blog/location-intelligence-explained" target="_blank"><img src="https://wordpress.mapsted.com/wp-content/uploads/2021/12/location-int..jpg" alt=""></a>
+       </div>
+       <div class="dataContentBox">
+        <h3 class="heading3">What is Location Intelligence and How Can it Be Used by Businesses?</h3><span class="arrowLink"><a href="/blog/location-intelligence-explained" target="_blank">Read more<img src="/img/arrow-link2.png" alt=""></a></span>
+       </div>
+      </div>
+      <div class="contentBoxColumn">
+       <div class="imgContentBox">
+        <a href="/blog/characteristics-of-ideal-universities" target="_blank"><img src="https://wordpress.mapsted.com/wp-content/uploads/2021/12/characteristics-thriving-colleges-universities.jpg" alt=""></a>
+       </div>
+       <div class="dataContentBox">
+        <h3 class="heading3">Characteristics of an ideal university with an IPS</h3><span class="arrowLink"><a href="/blog/characteristics-of-ideal-universities" target="_blank">Read more<img src="/img/arrow-link2.png" alt=""></a></span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="section ctaSection" style="margin:0">
+    <div class="container">
+     <h2 class="heading2">We’d Love To Talk!</h2>
+     <div class="CTAGroup">
+      <div class="requestCallbackBox">
+       <img src="/img/homepage/img-request-call.jpg" alt="">
+       <div class="CTAGroupbox">
+        <img src="/img/homepage/icon-request-callback.svg" alt="">
+        <div class="ctagroupContent">
+         <b>Request a Callback</b>
+         <p>By requesting a callback one of our team members will reach out to you to discuss your business goals using Mapsted’s location-based services.</p><button>Request a Callback</button>
+        </div>
+       </div>
+      </div>
+      <div class="requestCTABody">
+       <div class="CTAGroupbox">
+        <img src="/img/homepage/icon-request-demo.svg" alt="">
+        <div class="ctagroupContent">
+         <b>Request a demo</b>
+         <p>See how Mapsted’s technology can help your business grow with a demo from one of our experts.</p><a href="/contact-us">Request Demo</a>
+        </div>
+       </div>
+       <div class="CTAGroupbox">
+        <img src="/img/homepage/icon-check-blog.svg" alt="">
+        <div class="ctagroupContent">
+         <b>Check out our blog</b>
+         <p>Keep up to date with all the latest innovations of indoor navigation while learning more about how location-based services can help your business grow.</p><button>Subscribe to our Blog</button>
+         <div class="ctaSubscribeBox" hidden>
+          <button class="closeBtn"></button>
+          <input type="text" placeholder="Enter Email..." value=""><button class="subscribeButton isDisabled">Subscribe</button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="mobileFooter">
+    <a class="linkNew" href="/"><img src="/img/logo.svg" alt=""></a><b>Products</b>
+    <div class="navFooter">
+     <div class="accordion__section navNew">
+      <button class="accordion ">Location Positioning Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/indoor-positioning-system">Location Positioning Technology</a><a class="linkItem" href="/indoor-maps">Interactive Map</a><a class="linkItem" href="/inside-maps">Intelligent Search</a><a class="linkItem" href="/indoor-navigation">Indoor Navigation</a><a class="linkItem" href="/indoor-wayfinding">Wayfinding</a><a class="linkItem" href="/accessibility">Accessibility</a><a class="linkItem" href="/indoor-location-sharing">Location Sharing</a><a class="linkItem" href="/indoor-positioning-technology">Outdoor-Indoor Navigation</a><a class="linkItem" href="/indoor-mapping-cms">Content Management System (CMS)</a><a class="linkItem" href="/indoor-positioning-sdk">APIs &amp; SDK Integration</a><a class="linkItem" href="/indoor-localization">Localization</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Location Marketing Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/location-based-marketing">Location Marketing Technology</a><a class="linkItem" href="/contextual-messaging">Contextual Messaging</a><a class="linkItem" href="/audience-segmentation">Audience Segmentation</a><a class="linkItem" href="/location-based-advertising">Location-based Advertising</a><a class="linkItem" href="/marketing-crm-software">Marketing CRM Software</a><a class="linkItem" href="/geofencing">Geofencing</a><a class="linkItem" href="/geoconquesting">Geoconquesting</a><a class="linkItem" href="/proximity-marketing">Proximity Marketing</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Location Analytics Technology<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/location-based-analytics">Location Analytics Technology</a><a class="linkItem" href="/traffic-flow-analysis-tool">Traffic Flow Analysis</a><a class="linkItem" href="/pattern-visualization-tool">Pattern Visualization</a><a class="linkItem" href="/real-time-analytics-tool">Real-time Analytics</a><a class="linkItem" href="/predictive-analytics-tool">Predictive Analytics</a><a class="linkItem" href="/customer-insights-tool">Customer Insights</a><a class="linkItem" href="/location-analytics-tool">Location Analytics Software</a>
+      </div>
+     </div>
+     <div class="accordion__section navNew">
+      <button class="accordion ">Industries<span class="nav__icon"></span></button>
+      <div style="max-height:0px" class="accordion__content">
+       <a class="linkItem" href="/industries">Industries</a><a class="linkItem" href="/industries/higher-education-institutions">Higher Education</a><a class="linkItem" href="/industries/trade-shows-and-exhibitions">Trade Shows &amp; Exhibitions</a><a class="linkItem" href="/industries/shopping-mall">Retail Mall</a><a class="linkItem" href="/industries/museums-and-art-galleries">Museums &amp; Art Galleries</a><a class="linkItem" href="/industries/railways-and-airports">Transportation Hubs</a><a class="linkItem" href="/industries/resorts-and-parks">Resorts &amp; Parks</a><a class="linkItem" href="/industries/healthcare-institutions">Hospitals &amp; Healthcare</a><a class="linkItem" href="/industries/big-box-retailers">Big Box Retail</a>
+      </div>
+     </div>
+    </div>
+    <div class="mobileFooterRow">
+     <div class="mobileFooterColumn">
+      <b>Technology</b><a class="linkItem" href="/why-mapsted">Why Mapsted?</a><a class="linkItem" href="/our-innovation">Our Innovation</a><a class="linkItem" href="/our-technology">Our Technology</a><b class="footerNavHead">Resources</b><a class="linkItem" href="/blog">Blog</a><a class="linkItem" href="https://developer.mapsted.com/mobile-sdk" target="_blank">Developers</a>
+     </div>
+     <div class="mobileFooterColumn">
+      <b>Company</b><a class="linkItem" href="/pricing">Pricing</a><a class="linkItem" href="/about-us">About Us</a><a class="linkItem" href="/career">Careers</a><a class="linkItem" href="/press-room">Press Room</a><a class="linkItem" href="/legal/privacy-policy">Legal</a><a class="linkItem" href="/legal/privacy-policy">Privacy</a><a class="linkItem" href="/legal/privacy-policy">GDPR</a>
+     </div>
+    </div>
+    <div class="mobileFooterSocial">
+     <a href="https://www.youtube.com/channel/UC_fFAdGRyTyn8FmUaSy1I5Q" target="_blank"><img src="/img/social-youtube.svg" alt=""></a><a href="https://twitter.com/MapstedHQ" target="_blank"><img src="/img/social-twitter.svg" alt=""></a><a href="https://www.linkedin.com/company/mapstedhq" target="_blank"><img src="/img/social-linkedin.svg" alt=""></a><a href="https://www.facebook.com/MapstedHQ" target="_blank"><img src="/img/social-facebook.svg" alt=""></a><a class="linkNew" href="/blog"><img src="/img/social-blog.svg" alt=""></a>
+    </div><span class="copyrights">Copyright © 2014-2021 Mapsted Corp. All rights reserved.</span>
+   </div>
+  </div>
+  <div id="calendly-mapsted"></div>
+  <script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"blogs":{"edges":[{"node":{"title":"Bluetooth Indoor Navigation: Everyone Loves it, But is Love Enough?","slug":"bluetooth-indoor-navigation","date":"2022-01-25T09:29:23","excerpt":"\u003cp\u003eWhen it comes to indoor navigation systems and location technology, everyone seems to love Bluetooth Low Energy (BLE) beacons. The internet is overflowing with articles about how BLE beacon technology is the frontrunner in a sector that is already galloping along at an astounding rate. According to a 2021 article on Globe Newswire, sales of\u0026hellip; \u003ca class=\"more-link\" href=\"https://wordpress.mapsted.com/2022/01/25/bluetooth-indoor-navigation/\"\u003eContinue reading \u003cspan class=\"screen-reader-text\"\u003eBluetooth Indoor Navigation: Everyone Loves it, But is Love Enough?\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e\n","categories":{"edges":[{"isPrimary":true,"node":{"name":"Uncategorized"}}]},"featuredImage":{"node":{"sourceUrl":"https://wordpress.mapsted.com/wp-content/uploads/2022/01/Featured-image-ble.jpg"}},"author":{"node":{"name":"asif@mapsted.com","firstName":"Asif","lastName":null,"avatar":{"url":"https://secure.gravatar.com/avatar/8415adc16f034308be83d6c1dd9b9804?s=96\u0026d=mm\u0026r=g"}}}}},{"node":{"title":"Airport Wayfinding – Reasons Airports Need a Passenger Wayfinding Strategy","slug":"airport-wayfinding","date":"2021-12-28T04:45:56","excerpt":"\u003cp\u003eThe world has developed in a manner in which innovation has been created throughout the long term. This advanced period that we are as of now living in has attempted to simplify assignments a lot simpler and all around made due. Since the time the world has turned its eyes towards portable and PC screens,\u0026hellip; \u003ca class=\"more-link\" href=\"https://wordpress.mapsted.com/2021/12/28/airport-wayfinding/\"\u003eContinue reading \u003cspan class=\"screen-reader-text\"\u003eAirport Wayfinding \u0026#8211; Reasons Airports Need a Passenger Wayfinding Strategy\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e\n","categories":{"edges":[{"isPrimary":false,"node":{"name":"Featured"}},{"isPrimary":true,"node":{"name":"Technology Trends"}}]},"featuredImage":{"node":{"sourceUrl":"https://wordpress.mapsted.com/wp-content/uploads/2021/12/Airport.jpg"}},"author":{"node":{"name":"asif@mapsted.com","firstName":"Asif","lastName":null,"avatar":{"url":"https://secure.gravatar.com/avatar/8415adc16f034308be83d6c1dd9b9804?s=96\u0026d=mm\u0026r=g"}}}}},{"node":{"title":"The Future of Aviation with Indoor Wayfinding","slug":"the-future-of-aviation","date":"2021-12-10T15:40:00","excerpt":"\u003cp\u003eWe all have experienced the way technology has developed over the years. This digital era that we are currently living in has worked to make simple tasks much easier and well managed. Ever since the world has turned its eyes towards mobile and computer screens, digital applications have grown more and more popular and important.\u0026hellip; \u003ca class=\"more-link\" href=\"https://wordpress.mapsted.com/2021/12/10/the-future-of-aviation/\"\u003eContinue reading \u003cspan class=\"screen-reader-text\"\u003eThe Future of Aviation with Indoor Wayfinding\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e\n","categories":{"edges":[{"isPrimary":true,"node":{"name":"Industry News"}},{"isPrimary":false,"node":{"name":"Technology Trends"}}]},"featuredImage":{"node":{"sourceUrl":"https://wordpress.mapsted.com/wp-content/uploads/2021/12/Aviation.jpg"}},"author":{"node":{"name":"Marketing","firstName":"Marketing","lastName":null,"avatar":{"url":"https://secure.gravatar.com/avatar/71cbe1af4cd5687c77cfef78321b2c82?s=96\u0026d=mm\u0026r=g"}}}}},{"node":{"title":"What is Location Intelligence and How Can it Be Used by Businesses?","slug":"location-intelligence-explained","date":"2021-12-07T12:44:15","excerpt":"\u003cp\u003eThe world is moving forward fast as we reside in the digital transformation era. A maximum number of services are now easily accessible through our smartphones. This has made it easier for anyone to start their business and reach a large audience. An important aspect in marketing is location intelligence, this has played a very\u0026hellip; \u003ca class=\"more-link\" href=\"https://wordpress.mapsted.com/2021/12/07/location-intelligence-explained/\"\u003eContinue reading \u003cspan class=\"screen-reader-text\"\u003eWhat is Location Intelligence and How Can it Be Used by Businesses?\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e\n","categories":{"edges":[{"isPrimary":true,"node":{"name":"Featured"}},{"isPrimary":false,"node":{"name":"Technology Trends"}}]},"featuredImage":{"node":{"sourceUrl":"https://wordpress.mapsted.com/wp-content/uploads/2021/12/location-int..jpg"}},"author":{"node":{"name":"asif@mapsted.com","firstName":"Asif","lastName":null,"avatar":{"url":"https://secure.gravatar.com/avatar/8415adc16f034308be83d6c1dd9b9804?s=96\u0026d=mm\u0026r=g"}}}}},{"node":{"title":"Characteristics of an ideal university with an IPS","slug":"characteristics-of-ideal-universities","date":"2021-12-03T05:45:26","excerpt":"\u003cp\u003eThe education industry has come a long way from what it used to be years back. As technology has taken over almost every aspect of our lives, Its advanced developments are very much visible in the education system today. Especially when it comes to Universities and colleges, the best ones around the world have set\u0026hellip; \u003ca class=\"more-link\" href=\"https://wordpress.mapsted.com/2021/12/03/characteristics-of-ideal-universities/\"\u003eContinue reading \u003cspan class=\"screen-reader-text\"\u003eCharacteristics of an ideal university with an IPS\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e\n","categories":{"edges":[{"isPrimary":true,"node":{"name":"Featured"}},{"isPrimary":false,"node":{"name":"Technology Trends"}}]},"featuredImage":{"node":{"sourceUrl":"https://wordpress.mapsted.com/wp-content/uploads/2021/12/characteristics-thriving-colleges-universities.jpg"}},"author":{"node":{"name":"asif@mapsted.com","firstName":"Asif","lastName":null,"avatar":{"url":"https://secure.gravatar.com/avatar/8415adc16f034308be83d6c1dd9b9804?s=96\u0026d=mm\u0026r=g"}}}}}],"pageInfo":{"offsetPagination":{"total":51,"hasPrevious":false,"hasMore":true}}}},"__N_SSP":true},"page":"/","query":{},"buildId":"vbrplQYGERaQijVVvBvsP","isFallback":false,"gssp":true,"customServer":true,"locale":"en-us","locales":["en-us","en-gb","en-ca","en-sg","en-in","en-my","en-qa","en-ae","en-kr","en-ru","en-ar","en-de","en-pl","en-jp","en-es","en-fr","en-au","en-za","en-sa","en-hk","en-nl","en-it","en-ph","en-tr","en-th","en-il","en-se","en-cn","en-ua","en-ch","en-mx","en-tw","en-be","en-pt","en-no","en-ie","en-dk","en-fi","en-at","en-ro","en-hu","en-gr","en-nz","en-bh","en-ma","en-co","en-id"],"defaultLocale":"en-us","scriptLoader":[]}</script>
+  <script type="text/javascript">
+                  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                
+                  ym(65758762, "init", {
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true,
+                        ecommerce:"dataLayer"
+                  });                            
+              </script>
+  <noscript>
+   <div>
+    <img src="https://mc.yandex.ru/watch/65758762" style="position:absolute;left:-9999px" alt="">
+   </div>
+  </noscript>
+ </body>
+</html>

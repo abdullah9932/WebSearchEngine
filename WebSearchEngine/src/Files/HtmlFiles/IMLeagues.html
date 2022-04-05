@@ -1,0 +1,1311 @@
+<!doctype html>
+<html ng-controller="index" lang="{{lang}}"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="fragment" content="!"> 
+  <title ng-bind="title">IMLeagues</title> 
+  <base href="/spa/"> <!--[if IE]><script type="text/javascript">
+                    // Fix for IE ignoring relative base tags.
+                    (function() {
+                        var baseTag = document.getElementsByTagName('base')[0];
+                        baseTag.href = baseTag.href;
+                    })();
+                </script><![endif]--> 
+  <link rel="icon" href="/spa/images/favicon.ico" type="image/x-icon"> 
+  <script src="/spa/lib/jquery/dist/jquery.min.js?v=217" type="text/javascript"></script> 
+  <script type="text/javascript">
+        function refreshMMPlayer(){
+            var playerId = "825ded83-f82a-5997-8694-81cdd7ad029b";
+            window["$$mm-pubsubbroker"] = undefined;
+            var elem = document.getElementsByClassName(`monti-placeholder-${playerId}`)[0];
+            elem.parentNode.removeChild(elem);
+            var injectorTag = document.createElement('script');
+            injectorTag.setAttribute('src', "https://bucket1.mm-syringe.com/prod/injector/injector.1.3.js")
+            var playerScriptTag = document.createElement('script');
+            playerScriptTag.setAttribute('src', `https:\/\/bucket1.mm-syringe.com/prod/configs/${playerId}.js`)
+            document.body.appendChild(playerScriptTag)
+            document.body.appendChild(injectorTag)
+        }
+    </script> <!-- AdsTagType.USATROS Start --> <!-- AdsTagType.USATROS End --> <!-- Google Analytics --> 
+  <script>
+        (function (i, s, o, g, r, a, m) {
+            {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            }
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-3300343-3', 'imleagues.com');
+        ga('create', 'UA-3300343-1', 'imleagues.com', { 'name': 'pageViewOnly' });
+
+        // don't need to send pageview now
+        // we will send page view once the view is loaded
+        // please see updateAnalytics in index.js
+    </script> <!-- End Google Analytics --> 
+  <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        @-webkit-keyframes logo-breathe {
+            from {
+                opacity: 1;
+                filter: alpha(opacity=20);
+            }
+
+            to {
+                opacity: .2;
+                filter: alpha(opacity=100);
+            }
+        }
+
+        @keyframes logo-breathe {
+            from {
+                opacity: 1;
+                filter: alpha(opacity=20);
+            }
+
+            to {
+                opacity: .2;
+                filter: alpha(opacity=100);
+            }
+        }
+        .framework-none { display: none; }
+        #loadingScreen {
+            background: #19589b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 999999;
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transition: opacity .5s ease;
+            transition: opacity .5s ease;
+        }
+
+        .im-loading.out {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .im-loading .iml-logo {
+            overflow: hidden;
+            display: block;           
+            background-size:contain;
+            -webkit-animation-name: logo-breathe;
+            animation-name: logo-breathe;
+            -webkit-animation-duration: 1.8s;
+            animation-duration: 1.8s;
+            -webkit-animation-delay: .2s;
+            animation-delay: .2s;
+            -webkit-animation-timing-function: cubic-bezier(.73,.005,.42,1.005);
+            animation-timing-function: cubic-bezier(.73,.005,.42,1.005);
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+            position:absolute;            
+        }
+
+        .large-loading .iml-logo {
+            width: 150px;
+            height: 100px;
+            background-image: url(/spa/images/iml-logo.svg);
+            margin: 40px 0px 0px 25px;
+        }
+
+        .im-loading .im-loading-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;           
+        }
+
+        .large-loading .im-loading-content {
+            width: 190px;
+            height: 190px;
+            margin: -95px 0px 0px -95px;
+        }
+
+        .im-loading .iml-loading-spinner {
+            display: inline-block;
+            margin: 0;
+            font-size: 10px;
+            text-indent: -9999em;
+            -webkit-animation: iml-load-move 1.5s infinite linear;
+            animation: iml-load-move 1.5s infinite linear;
+        }
+
+        .large-loading .iml-loading-spinner {
+            border-top: 9px solid #fff;
+            border-right: 9px solid #fff;
+            border-bottom: 9px solid transparent;
+            border-left: 9px solid #fff;
+        }
+
+        .im-loading .iml-loading-spinner, .im-loading .iml-loading-spinner::after {
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .large-loading .iml-loading-spinner, .large-loading .iml-loading-spinner::after {
+            width: 160px;
+            height: 160px;
+            margin: 15px 0px 0px 15px;
+        }
+
+        @keyframes iml-load-move {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes iml-load-move {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        .ng-cloak{
+            display: none !important;
+        }
+
+        #tyche_corner_video_container {
+            bottom:90px !important
+        }
+    </style> 
+  <script>
+    var propertag = propertag || {};
+    propertag.cmd = propertag.cmd || [];
+    (function() {
+    var pm = document.createElement('script');
+    pm.async = true; pm.type = 'text/javascript';
+    var is_ssl = 'https:' == document.location.protocol;
+    pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/imleagues.min.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(pm, node);
+    })();
+    </script> 
+  <script>var noStickyBanner = 0;</script> <!--  AdsTagType.AdMetricsPro Start Header Code for IMLeagues.com Main Layout --> 
+  <script src="https://tagan.adlightning.com/math-aids-imleagues/op.js"></script> 
+  <script src="//securepubads.g.doubleclick.net/tag/js/gpt.js"></script> 
+  <script src="https://qd.admetricspro.com/js/imleagues/new-main-layout.js"></script> 
+  <script src="https://qd.admetricspro.com/js/imleagues/cmp.js"></script> 
+  <script src="https://qd.admetricspro.com/js/imleagues/uspcmp.js"></script> 
+  <script src="https://qd.admetricspro.com/js/imleagues/prebid.js"></script> 
+  <script src="https://qd.admetricspro.com/js/imleagues/engine.js"></script> <!--  AdsTagType.AdMetricsPro End Header Code for IMLeagues.com --> 
+  <script type="text/javascript">var special_ops = special_ops || {}; special_ops['spa_settings'] = { enabled: true };</script>
+  <script type="text/javascript">var _Skin;googletag.cmd.push(function() {_Skin = googletag.defineSlot('/317673431/IMLeagues_ROS_Skin', [1, 1], 'div-gpt-ad-1556129391354-0').addService(googletag.pubads());googletag.pubads().enableSingleRequest();googletag.enableServices();});</script><!-- AdMetricsPro Video Head Code for IMLeagues.com - Logged In Player -->
+  <script>!function(n){if(!window.cnx){window.cnx={},window.cnx.cmd=[];var t=n.createElement('iframe');t.display='none',t.onload=function(){var n=t.contentWindow.document,c=n.createElement('script');c.src='//cd.connatix.com/connatix.player.js',c.setAttribute('async','1'),c.setAttribute('type','text/javascript'),n.body.appendChild(c)},n.head.appendChild(t)}}(document);</script><!-- AdMetricsPro Video Head Code for IMLeagues.com - Logged In Player --> 
+ </head> 
+ <body ng-class="{'iml-body-gray':isBoxStyle,'im-showads':isShowAds,'iml-responsiveness':isResponsivenessEnabled,'iml-nonresponsiveness':!isResponsivenessEnabled,'iml-wider-site-width':!isSiteExpandWiderDisabled,'iml-old-site-width':isSiteExpandWiderDisabled}"> 
+  <div id="divHeadTagsPlaceHolder"></div> 
+  <div id="loadingScreen" class="im-loading large-loading"> 
+   <div class="im-loading-content"> 
+    <div class="iml-logo"></div> 
+    <div class="iml-loading-spinner"></div> 
+   </div> 
+  </div> 
+  <div id="mainView" class="ng-cloak" style="display: none;"> <!-- START MAIN_VIEW --> <!-- build:css(./src/) css/vendor.css --> <!-- bower:css --> 
+   <link rel="stylesheet" href="/spa/lib/bootstrap/dist/css/bootstrap.css?v=217"> 
+   <link rel="stylesheet" href="/spa/lib/fontawesome/css/font-awesome.css?v=217"> <!-- endbower --> <!-- endbuild --> <!-- build:css(./src/) css/main.css --> <!--<link rel="stylesheet" type="text/css" href="/spa/css/im-layout.css?v=217">--> <!--<link rel="stylesheet" type="text/css" href="/spa/css/im-ui.css?v=217">--> <!--<link rel="stylesheet" type="text/css" href="/spa/css/iml-theme.css?v=217">--> <!--<link rel="stylesheet" type="text/css" href="/spa/css/bottom-contact.css?v=217">--> 
+   <link rel="stylesheet" type="text/css" href="/spa/css/jquery-ui-1.7.2.custom.css?v=217"> 
+   <link rel="stylesheet" type="text/css" href="/spa/css/iml-ui.css?v=217"> 
+   <link rel="stylesheet" type="text/css" href="/spa/css/iml-layout.css?v=217"> 
+   <link rel="stylesheet" type="text/css" href="/spa/css/iml-ui-responsive.css?v=217"> 
+   <link rel="stylesheet" type="text/css" href="/spa/css/iml-layout-responsive.css?v=217"> <!-- migrate Helper --> 
+   <link rel="stylesheet" type="text/css" href="/spa/css/migrate-helper.css?v=217"> <!-- endbuild --> <!-- move these css file into main templete since it's only used in this templete for now, and have some conflict with account responsive design--> <!-- <link rel="stylesheet" type="text/css" href="/spa/css/im-bootstrap-overrides.css?v=217"/> --> <!-- <link rel="stylesheet" type="text/css" href="/spa/css/im-topnav-new.css?v=217"/> --> 
+   <link rel="stylesheet" type="text/css" href="/spa/lib/Trip.js/dist/trip.min.css?v=217"> 
+   <link rel="stylesheet" type="text/css" href="/spa/lib/css-avatars/dist/css/css-avatars.min.css?v=217"> <!-- move responsive --> <!--<link rel="stylesheet" type="text/css" href="/spa/css/non-responsive.css?v=217">--> 
+   <link rel="stylesheet" type="text/css" href="/spa/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?v=217"> 
+   <style type="text/css">
+    .mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: #dcdcdc;
+    }
+
+    .carousel.slide .carousel-inner {
+         /*fix bug IM-2690 - Page Automatically Refreshes by going to add a fitness session and adjust the time of the session*/
+         z-index: 0!important;
+     }
+</style> 
+   <div ng-controller="template.main" translate-namespace="template.main" ng-class="{'iml-menu-push':initData.adminBarItems &amp;&amp; initData.adminBarItems.length > 0}"> 
+    <div id="divTagRCN" ng-bind-html="trustAsHtml(initData.ads.unit.tagRCN)" iml-ad-unit-container="1" iml-ad-unit-prop="tagRCN" iml-ad-unit-no-refresh="1"></div> 
+    <div ng-bind-html="trustAsHtml(initData.colorStyles)"></div> 
+    <div ng-bind-html="trustAsHtml(initData.schoolSpecificStyles)"></div> <!-- <div ng-bind-html="trustAsHtml(initData.ads.head)"></div> --> <!--<div ng-bind-html="trustAsHtml(initData.ads.body)" iml-ad-unit-container="1" iml-ad-prop="body"></div>--> 
+    <div ng-bind-html="trustAsHtml(initData.ads.dynamicBody)" iml-ad-unit-container="1" iml-ad-prop="dynamicBody"></div> 
+    <div ng-bind-html="trustAsHtml(initData.ads.unit.launchpad)" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="launchpad" iml-ad-unit-always-refresh="1"></div> 
+    <div class="iml-support-container" ng-if="$root.isFirstViewLoaded &amp;&amp; !$root.isFullEmbed"> <a id="btn-support" onclick="toggleShowSupportList()" class="iml-support-btn text-center"><i class="fa fa-question-circle fa-2x"></i> <strong>{{'template.main.NeedSomeHelp'|translate}}</strong></a> 
+    </div> 
+    <div id="divSupportArea" class="iml-support-list-container" style="display: none"> 
+     <ul class="list-group iml-m-0"> <!--<li class="list-group-item" ng-if="initData.supportInfo.showLiveChatSupport"><div id="comm100-button-2625"></div>
+                <script type="text/javascript">
+                    var Comm100API = Comm100API || new Object;
+                    Comm100API.chat_buttons = Comm100API.chat_buttons || [];
+                    var comm100_chatButton = new Object;
+                    comm100_chatButton.code_plan = 2624;
+                    comm100_chatButton.div_id = 'comm100-button-2625';
+                    Comm100API.chat_buttons.push(comm100_chatButton);
+                    Comm100API.site_id = 103740;
+                    Comm100API.main_code_plan = 2624;
+
+                    var comm100_lc = document.createElement('script');
+                    comm100_lc.type = 'text/javascript';
+                    comm100_lc.async = true;
+                    comm100_lc.src = 'https://chatserver.comm100.com/livechat.ashx?siteId=' + Comm100API.site_id;
+                    var comm100_s = document.getElementsByTagName('script')[0];
+                    comm100_s.parentNode.insertBefore(comm100_lc, comm100_s);
+                </script>
+            </li>--> 
+      <li class="list-group-item" ng-if="initData.supportInfo.schoolID &amp;&amp; initData.supportInfo.showContactInformation"><a ng-href="{{initData.supportInfo.contactInformationLink}}"><i class="fa fa-info-circle fa-lg"></i> {{initData.supportInfo.defaultContactText}}</a></li> 
+      <li class="list-group-item" ng-if="initData.supportInfo.schoolID &amp;&amp; initData.supportInfo.showHandbooksAndManuals"><a ng-href="{{initData.supportInfo.handbooksAndManualsLink}}"><i class="fa fa-book fa-lg"></i> {{initData.supportInfo.defaultHandbooksAndManuals}}</a></li> 
+      <li class="list-group-item" ng-if="initData.supportInfo.schoolID &amp;&amp; initData.supportInfo.showFAQs"><a ng-href="{{initData.supportInfo.faQsLink}}"><i class="fa fa-question-circle fa-lg"></i> {{initData.supportInfo.defaultFAQsText}}</a></li> 
+      <li class="list-group-item" ng-if="initData.supportInfo.schoolID &amp;&amp; initData.supportInfo.showDiscussionBoard"><a ng-href="{{initData.supportInfo.discussionBoardLink}}"><i class="fa fa fa-comments-o fa-lg"></i> {{initData.supportInfo.defaultDiscussionBoardText}}</a></li> 
+      <li class="list-group-item"><a href="javascript:void(0)" onclick="toggleShowSupportList()"><i class="fa fa-close fa-lg"></i> {{'template.main.Close'|translate}}</a></li> 
+     </ul> 
+    </div> <!-- iml site admin bar start --> 
+    <div id="imlMenu" class="ng-hide" ng-show="initData.adminBarItems &amp;&amp; initData.adminBarItems.length > 0 &amp;&amp; !$root.isFullEmbed"> 
+     <div class="iml-menu-top"> <a aria-label="setting" href="javascript:void(0);" onclick="$('.iml-menu-push').toggleClass('iml-menu-push-toright'); $('body').toggleClass('iml-of-x-hide');" class="iml-icon-28"><img alt="setting" src="/spa/images/iml-icon-thumb-white.png"></a> 
+     </div> 
+     <ul class="list-unstyled"> 
+      <li ng-repeat=" item in initData.adminBarItems" ng-class="{'current':isTabActive(item)}" title="{{item.text}}"> <a ng-href="{{item.link}}" title="{{item.text}}" im-click="{{item.click}}"><i class="fa fa-2x" ng-class="item.icon"></i><span ng-bind="item.text"></span></a> </li> 
+     </ul> 
+    </div> <!-- iml site header start --> 
+    <div id="imlHead" role="floatbar" ng-if="$root.isFirstViewLoaded  &amp;&amp; !$root.isFullEmbed" ng-class="{'iml-header-with-bg-img':(initData.topBar.secondBarBackground !=='' &amp;&amp; initData.topBar.secondBarBackground.length >0)}"> <!--float bar start--> 
+     <div id="imlFloatBar" class="navbar navbar-default iml-float-bar schoolMainNavigBack"> 
+      <div class="container iml-override-container text-center"> 
+       <div class="row"> 
+        <div class="col-xs-12"> 
+         <ul class="list-unstyled iml-nav iml-m-0 iml-nav-left pull-left"> 
+          <li class="hidden iml-show-sm iml-menu-top-toggle-btn" ng-if="initData.adminBarItems &amp;&amp; initData.adminBarItems.length > 0"> <a aria-label="setting" href="javascript:void(0);" class="iml-line-height-32 iml-icon-28" onclick="$('.iml-menu-push').toggleClass('iml-menu-push-toright'); $('body').toggleClass('iml-of-x-hide');"><img src="/spa/images/iml-icon-thumb-white.png" alt="setting"></a> </li> 
+          <li> <a ng-href="{{initData.isGuest ? initData.loginLink :'/spa/member/player'}}" class="iml-line-height-32" ng-class="{'active':entityType === 'member'}"> <i class="fa fa-home fa-lg"></i> <span class="iml-hidden-sm" translate=".Home" translate-keep-content>Home</span> </a> </li> 
+          <li class="iml-school-select-xs"> 
+           <div class="btn-group iml-network-div"> <a ng-href="/spa/{{initData.isEnableNetworkPage?'network':'intramural'}}/{{initData.topBar.schoolInfo.id}}/home" class="btn iml-network-btn iml-network-name iml-navbar-school-name" aria-label="Network Name"> <img ng-src="{{initData.topBar.schoolInfo.logo}}" class="img-circle iml-hidden-sm schoolFontTitleBack" alt="{{ initData.topBar.schoolInfo.name }}" height="18" width="18" objid="{{initData.topBar.schoolInfo.id}}" objtype="{{initData.topBar.schoolInfo.objType}}" onerror="if (updateObjectImage) updateObjectImage(this);"> {{ initData.topBar.schoolInfo.name }} </a> <button aria-label="chevron down button" type="button" class="btn iml-network-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-chevron-down"></i> </button> 
+            <ul class="dropdown-menu" ng-if="initData &amp;&amp; !initData.isGuest"> 
+             <li ng-repeat="network in initData.joinedNetworks"> <a ng-href="{{network.path}}"> 
+               <table width="100%"> 
+                <tbody> 
+                 <tr> 
+                  <td width="36px" valign="top"> <img alt="{{network.name}}" class="schoolFontTitleBack school-logo img-circle" height="36" width="36" ng-src="{{network.logo}}"> </td> 
+                  <td valign="top"> <h5 class="iml-m-0"> <strong>{{network.name}}</strong> </h5> <small class="text-muted" ng-if="!(network.enableClub||network.enableFitness||network.enableReservation)"> {{network.idValue}}({{network.type}}) </small> <small class="text-muted" ng-if="network.enableClub||network.enableFitness||network.enableReservation"> <a ng-href="/spa/intramural/{{network.id}}/home" class="text-primary">{{network.intramuralName}}</a> <span ng-if="network.enableFitness">/</span> <a ng-href="/spa/fitness/{{network.id}}/home" class="text-primary" ng-if="network.enableFitness">{{network.fitnessName}}</a> <span ng-if="network.enableClub">/</span> <a ng-href="/spa/club/{{network.id}}/home" class="text-primary" ng-if="network.enableClub">{{network.clubName}}</a> <span ng-if="network.enableReservation">/</span> <a ng-href="/spa/reservation/{{network.id}}/home" class="text-primary" ng-if="network.enableReservation">{{network.reservationName}}</a> </small> </td> 
+                 </tr> 
+                </tbody> 
+               </table> </a> </li> 
+             <li role="separator" class="divider"></li> 
+             <li> <a href="/Members/QuickSearch.aspx?Type=5"> <i class="fa fa-plus"></i> {{'template.main.AddNetwork'|translate}} </a> </li> 
+             <li role="separator" class="divider" ng-show="initData &amp;&amp; initData.topBar.forumEnabled"></li> 
+             <li ng-show="initData &amp;&amp; initData.topBar.forumEnabled"> <a href="http://iml.nodebb.com/auth/imleagues" target="_blank" translate=".Forum" translate-keep-content>Forum</a> </li> 
+            </ul> 
+           </div> </li> 
+         </ul> 
+         <ul class="list-unstyled iml-nav iml-m-0 iml-nav-right pull-right"> 
+          <li ng-if="initData&amp;&amp;!initData.isGuest"> <span class="iml-message-badge spanTotalMessageCount" ng-show="notification.totalCount>0">{{ notification.totalCount }}</span> <a href="javascript:void(0)" onclick="hideMessageRequest()" data-toggle="dropdown" class="iml-line-height-32" ng-if="initData &amp;&amp; !initData.isGuest" title="{{initData.memberName}}" aria-label="{{initData.memberName}}"> <img ng-src="{{initData.topBar.memberInfo.logo}}" class="img-circle schoolFontTitleBack" alt="{{ initData.topBar.memberInfo.name }}" height="24" width="24" ng-show="!initData.isUseAvatar" objid="{{initData.topBar.memberInfo.id}}" objtype="{{initData.topBar.memberInfo.objType}}" onerror="if (updateObjectImage) updateObjectImage(this);"> <i ng-show="initData.isUseAvatar" class="ng-hide img-circle avatar icon-avatar-24" ng-style="{'background-color':initData.avatarBackgroundColor}"> {{initData.avatarName}} </i> <span class="iml-hidden-sm iml-head-member-name pull-right">{{initData.topBar.memberInfo.name}}</span> </a> 
+           <ul class="dropdown-menu iml-dropdown-menu-right" role="menu" ng-if="initData &amp;&amp; !initData.isGuest"> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" href="javascript:void(0)" class="aMyMessages"> <i class="fa fa-comments fa-fw"></i>{{'template.main.Messages'|translate}} <span style="position: inherit;margin-left: .15rem" ng-if="notification&amp;&amp;notification.newMessageCount>0" class="iml-message-badge spNewMessageCount">{{ notification.newMessageCount }}</span> </a> </li> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" href="javascript:void(0)" class="aMyRequests"> <i class="fa fa-bell fa-fw"></i>{{'template.main.Requests'|translate}} <span style="position: inherit;margin-left: .15rem" ng-if="notification&amp;&amp;notification.newRequestCount>0" class="iml-message-badge spNewPendingRequestCount">{{ notification.newRequestCount }}</span> </a> </li> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" ng-href="{{initData.accountLink}}"> <i class="fa fa-user fa-fw"></i>{{'template.main.Account'|translate}} </a> </li> 
+            <li role="separator" class="divider"></li> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" href="javascript:void(0)" onclick="logout()"> <i class="fa fa-power-off fa-fw"></i>{{'template.main.SignOut2'|translate}} </a> </li> 
+           </ul> </li> 
+          <li ng-if="initData.isGuest"> 
+           <div class=""> <a class="btn iml-btn-success-outline btn-sm create-account-btn iml-hidden-sm" ng-href="{{initData.registrationLink}}" translate=".CREATEACCOUNT" translate-keep-content>CREATE ACCOUNT</a> <a class="btn iml-btn-warning-outline btn-sm" ng-href="{{initData.loginLink}}" translate=".LOGIN" translate-keep-content>LOGIN</a> <a class="btn iml-btn-secondary-outline btn-sm mobile-btn iml-hidden-sm" ng-href="/spa/portal/mobileapps" translate=".MobileApps" translate-keep-content>MobileApps</a> 
+           </div> </li> 
+         </ul> 
+         <ul class="list-unstyled iml-nav iml-m-0 iml-nav-right pull-right iml-search-icon-xs hidden iml-show-sm" ng-if="initData&amp;&amp;!initData.isGuest"> 
+          <li> <a aria-label="Open Mini Search Bar" href="javascript:void(0)" onclick="openMiniSearchBar();"> <i class="fa fa-search fa-lg"></i> </a> 
+           <div class="search-top-xs hidden-md-up " id="topbar-mini-search"> 
+           </div> </li> 
+         </ul> 
+         <div class="iml-mini-search-result hidden"> 
+          <input id="inSearchFieldMini" aria-label="Mini Search Field" type="text" data-action="grow" class="  inSearch" placeholder="{{'template.main.SearchForAnything'|translate}}" onblur="if (this.value == '') {this.value = '{{" template.main.searchforanything|translate}};} onfocus="if (this.value == '{{" template.main.searchforanything|translate}}) {this.value="" ;} onkeypress="return clickButton(event,'inSearchSubmit')" autocomplete="off"> <a aria-label="Search Submit" href="javascript:void(0)" onclick="onSearchSubmitClicked(this)"> <i class="fa fa-search fa-lg"></i> </a> <span id="searchingIndicatorMini" class="iml-search-indicator-mini" style="display: none;"> <i class="fa fa-spinner fa-spin fa-lg"></i> </span> <button type="button" class="close" aria-label="Close" onclick="openMiniSearchBar();"><span aria-hidden="true">×</span></button> 
+          <div id="divSearchResultsMini" class="popover fade bottom in" style=" display: none;"> 
+           <div class="popover-inner" style="text-align: left; width: 100%; padding: 0px;"> 
+            <div class="popover-content"></div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="pull-right iml-search-top iml-hidden-sm" ng-if="initData&amp;&amp;!initData.isGuest"> 
+          <input id="inSearchField" aria-label="Search Field" type="text" class="  inSearch" placeholder="{{'template.main.SearchForAnything'|translate}}" onblur="if (this.value == '') {this.value = '{{" template.main.searchforanything|translate}};} onfocus="if (this.value == '{{" template.main.searchforanything|translate}}) {this.value="" ;} onkeypress="return clickButton(event,'inSearchSubmit')" autocomplete="off"> <a href="javascript:void(0)" aria-label="Search Glass Icon" onclick="onSearchSubmitClicked(this)" id="searchGlass"> <i class="fa fa-search"></i> </a> <a href="javascript:void(0)" aria-label="Search Submit" style="display: none;" id="hdSearchSubmit"></a> <span id="searchingIndicator" style="display: none;" class="iml-search-indicator"> <i class="fa fa-spinner fa-spin fa-lg"></i> </span> 
+          <div style="display: none;"> <a id="inSearchSubmit" href="javascript:void(0)" class="db" onclick="onSearchSubmitClicked(this)" translate=".Go" translate-keep-content>Go</a> 
+          </div> 
+          <div id="divSearchResults" class="popover fade bottom in iml-dropdown-menu-right iml-popover-max-width-500" style="display: none;"> 
+           <div class="popover-inner" style="text-align: left; width: 448px; padding: 0px;"> 
+            <div class="popover-content"></div> 
+           </div> 
+          </div> 
+         </div> <a aria-label="Member Player" href="/spa/member/player" class="iml-navbar-brand iml-hidden-sm"><img src="/spa/images/iml-logo.svg?v=217" alt="IMLeagues" height="24"></a> 
+         <div class="iml-dropdown-arrow"> 
+          <div id="divMyMessagesPopup" class="popover fade bottom in divSearchResults ulSearchResults  iml-popover-max-width-500" style="display: none;"> 
+           <div class="arrow" style="left: 50%;"></div> 
+           <div class="popover-content"></div> 
+          </div> 
+          <div id="divMyRequestsPopup" class="popover fade bottom in divSearchResults ulSearchResults  iml-popover-max-width-500" style="display: none;"> 
+           <div class="arrow" style="left: 50%;"></div> 
+           <div class="popover-content"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> <!-- top second start--> 
+     <div class="iml-header-main schoolMainNavigBack" ng-class="{'iml-header-with-bg-img':(initData.topBar.secondBarBackground !=='' &amp;&amp; initData.topBar.secondBarBackground.length >0)}"> 
+      <input id="hdSchoolId" type="hidden" value="{{initData.topBar.mainEntityInfo.id}}"> 
+      <input id="hdBannerFolderPath" type="hidden" value="{{initData.topBar.bannerFolderPath}}"> 
+      <div id="imlBannerProgress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"> 
+       <div class="progress-bar progress-bar-success" style="width:100%;" data-dz-uploadprogress></div> 
+      </div> 
+      <div class="iml-header-banner-btn-container" ng-show="initData.topBar.showBannerBtnGroup"> <a title="Edit Background Banner Image" class="iml-header-banner-btn" href="javascript:void(0);"><i class="fa fa-camera fa-lg"></i>{{'template.main.EditBackgroundImage'|translate}}</a> 
+      </div> 
+      <div class="iml-header-banner" ng-if="(initData.topBar.secondBarBackground !=='' &amp;&amp; initData.topBar.secondBarBackground.length >0)"> 
+       <div class="carousel slide"> <!-- Wrapper for slides --> 
+        <div class="carousel-inner" role="listbox"> 
+         <div class="item " ng-repeat="imgx in initData.topBar.secondBarBackground" ng-class="{'active':$first}"> 
+          <div class="iml-header-banner-img" ng-attr-style="background-image:url({{imgx}})"></div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> <!-- top second end--> <!-- header bottom start--> 
+     <div id="imlStickerTab" class="iml-header-menu"> 
+      <div class="container iml-override-container"> 
+       <div class="row"> 
+        <div class="col-xs-12"> 
+         <div class="media iml-header-avatar" ng-class="{'iml-head-low-height':(initData.topBar.secondBarBackground ==='' || initData.topBar.secondBarBackground.length ===0)}"> 
+          <div class="media-left"> <a ng-href="{{initData.topBar.mainEntityLink}}" title="{{initData.topBar.mainEntityInfo.name}}"> <i ng-show="initData.topBar.isUseAvatar" class="ng-hide img-circle avatar icon-avatar-96 iml-header-logo" ng-style="{'background-color':initData.topBar.avatarBackgroundColor,'border-color':initData.topBar.statusColor}"> {{initData.topBar.mainEntityInfo.logo}} </i> <img ng-hide="initData.topBar.isUseAvatar" alt="{{initData.topBar.mainEntityInfo.name}}" ng-style="{'border-color':initData.topBar.statusColor}" class="img-circle schoolFontTitleBack iml-header-logo" ng-src="{{initData.topBar.mainEntityInfo.logo}}" objid="{{initData.topBar.mainEntityInfo.id}}" objtype="{{initData.topBar.mainEntityInfo.objType}}" onerror="if (updateObjectImage) updateObjectImage(this);"> </a> 
+           <div class="iml-avatar-upload-fade" ng-show="initData.topBar.showEditImage" data-entity-type="{{entityType}}">
+            <i class="fa fa-camera fa-lg"></i>
+           </div> <span class="iml-status" ng-style="{'border-color':initData.topBar.statusColor}" ng-if="initData &amp;&amp; initData.topBar.statusText &amp;&amp; initData.topBar.statusText !=='' ">{{initData.topBar.statusText}}</span> 
+          </div> 
+          <div class="media-body"> 
+           <div id="imlDefaultMenu"> 
+            <h3 class="media-heading" ng-class="{'schoolMainNavigBack':(initData.topBar.secondBarBackground ==='' || initData.topBar.secondBarBackground.length ===0)}" ng-if="initData.topBar.isSubTitleUseSlash &amp;&amp; !initData.topBar.isMainTitleUseSlash"> <a ng-href="{{initData.topBar.mainEntityLink}}" class="head-title iml-main-header-name" aria-label="{{initData.topBar.mainEntityInfo.name}}">{{initData.topBar.mainEntityInfo.name}}</a> <small class="sub-head-title" ng-if="initData.topBar.mainEntitySubTitle!==''">{{initData.topBar.mainEntitySubTitle}}</small> </h3> 
+            <div class="btn-group iml-head-main-title-btn-group schoolMainNavigBack" ng-if="initData.topBar.isMainTitleUseSlash"> <a aria-label="main navigation" ng-href="{{item.link}}" class="btn" ng-class="{'active schoolMainNavigBack':isTabActive(item),'a-two':(initData.topBar.mainTitleItems.length===2),'a-three':(initData.topBar.subTitleItems.length===3),'a-four':(initData.topBar.subTitleItems.length===4),'a-five':(initData.topBar.subTitleItems.length===5)}" ng-repeat=" item in initData.topBar.mainTitleItems"> <span ng-bind="item.text"></span> </a> 
+            </div> 
+            <div class="iml-media-heading-second"> 
+             <ol class="breadcrumb" ng-if="initData.topBar.isSubTitleUseSlash"> 
+              <li class="dropdown" ng-repeat=" item in initData.topBar.subTitleItems track by $index" ng-class="item.icon"> <a ng-href="{{item.link}}" aria-label="{{item.text}}" class="head-title"> <em ng-bind="item.text"></em> </a> <a aria-label="toggle dropdown menu" ng-if="item.click &amp;&amp; item.click !== ''" id="subMenuT{{::$index}}" class="dropdown-toggle" role="button" data-toggle="dropdown" href="javascript:void(0)" im-click="{{item.click}}"> <span class="caret"></span> </a> 
+               <ul class="dropdown-menu topbar-dropdown subTitle-dropdown" role="menu" ng-if="item.click &amp;&amp; item.click !== ''" aria-labelledby="subMenuT{{::$index}}"></ul> </li> 
+             </ol> 
+             <div class="btn-group iml-head-btn-group schoolMainNavigBack" ng-if="!initData.topBar.isSubTitleUseSlash"> <a ng-href="{{item.link}}" class="btn" ng-class="{'active schoolMainNavigBack':isTopBarSubTitleActive(item),'a-two':(initData.topBar.subTitleItems.length===2),'a-three':(initData.topBar.subTitleItems.length===3),'a-four':(initData.topBar.subTitleItems.length===4),'a-five':(initData.topBar.subTitleItems.length===5)}" ng-repeat=" item in initData.topBar.subTitleItems track by $index"> <span ng-bind="item.text"></span> </a> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="imlStickerMenu"> 
+            <h3 class="media-heading" ng-if="!initData.topBar.isMainTitleUseSlash"> <a ng-href="{{initData.topBar.mainEntityLink}}" class="head-title">{{initData.topBar.mainEntityInfo.name}}</a> </h3> 
+            <div id="mainTitleStickerMenu"> 
+             <ol class="breadcrumb" ng-if="initData.topBar.isMainTitleUseSlash"> 
+              <li class="dropdown" ng-repeat=" item in initData.topBar.mainTitleItems " ng-class="item.icon"> <a ng-href="{{item.link}}" title="{{item.text}}" im-click="{{item.click}}" ng-class="{'schoolMainNavigFont':(item.icon === 'current')}"> <em ng-bind="item.text"></em> </a> <a aria-label="toggle dropdown menu" ng-if="item.click &amp;&amp; item.click !== ''" id="subMenuTX{{::$index}}" class="dropdown-toggle" role="button" data-toggle="dropdown" href="javascript:void(0)" im-click="{{item.click}}"> <span class="caret"></span> </a> 
+               <ul class="dropdown-menu topbar-dropdown subTitle-dropdown" role="menu" ng-if="item.click &amp;&amp; item.click !== ''" aria-labelledby="subMenuTX{{::$index}}"></ul> </li> 
+             </ol> 
+            </div> 
+            <div class="iml-media-heading-second"> 
+             <ol class="breadcrumb" ng-class="{'no-slash':!initData.topBar.isSubTitleUseSlash}"> 
+              <li class="dropdown" ng-repeat=" item in initData.topBar.stickySubTitleItems " ng-class="item.icon"> <a ng-href="{{item.link}}" im-click="{{item.click}}" ng-class="{'schoolMainNavigFont':(item.icon === 'current')}"> <em ng-bind="item.text" ng-if="!initData.topBar.isSubTitleUseSlash"></em> <em ng-bind="item.text" ng-if="initData.topBar.isSubTitleUseSlash"></em> </a> <a aria-label="toggle dropdown menu" ng-if="item.click &amp;&amp; item.click !== ''" id="subMenuTX{{::$index}}" class="dropdown-toggle" role="button" data-toggle="dropdown" href="javascript:void(0)" im-click="{{item.click}}"> <span class="caret"></span> </a> 
+               <ul class="dropdown-menu topbar-dropdown subTitle-dropdown" role="menu" ng-if="item.click &amp;&amp; item.click !== ''" aria-labelledby="subMenuTX{{::$index}}"></ul> </li> 
+             </ol> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="iml-navbar-btn" ng-class="{'text-success': (entityType === 'league' &amp;&amp; initData.topBar.naviButton.icon === 'text-success'), 'text-success-disable': (entityType === 'league' &amp;&amp; initData.topBar.naviButton.icon === 'text-warning')}"> <a ng-if="initData &amp;&amp; initData.topBar &amp;&amp; initData.topBar.isGetInvolvedBtn" class="btn iml-btn-white-outline schoolMainNavigFontHover" ng-show="isGetInvolvedBtnShown()" ng-href="{{initData.topBar.naviButton.link}}" im-click="{{initData.topBar.naviButton.click}}"> <span ng-bind-html="trustAsHtml(initData.topBar.naviButton.text)"></span> <i class="fa fa-play" style="margin-left: 2px"></i> </a> <a class="btn iml-btn-white-outline schoolMainNavigFontHover" ng-href="{{initData.topBar.naviButton.link}}" im-click="{{initData.topBar.naviButton.click}}" ng-if="initData &amp;&amp; !initData.topBar.isGetInvolvedBtn &amp;&amp; initData.topBar.naviButton.text &amp;&amp; initData.topBar.naviButton.text!==''&amp;&amp;(!initData.topBar.naviButton.items || initData.topBar.naviButton.items.length===0)"> <span ng-bind-html="trustAsHtml(initData.topBar.naviButton.text)"></span> </a> 
+           <div class="dropdown" ng-if="initData&amp;&amp; !initData.topBar.isGetInvolvedBtn &amp;&amp; initData.topBar.naviButton.items&amp;&amp;initData.topBar.naviButton.items.length>0"> <a aria-expanded="true" aria-haspopup="true" class="btn iml-btn-white-outline dropdown-toggle schoolMainNavigFontHover" data-toggle="dropdown" id="topBarMainNavBtn" href="javascript:void(0)"> <span ng-bind-html="trustAsHtml(initData.topBar.naviButton.text)"></span> <span class="caret"></span> </a> 
+            <ul style="left: auto;right: 0;" aria-labelledby="topBarMainNavBtn" class="dropdown-menu topbar-dropdown " ng-if="initData&amp;&amp;initData.topBar.naviButton.items&amp;&amp;initData.topBar.naviButton.items.length>0"> 
+             <li ng-repeat=" li in initData.topBar.naviButton.items" ng-class="{'dropdown-header': (li.link==='Category') }"> <a ng-href="{{ (li.link==='Category')?'javascript:void(0)':li.link }}" im-click="{{li.click}}" ng-if="li.link!=='Category'"> <i class="fa " ng-class="li.icon"></i> <span ng-bind-html="trustAsHtml(li.text)"></span> </a> <strong ng-bind-html="trustAsHtml(li.text)" ng-if="li.link==='Category'"></strong> </li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="row"> 
+        <div class="col-xs-12"> 
+         <ul class="nav iml-nav-tabs" ng-class="getNavTabsClasses()"> 
+          <li ng-repeat="tabItem in initData.topBar.tabItems" ng-class="{'active':isTabActive(tabItem)}" class="main-tab-li"> <a ng-href="{{tabItem.link}}" im-click="{{tabItem.click}}" ng-if="!tabItem.items||tabItem.items.length===0"> <i ng-class="tabItem.icon"></i> <label class="iml-nav-tabs-item" ng-bind-html="trustAsHtml(tabItem.text)"></label> </a> <a ng-if="tabItem.items&amp;&amp;tabItem.items.length>0" aria-expanded="true" aria-haspopup="true" class="dropdown-toggle main-tab-dropdown" data-toggle="dropdown" id="topBarTab{{::$index}}" type="button" href="javascript:void(0)"> <i ng-class="tabItem.icon"></i> <label class="iml-nav-tabs-item"><span ng-bind-html="trustAsHtml(tabItem.text)"></span> <i class="caret"></i></label> </a> 
+           <ul aria-labelledby="topBarTab{{::$index}}" class="dropdown-menu topbar-dropdown main-tab-dropdown-menu" ng-if="tabItem.items&amp;&amp;tabItem.items.length>0"> <!-- <li class="dropdown-header">Intramuals</li> --> 
+            <li ng-repeat=" li in tabItem.items"> <a ng-href="{{li.link}}" im-click="{{li.click}}"> <i ng-class="li.icon"></i> <span ng-bind-html="trustAsHtml(li.text)"></span> </a> </li> 
+           </ul> </li> 
+          <li class="more"> <a id="moreTab" href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-ellipsis-h"></i> <label class="iml-nav-tabs-item">{{'template.main.More'|translate}} <i class="caret"></i></label> </a> 
+           <ul class="dropdown-menu" aria-labelledby="moreTab"> 
+            <div ng-repeat="tabItem in initData.topBar.tabItems"> 
+             <li class="dropdown-header" ng-if="!tabItem.items||tabItem.items.length===0"> <a ng-href="{{tabItem.link}}" im-click="{{tabItem.click}}"> <i ng-class="tabItem.icon"></i> <label ng-bind-html="trustAsHtml(tabItem.text)"></label> </a> </li> 
+             <li class="dropdown-header" ng-if="tabItem.items&amp;&amp;tabItem.items.length>0"> <i ng-class="tabItem.icon"></i> <label ng-bind-html="trustAsHtml(tabItem.text)"></label> </li> 
+             <li ng-repeat="li in tabItem.items" ng-if="tabItem.items&amp;&amp;tabItem.items.length>0"> <a ng-href="{{li.link}}" im-click="{{li.click}}"> <i ng-class="li.icon"></i> <label ng-bind-html="trustAsHtml(li.text)"></label> </a> </li> 
+            </div> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> <!-- header bottom end --> 
+    </div> <!-- dash board --> 
+    <div id="imlHeadDashboard" ng-class="{'framework-none': (entityType === 'conversation' || $root.isFullEmbed)}"> 
+     <div class="container iml-override-container"> 
+      <div class="row"> 
+       <div class="col-xs-12"> 
+        <div class="iml-dashboard-main iml-bg-white" style="{{initData.dashboard.expanded ?'':'display:none;'}} " ng-if="initData.dashboard.enabled &amp;&amp; entityType!=='playoff'"> <a ng-repeat=" quickLink in initData.dashboard.linkItems track by $index" ng-href="{{quickLink.link}}" class="pull-left"> <i class="fa {{quickLink.icon}} fa-2x"></i>{{quickLink.text}}</a> 
+        </div> 
+        <div id="imlHeadBanner" class=" text-center im-ads90" ng-class="{'hasAd': initData.ads.showAds, 'framework-none': !($root.isFirstViewLoaded &amp;&amp; entityType !== 'playoff')}"> 
+         <div id="imlBtnDashboard" class="schoolMainNavigBack" ng-show="initData.dashboard.enabled">
+           {{'template.main.AdminDash'|translate}}&nbsp; <i class="fa {{initData.dashboard.expanded ? 'fa-minus-circle' : 'fa-plus-circle'}}"></i> 
+         </div> 
+         <div class="iml-head-ads-container text-center"> 
+          <div class="iml-head-ads iml-empty-ad" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="top">
+           <!-- /1090918/imleagues-728x90-ATF -->
+           <div id="div-gpt-ad-1615435069308-0">
+            <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1615435069308-0'); });</script>
+           </div>
+          </div> 
+          <div class="iml-head-ads-close-sticky fa fa-remove"></div> 
+         </div> <!--<div class="iml-head-ads" ng-bind-html="trustAsHtml(initData.ads.unit.mobileTop)" ng-if="showMobileAd"></div>--> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="imlEmbedHead" class="container iml-override-container " ng-if="$root.isFirstViewLoaded  &amp;&amp; $root.isFullEmbed"> 
+     <div class="row iml-embed-header"> <!--first row--> 
+      <div class="col-xs-12 schoolMainNavigBack iml-embed-first-row iml-header-menu"> 
+       <div class="media iml-header-avatar" ng-class="{'iml-head-low-height':(initData.topBar.secondBarBackground ==='' || initData.topBar.secondBarBackground.length ===0)}"> 
+        <div class="media-left"> <a ng-href="{{initData.topBar.mainEntityLink}}" title="{{initData.topBar.mainEntityInfo.name}}"> <i ng-show="initData.topBar.isUseAvatar" class="ng-hide img-circle avatar icon-avatar-64 iml-header-logo" ng-style="{'background-color':initData.topBar.avatarBackgroundColor,'border-color':initData.topBar.statusColor}"> {{initData.topBar.mainEntityInfo.logo}} </i> <img ng-hide="initData.topBar.isUseAvatar" alt="{{initData.topBar.mainEntityInfo.name}}" ng-style="{'border-color':initData.topBar.statusColor}" class="img-circle schoolFontTitleBack iml-header-logo" ng-src="{{initData.topBar.mainEntityInfo.logo}}" objid="{{initData.topBar.mainEntityInfo.id}}" objtype="{{initData.topBar.mainEntityInfo.objType}}" onerror="if (updateObjectImage) updateObjectImage(this);"> </a> <span class="iml-status" ng-style="{'border-color':initData.topBar.statusColor}" ng-if="initData &amp;&amp; initData.topBar.statusText &amp;&amp; initData.topBar.statusText !=='' ">{{initData.topBar.statusText}}</span> 
+        </div> 
+        <div class="media-body"> 
+         <div class="iml-embed-media-head"> 
+          <h3 class="media-heading" ng-class="{'schoolMainNavigBack':(initData.topBar.secondBarBackground ==='' || initData.topBar.secondBarBackground.length ===0)}" ng-if="initData.topBar.isSubTitleUseSlash &amp;&amp; !initData.topBar.isMainTitleUseSlash"> <a ng-href="{{initData.topBar.mainEntityLink}}" class="head-title iml-main-header-name" style="color: #ffffff;">{{initData.topBar.mainEntityInfo.name}}</a> <small class="sub-head-title" ng-if="initData.topBar.mainEntitySubTitle!==''">{{initData.topBar.mainEntitySubTitle}}</small> </h3> 
+          <div class="btn-group btn-group-sm iml-head-main-title-btn-group schoolMainNavigBack" ng-if="initData.topBar.isMainTitleUseSlash"> <a aria-label="main navigation" ng-href="{{item.link}}" class="btn" ng-class="{'active schoolMainNavigBack':isTabActive(item),'a-two':(initData.topBar.mainTitleItems.length===2),'a-three':(initData.topBar.subTitleItems.length===3),'a-four':(initData.topBar.subTitleItems.length===4),'a-five':(initData.topBar.subTitleItems.length===5)}" ng-repeat=" item in initData.topBar.mainTitleItems"> <span ng-bind="item.text"></span> </a> 
+          </div> 
+          <div class="iml-media-heading-second"> 
+           <ol class="breadcrumb" ng-if="initData.topBar.isSubTitleUseSlash"> 
+            <li class="dropdown" ng-repeat=" item in initData.topBar.subTitleItems track by $index" ng-class="item.icon"> <a ng-href="{{item.link}}" class="head-title"> <em ng-bind="item.text"></em> </a> <a aria-label="toggle dropdown menu" ng-if="item.click &amp;&amp; item.click !== ''" id="subMenuTEmbed{{::$index}}" class="dropdown-toggle" role="button" data-toggle="dropdown" href="javascript:void(0)" im-click="{{item.click}}"> <span class="caret"></span> </a> 
+             <ul class="dropdown-menu topbar-dropdown subTitle-dropdown" role="menu" ng-if="item.click &amp;&amp; item.click !== ''" aria-labelledby="subMenuTEmbed{{::$index}}"></ul> </li> 
+           </ol> 
+           <div class="btn-group btn-group-sm iml-head-btn-group schoolMainNavigBack" ng-if="!initData.topBar.isSubTitleUseSlash"> <a ng-href="{{item.link}}" class="btn" ng-class="{'active schoolMainNavigBack':isTopBarSubTitleActive(item),'a-two':(initData.topBar.subTitleItems.length===2),'a-three':(initData.topBar.subTitleItems.length===3),'a-four':(initData.topBar.subTitleItems.length===4),'a-five':(initData.topBar.subTitleItems.length===5)}" ng-repeat=" item in initData.topBar.subTitleItems track by $index"> <span ng-bind="item.text"></span> </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="iml-navbar-btn" ng-class="{'text-success': (entityType === 'league' &amp;&amp; initData.topBar.naviButton.icon === 'text-success'), 'text-success-disable': (entityType === 'league' &amp;&amp; initData.topBar.naviButton.icon === 'text-warning')}"> <a ng-if="initData &amp;&amp; initData.topBar &amp;&amp; initData.topBar.isGetInvolvedBtn" class="btn btn-sm iml-btn-white-outline schoolMainNavigFontHover" ng-show="isGetInvolvedBtnShown()" ng-href="{{initData.topBar.naviButton.link}}" im-click="{{initData.topBar.naviButton.click}}"> <span ng-bind-html="trustAsHtml(initData.topBar.naviButton.text)"></span> <i class="fa fa-play" style="margin-left: 2px"></i> </a> <a class="btn btn-sm iml-btn-white-outline schoolMainNavigFontHover" ng-href="{{initData.topBar.naviButton.link}}" im-click="{{initData.topBar.naviButton.click}}" ng-if="initData &amp;&amp; !initData.topBar.isGetInvolvedBtn &amp;&amp; initData.topBar.naviButton.text &amp;&amp; initData.topBar.naviButton.text!==''&amp;&amp;(!initData.topBar.naviButton.items || initData.topBar.naviButton.items.length===0)"> <span ng-bind-html="trustAsHtml(initData.topBar.naviButton.text)"></span> </a> 
+         <div class="dropdown" ng-if="initData&amp;&amp; !initData.topBar.isGetInvolvedBtn &amp;&amp; initData.topBar.naviButton.items&amp;&amp;initData.topBar.naviButton.items.length>0"> <a aria-expanded="true" aria-haspopup="true" class="btn btn-sm iml-btn-white-outline dropdown-toggle schoolMainNavigFontHover" data-toggle="dropdown" id="topBarMainNavBtnEmbed" href="javascript:void(0)"> <span ng-bind-html="trustAsHtml(initData.topBar.naviButton.text)"></span> <span class="caret"></span> </a> 
+          <ul style="left: auto;right: 0;" aria-labelledby="topBarMainNavBtnEmbed" class="dropdown-menu topbar-dropdown " ng-if="initData&amp;&amp;initData.topBar.naviButton.items&amp;&amp;initData.topBar.naviButton.items.length>0"> 
+           <li ng-repeat=" li in initData.topBar.naviButton.items" ng-class="{'dropdown-header': (li.link==='Category') }"> <a ng-href="{{ (li.link==='Category')?'javascript:void(0)':li.link }}" im-click="{{li.click}}" ng-if="li.link!=='Category'"> <i class="fa " ng-class="li.icon"></i> <span ng-bind-html="trustAsHtml(li.text)"></span> </a> <strong ng-bind-html="trustAsHtml(li.text)" ng-if="li.link==='Category'"></strong> </li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="iml-embed-account-area"> 
+         <ul class="list-unstyled iml-nav iml-m-0 iml-nav-right"> 
+          <li ng-if="initData&amp;&amp;!initData.isGuest"> <span class="iml-message-badge spanTotalMessageCount" ng-show="notification.totalCount>0">{{ notification.totalCount }}</span> <a href="javascript:void(0)" onclick="hideMessageRequest()" data-toggle="dropdown" class="iml-line-height-32" ng-if="initData &amp;&amp; !initData.isGuest" title="{{initData.memberName}}" aria-label="{{initData.memberName}}"> <img ng-src="{{initData.topBar.memberInfo.logo}}" class="img-circle schoolFontTitleBack" alt="{{ initData.topBar.memberInfo.name }}" height="24" width="24" ng-show="!initData.isUseAvatar" objid="{{initData.topBar.memberInfo.id}}" objtype="{{initData.topBar.memberInfo.objType}}" onerror="if (updateObjectImage) updateObjectImage(this);"> <i ng-show="initData.isUseAvatar" class="ng-hide img-circle avatar icon-avatar-24" ng-style="{'background-color':initData.avatarBackgroundColor}"> {{initData.avatarName}} </i> <span class="iml-hidden-sm iml-head-member-name pull-right">{{initData.topBar.memberInfo.name}}</span> </a> 
+           <ul class="dropdown-menu iml-dropdown-menu-right" role="menu" ng-if="initData &amp;&amp; !initData.isGuest"> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" href="javascript:void(0)" class="aMyMessages"> <i class="fa fa-comments fa-fw"></i>{{'template.main.Messages'|translate}} <span style="position: inherit;margin-left: .15rem" ng-if="notification&amp;&amp;notification.newMessageCount>0" class="iml-message-badge spNewMessageCount">{{ notification.newMessageCount }}</span> </a> </li> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" href="javascript:void(0)" class="aMyRequests"> <i class="fa fa-bell fa-fw"></i>{{'template.main.Requests'|translate}} <span style="position: inherit;margin-left: .15rem" ng-if="notification&amp;&amp;notification.newRequestCount>0" class="iml-message-badge spNewPendingRequestCount">{{ notification.newRequestCount }}</span> </a> </li> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" ng-href="{{initData.accountLink}}"> <i class="fa fa-user fa-fw"></i>{{'template.main.Account'|translate}} </a> </li> 
+            <li role="separator" class="divider"></li> 
+            <li role="presentation"> <a role="menuitem" tabindex="-1" href="javascript:void(0)" onclick="logout()"> <i class="fa fa-power-off fa-fw"></i>{{'template.main.SignOut2'|translate}} </a> </li> 
+           </ul> </li> 
+          <li ng-if="initData.isGuest"> 
+           <div class=""> <a class="btn iml-btn-warning-outline btn-sm" ng-click="embedTryLogin(initData.loginLink)" translate=".LOGIN" translate-keep-content>LOGIN</a> 
+           </div> </li> 
+         </ul> 
+         <div class="iml-dropdown-arrow"> 
+          <div id="divMyMessagesPopup" class="popover fade bottom in divSearchResults ulSearchResults  iml-popover-max-width-500" style="display: none;"> 
+           <div class="arrow" style="left: 50%;"></div> 
+           <div class="popover-content"></div> 
+          </div> 
+          <div id="divMyRequestsPopup" class="popover fade bottom in divSearchResults ulSearchResults  iml-popover-max-width-500" style="display: none;"> 
+           <div class="arrow" style="left: 50%;"></div> 
+           <div class="popover-content"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> <!--second row--> 
+      <div class="col-xs-12 iml-header-menu iml-embed-second-row"> 
+       <ul class="nav iml-nav-tabs" ng-class="getNavTabsClasses()"> 
+        <li ng-repeat="tabItem in initData.topBar.tabItems" ng-class="{'active':isTabActive(tabItem)}" class="main-tab-li"> <a ng-href="{{tabItem.link}}" im-click="{{tabItem.click}}" ng-if="!tabItem.items||tabItem.items.length===0"> <i ng-class="tabItem.icon"></i> <label class="iml-nav-tabs-item" ng-bind-html="trustAsHtml(tabItem.text)"></label> </a> <a ng-if="tabItem.items&amp;&amp;tabItem.items.length>0" aria-expanded="true" aria-haspopup="true" class="dropdown-toggle main-tab-dropdown" data-toggle="dropdown" id="topBarTabEmbed{{::$index}}" type="button" href="javascript:void(0)"> <i ng-class="tabItem.icon"></i> <label class="iml-nav-tabs-item"><span ng-bind-html="trustAsHtml(tabItem.text)"></span> <i class="caret"></i></label> </a> 
+         <ul aria-labelledby="topBarTabEmbed{{::$index}}" class="dropdown-menu topbar-dropdown main-tab-dropdown-menu" ng-if="tabItem.items&amp;&amp;tabItem.items.length>0"> <!-- <li class="dropdown-header">Intramuals</li> --> 
+          <li ng-repeat=" li in tabItem.items"> <a ng-href="{{li.link}}" im-click="{{li.click}}"> <i ng-class="li.icon"></i> <span ng-bind-html="trustAsHtml(li.text)"></span> </a> </li> 
+         </ul> </li> 
+        <li class="more"> <a id="moreTabEmbed" href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-ellipsis-h"></i> <label class="iml-nav-tabs-item">{{'template.main.More'|translate}} <i class="caret"></i></label> </a> 
+         <ul class="dropdown-menu" aria-labelledby="moreTabEmbed"> 
+          <div ng-repeat="tabItem in initData.topBar.tabItems"> 
+           <li class="dropdown-header" ng-if="!tabItem.items||tabItem.items.length===0"> <a ng-href="{{tabItem.link}}" im-click="{{tabItem.click}}"> <i ng-class="tabItem.icon"></i> <label ng-bind-html="trustAsHtml(tabItem.text)"></label> </a> </li> 
+           <li class="dropdown-header" ng-if="tabItem.items&amp;&amp;tabItem.items.length>0"> <i ng-class="tabItem.icon"></i> <label ng-bind-html="trustAsHtml(tabItem.text)"></label> </li> 
+           <li ng-repeat="li in tabItem.items" ng-if="tabItem.items&amp;&amp;tabItem.items.length>0"> <a ng-href="{{li.link}}" im-click="{{li.click}}"> <i ng-class="li.icon"></i> <label ng-bind-html="trustAsHtml(li.text)"></label> </a> </li> 
+          </div> 
+         </ul> </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="imlBody"> 
+     <div id="imlBodyContent" class="container iml-override-container"> 
+      <div class="iml-sidebar pull-left" ng-if="$root.isFirstViewLoaded &amp;&amp; entityType !== 'playoff' &amp;&amp; entityType !== 'madness'"> 
+       <div class="row"> 
+        <div class="col-xs-12 iml-col-sm-6 col-md-12 col-lg-12"> <!--box up on ad--> 
+         <div class="iml-banner" ng-repeat="panelBox in initData.leftTopContentBoxes"> 
+          <div ng-bind-html="trustAsHtml(panelBox)"></div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="imlBodyMain" class="pull-right" style="min-height: 650px;"> 
+       <div class="row"> 
+        <div class="col-xs-12" ng-class="{'bg-background-white':!isBoxStyle}" style="min-height: 400px;"> 
+         <div id="messageBoxDiv" style="z-index: 9999; width: 300px; top: 10px; right: 10px; position: fixed;"></div> 
+         <div class="animate-show" ng-show="$root.isViewDataLoaded &amp;&amp; $root.isIndexDataLoaded" ng-class="{'animate-fade-in':($root.isViewDataLoaded &amp;&amp; $root.isIndexDataLoaded)||$root.isInitDataLoadFailed,'animate-fade-out':!(($root.isViewDataLoaded &amp;&amp; $root.isIndexDataLoaded)||$root.isInitDataLoadFailed)}"> 
+          <div ng-view=""></div> 
+          <div> <!-- Taboola Integration --> <!--<div id="taboola-below-article-thumbnails"></div>
+                                <script type="text/javascript">
+                                window._taboola = window._taboola || [];
+                                _taboola.push({
+                                    mode: 'thumbnails-a',
+                                    container: 'taboola-below-article-thumbnails',
+                                    placement: 'Below Article Thumbnails',
+                                    target_type: 'mix'
+                                });
+                                </script>--> 
+          </div> 
+         </div> 
+         <div style=" top: 0; left: 0; width: 100%; height: 200px" ng-hide="!$root.isFirstViewLoaded || ($root.isViewDataLoaded &amp;&amp; $root.isIndexDataLoaded) || $root.isViewDataLoadFailed" class="im-loading small-loading animate-show"> 
+          <div class="im-loading-content"> 
+           <div class="iml-logo"></div> 
+           <div class="iml-loading-spinner"></div> 
+          </div> 
+         </div> 
+         <div ng-if="$root.isViewDataLoadFailed"> 
+          <div class="alert alert-danger iml-override-alert" role="alert"> <strong>Error!</strong> 
+           <div ng-bind-html="trustAsHtml($root.viewDataLoadFailureMsg)"></div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="imlFootBanner" class="text-center col-xs-12" ng-class="{'framework-none': !(entityType !== 'playoff' &amp;&amp; entityType !== 'conversation' &amp;&amp; $root.isFirstViewLoaded &amp;&amp; $root.isIndexDataLoaded &amp;&amp; entityType !== 'madness')}"> 
+         <div style="display: inline-block; margin-bottom: 4px;" class="iml-empty-ad" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="bottom">
+          <!-- /1090918/imleagues-729x90-BTF -->
+          <div id="div-gpt-ad-1615435146865-0" style="width: 728px; height: 90px;">
+           <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1615435146865-0'); });</script>
+          </div>
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="iml-sidebar pull-left" ng-class="{'framework-none': !($root.isFirstViewLoaded &amp;&amp; entityType !== 'playoff' &amp;&amp; entityType !== 'madness')}"> 
+       <div class="row"> 
+        <div class="iml-banner minute-media-player" style="width: 400px; position: relative; left: -92px;" iml-ad-unit-container="1" iml-ad-unit-list-prop="leftVideoUnitList" iml-ad-unit-prop="tagMinuteMediaVideo" iml-ad-unit-no-refresh="1" iml-ad-unit-loaded="0" iml-dynamic-ad-unit-container="1"></div> 
+        <div id="banner3" class="Advertise im-ads250 text-center iml-empty-ad" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="right">
+         <!-- /1090918/imleagues-300x250-ATF -->
+         <div id="div-gpt-ad-1615434747146-0" style="width: 300px; height: 250px;">
+          <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1615434747146-0'); });</script>
+         </div>
+        </div> <!--<div id="banner3" class="Advertise im-ads250 text-center" ng-bind-html="trustAsHtml(initData.ads.unit.mobileMiddle)" ng-if="showMobileAd"></div>--> <!--<div class ="iml-banner text-center">
+                        <carambola-layer wid=“2"></carambola-layer>
+                    </div>--> 
+        <div class="iml-banner text-center"> 
+         <div class="d-inline-block im-ads250 iml-empty-ad" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="rightMiddle">
+          <!-- /1090918/imleagues-300x250-ATF2 -->
+          <div id="div-gpt-ad-1615434843429-0" style="width: 300px; height: 250px;">
+           <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1615434843429-0'); });</script>
+          </div>
+         </div> 
+        </div> 
+        <div class="iml-banner text-center" ng-if="initData.ads.showVideoAds" ng-bind-html="trustAsHtml(initData.ads.unit.video)" iml-ad-unit-container="1" iml-ad-unit-prop="video"></div> 
+        <div class="col-xs-12 iml-col-sm-6 col-md-12 col-lg-12" ng-repeat="panelBox in initData.leftBottomContentBoxes"> <!--box below ad--> 
+         <div class="iml-banner"> 
+          <div ng-bind-html="trustAsHtml(panelBox)"></div> 
+         </div> 
+        </div> 
+        <div class="iml-banner text-center"> 
+         <div class="d-inline-block im-ads250 iml-empty-ad" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="rightRail">
+          <!-- /1090918/imleagues-300x250-BTF -->
+          <div id="div-gpt-ad-1615434871924-0" style="width: 300px; height: 250px;">
+           <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1615434871924-0'); });</script>
+          </div>
+         </div> 
+        </div> 
+        <div class="iml-banner text-center"> 
+         <div class="d-inline-block im-ads250 iml-empty-ad" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="rightBottom">
+          <!-- /1090918/imleagues-300x250-BTF2 -->
+          <div id="div-gpt-ad-1615434942517-0" style="width: 300px; height: 250px;">
+           <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1615434942517-0'); });</script>
+          </div>
+         </div> 
+        </div> 
+        <div class="iml-banner text-center"> 
+         <div ng-bind-html="trustAsHtml(initData.ads.unit.tagInsticator)" class="d-inline-block" iml-ad-unit-container="1" iml-ad-unit-prop="tagInsticator"></div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> <!-- <div id="imlFootBanner" class="text-center" ng-if="entityType !== 'playoff' && entityType !== 'conversation' && $root.isFirstViewLoaded && $root.isIndexDataLoaded && entityType !== 'madness' ">
+        <div style="display: inline-block; margin-bottom: 4px;" ng-bind-html="trustAsHtml(initData.ads.unit.bottom)"></div>
+    </div> --> <!--iml site footer start--> 
+    <div id="imlFoot" ng-if="entityType !== 'playoff' &amp;&amp; entityType !== 'conversation' &amp;&amp; $root.isFirstViewLoaded &amp;&amp; entityType !== 'madness' &amp;&amp; !$root.isFullEmbed"> <ng-include src="'/spa/scripts/template/bottom-contact.html?v=217'"></ng-include> 
+     <div class="container iml-override-container"> 
+      <div class="row"> 
+       <div class="col-xs-12"> 
+        <ul class="list-inline text-center"> 
+         <li> <a class="schoolMainNavigFont" href="/spa/member/termscondition" translate=".TermsAndConditions" translate-keep-content>Terms and conditions</a> </li> 
+         <li> <a class="schoolMainNavigFont" href="/Members/Home.aspx?Control=Privacy" translate=".PrivacyPolicy" translate-keep-content>Privacy Policy</a> </li> 
+         <li> <a class="schoolMainNavigFont" href="/spa/portal/dataprotectionpolicy" translate=".DataProtectionPolicy" translate-keep-content>Data Protection Policy</a> </li> 
+         <li> <a class="schoolMainNavigFont" href="/Members/Home.aspx?Control=About" translate=".AboutUs" translate-keep-content> About &nbsp; Us </a> </li> 
+         <li> <a class="schoolMainNavigFont" href="/Members/Home.aspx?Control=Contact" translate=".Contact" translate-keep-content>Contact</a> </li> 
+        </ul> 
+        <ul class="list-inline text-center"> 
+         <li> <a aria-label="twitter" href="https://twitter.com/imleagues" class="fa-stack fa-lg schoolMainNavigFont"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </a> <a aria-label="facebook" href="https://www.facebook.com/IMLeagues" class="fa-stack fa-lg schoolMainNavigFont"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </a> </li> 
+         <li translate=".BecomeAFacebookFan" translate-keep-content> Become a fan on Facebook or </li> 
+         <li> 
+          <div class="iml-iframe-btn"> <iframe aria-label="facebook" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FIMLeagues&amp;width&amp;layout=button&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80" scrolling="no" allowtransparency="true" frameborder="0"></iframe> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="container iml-override-container"> 
+      <div class="row"> 
+       <div class="col-xs-12"> 
+        <p id="imlCopyright" class="text-center" translate=".CopyRight" translate-keep-content>2007-2016 IMLeagues, All Rights Reserved</p> 
+       </div> 
+      </div> 
+     </div> 
+    </div> <!--iml site footer end--> 
+    <div ng-bind-html="trustAsHtml(initData.ads.unit.skin)" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="skin" iml-ad-unit-always-refresh="0"></div> 
+    <div ng-bind-html="trustAsHtml(initData.ads.unit.interstitial)" iml-ad-unit-container="1" iml-ad-unit-ours="1" iml-ad-unit-prop="interstitial" iml-ad-unit-always-refresh="1"></div> 
+    <div ng-show="initData.ads.showGumGumAds" iml-ad-unit-loaded="0" iml-dynamic-ad-unit-container="1" iml-ad-unit-container="1" iml-ad-unit-prop="tagGumGumFooter" iml-ad-unit-list-prop="bottomBarUnitList"></div> <!-- USAT Bottom Ads Start  --> 
+    <div id="adsMiddleContainer" style="position: fixed; bottom: 0px; width: 732px;  z-index: 999888000; background: rgb(235, 235, 235); border: 1px solid rgb(221, 221, 221); border-radius: 4px 0px 0px; left: 50%; margin-left: -366px;"> 
+     <div style="width: 728px; margin: 2px; position: relative;" ng-bind-html="trustAsHtml(initData.ads.unit.middle)"></div> 
+    </div> <!-- USAT Bottom Ads End  --> 
+    <div id="commonMessageModal" class="modal fade" style="display: none"> 
+     <div class="modal-dialog"> 
+      <div class="modal-content"> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
+        <h3 id="commonMessageModalHeader">Common Message</h3> 
+       </div> 
+       <div class="modal-body"> 
+        <p id="commonMessageModalBody"></p> 
+       </div> 
+       <div class="modal-footer"> 
+        <div id="commonMessageModalBottonPlaceHolder"></div> <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true" translate=".Close" translate-keep-content> Close </button> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="divLoginModal" class="modal fade"> 
+     <div class="modal-dialog" style="width: 500px"> 
+      <div class="modal-content"> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <h3 translate=".IMLeaguesLogin" translate-keep-content>IMLeagues Login</h3> 
+       </div> 
+       <div class="modal-body"> 
+        <p class="text-left" translate=".PleaseLogin" translate-keep-content> Please login to visit this page or feature. If you are not a member, please click Create Account to register first. </p> 
+        <p id="pLoginDetails" class="text-left text-danger"></p> 
+       </div> 
+       <div class="modal-footer"> <a ng-href="{{initData.loginLink}}" class="btn btn-primary" translate=".Login2" translate-keep-content>Login</a> <a ng-href="{{initData.registrationLink}}" class="btn btn-primary" translate=".CreateAccount2" translate-keep-content>Create Account</a> <button type="button" data-dismiss="modal" class="btn" translate=".Cancel" translate-keep-content>Cancel</button> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="denyWithReplyContainer" ng-bind-html="trustAsHtml(initData.denyWithReplyModalHtml)"></div> 
+    <div ng-bind-html="trustAsHtml(initData.indexSpecificHtml)"></div> 
+    <div class="iml-override-container" ng-bind-html="trustAsHtml(initData.imHeroModalHtml)"></div> 
+    <div ng-bind-html="trustAsHtml(initData.ads.unit.tagUSATodayVideo)" iml-ad-unit-container="1" iml-ad-unit-prop="tagUSATodayVideo"></div> 
+    <div class="premium-switch-container" ng-show="$root.premiumSwitchHelper.show"> <a ng-if="!$root.premiumSwitchHelper.inPremium" class="btn btn-sm btn-info" title="Go to premium page" ng-href="{{$root.premiumSwitchHelper.premiumSwitchUrl}}"><i class="fa fa-lg fa-exchange"></i></a> 
+    </div> 
+   </div> 
+   <script type="text/javascript">
+
+    // It seems that the parameter suffix when loading script due to html() disappears after we update jquery to the latest one; Thus, we don't need the following code.
+    $(document).ready(function() {
+        jQuery.ajaxSetup({cache: true});
+        if (document.getElementById("comm100-button-2624") == undefined || $("#comm100-button-2624").text().length <= 0) {
+            $('#support-button-not-shown').show();
+        }
+
+        updateSmallLoadingStyle();
+    });
+
+    function hideMessageRequest() {
+
+        if ($('#divMyMessagesPopup').is(':visible')) {
+            $('#divMyMessagesPopup').hide();
+        }
+
+        if ($('#divMyRequestsPopup').is(':visible')) {
+            $('#divMyRequestsPopup').hide();
+        }
+
+    }
+
+
+    function updateSmallLoadingStyle() {
+        //get main school background color from cookie, if have no cookies use default IM background color
+        var cookiedUserSetting = getCookie("IMUserSetting");
+        if (cookiedUserSetting != "") {
+            var userSettings = JSON.parse(cookiedUserSetting);
+            var mainColor = userSettings.mainColor;
+            if (mainColor != "") {
+                var node = document.querySelector(".small-loading .iml-loading-spinner");
+                node.style.borderColor = mainColor;
+                node.style.borderBottomColor = "transparent";
+
+                var logoNode = document.querySelector(".small-loading .iml-logo");
+                logoNode.style.backgroundColor = mainColor;
+            }
+        }
+    }
+
+    function mouseGetIn(element) {
+        //because set right attribute in firefox has problem when the scroll bar is showing ,so change to the attribute 'left'
+        $(element).css("left", document.body.clientWidth + 3 - 40 + "px");
+    }
+    function mouseGetOut(element) {
+        $(element).css("left", document.body.clientWidth + 5 - 40 + "px");
+    }
+
+    function goToByScroll(id) {
+        $('html,body').animate({
+            scrollTop: $("#" + id).offset().top
+        }, 1500);
+    }
+
+    // the following methods are two utility methods for showing message when an ajax call starts and an ajax call ends. Usually, we show a message to indicate that ajax call is in progress, and hide it when ajax call ends. they can also be used to show
+    // a mesage for notification
+    function showNotification(msg, isShowOverlay, width, afterSeconds) {
+        if (!msg) 
+            msg = 'Loading...';
+        if (!isShowOverlay) 
+            isShowOverlay = false;
+        if (!width) 
+            width = 100;
+        if (!afterSeconds) 
+            afterSeconds = 0;
+        
+        $.blockUI({
+            message: '<em>' + msg + '</em>',
+            fadeIn: 500,
+            fadeOut: 500,
+            showOverlay: isShowOverlay,
+            centerY: false,
+            css: {
+                position: 'fixed',
+                top: '0',
+                left: '50%',
+                width: width + 'px',
+                margin: '0 0 0 -' + width / 2 + 'px',
+                border: 'none',
+                padding: '5px',
+                'font-weight': 'bold',
+                backgroundColor: '#f3e3a5',
+                //'-webkit-border-radius': '6px', '-moz-border-radius': '6px',
+                '-webkit-border-radius': '0 0 6px 6px',
+                '-moz-border-radius': '0 0 6px 6px',
+                '-moz-box-shadow': '1px 1px 1px 1px #222222',
+                '-webkit-box-shadow': '1px 1px 1px 1px #222222',
+                'box-shadow': '1px 1px 1px 1px #222222',
+                opacity: 1,
+                'z-index': '1000002'
+            }
+        });
+
+        // automatically hide the message after the number of seconds
+        if (afterSeconds > 0) {
+            setTimeout('hideNotification()', afterSeconds * 1000);
+        }
+    }
+
+    function hideNotification() {
+        $.unblockUI();
+    }
+
+    function ShowGuestLogin(msg) {
+        $('#pLoginDetails').html(msg);
+        $('#divLoginModal').modal("show");
+    }
+
+    function Login() {
+        window.open('/Login.aspx', '_self', '');
+    }
+
+    function createAccount(schoolId) {
+        registrationPagePath = '/Registration.aspx';
+        window.open(registrationPagePath, '_self', '');
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) 
+            return unescape(r[2]);
+        return null;
+    }
+
+    function messageModal(messageHeader, messageBody, buttons) {
+        if (!messageBody || messageBody == null || messageBody == '') {
+            messageBody = messageHeader;
+            messageHeader = 'Message';
+        }
+
+        $('#commonMessageModalHeader').html(messageHeader);
+        $('#commonMessageModalBody').html(messageBody);
+        if (buttons) $('#commonMessageModalBottonPlaceHolder').replaceWith(buttons);
+        $('#commonMessageModal').modal('show');
+    }
+
+    function liveSupportDisabled() {
+        messageModal('Support Disabled', "If you're seeing this message it means the network you're connected to is blocking our live chat service. Please talk to your network admin to have them remove the block for www.Comm100.com. If you need support please call or email DougMyers@IMLeague" +
+                "s.com");
+    }
+
+    function showProgressPopup() {
+        //reset the progress data.
+        var $modal = $('.index-loading-bar');
+        var $bar = $modal.find('.progress-bar');
+        $bar.attr('aria-valuenow', 0);
+        $bar.css('width', 0 + '%');
+        $bar.text(0 + '%');
+        $modal.modal('show');
+    }
+
+    function hideProgressPopup() {
+        var $modal = $('.index-loading-bar');
+        var $bar = $modal.find('.progress-bar');
+        $bar.attr('aria-valuenow', 0);
+        $bar.css('width', 0 + '%');
+        $bar.text(0 + '%');
+        $modal.modal('hide');
+    }
+
+    function updateProgress(taskID, callback) {
+        var $modal = $('.index-loading-bar');
+        var $bar = $modal.find('.progress-bar');
+
+        $.post('/AjaxRequestHandler.ashx?class=imLeagues.Web.Members.Pages.BO.ProgressTask&method=GetProgress&TaskID=' + taskID, {}, function(response) {
+            var progress = response.Progress;
+            if (progress >= 100) {
+                $bar.attr('aria-valuenow', 100);
+                $bar.css('width', 100 + '%');
+                $bar.text(100 + '%');
+                //$modal.modal('hide'); when the task is completed, then call the callback method
+                callback(response.Data);
+            } else {
+                $bar.attr('aria-valuenow', progress);
+                $bar.css('width', progress + '%');
+                $bar.text(progress + '%');
+                setTimeout("updateProgress('" + taskID + "'," + callback + ")", 100);
+            }
+        }, 'json');
+    }
+
+    /* Top ad sticky methods start */
+    function _imlTopBannerAdLoad(topBannerSlotId) {
+        if (topBannerSlotId && window.googletag) {
+            //console.log("top banner event bind start, slotId:" + topBannerSlotId);
+            var __topBannerLoadingChecktimer = setTimeout(function () {
+                console.log('from second timeout: prevent ad load fail.');
+                _imlAfterTopBannerAdLoaded()
+            }, 6000);
+            window.googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                if (event.slot.getAdUnitPath().indexOf(topBannerSlotId) > -1) {
+                    clearTimeout(__topBannerLoadingChecktimer);
+                    setTimeout(function () {
+                        console.log('top banner ad load success.');
+                        _imlAfterTopBannerAdLoaded()
+                    }, 2000)
+                }
+            });
+            $(window).on('scroll.top-banner-sticky', function (e) {
+                //e.stopPropagation();
+                _imlApplyTopBannerAdSticky();
+            });
+        }
+    }
+
+    function _imlAfterTopBannerAdLoaded() {
+        $('.iml-head-ads-container').addClass('top-ad-loaded');
+        $(window).off('scroll.top-banner-sticky');
+        $('.iml-head-ads-close-sticky').on('click.close-top-ad-sticky', function () {
+            _removeTopBannerAdStickyImmediately();
+        });
+        if ($('#imlHeadBanner').hasClass("top-ad-sticky")) {
+            _imlRemoveTopBannerAdSticky()
+        }
+    }
+
+    function _imlRemoveTopBannerAdSticky() {
+        setTimeout(function () {
+            console.log('auto remove sticky top banner ad.');
+            var imlHeadBanner = $('#imlHeadBanner');
+            imlHeadBanner.slideUp(250, function () {
+                imlHeadBanner.removeClass('top-ad-sticky');
+                imlHeadBanner.slideDown(250)
+            })
+        }, 4000)
+    }
+
+    function _imlApplyTopBannerAdSticky() {
+        var topBannerAdEle = $('.iml-head-ads');
+        //if top banner ad is empty, do nothing
+        if (topBannerAdEle.is(':empty')) {
+            $('#imlHeadBanner').removeClass('top-ad-sticky')
+        } else {
+            var windowWidth = window.innerWidth;
+
+            var scrollTop = windowWidth > 633 ? $('#imlHead').hasClass('iml-header-with-bg-img') ? 496 : 63 : 207;
+
+            if ($(window).scrollTop() > scrollTop) {
+                $('#imlHeadBanner').addClass('top-ad-sticky');
+            } else {
+                $('#imlHeadBanner').removeClass('top-ad-sticky')
+            }
+        }
+    }
+    
+    function _removeTopBannerAdStickyImmediately() {
+        $('#imlHeadBanner').removeClass('top-ad-sticky')
+    }
+
+    /* Top ad sticky methods end */
+</script> <!-- other js files --> 
+   <script src="/lib/highchart/highcharts.js?v=217" type="text/javascript"></script> <!-- end --> <!-- required by activity feed --> 
+   <script src="/js/jquery.autosize-min.js?v=217" type="text/javascript"></script> 
+   <script src="/js/jquery.tonkeninput/jquery.tokeninput.js?v=217" type="text/javascript"></script> 
+   <script src="/js/jquery.daterangepicker/js/date.js?v=217" type="text/javascript"></script> 
+   <script src="/js/jquery.daterangepicker/js/daterangepicker.js?v=217" type="text/javascript"></script> 
+   <script src="/js/uploadify/jquery.uploadify.min.js?v=217" type="text/javascript"></script> 
+   <script src="/js/iframeResizer/iframeResizer.contentWindow.min.js?v=217" type="text/javascript"></script> 
+   <script src="/spa/scripts/external/fullembed/embedIframeCommon.js?v=217" type="text/javascript"></script> <!-- end --> 
+   <script type="text/javascript" src="/spa/scripts/template/main.ext.js?v=217"></script> <!-- end --> 
+   <div class="modal fade index-loading-bar" data-backdrop="static" style="display: none"> 
+    <div class="modal-dialog" style="margin-top: 15%;"> 
+     <div class="modal-content"> 
+      <div class="modal-body"> 
+       <div class="progress progress-popup" style="margin-bottom: 0"> 
+        <div class="progress-bar active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0;min-width: 2em;">
+          0% 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="adBlockModalContainer"></div> 
+   <script src="/spa/lib/dropzone/dist/dropzone.js?v=217" type="text/javascript"></script> 
+   <script type="text/javascript">
+    $(function () {
+       // Asynchronous loading JS, avoid blocking, improve performance
+        require(['/spa/lib/jquery-mousewheel/jquery.mousewheel.min.js?217', '/spa/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js?217'], function () {
+
+        });
+
+        initUploadConfig();
+    });
+
+    function initUploadConfig() {
+        if (typeof Dropzone != "undefined" && $("#imlHead .iml-header-main :visible").length > 0 && $(".iml-header-banner-btn :visible").length > 0) {
+            setUploadConfig();
+        } else {
+            setTimeout(initUploadConfig, 1000);
+        }
+    }
+
+    function initEditImageConfig() {
+        if (typeof Dropzone != "undefined" && $("#imlHead .iml-header-menu :visible").length > 0 ) {
+            setEditImageConfig();
+        } else {
+            setTimeout(initEditImageConfig, 1000);
+        }
+    }
+
+    function setUploadConfig() {
+        var myDropzone = new Dropzone(document.querySelector('.iml-header-main'), {
+            url: '/Upload.ashx', // Set the url
+            paramName: 'file', // The name that will be used to transfer the file
+            uploadMultiple: false,
+            maxFilesize: 5, //max size 5mb
+            autoProcessQueue: true,
+            parallelUploads: 1,
+            //createImageThumbnails: false, //disable to create preview template
+            previewTemplate: '<div style="display:none"></div>',
+            autoQueue: true, // Make sure the files aren't queued until manually added
+            clickable: '.iml-header-banner-btn', // Define the element that should be used as click trigger to select files.
+            acceptedFiles: 'image/*', //just accept image file
+            uploadprogress: function (file, progress, bytesSent) {
+                // Display the progress
+                if (progress < 100) {
+                    $("#imlBannerProgress").find('.progress-bar').attr("style", "width:30%");
+                } else if (progress == 100) {
+                    $("#imlBannerProgress").find('.progress-bar').attr("style", "width:50%");
+                }
+            },
+            addedfile: function (file) {
+                $("#imlBannerProgress").fadeIn();
+                $("#imlBannerProgress").find('.progress-bar').attr("style", "width:5%");
+            },
+        });
+
+        myDropzone.on("complete", function (file) {
+            //hide this image's progress bar
+            $("#imlBannerProgress").find('.progress-bar').attr("style", "width:60%");
+        });
+
+        myDropzone.on('sending', function (file, xhr, formData) {
+            formData.append('UploadType', '0');
+            formData.append('folder', $("#hdBannerFolderPath").val());
+            formData.append('SchoolBanner', 'true');
+            formData.append('SchoolID', $("#hdSchoolId").val());
+        });
+
+        myDropzone.on('success', function (file, responseData) {
+            var response = JSON.parse(responseData);
+            if (response.IsDone) {
+                var imagePath = response.Data[0];
+
+                //update progress bar
+                $("#imlBannerProgress").find('.progress-bar').attr("style", "width:70%");
+
+                //replace of the background image of school banner
+                if ($(".iml-header-with-bg-img").length > 0 && $(".iml-header-banner").length > 0) {
+                    var itemDIV = $(".iml-header-banner").find(".carousel-inner .item:first").clone();
+                    $(itemDIV).removeClass('active');
+                    $(itemDIV).find(".iml-header-banner-img").attr("style", "background-image:url(\"" + imagePath + "\")");
+                    $(".iml-header-banner").find(".carousel-inner").append(itemDIV);
+                }
+                //update progress bar
+                $("#imlBannerProgress").find('.progress-bar').attr("style", "width:100%");
+                $("#imlBannerProgress").fadeOut();
+            } else {
+                myDropzone.removeFile(file);
+                $('#messageBoxDiv').message({ messageType: 'Error', messageText: response.Message });
+            }
+        });
+        //updated for IM-2203 Accessibility Improvement
+        if ($(".dz-hidden-input").length > 0) {
+            $(".dz-hidden-input").attr("aria-label", "upload file");
+        }
+
+    }
+
+    function setEditImageConfig() {
+
+        if ($('.iml-header-menu .iml-avatar-upload-fade').hasClass('dz-clickable')) {
+            //just return if the element has been attached
+            return;
+        }
+
+        var myDropzone = new Dropzone(document.querySelector('.iml-header-menu'), {
+            url: '/Upload.ashx', // Set the url
+            paramName: 'file', // The name that will be used to transfer the file
+            uploadMultiple: false,
+            maxFilesize: 5, //max size 5mb
+            autoProcessQueue: true,
+            parallelUploads: 1,
+            //createImageThumbnails: false, //disable to create preview template
+            previewTemplate: '<div style="display:none"></div>',
+            autoQueue: true, // Make sure the files aren't queued until manually added
+            clickable: '.iml-avatar-upload-fade', // Define the element that should be used as click trigger to select files.
+            acceptedFiles: 'image/*', //just accept image file
+        });
+
+        myDropzone.on('sending', function (file, xhr, formData) {
+            formData.append('UploadType', '0');
+            formData.append('EditImageWithDropzone', 'true');
+            formData.append('SchoolID', $("#hdSchoolId").val());
+            formData.append('EntityType', $('.iml-avatar-upload-fade').attr('data-entity-type'));
+        });
+
+        myDropzone.on('success', function (file, responseData) {
+            var response = JSON.parse(responseData);
+            if (response.IsDone) {
+                var imagePath = response.Data;
+
+                $('.iml-header-avatar .media-left img.iml-header-logo').attr('src', imagePath);
+                if ($('.iml-header-avatar .media-left img.iml-header-logo').hasClass('ng-hide')) {
+                    $('.iml-header-avatar .media-left').find('i').addClass('ng-hide');
+                    $('.iml-header-avatar .media-left').find('img.iml-header-logo').removeClass('ng-hide');
+                }
+            } else {
+                myDropzone.removeFile(file);
+                $('#messageBoxDiv').message({ messageType: 'Error', messageText: response.Message });
+            }
+        });
+        //updated for IM-2203 Accessibility Improvement
+        if ($(".dz-hidden-input").length > 0) {
+            $(".dz-hidden-input").attr("aria-label", "upload file");
+        }
+    }
+
+    function toggleShowSupportList() {
+        $(".iml-support-list-container .list-group-item>a").hover(function(){
+            $(this).addClass('schoolMainNavigBackOpacity')
+        },function(){
+            $(this).removeClass('schoolMainNavigBackOpacity')
+        });
+
+        if ($("#divSupportArea").attr("style").indexOf("display: none") >= 0) {
+            $("#divSupportArea").show();
+            $(".iml-support-container").hide("slow");
+        } else {
+            $("#divSupportArea").hide();
+            $(".iml-support-container").show("slow");
+        }
+    }
+
+
+    $(document).click(function (e) {
+        if (window.event) e = window.event;
+        var srcElement = e.srcElement ? e.srcElement : e.target;
+        var jSrc = $(srcElement);
+
+        if (jSrc.closest('#btn-support').length > 0 && jSrc.closest('#divSupportArea').length === 0) {
+            $("#divSupportArea").show();          
+        }
+        else {
+            $("#divSupportArea").hide();
+            $(".iml-support-container").show("slow");
+        }
+    });
+</script> <!-- END MAIN_VIEW --> 
+  </div> 
+  <script type="text/javascript">
+    // it is used in main.js and index.js files, so we ned to define it first
+    var g_cdnServer = "";
+
+    // mainly used to check if the page in the client like browser needs to be refreshed or reloaded for now
+    var g_clientVersion = "217";
+
+    var g_serviceDomains = "";
+
+    var g_onlyRefreshOurViewableAd = "0" === "1";
+
+    var indexInitData = null;
+
+    window.localStorage.setItem('JwtTokenForSPA', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imd1ZXN0IiwibmJmIjoxNjQ5MTk0NTM4LCJleHAiOjE2NDk3OTkzMzgsImlhdCI6MTY0OTE5NDUzOH0.PoprtbGTTFltUXkW_kUf99QjLQdoL73OkvcU2Sve0Js');
+
+    if (window.localStorage.getItem('JwtTokenIndexForSPA') && window.localStorage.getItem('JwtTokenIndexForSPA') === -1) {
+        window.localStorage.setItem('JwtTokenIndexForSPA', '81');
+    }
+
+    //set a base ckeditor url for use ckeditor directive.
+    //This must set before ckeditor loaded
+    //since now use template for main we just set it here.
+    window.CKEDITOR_BASEPATH = '/ckeditor/';
+
+    function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=")
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1
+                c_end = document.cookie.indexOf(";", c_start)
+                if (c_end == -1) c_end = document.cookie.length
+                return unescape(document.cookie.substring(c_start, c_end))
+            }
+        }
+        return ""
+    }
+
+    // set a background color based on user primary school color saved in
+    // user setting cookie
+    (function () {
+        //get main school background color from cookie, if have no cookies use default IM background color
+        var cookiedUserSetting = getCookie("IMUserSetting");
+        if (cookiedUserSetting != "") {
+            var userSettings = JSON.parse(cookiedUserSetting);
+            if (userSettings.mainColor != "") {
+                document.getElementById("loadingScreen").style.backgroundColor = userSettings.mainColor;
+            }
+        }
+    }());
+
+    // implement the fadein and fadeout effect for initial page loading
+    // when this function is called, jquery is supposed to be loaded into
+    // the browser. Thus, it should be no problem to use jquery at this time.
+    // for first time we need to scroll after main view fadeIn. the callback is the scroll code.
+    function onFirstViewLoaded(callback) {
+        $('#loadingScreen').fadeOut();
+        $('#mainView').fadeIn('normal',function(){
+            detectBannerLoad(callback);
+            initEditImageConfig();
+        });
+    }
+        
+    var g_detectBigBannerCount = 0;
+    //only scroll after banner loaded
+    function detectBannerLoad(callback) {
+        if (callback) {
+            if ($('.iml-header-main.schoolMainNavigBack.iml-header-with-bg-img').length > 0) {
+                callback();
+            }else{
+                if (g_detectBigBannerCount < 20) {
+                    g_detectBigBannerCount +=1;
+                    setTimeout(function () {
+                        detectBannerLoad(callback);
+                    }, 500);
+                }
+            }
+        }
+    }
+
+    var g_imlAdImpressionVieableListened = false;
+
+    //listen to the ad ImpressionViewable event
+    function _imlListenAdImpressionViewable() {
+        //do not add multiple listener
+        if (window.googletag && !g_imlAdImpressionVieableListened) {
+            console.log('imlad: start listen ad ImpressionViewable');
+            //when ad start to request, we add class to them to reset the viewed flag
+            googletag.pubads().addEventListener('slotRequested', function (event2) {
+                var slotId2 = event2.slot.getSlotElementId();
+                var parentContainer2 = $('#' + slotId2).parent();
+                if ($(parentContainer2).attr('iml-ad-unit-ours') === '1') {
+                    console.log('imlad:  ad slot start requested, slot Id:' + event2.slot.getAdUnitPath());
+                    //reset class
+                    $(parentContainer2).removeClass('iml-ad-viewed');
+                    $(parentContainer2).addClass('iml-empty-ad');
+                }
+            });
+            //we need also see if the ad is not empty
+            googletag.pubads().addEventListener('slotRenderEnded', function (event3) {
+                var slotId3 = event3.slot.getSlotElementId();
+                var parentContainer3 = $('#' + slotId3).parent();
+                if ($(parentContainer3).attr('iml-ad-unit-ours') === '1') {
+                    if (!event3.isEmpty) {
+                        console.log('imlad:  ad render success, slot Id:' + event3.slot.getAdUnitPath());
+                        $(parentContainer3).removeClass('iml-empty-ad');
+                    } else {
+                        console.log('imlad:  ad render fail, render a empty ad, slot Id:' + event3.slot.getAdUnitPath());
+                    }
+                }
+            });
+            window.googletag.pubads().addEventListener('impressionViewable', function (event) {
+                var slotElementId = event.slot.getSlotElementId();
+                var parentContainer = $('#' + slotElementId).parent();
+                //only consider our ad
+                if ($(parentContainer).attr('iml-ad-unit-ours') === '1') {
+                    console.log('imlad:  ImpressionViewable fired, slot Id:' + event.slot.getAdUnitPath());
+                    $(parentContainer).addClass('iml-ad-viewed');
+                }
+            });
+            g_imlAdImpressionVieableListened = true;
+        }
+    }
+</script> <!-- bootstrap the application --> 
+  <script data-main="/spa/main.js?v=217" src="/spa/lib/requirejs/require.js?v=217"></script> 
+  <div id="divFootTagsPlaceHolder"></div> <!-- Taboola Integration --> <!--<script type="text/javascript">
+    window._taboola = window._taboola || [];
+    _taboola.push({flush: true});
+    </script>--> <!-- LiveConnectTag for publisher IM-2017 --> 
+  <script type="text/javascript" src="//b-code.liadm.com/a-01de.min.js" async="true" charset="utf-8"></script> <!-- LiveConnectTag for publisher -->  
+ </body>
+</html>

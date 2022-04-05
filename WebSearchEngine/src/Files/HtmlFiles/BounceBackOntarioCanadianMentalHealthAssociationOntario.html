@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en-US"> 
+ <head itemscope itemtype="https://schema.org/WebSite"> 
+  <meta charset="UTF-8"> 
+  <meta name="description" content="Canadian Mental Health Association, Ontario"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>BounceBack Ontario – Canadian Mental Health Association, Ontario</title> 
+  <meta name="robots" content="max-image-preview:large"> 
+  <link rel="alternate" hreflang="en-us" href="https://bouncebackontario.ca"> 
+  <link rel="alternate" hreflang="fr-fr" href="https://bouncebackontario.ca/fr/"> 
+  <link rel="alternate" hreflang="x-default" href="https://bouncebackontario.ca"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//use.fontawesome.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="BounceBack Ontario » Feed" href="https://bouncebackontario.ca/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="BounceBack Ontario » Comments Feed" href="https://bouncebackontario.ca/comments/feed/"> 
+  <link rel="canonical" href="https://bouncebackontario.ca/"> <!-- This site uses the Google Analytics by MonsterInsights plugin v8.5.0 - Using Analytics tracking - https://www.monsterinsights.com/ --> 
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-2451900-29" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script> 
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.5.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-2451900-29',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-2451900-29', {"allow_anchor":"true","forceSSL":"true","anonymize_ip":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script> <!-- / Google Analytics by MonsterInsights --> 
+  <script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/bouncebackontario.ca\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="bounce-back-ontario-css" href="https://bouncebackontario.ca/wp-content/themes/network/style.css?ver=1623181190" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-library-css" href="https://bouncebackontario.ca/wp-includes/css/dist/block-library/style.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-components-css" href="https://bouncebackontario.ca/wp-includes/css/dist/components/style.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-editor-css" href="https://bouncebackontario.ca/wp-includes/css/dist/block-editor/style.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-nux-css" href="https://bouncebackontario.ca/wp-includes/css/dist/nux/style.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-reusable-blocks-css" href="https://bouncebackontario.ca/wp-includes/css/dist/reusable-blocks/style.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-editor-css" href="https://bouncebackontario.ca/wp-includes/css/dist/editor/style.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bounceback_gutenberg_block-cgb-style-css-css" href="https://bouncebackontario.ca/wp-content/plugins/bounceback-gutenberg-block/dist/blocks.style.build.css" type="text/css" media="all"> 
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style> 
+  <link rel="stylesheet" id="bbpl-css" href="https://bouncebackontario.ca/wp-content/plugins/bounceback-postal-to-lhin/assets/css/style.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-custom-font-css" href="https://fonts.googleapis.com/css?family=Barlow%3A400%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i&amp;display=swap&amp;ver=1623181190" type="text/css" media="all"> 
+  <link rel="stylesheet" id="dashicons-css" href="https://bouncebackontario.ca/wp-includes/css/dashicons.min.css?ver=5.9.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="custom-stylesheet-css" href="https://bouncebackontario.ca/wp-content/themes/network/cmha-custom.css?ver=1623181190" type="text/css" media="all"> 
+  <link rel="stylesheet" id="font-awesome-official-css" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" type="text/css" media="all" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous"> 
+  <link rel="stylesheet" id="font-awesome-official-v4shim-css" href="https://use.fontawesome.com/releases/v5.10.1/css/v4-shims.css" type="text/css" media="all" integrity="sha384-i1lF6V7EeiD7KOgGLtAvJiK1GAQx4ogzG6B9gpEaDuHSLZuM3sFtPZrI6H2Gzqs6" crossorigin="anonymous"> 
+  <style id="font-awesome-official-v4shim-inline-css" type="text/css">
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-brands-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-brands-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-brands-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-brands-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-solid-900.eot"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-solid-900.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-solid-900.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-solid-900.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-regular-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-regular-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-regular-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-regular-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.10.1/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+}
+</style> 
+  <link rel="stylesheet" type="text/css" href="https://bouncebackontario.ca/wp-content/plugins/nextend-smart-slider3-pro/Public/SmartSlider3/Application/Frontend/Assets/dist/smartslider.min.css?ver=f4759c2e" media="all"> 
+  <style data-related="n2-ss-7">div#n2-ss-7 .n2-ss-slider-1{display:grid;position:relative;}div#n2-ss-7 .n2-ss-slider-2{display:grid;position:relative;overflow:hidden;padding:10px 0px 10px 0px;border:0px solid RGBA(62,62,62,1);border-radius:0px;background-clip:padding-box;background-repeat:repeat;background-position:50% 50%;background-size:cover;background-attachment:scroll;z-index:1;}div#n2-ss-7:not(.n2-ss-loaded) .n2-ss-slider-2{background-image:none !important;}div#n2-ss-7 .n2-ss-slider-3{display:grid;grid-template-areas:'cover';position:relative;overflow:hidden;z-index:10;}div#n2-ss-7 .n2-ss-slider-3 > *{grid-area:cover;}div#n2-ss-7 .n2-ss-slide-backgrounds,div#n2-ss-7 .n2-ss-slider-3 > .n2-ss-divider{position:relative;}div#n2-ss-7 .n2-ss-slide-backgrounds{z-index:10;}div#n2-ss-7 .n2-ss-slide-backgrounds > *{overflow:hidden;}div#n2-ss-7 .n2-ss-slide-background{transform:translateX(-100000px);}div#n2-ss-7 .n2-ss-slider-4{place-self:center;position:relative;width:100%;height:100%;z-index:20;display:grid;grid-template-areas:'slide';}div#n2-ss-7 .n2-ss-slider-4 > *{grid-area:slide;}div#n2-ss-7.n2-ss-full-page--constrain-ratio .n2-ss-slider-4{height:auto;}div#n2-ss-7 .n2-ss-slide{display:grid;place-items:center;grid-auto-columns:100%;position:relative;z-index:20;-webkit-backface-visibility:hidden;transform:translateX(-100000px);}div#n2-ss-7 .n2-ss-slide{perspective:1000px;}div#n2-ss-7 .n2-ss-slide-active{z-index:21;}.n2-ss-background-animation{position:absolute;top:0;left:0;width:100%;height:100%;z-index:3;}div#n2-ss-7 .nextend-arrow{cursor:pointer;overflow:hidden;line-height:0 !important;z-index:18;-webkit-user-select:none;}div#n2-ss-7 .nextend-arrow img{position:relative;display:block;}div#n2-ss-7 .nextend-arrow img.n2-arrow-hover-img{display:none;}div#n2-ss-7 .nextend-arrow:FOCUS img.n2-arrow-hover-img,div#n2-ss-7 .nextend-arrow:HOVER img.n2-arrow-hover-img{display:inline;}div#n2-ss-7 .nextend-arrow:FOCUS img.n2-arrow-normal-img,div#n2-ss-7 .nextend-arrow:HOVER img.n2-arrow-normal-img{display:none;}div#n2-ss-7 .nextend-arrow-animated{overflow:hidden;}div#n2-ss-7 .nextend-arrow-animated > div{position:relative;}div#n2-ss-7 .nextend-arrow-animated .n2-active{position:absolute;}div#n2-ss-7 .nextend-arrow-animated-fade{transition:background 0.3s, opacity 0.4s;}div#n2-ss-7 .nextend-arrow-animated-horizontal > div{transition:all 0.4s;transform:none;}div#n2-ss-7 .nextend-arrow-animated-horizontal .n2-active{top:0;}div#n2-ss-7 .nextend-arrow-previous.nextend-arrow-animated-horizontal .n2-active{left:100%;}div#n2-ss-7 .nextend-arrow-next.nextend-arrow-animated-horizontal .n2-active{right:100%;}div#n2-ss-7 .nextend-arrow-previous.nextend-arrow-animated-horizontal:HOVER > div,div#n2-ss-7 .nextend-arrow-previous.nextend-arrow-animated-horizontal:FOCUS > div{transform:translateX(-100%);}div#n2-ss-7 .nextend-arrow-next.nextend-arrow-animated-horizontal:HOVER > div,div#n2-ss-7 .nextend-arrow-next.nextend-arrow-animated-horizontal:FOCUS > div{transform:translateX(100%);}div#n2-ss-7 .nextend-arrow-animated-vertical > div{transition:all 0.4s;transform:none;}div#n2-ss-7 .nextend-arrow-animated-vertical .n2-active{left:0;}div#n2-ss-7 .nextend-arrow-previous.nextend-arrow-animated-vertical .n2-active{top:100%;}div#n2-ss-7 .nextend-arrow-next.nextend-arrow-animated-vertical .n2-active{bottom:100%;}div#n2-ss-7 .nextend-arrow-previous.nextend-arrow-animated-vertical:HOVER > div,div#n2-ss-7 .nextend-arrow-previous.nextend-arrow-animated-vertical:FOCUS > div{transform:translateY(-100%);}div#n2-ss-7 .nextend-arrow-next.nextend-arrow-animated-vertical:HOVER > div,div#n2-ss-7 .nextend-arrow-next.nextend-arrow-animated-vertical:FOCUS > div{transform:translateY(100%);}div#n2-ss-7 .n2-ss-slider-2{background-color:RGBA(255,0,0,1);}div#n2-ss-7 .n-uc-mwK2qOVzRpIX{padding:10px 10px 10px 10px}div#n2-ss-7 .n-uc-18c8e3163612b-inner{padding:10px 10px 10px 10px;justify-content:center}div#n2-ss-7 .n-uc-18c8e3163612b{align-self:center;}div#n2-ss-7 .n-uc-7ueQNGjPA0BT{padding:10px 10px 10px 10px}div#n2-ss-7 .n-uc-1e8d2f7910b5b-inner{padding:10px 10px 10px 10px;justify-content:center}div#n2-ss-7 .n-uc-1e8d2f7910b5b{align-self:center;}div#n2-ss-7 .n-uc-Gw1nuVrUnsxj{padding:10px 10px 10px 10px}div#n2-ss-7 .n-uc-1bfc447236d75-inner{padding:10px 10px 10px 10px;justify-content:center}div#n2-ss-7 .n-uc-1bfc447236d75{align-self:center;}div#n2-ss-7 .n-uc-GiMVxrO7rbwo{padding:10px 10px 10px 10px}div#n2-ss-7 .n-uc-1ed6229cc19a8-inner{padding:10px 10px 10px 10px;justify-content:center}div#n2-ss-7 .n-uc-1ed6229cc19a8{align-self:center;}div#n2-ss-7 .n-uc-jt0aScovqkr3{padding:10px 10px 10px 10px}div#n2-ss-7 .n-uc-14db05d781681-inner{padding:10px 10px 10px 10px;justify-content:center}div#n2-ss-7 .n-uc-14db05d781681{align-self:center;}div#n2-ss-7 .n2-ss-slider-1{min-height:400px;}div#n2-ss-7 .nextend-arrow img{width: 32px}@media (min-width: 1200px){div#n2-ss-7 [data-hide-desktopportrait="1"]{display: none !important;}}@media (orientation: landscape) and (max-width: 1199px) and (min-width: 901px),(orientation: portrait) and (max-width: 1199px) and (min-width: 701px){div#n2-ss-7 [data-hide-tabletportrait="1"]{display: none !important;}}@media (orientation: landscape) and (max-width: 900px),(orientation: portrait) and (max-width: 700px){div#n2-ss-7 .n-uc-XOxCJDOTHNuZ{display:none}div#n2-ss-7 .n-uc-HYHPhHkngnNv{display:none}div#n2-ss-7 .n-uc-1qFJ2vJGBIre{display:none}div#n2-ss-7 .n-uc-OF7gU4uYvuYe{display:none}div#n2-ss-7 .n-uc-gMAdzqCcO8YU{display:none}div#n2-ss-7 [data-hide-mobileportrait="1"]{display: none !important;}div#n2-ss-7 .nextend-arrow img{width: 16px}}</style> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.5.0" id="monsterinsights-frontend-script-js"></script> 
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,xlsx,pptx","inbound_paths":"[]","home_url":"https:\/\/bouncebackontario.ca","hash_tracking":"true","ua":"UA-2451900-29","v4_id":""};/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/bounceback-postal-to-lhin/assets/js/papaparse.min.js?ver=5.9.2" id="papa_csv-js"></script> 
+  <script type="text/javascript" id="bbpl-js-extra">
+/* <![CDATA[ */
+var BBPL = {"lhin_default_list_url":"https:\/\/bouncebackontario.ca\/wp-content\/uploads\/2021\/09\/MOHLTC-Nov-2018-Postal-Code-3-LHINs.csv","lhin_handlers":"{\"bounceback-coaching\":{\"na\":{\"title\":\"Not Found\",\"redirect_to\":\"\\\/access-services\\\/\"},\"09\":{\"title\":\"Central East\",\"redirect_to\":\"\\\/ontario-shores\\\/\"},\"11\":{\"title\":\"Champlain\",\"redirect_to\":\"\\\/the-royal\\\/\"},\"12\":{\"title\":\"North Simcoe Muskoka\",\"redirect_to\":\"\\\/waypoint\\\/\"}},\"refer-clients\":{\"na\":{\"title\":\"Not Found\",\"redirect_to\":\"\\\/how-to-refer\\\/\"},\"09\":{\"title\":\"Central East\",\"redirect_to\":\"\\\/ontario-shores\\\/\"},\"11\":{\"title\":\"Champlain\",\"redirect_to\":\"\\\/the-royal\\\/\"},\"12\":{\"title\":\"North Simcoe Muskoka\",\"redirect_to\":\"\\\/waypoint\\\/\"}}}"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/bounceback-postal-to-lhin/assets/js/script.js?ver=1631274520" id="bbpl-js"></script> 
+  <link rel="https://api.w.org/" href="https://bouncebackontario.ca/wp-json/">
+  <link rel="alternate" type="application/json" href="https://bouncebackontario.ca/wp-json/wp/v2/pages/6802">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bouncebackontario.ca/xmlrpc.php?rsd"> 
+  <link rel="alternate" type="application/json+oembed" href="https://bouncebackontario.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbouncebackontario.ca%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://bouncebackontario.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbouncebackontario.ca%2F&amp;format=xml"> 
+  <meta name="generator" content="WPML ver:4.5.5 stt:1,4;"> 
+  <meta itemprop="name" content="BounceBack Ontario"> 
+  <meta itemprop="url" content="https://bouncebackontario.ca/"> 
+  <style type="text/css">
+		#container-top-widget .featured-content .entry-title,
+		#container-top-widget { 
+			background-color: #00b1b0 ;
+			color: #ffffff ;
+		}
+		.container-down-arrow:after {border-left: 20px solid #00b1b0;}
+		.utility-bar { 
+			background-color: #bd0102 ;
+			color:  ;
+		}
+		
+		.utility-bar a { 
+			color:  ;
+		}			
+		
+				.content a {
+			color:  ;
+		}
+		.content a:hover{
+			color: ;
+			text-decoration:underline;
+		}
+					
+		.utility-bar-wrap.closed .close{background-color: #bd0102 ;}		
+		
+				.header-middle-container {
+			display: none;
+		}
+				
+		</style> <!-- Global site tag (gtag.js) - Google Ads: 642826458 --> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-642826458"></script> 
+  <script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'AW-642826458');
+	</script> <!-- Global site tag (gtag.js) - Google Ads: 642826458 --> <!-- Facebook Pixel Code --> 
+  <script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window,document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '571248146855811'); 
+	fbq('track', 'PageView');
+	</script> 
+  <noscript>
+   &lt;img height="1" width="1" src="https://www.facebook.com/tr?id=571248146855811&amp;amp;ev=PageView &amp;amp;noscript=1"&gt;
+  </noscript> <!-- End Facebook Pixel Code --> 
+  <link rel="icon" href="https://bouncebackontario.ca/wp-content/uploads/2018/03/cropped-bb-favicon-01-32x32.png" sizes="32x32"> 
+  <link rel="icon" href="https://bouncebackontario.ca/wp-content/uploads/2018/03/cropped-bb-favicon-01-192x192.png" sizes="192x192"> 
+  <link rel="apple-touch-icon" href="https://bouncebackontario.ca/wp-content/uploads/2018/03/cropped-bb-favicon-01-180x180.png"> 
+  <meta name="msapplication-TileImage" content="https://bouncebackontario.ca/wp-content/uploads/2018/03/cropped-bb-favicon-01-270x270.png"> 
+  <style type="text/css" id="wp-custom-css">
+			.referral-img img{border: 1px solid #ddd;}
+.form-postal-lhin .submit-btn{
+	padding: 0px 10px;
+  font-weight: 600;
+  font-size: 25px;
+  min-height: 40px;
+  text-transform: capitalize;
+  display: inline-block;
+  justify-content: center;
+	color: #fff;
+  background: #00afaa;
+}
+.form-postal-lhin .submit-btn:before{
+	  content: "";
+    display: inline-block;
+    width: 25px;
+    height: 19px;
+    margin-right: 10px;
+    background: url(/wp-content/uploads/2019/08/arrowwhite.svg) no-repeat center;
+	background-size: contain;
+}
+.form-postal-lhin .submit-btn:hover{background: #443635;}		</style> 
+  <script>(function(){this._N2=this._N2||{_r:[],_d:[],r:function(){this._r.push(arguments)},d:function(){this._d.push(arguments)}}}).call(window);!function(a){a.indexOf("Safari")>0&&-1===a.indexOf("Chrome")&&document.documentElement.style.setProperty("--ss-safari-fix-225962","1px")}(navigator.userAgent);!function(e,i,o,r){(i=e.match(/(Chrome|Firefox|Safari)\/(\d+)\./))&&("Chrome"==i[1]?r=+i[2]>=32:"Firefox"==i[1]?r=+i[2]>=65:"Safari"==i[1]&&(o=e.match(/Version\/(\d+)/)||e.match(/(\d+)[0-9_]+like Mac/))&&(r=+o[1]>=14),r&&document.documentElement.classList.add("n2webp"))}(navigator.userAgent);</script>
+  <script src="https://bouncebackontario.ca/wp-content/plugins/nextend-smart-slider3-pro/Public/SmartSlider3/Application/Frontend/Assets/dist/n2.min.js?ver=f4759c2e" defer async></script> 
+  <script src="https://bouncebackontario.ca/wp-content/plugins/nextend-smart-slider3-pro/Public/SmartSlider3/Application/Frontend/Assets/dist/smartslider-frontend.min.js?ver=f4759c2e" defer async></script> 
+  <script src="https://bouncebackontario.ca/wp-content/plugins/nextend-smart-slider3-pro/Public/SmartSlider3/Slider/SliderType/Simple/Assets/dist/ss-simple.min.js?ver=f4759c2e" defer async></script> 
+  <script src="https://bouncebackontario.ca/wp-content/plugins/nextend-smart-slider3-pro/Public/SmartSlider3/Widget/Arrow/ArrowImage/Assets/dist/w-arrow-image.min.js?ver=f4759c2e" defer async></script> 
+  <script>_N2.r('documentReady',function(){_N2.r(["documentReady","smartslider-frontend","SmartSliderWidgetArrowImage","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-7',{"admin":false,"callbacks":"","background.video.mobile":1,"loadingTime":2000,"randomize":{"randomize":0,"randomizeFirst":0},"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":4679,"slideOuterHeight":1250,"sliderWidth":4679,"sliderHeight":1250,"slideWidth":4679,"slideHeight":1250},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":4679,"height":1250,"max":4679,"min":1200},"tabletPortrait":{"width":701,"height":187,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":85,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":8000,"autoplayLoop":1,"allowReStart":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1000,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"parallax":{"enabled":1,"mobile":0,"is3D":0,"animate":1,"horizontal":"mouse","vertical":"mouse","origin":"slider","scrollmove":"both"},"postBackgroundAnimations":0,"bgAnimations":0,"mainanimation":{"type":"fade","duration":800,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":"auto"},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this)}})})});</script>
+ </head> 
+ <body class="home page-template page-template-single-page-fullwidth page-template-single-page-fullwidth-php page page-id-6802 wp-embed-responsive header-image full-width-content genesis-breadcrumbs-hidden cmha-frontpage cmha-page" itemscope itemtype="https://schema.org/WebPage">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0.49803921568627" />
+      <fefuncg type="table" tablevalues="0 0.49803921568627" />
+      <fefuncb type="table" tablevalues="0 0.49803921568627" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 0.27843137254902" />
+      <fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0" />
+      <fefuncg type="table" tablevalues="0 0.64705882352941" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.78039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.94901960784314" />
+      <fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.44705882352941 0.4" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.098039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.66274509803922" />
+      <fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <ul class="genesis-skip-link">
+   <li><a href="#header-nav" class="screen-reader-shortcut"> Skip to Header Navigation</a></li>
+   <li><a href="#primary_nav" class="screen-reader-shortcut"> Skip to Primary Navigation</a></li>
+   <li><a href="#genesis-responsive-slider" class="screen-reader-shortcut"> Skip to Featured Posts Slider</a></li>
+   <li><a href="#latest-info" class="screen-reader-shortcut"> Skip to Latest News and Information</a></li>
+   <li><a href="#sponsor-section" class="screen-reader-shortcut"> Skip to Sponsor Section</a></li>
+   <li><a href="#footer-container" class="screen-reader-shortcut"> Skip to Footer Area</a></li>
+  </ul><a href="#0" class="go-top to-top" title="Back To Top">Top</a>
+  <div class="utility-bar-wrap">
+   <div id="utility-bar" class="utility-bar">
+    <div class="wrap">
+     <h2 class="screen-reader-text">Highlight Bar</h2>
+     <div id="utility-bar-container">
+      <ul>
+       <li id="black-studio-tinymce-47" class=" container-widgets-1  widget widget_black_studio_tinymce ">
+        <div class="textwidget">
+         <p style="text-align: center;"><i class="fas fa-info-circle"></i><span class="uppercase"> IN CRISIS?</span> Call Canada Suicide Prevention Service at 1-833-456-4566, or&nbsp; <a href="http://ontario.cmha.ca/local-cmha-branch-supports/" target="_blank" rel="noopener"><u>find your local CMHA branch</u></a>.<br> For immediate help, call 9-1-1</p> 
+        </div></li>
+      </ul>
+     </div><!-- end utility-bar container-->
+    </div>
+   </div><button id="close-utility-bar" class="close close-button"><span class="screen-reader-text">Close highlight bar</span></button>
+  </div><!-- end utility-bar wrap-->
+  <div class="site-container"> 
+   <div id="cmha-header"> 
+    <div style="background-color: #fff"> 
+     <div class="header-wrap"> 
+      <div class="header-logo-wrap"> <a href="https://bouncebackontario.ca"> <img src="/wp-content/uploads/2018/03/BB-logo-colour-R.svg" alt="BounceBack Ontario"> </a> 
+      </div> 
+      <div class="header-middle-container"> 
+       <div class="header-middle"> 
+        <p><span aria-hidden="true"></span></p> 
+       </div> 
+      </div> 
+      <div id="header-nav" class="search-container"> 
+       <nav class="nav-header menu genesis-nav-menu menu-primary" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <div class="menu-header-menu-container">
+         <ul id="menu-header-menu" class="menu">
+          <li id="menu-item-6714" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6714"><a href="https://bouncebackontario.ca/bounceback-offers-quick-tips-to-support-your-mental-health-during-covid-19/" itemprop="url">COVID-19</a></li> 
+          <li id="menu-item-5144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5144"><a href="https://bouncebackontario.ca/adults-19/" itemprop="url">Adults (19+)</a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-5145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5145"><a href="https://bouncebackontario.ca/adults-19/faqs-adults/" itemprop="url">FAQs</a></li> 
+           </ul> </li> 
+          <li id="menu-item-5146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5146"><a href="https://bouncebackontario.ca/what-is-bounceback-youth/" itemprop="url">Youth (15-17)</a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-5147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5147"><a href="https://bouncebackontario.ca/what-is-bounceback-youth/youth-faqs/" itemprop="url">FAQs</a></li> 
+           </ul> </li> 
+          <li id="menu-item-5148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5148"><a href="https://bouncebackontario.ca/care-providers/" itemprop="url">Care Providers</a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-5149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5149"><a href="https://bouncebackontario.ca/care-providers/care-providers-faqs/" itemprop="url">FAQs</a></li> 
+           </ul> </li> 
+          <li id="menu-item-5704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5704"><a href="https://bouncebackontario.ca/about-cmha/" itemprop="url">About CMHA Ontario</a></li> 
+          <li id="menu-item-5822" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5822"><a href="https://bouncebackontario.ca/contact-us/" itemprop="url">Contact Us</a></li> 
+          <li class="custom-menu-item menu-item"><a href="https://bouncebackontario.ca/fr/" class="wpml-ls-link"><span class="screen-reader-text">Translate site to</span><span class="wpml-ls-native icl_lang_sel_native" lang="fr">FR</span></a></li>
+          <li class="menu-item menu-item-search">
+           <div class="search-wrap">
+            <form class="search-form" method="get" action="https://bouncebackontario.ca/" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+             <label class="search-form-label screen-reader-text" for="searchform-1">Search BounceBack Ontario...</label>
+             <input class="search-form-input" type="search" name="s" id="searchform-1" placeholder="Search BounceBack Ontario..." itemprop="query-input">
+             <input class="search-form-submit" type="submit" value="Search">
+             <meta content="https://bouncebackontario.ca/?s={s}" itemprop="target">
+            </form>
+           </div><button id="main-nav-search-link" class="icon-search"><span class="screen-reader-text">Search</span></button></li>
+         </ul>
+        </div>
+       </nav> 
+      </div> <!-- end search-container --> 
+     </div> <!-- end header-wrap --> 
+    </div> <!-- end wrap --> 
+    <div class="nav_container aligncenter"> 
+     <div class="wrap"> 
+      <div id="primary_nav"> 
+       <div class="language_display"></div> 
+       <div class="nav_menu_container "> 
+       </div> 
+       <div class="nav_mobile_container"> 
+        <nav class="nav-primary nav-mobile" style="display: none;">
+         <div class="wrap">
+          <ul id="menu-primary-1" class="menu genesis-nav-menu menu-primary menu-mobile responsive-menu">
+           <li class="menu-item menu-item-search">
+            <div class="search-wrap-mobile">
+             <form class="search-form" method="get" action="https://bouncebackontario.ca/" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+              <label class="search-form-label screen-reader-text" for="searchform-2">Search BounceBack Ontario...</label>
+              <input class="search-form-input" type="search" name="s" id="searchform-2" placeholder="Search BounceBack Ontario..." itemprop="query-input">
+              <input class="search-form-submit" type="submit" value="Search">
+              <meta content="https://bouncebackontario.ca/?s={s}" itemprop="target">
+             </form>
+            </div></li>
+           <li class="menu-item"><a href="https://bouncebackontario.ca/fr/"><span class="screen-reader-text">Translate site to</span><span lang="fr">[FR]</span></a></li>
+           <div class="menu-header-menu-container">
+            <ul id="menu-header-menu-1" class="menu">
+             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6714"><a href="https://bouncebackontario.ca/bounceback-offers-quick-tips-to-support-your-mental-health-during-covid-19/" itemprop="url">COVID-19</a></li> 
+             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5144"><a href="https://bouncebackontario.ca/adults-19/" itemprop="url">Adults (19+)</a> 
+              <ul class="sub-menu"> 
+               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5145"><a href="https://bouncebackontario.ca/adults-19/faqs-adults/" itemprop="url">FAQs</a></li> 
+              </ul> </li> 
+             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5146"><a href="https://bouncebackontario.ca/what-is-bounceback-youth/" itemprop="url">Youth (15-17)</a> 
+              <ul class="sub-menu"> 
+               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5147"><a href="https://bouncebackontario.ca/what-is-bounceback-youth/youth-faqs/" itemprop="url">FAQs</a></li> 
+              </ul> </li> 
+             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5148"><a href="https://bouncebackontario.ca/care-providers/" itemprop="url">Care Providers</a> 
+              <ul class="sub-menu"> 
+               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5149"><a href="https://bouncebackontario.ca/care-providers/care-providers-faqs/" itemprop="url">FAQs</a></li> 
+              </ul> </li> 
+             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5704"><a href="https://bouncebackontario.ca/about-cmha/" itemprop="url">About CMHA Ontario</a></li> 
+             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5822"><a href="https://bouncebackontario.ca/contact-us/" itemprop="url">Contact Us</a></li> 
+             <li class="custom-menu-item menu-item"><a href="https://bouncebackontario.ca/fr/" class="wpml-ls-link"><span class="screen-reader-text">Translate site to</span><span class="wpml-ls-native icl_lang_sel_native" lang="fr">FR</span></a></li>
+             <li class="menu-item menu-item-search">
+              <div class="search-wrap">
+               <form class="search-form" method="get" action="https://bouncebackontario.ca/" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                <label class="search-form-label screen-reader-text" for="searchform-3">Search BounceBack Ontario...</label>
+                <input class="search-form-input" type="search" name="s" id="searchform-3" placeholder="Search BounceBack Ontario..." itemprop="query-input">
+                <input class="search-form-submit" type="submit" value="Search">
+                <meta content="https://bouncebackontario.ca/?s={s}" itemprop="target">
+               </form>
+              </div><button id="main-nav-search-link" class="icon-search"><span class="screen-reader-text">Search</span></button></li>
+            </ul>
+           </div>
+          </ul>
+         </div>
+        </nav> 
+       </div> 
+      </div> <!-- end wrap --> 
+     </div> <!-- end nav_container --> 
+    </div> <!-- end primary_nav --> 
+   </div> <!-- end cmha-header --> 
+   <div class="site-inner full" aria-label="Home 3" id="genesis-content">
+    <div class="content-sidebar-wrap">
+     <main class="content" id="genesis-content">
+      <article class="post-6802 page type-page status-publish entry" aria-label="Home 3" itemscope itemtype="https://schema.org/CreativeWork">
+       <div class="entry-content" itemprop="text"> 
+        <div class="wp-block-nextend-smartslider3 nomargin">
+         <div>
+          <ss3-force-full-width data-overflow-x="html" data-horizontal-selector="body">
+           <div class="n2-section-smartslider fitvidsignore " data-ssid="7" tabindex="0" role="region" aria-label="Slider">
+            <div class="n2-ss-margin" style="margin: 0px 0px 50px 0px;">
+             <div id="n2-ss-7-align" class="n2-ss-align">
+              <div class="n2-padding">
+               <div id="n2-ss-7" data-creator="Smart Slider 3" data-responsive="fullwidth" class="n2-ss-slider n2-ow n2-has-hover n2notransition  ">
+                <div class="n2-ss-slider-wrapper-inside"> 
+                 <div class="n2-ss-slider-1 n2_ss__touch_element n2-ow" style=""> 
+                  <div class="n2-ss-slider-2 n2-ow"> 
+                   <div class="n2-ss-slider-3 n2-ow" style=""> 
+                    <div class="n2-ss-slide-backgrounds n2-ow-all">
+                     <div class="n2-ss-slide-background" data-public-id="1" data-mode="fill">
+                      <div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="" data-title="">
+                       <picture class="skip-lazy" data-skip-lazy="1">
+                        <img src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Andriah-scaled.jpg" alt="" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1">
+                       </picture>
+                      </div>
+                      <div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div>
+                     </div>
+                     <div class="n2-ss-slide-background" data-public-id="2" data-mode="fill">
+                      <div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="" data-title="">
+                       <picture class="skip-lazy" data-skip-lazy="1">
+                        <img src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Pierre-scaled.jpg" alt="" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1">
+                       </picture>
+                      </div>
+                      <div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div>
+                     </div>
+                     <div class="n2-ss-slide-background" data-public-id="3" data-mode="fill">
+                      <div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="" data-title="">
+                       <picture class="skip-lazy" data-skip-lazy="1">
+                        <img src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Breton-scaled.jpg" alt="" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1">
+                       </picture>
+                      </div>
+                      <div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div>
+                     </div>
+                     <div class="n2-ss-slide-background" data-public-id="4" data-mode="fill">
+                      <div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="" data-title="">
+                       <picture class="skip-lazy" data-skip-lazy="1">
+                        <img src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Alexander-scaled.jpg" alt="" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1">
+                       </picture>
+                      </div>
+                      <div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div>
+                     </div>
+                     <div class="n2-ss-slide-background" data-public-id="5" data-mode="fill">
+                      <div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="" data-title="">
+                       <picture class="skip-lazy" data-skip-lazy="1">
+                        <img src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Amani-scaled.jpg" alt="" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1">
+                       </picture>
+                      </div>
+                      <div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div>
+                     </div>
+                    </div> 
+                    <div class="n2-ss-slider-4 n2-ow"> 
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 4679 1250" data-related-device="desktopPortrait" class="n2-ow n2-ss-preserve-size n2-ss-preserve-size--slider n2-ss-slide-limiter"></svg>
+                     <div data-first="1" data-slide-duration="0" data-id="50" data-slide-public-id="1" data-title="CMHA_Home Hero_Andriah" class="n2-ss-slide n2-ow  n2-ss-slide-50">
+                      <div role="note" class="n2-ss-slide--focus" tabindex="-1">
+                       CMHA_Home Hero_Andriah
+                      </div>
+                      <div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow">
+                       <div class="n2-ss-layer n2-ow n-uc-mwK2qOVzRpIX" data-sstype="slide" data-pm="default">
+                        <div class="n2-ss-layer n2-ow n-uc-18c8e3163612b" data-pm="default" data-sstype="content" data-hasbackground="0">
+                         <div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-18c8e3163612b-inner">
+                          <div class="n2-ss-layer n2-ow n-uc-VgElNAYvJCCn" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="24" data-mobileportraitleft="-81" data-desktopportraittop="29" data-mobileportraittop="-234" data-responsivesize="1" data-desktopportraitwidth="1096" data-mobileportraitwidth="3787" data-desktopportraitheight="404" data-mobileportraitheight="1228" data-desktopportraitalign="center" data-mobileportraitalign="center" data-desktopportraitvalign="middle" data-mobileportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item1" alt="" class="skip-lazy" width="2197" height="794" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Andriah_Text-Overlay_1.png">
+                            </picture>
+                           </div>
+                          </div>
+                          <div class="n2-ss-layer n2-ow n-uc-XOxCJDOTHNuZ" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="165" data-desktopportraittop="86" data-responsivesize="1" data-desktopportraitwidth="3624" data-desktopportraitheight="526" data-desktopportraitalign="center" data-desktopportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;duration&quot;:1.8999999999999999,&quot;delay&quot;:1.1499999999999999,&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-hidemobileportrait="1" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item2" alt="" class="skip-lazy" width="7289" height="664" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Andriah_Text-Overlay_2.png">
+                            </picture>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                     <div data-slide-duration="0" data-id="51" data-slide-public-id="2" data-title="CMHA_Home Hero_Pierre" class="n2-ss-slide n2-ow  n2-ss-slide-51">
+                      <div role="note" class="n2-ss-slide--focus" tabindex="-1">
+                       CMHA_Home Hero_Pierre
+                      </div>
+                      <div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow">
+                       <div class="n2-ss-layer n2-ow n-uc-7ueQNGjPA0BT" data-sstype="slide" data-pm="default">
+                        <div class="n2-ss-layer n2-ow n-uc-1e8d2f7910b5b" data-pm="default" data-sstype="content" data-hasbackground="0">
+                         <div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-1e8d2f7910b5b-inner">
+                          <div class="n2-ss-layer n2-ow n-uc-TjUEWLqSzmk7" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="-1" data-mobileportraitleft="0" data-desktopportraittop="45" data-mobileportraittop="577" data-responsivesize="1" data-desktopportraitwidth="1128" data-mobileportraitwidth="3889" data-desktopportraitheight="auto" data-mobileportraitheight="1886" data-desktopportraitalign="center" data-mobileportraitalign="center" data-desktopportraitvalign="middle" data-mobileportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item3" alt="" class="skip-lazy" loading="lazy" width="2245" height="649" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Pierre_Text-Overlay_1.png">
+                            </picture>
+                           </div>
+                          </div>
+                          <div class="n2-ss-layer n2-ow n-uc-HYHPhHkngnNv" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="62" data-desktopportraittop="73" data-responsivesize="1" data-desktopportraitwidth="3256" data-desktopportraitheight="489" data-desktopportraitalign="center" data-desktopportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;duration&quot;:1.8999999999999999,&quot;delay&quot;:1.1499999999999999,&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-hidemobileportrait="1" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item4" alt="" class="skip-lazy" loading="lazy" width="6543" height="973" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Pierre_Text-Overlay_2.png">
+                            </picture>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                     <div data-slide-duration="0" data-id="52" data-slide-public-id="3" data-title="CMHA_Home Hero_Breton" class="n2-ss-slide n2-ow  n2-ss-slide-52">
+                      <div role="note" class="n2-ss-slide--focus" tabindex="-1">
+                       CMHA_Home Hero_Breton
+                      </div>
+                      <div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow">
+                       <div class="n2-ss-layer n2-ow n-uc-Gw1nuVrUnsxj" data-sstype="slide" data-pm="default">
+                        <div class="n2-ss-layer n2-ow n-uc-1bfc447236d75" data-pm="default" data-sstype="content" data-hasbackground="0">
+                         <div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-1bfc447236d75-inner">
+                          <div class="n2-ss-layer n2-ow n-uc-858YOJ9GGcMj" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="47" data-mobileportraitleft="0" data-desktopportraittop="10" data-mobileportraittop="0" data-responsivesize="1" data-desktopportraitwidth="1071" data-mobileportraitwidth="3889" data-desktopportraitheight="387" data-mobileportraitheight="1462" data-desktopportraitalign="center" data-mobileportraitalign="center" data-desktopportraitvalign="middle" data-mobileportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item5" alt="" class="skip-lazy" loading="lazy" width="2048" height="772" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Breton_Text-Overlay_1.png">
+                            </picture>
+                           </div>
+                          </div>
+                          <div class="n2-ss-layer n2-ow n-uc-1qFJ2vJGBIre" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="-219" data-tabletportraitleft="-180" data-desktopportraittop="19" data-tabletportraittop="23" data-responsivesize="1" data-desktopportraitwidth="3443" data-tabletportraitwidth="3658" data-desktopportraitheight="518" data-tabletportraitheight="554" data-desktopportraitalign="center" data-tabletportraitalign="center" data-desktopportraitvalign="middle" data-tabletportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;duration&quot;:1.8999999999999999,&quot;delay&quot;:1.1499999999999999,&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-hidemobileportrait="1" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item6" alt="" class="skip-lazy" loading="lazy" width="7397" height="805" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Breton_Text-Overlay_2.png">
+                            </picture>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                     <div data-slide-duration="0" data-id="53" data-slide-public-id="4" data-title="CMHA_Home Hero_Alexander" class="n2-ss-slide n2-ow  n2-ss-slide-53">
+                      <div role="note" class="n2-ss-slide--focus" tabindex="-1">
+                       CMHA_Home Hero_Alexander
+                      </div>
+                      <div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow">
+                       <div class="n2-ss-layer n2-ow n-uc-GiMVxrO7rbwo" data-sstype="slide" data-pm="default">
+                        <div class="n2-ss-layer n2-ow n-uc-1ed6229cc19a8" data-pm="default" data-sstype="content" data-hasbackground="0">
+                         <div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-1ed6229cc19a8-inner">
+                          <div class="n2-ss-layer n2-ow n-uc-6HCPIejUWqyE" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="-1" data-mobileportraitleft="7" data-desktopportraittop="0" data-mobileportraittop="358" data-responsivesize="1" data-desktopportraitwidth="1100" data-mobileportraitwidth="3992" data-desktopportraitheight="auto" data-mobileportraitheight="1798" data-desktopportraitalign="center" data-mobileportraitalign="center" data-desktopportraitvalign="middle" data-mobileportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item7" alt="" class="skip-lazy" loading="lazy" width="2256" height="794" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Alexander_Text-Overlay_1.png">
+                            </picture>
+                           </div>
+                          </div>
+                          <div class="n2-ss-layer n2-ow n-uc-OF7gU4uYvuYe" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="-337" data-desktopportraittop="-53" data-responsivesize="1" data-desktopportraitwidth="3635" data-desktopportraitheight="396" data-desktopportraitalign="center" data-desktopportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;duration&quot;:1.8999999999999999,&quot;delay&quot;:1.1499999999999999,&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-hidemobileportrait="1" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item8" alt="" class="skip-lazy" loading="lazy" width="7431" height="683" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Alexander_Text-Overlay_2.png">
+                            </picture>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                     <div data-slide-duration="0" data-id="54" data-slide-public-id="5" data-title="CMHA_Home Hero_Amani" class="n2-ss-slide n2-ow  n2-ss-slide-54">
+                      <div role="note" class="n2-ss-slide--focus" tabindex="-1">
+                       CMHA_Home Hero_Amani
+                      </div>
+                      <div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow">
+                       <div class="n2-ss-layer n2-ow n-uc-jt0aScovqkr3" data-sstype="slide" data-pm="default">
+                        <div class="n2-ss-layer n2-ow n-uc-14db05d781681" data-pm="default" data-sstype="content" data-hasbackground="0">
+                         <div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-14db05d781681-inner">
+                          <div class="n2-ss-layer n2-ow n-uc-znmYcfJHPPcJ" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="0" data-mobileportraitleft="7" data-desktopportraittop="19" data-mobileportraittop="256" data-responsivesize="1" data-desktopportraitwidth="1072" data-mobileportraitwidth="4138" data-desktopportraitheight="292" data-mobileportraitheight="1535" data-desktopportraitalign="center" data-mobileportraitalign="center" data-desktopportraitvalign="middle" data-mobileportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item9" alt="" class="skip-lazy" loading="lazy" width="2106" height="659" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Amani_Text-Overlay_1.png">
+                            </picture>
+                           </div>
+                          </div>
+                          <div class="n2-ss-layer n2-ow n-uc-gMAdzqCcO8YU" data-pm="absolute" data-responsiveposition="1" data-desktopportraitleft="-151" data-desktopportraittop="50" data-responsivesize="1" data-desktopportraitwidth="3889" data-desktopportraitheight="409" data-desktopportraitalign="center" data-desktopportraitvalign="middle" data-parentid="" data-desktopportraitparentalign="center" data-desktopportraitparentvalign="middle" data-animv2="{&quot;basic&quot;:{&quot;in&quot;:{&quot;type&quot;:&quot;basic&quot;,&quot;name&quot;:&quot;Fade&quot;,&quot;keyFrames&quot;:[{&quot;duration&quot;:1.8999999999999999,&quot;delay&quot;:1.1499999999999999,&quot;ease&quot;:&quot;easeInOutCubic&quot;,&quot;opacity&quot;:0}]}}}" data-hidemobileportrait="1" data-sstype="layer">
+                           <div class=" n2-ss-item-image-content n2-ss-item-content n2-ow-all">
+                            <picture class="skip-lazy" data-skip-lazy="1">
+                             <img id="n2-ss-7item10" alt="" class="skip-lazy" loading="lazy" width="7890" height="515" data-skip-lazy="1" src="//bouncebackontario.ca/wp-content/uploads/2021/04/CMHA_Home-Hero_Amani_Text-Overlay_2.png">
+                            </picture>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-left-center">
+                  <div style="--widget-offset:15px;" class="n2-ss-widget nextend-arrow n2-ow-all nextend-arrow-previous  nextend-arrow-animated-fade" data-hide-mobilelandscape="1" data-hide-mobileportrait="1" id="n2-ss-7-arrow-previous" role="button" aria-label="previous arrow" tabindex="0">
+                   <img width="32" height="32" class="skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMS40MzMgMTUuOTkyTDIyLjY5IDUuNzEyYy4zOTMtLjM5LjM5My0xLjAzIDAtMS40Mi0uMzkzLS4zOS0xLjAzLS4zOS0xLjQyMyAwbC0xMS45OCAxMC45NGMtLjIxLjIxLS4zLjQ5LS4yODUuNzYtLjAxNS4yOC4wNzUuNTYuMjg0Ljc3bDExLjk4IDEwLjk0Yy4zOTMuMzkgMS4wMy4zOSAxLjQyNCAwIC4zOTMtLjQuMzkzLTEuMDMgMC0xLjQybC0xMS4yNTctMTAuMjkiCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjgiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=" alt="previous arrow">
+                  </div>
+                 </div>
+                 <div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-right-center">
+                  <div style="--widget-offset:15px;" class="n2-ss-widget nextend-arrow n2-ow-all nextend-arrow-next  nextend-arrow-animated-fade" data-hide-mobilelandscape="1" data-hide-mobileportrait="1" id="n2-ss-7-arrow-next" role="button" aria-label="next arrow" tabindex="0">
+                   <img width="32" height="32" class="skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMC43MjIgNC4yOTNjLS4zOTQtLjM5LTEuMDMyLS4zOS0xLjQyNyAwLS4zOTMuMzktLjM5MyAxLjAzIDAgMS40MmwxMS4yODMgMTAuMjgtMTEuMjgzIDEwLjI5Yy0uMzkzLjM5LS4zOTMgMS4wMiAwIDEuNDIuMzk1LjM5IDEuMDMzLjM5IDEuNDI3IDBsMTIuMDA3LTEwLjk0Yy4yMS0uMjEuMy0uNDkuMjg0LS43Ny4wMTQtLjI3LS4wNzYtLjU1LS4yODYtLjc2TDEwLjcyIDQuMjkzeiIKICAgICAgICAgIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOCIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==" alt="next arrow">
+                  </div>
+                 </div>
+                </div>
+               </div><ss3-loader></ss3-loader>
+              </div>
+             </div>
+             <div class="n2_clear"></div>
+            </div>
+           </div>
+          </ss3-force-full-width>
+         </div>
+        </div> 
+        <div class="wp-block-columns home_wrap2"> 
+         <div class="wp-block-column"> 
+          <p class="button-home2" style="font-size:24px"><strong>GET STARTED</strong></p> 
+         </div> 
+         <div class="wp-block-column"> 
+          <p class="has-text-align-center column__block__home_menu" style="font-size:24px"><a href="http://bouncebackontario.ca/adults-19/">ADULTS 19+</a></p> 
+         </div> 
+         <div class="wp-block-column"> 
+          <p class="has-text-align-center column__block__home" style="font-size:24px"><a href="http://bouncebackontario.ca/what-is-bounceback-youth/">YOUTH 15-18</a></p> 
+         </div> 
+         <div class="wp-block-column"> 
+          <p class="has-text-align-center column__block__home_menu" style="font-size:24px"><a href="http://bouncebackontario.ca/care-providers/">CARE PROVIDERS</a></p> 
+         </div> 
+        </div> 
+        <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div> 
+        <p class="has-text-align-center home_wrap3" style="font-size:22px"><strong>BounceBack®</strong> is a free skill-building program managed by the Canadian Mental Health Association (CMHA). It is designed to help adults and youth 15+ manage low mood, mild to moderate depression and anxiety, stress or worry. Delivered over the phone with a coach and through online videos, you will get access to tools that will support you on your path to mental wellness.</p> 
+        <div class="wp-block-columns home_wrap4"> 
+         <div class="wp-block-column"> 
+          <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+           <div class="wp-block-embed__wrapper"> <iframe width="500" height="281" src="https://www.youtube.com/embed/TmxAtQSq6H8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+           </div>
+          </figure> 
+         </div> 
+        </div> 
+        <div id="wow-modal-overlay-1" class="wow-modal-overlay" style="display:none;">
+         <div id="wow-modal-overclose-1" class="wow-modal-overclose"></div>
+         <div id="wow-modal-window-1" class="wow-modal-window" style="display:none;">
+          <div id="wow-modal-close-1" class="mw-close-btn topRight text"></div>
+          <div class="modal-window-content">
+           <div class="mw-title">
+            Supporting Ontarians’ mental health through COVID-19
+           </div>
+           <p>&nbsp;</p> 
+           <p>The Ontario government <strong><a href="https://news.ontario.ca/opo/en/2020/04/ontario-increasing-mental-health-support-during-covid-19.html">has announced an expansion of online and virtual mental health supports</a></strong>, including <strong><a href="http://www.bouncebackontario.ca">BounceBack</a></strong>, to help Ontarians navigating the difficult realities in the wake of COVID-19.</p> 
+           <h3><em><strong>Is BounceBack right for you?</strong></em></h3> 
+           <p>BounceBack is a free, guided self-help program that’s effective in helping people aged 15 and up who are experiencing mild-to-moderate anxiety or depression, or may be feeling low, stressed, worried, irritable or angry.</p> 
+           <p>Participants receive telephone coaching, skill-building workbooks and online videos to help them overcome these symptoms and gain new skills to regain positive mental health. To receive telephone coaching support, clients must either be referred by their primary care provider (family doctor, nurse practitioner) or psychiatrist, or they may self-refer as long as they’re connected with a primary care provider. For those who are not quite ready for coaching, our online videos can provide helpful tips.</p> 
+           <p>BounceBack is <strong>not a crisis service or counselling</strong>, but a life-skills program that participants work with to develop coping techniques so they can overcome challenges now or in the future. Typically, participants take three to six months to complete the program.</p> 
+           <p>If BounceBack is right for you, get started with more information for <strong><a href="https://bouncebackontario.ca/what-is-bounceback-youth/">Youth (15-18)</a> </strong>or <strong><a href="https://bouncebackontario.ca/adults-19/">Adults (19+)</a></strong>.</p> 
+           <p>If BounceBack isn’t the right support you need, find a <strong><a href="http://ontario.cmha.ca/local-cmha-branch-supports/" target="_blank" rel="noopener">local CMHA branch</a></strong>, other <strong><a href="http://ontario.cmha.ca/provincial-mental-health-supports/" target="_blank" rel="noopener">provincial mental health supports</a></strong>, or try these <strong><a href="https://bouncebackontario.ca/wp-content/uploads/2020/04/BounceBack-Tip-Sheet-Covid19-EN.pdf" target="_blank" rel="noopener">mental health tips</a></strong> to help you manage during COVID-19.</p>
+          </div>
+         </div>
+        </div> 
+       </div>
+      </article>
+     </main>
+    </div>
+   </div>
+   <div id="footer-container" class="footer-widgets">
+    <div class="wrap">
+     <span class="screen-reader-text">Footer Section</span>
+     <div id="container-footer-widget" class="container-widget">
+      <ul>
+       <li id="black-studio-tinymce-40" class=" first one-half  widget widget_black_studio_tinymce ">
+        <div class="textwidget">
+         <p>&nbsp;</p> 
+         <p><img class="alignnone wp-image-4850" src="https://bouncebackontario.ca/wp-content/uploads/2018/03/BB-logo-colour-R.svg" alt="" width="278" height="59"></p> 
+        </div></li>
+       <li id="black-studio-tinymce-38" class=" last one-half alignright widget widget_black_studio_tinymce ">
+        <div class="textwidget">
+         <p style="text-align: left;"><span style="color: #000000;">Find Us On:<br> <a href="http://www.facebook.com/cmhaontario"><i class="fab fa-facebook-square fa-2x"></i><span class="screen-reader-text" style="color: #111111;">Facebook</span></a> <a href="http://twitter.com/#!/cmhaontario"><i class="fab fa-twitter-square fa-2x"></i><span class="screen-reader-text" style="color: #111111;">Twitter</span></a></span></p> 
+         <p style="text-align: left;"><span style="color: #000000;"><strong>If you’re an individual</strong> interested in learning more about the BounceBack program, or have a question about your referral or a concern:</span></p> 
+         <p style="text-align: left;"><span style="color: #000000;"><i class="fas fa-phone"></i>&nbsp; Toll-Free: 1-866-345-0224<br> </span><span style="color: #000000;"><i class="fas fa-envelope"></i>&nbsp; <a href="mailto:bb-referral@cmha-yr.on.ca">bb-referral@cmha-yr.on.ca</a><br> </span><span style="color: #000000;"><i class="fas fa-fax"></i>&nbsp; 905-430-1768</span><br> <span style="color: #000000;">CMHA York and South Simcoe</span><br> <span style="color: #000000;">8271 Keele St., Unit 2, Concord, ON, L4K 1Z1</span></p> 
+         <p style="text-align: left;"><span style="color: #000000;"><strong>If you’re a health care professional</strong> who would like to contact our marketing team to order client resources or request a presentation:</span></p> 
+         <p style="text-align: left;"><span style="color: #000000;"><i class="fas fa-envelope"></i>&nbsp; <span class="screen-reader-text">Email</span><a href="mailto:bounceback@ontario.cmha.ca ">bounceback@ontario.cmha.ca</a></span></p> 
+        </div></li>
+      </ul>
+     </div>
+    </div><!-- end .wrap -->
+   </div><!-- end .footer-container -->
+   <footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
+    <div class="wrap">
+     <div class="credits-left">
+      <p>© 2022 <a href="https://bouncebackontario.ca/home">BounceBack Ontario</a></p>
+     </div>
+     <div class="credits-right">
+      <section id="cmha-menu-widget-21" class="widget widget_cmha-menu-widget">
+       <div class="widget-wrap">
+        <div class="menu-copyright-container">
+         <ul id="menu-copyright" class="menu">
+          <li id="menu-item-658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="https://bouncebackontario.ca/accessibility/" itemprop="url">Accessibility</a></li> 
+          <li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="https://bouncebackontario.ca/copyright-and-permissions/" itemprop="url">Copyright and Permissions</a></li> 
+          <li id="menu-item-655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-655"><a href="https://bouncebackontario.ca/privacy/" itemprop="url">Privacy</a></li> 
+          <li id="menu-item-656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-656"><a href="https://bouncebackontario.ca/disclaimer/" itemprop="url">Disclaimer</a></li> 
+         </ul>
+        </div>
+       </div>
+      </section> 
+     </div>
+     <img height="1" width="1" style="border-style:none;" alt="" src="https://insight.adsrvr.org/track/pxl/?adv=b6ja63i&amp;ct=0:8n996p9&amp;fmt=3">
+    </div>
+   </footer>
+  </div>
+  <script>(function(){var s=document.createElement('script');e = !document.body ? document.querySelector('head'):document.body;s.src='https://acsbapp.com/apps/app/dist/js/app.js';s.defer=true;s.onload=function(){acsbJS.init({
+            statementLink     : '',
+            feedbackLink      : '',
+            footerHtml        : '',
+            hideMobile        : false,
+            hideTrigger       : false,
+            language          : 'en',
+            position          : 'right',
+            leadColor         : '#146FF8',
+            triggerColor      : '#146FF8',
+            triggerRadius     : '50%',
+            triggerPositionX  : 'right',
+            triggerPositionY  : 'bottom',
+            triggerIcon       : 'people',
+            triggerSize       : 'medium',
+            triggerOffsetX    : 30,
+            triggerOffsetY    : 20,
+            mobile            : {
+                triggerSize       : 'small',
+                triggerPositionX  : 'right',
+                triggerPositionY  : 'bottom',
+                triggerOffsetX    : 0,
+                triggerOffsetY    : 0,
+                triggerRadius     : '50%'
+            }
+        });
+    };
+    e.appendChild(s);}());</script>
+  <link rel="stylesheet" id="so-css-genesis-css" href="https://bouncebackontario.ca/wp-content/uploads/so-css/so-css-genesis.css?ver=1649087149" type="text/css" media="all"> 
+  <link rel="stylesheet" id="modal-window-css" href="https://bouncebackontario.ca/wp-content/plugins/modal-window/public/assets/css/style.min.css?ver=5.3" type="text/css" media="all"> 
+  <style id="modal-window-inline-css" type="text/css">
+@media only screen and (max-width: 480px){ #wow-modal-window-1 { width:85% !important; } } #wow-modal-close-1 { top: 0px;right: 0px; } #wow-modal-close-1.mw-close-btn.text:before { content: "Close"; color: #fff; padding: 6px 12px; font-family: inherit; font-size: 12px; font-weight: normal; font-style: normal; background: linear-gradient(to right, #fff 50%, #000 50%); background-size: 200% 100%; background-position: right bottom; border-radius: 0; } #wow-modal-close-1.mw-close-btn.text:hover:before { color: #000; background-position: left bottom; }
+</style> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/svg-support/js/svgs-inline.js?ver=1.0.0" id="bodhi_svg_inline-js"></script> 
+  <script type="text/javascript" id="bodhi_svg_inline-js-after">
+cssTarget="img.style-svg";ForceInlineSVGActive="false";
+</script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10" id="superfish-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.3.3" id="superfish-args-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.3.3" id="skip-links-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/network/lib/js/responsive-menu.js?ver=1.0.0" id="cmha-responsive-menu-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/network/lib/js/cmha.js?ver=1.0.1" id="cmha-js-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/network/lib/js/toggle-search.js?ver=1.0.2" id="toggle-search-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/network/lib/js/to-top.js?ver=1.0.0" id="to-top-js"></script> 
+  <script type="text/javascript" id="sig-counter-js-extra">
+/* <![CDATA[ */
+var trans_lang = {"wpml_current_language":"en","any_other_var":"any_other_value"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/network/lib/js/signature-counter.js?ver=1.2.6" id="sig-counter-js"></script> 
+  <script type="text/javascript" id="utilitybar-js-js-extra">
+/* <![CDATA[ */
+var utilitybar_text = {"open":"Click to open hello bar","close":"Click to close hello bar"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/themes/network/lib/js/utility-bar.js?ver=1.0.0" id="utilitybar-js-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6" id="page-links-to-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/modal-window/public/assets/js/jquery.effects.min.js?ver=5.3" id="modal-window-effects-js"></script> 
+  <script type="text/javascript" src="https://bouncebackontario.ca/wp-content/plugins/modal-window/public/assets/js/jquery.modalWindow.min.js?ver=5.3" id="modal-window-js"></script> 
+  <script type="text/javascript" id="modal-window-js-after">
+jQuery(function() {jQuery("#wow-modal-overlay-1").ModalWindow({"animation":["no","400","no","400"],"overlay":true,"overlay_css":["rgba(0,0,0,0.53)"],"action":["load","2"],"closeBtn":[false,"0"],"closeAction":[true,true],"cookie":[true,"1","wow-modal-id-1"],"triggers":["wow-modal-id-1","wow-modal-close-1","wow-button-close-1"],"modal_css":{"width":"60%","height":"auto","top":"10%","left":"0%","right":"0%","padding":"30px","border-width":0,"border-style":"none","border-color":"#ffffff","position":"absolute","border-radius":"5px","background-color":"#ffffff","box-shadow":"none"},"content_css":{"font-family":"inherit","font-size":"14px"},"title_css":{"font-family":"inherit","font-size":"32px","line-height":"36px","font-weight":"normal","font-style":"normal","text-align":"center","color":"#dd3333"}}); });
+</script> 
+ </body>
+</html>

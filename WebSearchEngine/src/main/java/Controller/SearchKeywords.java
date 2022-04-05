@@ -153,7 +153,7 @@ public class SearchKeywords {
 	        		//StdOut.println(word+" "+frequency);
 	        		 
 	        		//adding frequency into the counter
-	        		//counter adds frequencies present in all the files
+	        		//counter adds frequencies of all words 
 	        		counter = counter + frequency;        		
 	        	}
 	        }

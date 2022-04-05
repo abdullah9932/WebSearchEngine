@@ -44,7 +44,7 @@ public class WebEngine {
 	}
 
 	public static void main(String[] args) throws Exception {
-		/*
+	/*
 		System.out.println("Welcome to Forage-X Engine\n");
 		System.out.println("*************************************************************************\n");
 		System.out.println("Enter the URL you want to crawl");
@@ -65,8 +65,10 @@ public class WebEngine {
 			System.out.println("Thank you");
 			System.out.println("\n*************************************************************************\n");
 			
-		}	
-		*/
+		}
+		
+			*/
+
 		//searching and returning result in hashmap with its values
 		HashMap<String, Integer> result = new HashMap();
 		boolean checkResultIsNotEmpty = false;

@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en"> 
+ <head>
+  <!-- StartFormCustomCSS --> 
+  <style type="text/css">
+        .elq-form .elq-required{color:red!important;display:inline;float:none;font-weight:700;margin:0;padding:0}.elq-form #elq-FormLastRow{position:absolute;left:-80%;top:-80%}.elq-form .elq-label{display:inline-block;max-width:100%;font-weight:400;box-sizing:border-box;margin-bottom:0}.elq-form .elq-label-top{padding-bottom:3px}.elq-form .elq-item-label{max-width:100%;font-weight:400;box-sizing:border-box}.elq-form .list-order{margin-left:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elq-form .one-column{width:100%;clear:both}.elq-form .two-column{float:left;width:38%}.elq-form .three-column{float:left;width:30%}.elq-form .elq-item-textarea{resize:vertical;min-height:48px;max-height:360px;box-sizing:border-box}.elq-form .elq-item-input,.elq-form .elq-item-select,.elq-form .elq-item-textarea{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;font:inherit;margin:0}.elq-form .elq-item-select{text-transform:none}.elq-form .row.single-checkbox-row{margin-left:0}.elq-form .elq-field-style{padding-bottom:10px}.elq-form .elq-field-style input[type=submit]{-webkit-appearance:square-button}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.elq-form .loader{vertical-align:middle;display:inline-block;margin-left:10px;border:3px solid #f3f3f3;border-radius:50%;border-top:3px solid #3498db;width:20px;height:20px;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite}.elq-form input[type=checkbox],.elq-form input[type=radio]{margin:0}.elq-form .list-order input[type=radio]{margin-left:1px}.elq-form *,.elq-form :after,.elq-form :before{box-sizing:border-box}.elq-form html{font-size:10px;-webkit-tap-highlight-color:transparent}.elq-form body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857;color:#333;background-color:#fff}.elq-form button,.elq-form input,.elq-form select,.elq-form textarea{font-family:inherit;font-size:inherit;line-height:inherit}.elq-form a{color:#337ab7;text-decoration:none}.elq-form a:focus,.elq-form a:hover{color:#23527c;text-decoration:underline}.elq-form a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.elq-form figure{margin:0}.elq-form img{vertical-align:middle}.elq-form .img-responsive{display:block;max-width:100%;height:auto}.elq-form .img-rounded{border-radius:6px}.elq-form .img-thumbnail{padding:4px;line-height:1.42857;background-color:#fff;border:1px solid #ddd;border-radius:4px;transition:all .2s ease-in-out;display:inline-block;max-width:100%;height:auto}.elq-form .img-circle{border-radius:50%}.elq-form hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.elq-form .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.elq-form .sr-only-focusable:active,.elq-form .sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}.elq-form [role=button]{cursor:pointer}.elq-form .container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.elq-form .container:after,.elq-form .container:before{display:table;content:" "}.elq-form .container:after{clear:both}@media (min-width:768px){.elq-form .container{width:750px}}@media (min-width:992px){.elq-form .container{width:970px}}@media (min-width:1200px){.elq-form .container{width:1170px}}.elq-form .container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.elq-form .container-fluid:after,.elq-form .container-fluid:before{display:table;content:" "}.elq-form .container-fluid:after{clear:both}.elq-form .row{margin-right:-15px;margin-left:-15px}.elq-form .row:after,.elq-form .row:before{display:table;content:" "}.elq-form .row:after{clear:both}.elq-form .row-no-gutters{margin-right:0;margin-left:0}.elq-form .row-no-gutters [class*=col-]{padding-right:0;padding-left:0}.elq-form .col-lg-1,.elq-form .col-lg-2,.elq-form .col-lg-3,.elq-form .col-lg-4,.elq-form .col-lg-5,.elq-form .col-lg-6,.elq-form .col-lg-7,.elq-form .col-lg-8,.elq-form .col-lg-9,.elq-form .col-lg-10,.elq-form .col-lg-11,.elq-form .col-lg-12,.elq-form .col-md-1,.elq-form .col-md-2,.elq-form .col-md-3,.elq-form .col-md-4,.elq-form .col-md-5,.elq-form .col-md-6,.elq-form .col-md-7,.elq-form .col-md-8,.elq-form .col-md-9,.elq-form .col-md-10,.elq-form .col-md-11,.elq-form .col-md-12,.elq-form .col-sm-1,.elq-form .col-sm-2,.elq-form .col-sm-3,.elq-form .col-sm-4,.elq-form .col-sm-5,.elq-form .col-sm-6,.elq-form .col-sm-7,.elq-form .col-sm-8,.elq-form .col-sm-9,.elq-form .col-sm-10,.elq-form .col-sm-11,.elq-form .col-sm-12,.elq-form .col-xs-1,.elq-form .col-xs-2,.elq-form .col-xs-3,.elq-form .col-xs-4,.elq-form .col-xs-5,.elq-form .col-xs-6,.elq-form .col-xs-7,.elq-form .col-xs-8,.elq-form .col-xs-9,.elq-form .col-xs-10,.elq-form .col-xs-11,.elq-form .col-xs-12{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.elq-form .col-xs-1,.elq-form .col-xs-2,.elq-form .col-xs-3,.elq-form .col-xs-4,.elq-form .col-xs-5,.elq-form .col-xs-6,.elq-form .col-xs-7,.elq-form .col-xs-8,.elq-form .col-xs-9,.elq-form .col-xs-10,.elq-form .col-xs-11,.elq-form .col-xs-12{float:left}.elq-form .col-xs-1{width:8.33333%}.elq-form .col-xs-2{width:16.66667%}.elq-form .col-xs-3{width:25%}.elq-form .col-xs-4{width:33.33333%}.elq-form .col-xs-5{width:41.66667%}.elq-form .col-xs-6{width:50%}.elq-form .col-xs-7{width:58.33333%}.elq-form .col-xs-8{width:66.66667%}.elq-form .col-xs-9{width:75%}.elq-form .col-xs-10{width:83.33333%}.elq-form .col-xs-11{width:91.66667%}.elq-form .col-xs-12{width:100%}.elq-form .col-xs-pull-0{right:auto}.elq-form .col-xs-pull-1{right:8.33333%}.elq-form .col-xs-pull-2{right:16.66667%}.elq-form .col-xs-pull-3{right:25%}.elq-form .col-xs-pull-4{right:33.33333%}.elq-form .col-xs-pull-5{right:41.66667%}.elq-form .col-xs-pull-6{right:50%}.elq-form .col-xs-pull-7{right:58.33333%}.elq-form .col-xs-pull-8{right:66.66667%}.elq-form .col-xs-pull-9{right:75%}.elq-form .col-xs-pull-10{right:83.33333%}.elq-form .col-xs-pull-11{right:91.66667%}.elq-form .col-xs-pull-12{right:100%}.elq-form .col-xs-push-0{left:auto}.elq-form .col-xs-push-1{left:8.33333%}.elq-form .col-xs-push-2{left:16.66667%}.elq-form .col-xs-push-3{left:25%}.elq-form .col-xs-push-4{left:33.33333%}.elq-form .col-xs-push-5{left:41.66667%}.elq-form .col-xs-push-6{left:50%}.elq-form .col-xs-push-7{left:58.33333%}.elq-form .col-xs-push-8{left:66.66667%}.elq-form .col-xs-push-9{left:75%}.elq-form .col-xs-push-10{left:83.33333%}.elq-form .col-xs-push-11{left:91.66667%}.elq-form .col-xs-push-12{left:100%}.elq-form .col-xs-offset-0{margin-left:0}.elq-form .col-xs-offset-1{margin-left:8.33333%}.elq-form .col-xs-offset-2{margin-left:16.66667%}.elq-form .col-xs-offset-3{margin-left:25%}.elq-form .col-xs-offset-4{margin-left:33.33333%}.elq-form .col-xs-offset-5{margin-left:41.66667%}.elq-form .col-xs-offset-6{margin-left:50%}.elq-form .col-xs-offset-7{margin-left:58.33333%}.elq-form .col-xs-offset-8{margin-left:66.66667%}.elq-form .col-xs-offset-9{margin-left:75%}.elq-form .col-xs-offset-10{margin-left:83.33333%}.elq-form .col-xs-offset-11{margin-left:91.66667%}.elq-form .col-xs-offset-12{margin-left:100%}@media (min-width:768px){.elq-form .col-sm-1,.elq-form .col-sm-2,.elq-form .col-sm-3,.elq-form .col-sm-4,.elq-form .col-sm-5,.elq-form .col-sm-6,.elq-form .col-sm-7,.elq-form .col-sm-8,.elq-form .col-sm-9,.elq-form .col-sm-10,.elq-form .col-sm-11,.elq-form .col-sm-12{float:left}.elq-form .col-sm-1{width:8.33333%}.elq-form .col-sm-2{width:16.66667%}.elq-form .col-sm-3{width:25%}.elq-form .col-sm-4{width:33.33333%}.elq-form .col-sm-5{width:41.66667%}.elq-form .col-sm-6{width:50%}.elq-form .col-sm-7{width:58.33333%}.elq-form .col-sm-8{width:66.66667%}.elq-form .col-sm-9{width:75%}.elq-form .col-sm-10{width:83.33333%}.elq-form .col-sm-11{width:91.66667%}.elq-form .col-sm-12{width:100%}.elq-form .col-sm-pull-0{right:auto}.elq-form .col-sm-pull-1{right:8.33333%}.elq-form .col-sm-pull-2{right:16.66667%}.elq-form .col-sm-pull-3{right:25%}.elq-form .col-sm-pull-4{right:33.33333%}.elq-form .col-sm-pull-5{right:41.66667%}.elq-form .col-sm-pull-6{right:50%}.elq-form .col-sm-pull-7{right:58.33333%}.elq-form .col-sm-pull-8{right:66.66667%}.elq-form .col-sm-pull-9{right:75%}.elq-form .col-sm-pull-10{right:83.33333%}.elq-form .col-sm-pull-11{right:91.66667%}.elq-form .col-sm-pull-12{right:100%}.elq-form .col-sm-push-0{left:auto}.elq-form .col-sm-push-1{left:8.33333%}.elq-form .col-sm-push-2{left:16.66667%}.elq-form .col-sm-push-3{left:25%}.elq-form .col-sm-push-4{left:33.33333%}.elq-form .col-sm-push-5{left:41.66667%}.elq-form .col-sm-push-6{left:50%}.elq-form .col-sm-push-7{left:58.33333%}.elq-form .col-sm-push-8{left:66.66667%}.elq-form .col-sm-push-9{left:75%}.elq-form .col-sm-push-10{left:83.33333%}.elq-form .col-sm-push-11{left:91.66667%}.elq-form .col-sm-push-12{left:100%}.elq-form .col-sm-offset-0{margin-left:0}.elq-form .col-sm-offset-1{margin-left:8.33333%}.elq-form .col-sm-offset-2{margin-left:16.66667%}.elq-form .col-sm-offset-3{margin-left:25%}.elq-form .col-sm-offset-4{margin-left:33.33333%}.elq-form .col-sm-offset-5{margin-left:41.66667%}.elq-form .col-sm-offset-6{margin-left:50%}.elq-form .col-sm-offset-7{margin-left:58.33333%}.elq-form .col-sm-offset-8{margin-left:66.66667%}.elq-form .col-sm-offset-9{margin-left:75%}.elq-form .col-sm-offset-10{margin-left:83.33333%}.elq-form .col-sm-offset-11{margin-left:91.66667%}.elq-form .col-sm-offset-12{margin-left:100%}}@media (min-width:992px){.elq-form .col-md-1,.elq-form .col-md-2,.elq-form .col-md-3,.elq-form .col-md-4,.elq-form .col-md-5,.elq-form .col-md-6,.elq-form .col-md-7,.elq-form .col-md-8,.elq-form .col-md-9,.elq-form .col-md-10,.elq-form .col-md-11,.elq-form .col-md-12{float:left}.elq-form .col-md-1{width:8.33333%}.elq-form .col-md-2{width:16.66667%}.elq-form .col-md-3{width:25%}.elq-form .col-md-4{width:33.33333%}.elq-form .col-md-5{width:41.66667%}.elq-form .col-md-6{width:50%}.elq-form .col-md-7{width:58.33333%}.elq-form .col-md-8{width:66.66667%}.elq-form .col-md-9{width:75%}.elq-form .col-md-10{width:83.33333%}.elq-form .col-md-11{width:91.66667%}.elq-form .col-md-12{width:100%}.elq-form .col-md-pull-0{right:auto}.elq-form .col-md-pull-1{right:8.33333%}.elq-form .col-md-pull-2{right:16.66667%}.elq-form .col-md-pull-3{right:25%}.elq-form .col-md-pull-4{right:33.33333%}.elq-form .col-md-pull-5{right:41.66667%}.elq-form .col-md-pull-6{right:50%}.elq-form .col-md-pull-7{right:58.33333%}.elq-form .col-md-pull-8{right:66.66667%}.elq-form .col-md-pull-9{right:75%}.elq-form .col-md-pull-10{right:83.33333%}.elq-form .col-md-pull-11{right:91.66667%}.elq-form .col-md-pull-12{right:100%}.elq-form .col-md-push-0{left:auto}.elq-form .col-md-push-1{left:8.33333%}.elq-form .col-md-push-2{left:16.66667%}.elq-form .col-md-push-3{left:25%}.elq-form .col-md-push-4{left:33.33333%}.elq-form .col-md-push-5{left:41.66667%}.elq-form .col-md-push-6{left:50%}.elq-form .col-md-push-7{left:58.33333%}.elq-form .col-md-push-8{left:66.66667%}.elq-form .col-md-push-9{left:75%}.elq-form .col-md-push-10{left:83.33333%}.elq-form .col-md-push-11{left:91.66667%}.elq-form .col-md-push-12{left:100%}.elq-form .col-md-offset-0{margin-left:0}.elq-form .col-md-offset-1{margin-left:8.33333%}.elq-form .col-md-offset-2{margin-left:16.66667%}.elq-form .col-md-offset-3{margin-left:25%}.elq-form .col-md-offset-4{margin-left:33.33333%}.elq-form .col-md-offset-5{margin-left:41.66667%}.elq-form .col-md-offset-6{margin-left:50%}.elq-form .col-md-offset-7{margin-left:58.33333%}.elq-form .col-md-offset-8{margin-left:66.66667%}.elq-form .col-md-offset-9{margin-left:75%}.elq-form .col-md-offset-10{margin-left:83.33333%}.elq-form .col-md-offset-11{margin-left:91.66667%}.elq-form .col-md-offset-12{margin-left:100%}}@media (min-width:1200px){.elq-form .col-lg-1,.elq-form .col-lg-2,.elq-form .col-lg-3,.elq-form .col-lg-4,.elq-form .col-lg-5,.elq-form .col-lg-6,.elq-form .col-lg-7,.elq-form .col-lg-8,.elq-form .col-lg-9,.elq-form .col-lg-10,.elq-form .col-lg-11,.elq-form .col-lg-12{float:left}.elq-form .col-lg-1{width:8.33333%}.elq-form .col-lg-2{width:16.66667%}.elq-form .col-lg-3{width:25%}.elq-form .col-lg-4{width:33.33333%}.elq-form .col-lg-5{width:41.66667%}.elq-form .col-lg-6{width:50%}.elq-form .col-lg-7{width:58.33333%}.elq-form .col-lg-8{width:66.66667%}.elq-form .col-lg-9{width:75%}.elq-form .col-lg-10{width:83.33333%}.elq-form .col-lg-11{width:91.66667%}.elq-form .col-lg-12{width:100%}.elq-form .col-lg-pull-0{right:auto}.elq-form .col-lg-pull-1{right:8.33333%}.elq-form .col-lg-pull-2{right:16.66667%}.elq-form .col-lg-pull-3{right:25%}.elq-form .col-lg-pull-4{right:33.33333%}.elq-form .col-lg-pull-5{right:41.66667%}.elq-form .col-lg-pull-6{right:50%}.elq-form .col-lg-pull-7{right:58.33333%}.elq-form .col-lg-pull-8{right:66.66667%}.elq-form .col-lg-pull-9{right:75%}.elq-form .col-lg-pull-10{right:83.33333%}.elq-form .col-lg-pull-11{right:91.66667%}.elq-form .col-lg-pull-12{right:100%}.elq-form .col-lg-push-0{left:auto}.elq-form .col-lg-push-1{left:8.33333%}.elq-form .col-lg-push-2{left:16.66667%}.elq-form .col-lg-push-3{left:25%}.elq-form .col-lg-push-4{left:33.33333%}.elq-form .col-lg-push-5{left:41.66667%}.elq-form .col-lg-push-6{left:50%}.elq-form .col-lg-push-7{left:58.33333%}.elq-form .col-lg-push-8{left:66.66667%}.elq-form .col-lg-push-9{left:75%}.elq-form .col-lg-push-10{left:83.33333%}.elq-form .col-lg-push-11{left:91.66667%}.elq-form .col-lg-push-12{left:100%}.elq-form .col-lg-offset-0{margin-left:0}.elq-form .col-lg-offset-1{margin-left:8.33333%}.elq-form .col-lg-offset-2{margin-left:16.66667%}.elq-form .col-lg-offset-3{margin-left:25%}.elq-form .col-lg-offset-4{margin-left:33.33333%}.elq-form .col-lg-offset-5{margin-left:41.66667%}.elq-form .col-lg-offset-6{margin-left:50%}.elq-form .col-lg-offset-7{margin-left:58.33333%}.elq-form .col-lg-offset-8{margin-left:66.66667%}.elq-form .col-lg-offset-9{margin-left:75%}.elq-form .col-lg-offset-10{margin-left:83.33333%}.elq-form .col-lg-offset-11{margin-left:91.66667%}.elq-form .col-lg-offset-12{margin-left:100%}}.elq-form .row{display:inherit}.LV_invalid_field,input.LV_invalid_field:active,input.LV_invalid_field:hover,textarea.LV_invalid_field:active,textarea.LV_invalid_field:hover{outline:1px solid #c00}.LV_validation_message{font-weight:700;margin:0 0 0 5px}.LV_valid{display:none}.LV_invalid{color:#c00;font-size:10px}.submit-button-style{padding:7px 20px;border:1px solid #979797;border-radius:3px;background-color:#fff;color:#4a4a4a;cursor:pointer}.checkbox-aligned{margin-left:5px;display:inline}.form-element-layout{padding:5px 10px}.form-element-instruction{font-size:10px}.form-element-form-text{margin:0}.form-field-visible-xs-block{display:none}.elq-form-design-field .list-order input[type=radio]{margin-left:1px}@media (max-width:767px){.form-field-visible-xs-block{display:block}}.form-field-hidden-xs{display:block}@media (max-width:767px){.form-field-hidden-xs{display:none}}.custom-overlay{margin-left:2px;background:#fff;box-shadow:0 0 4px 0 #777;border-radius:2px;max-width:256px}
+      </style> 
+  <style type="text/css">
+        .elq-form .elq-required{color:red!important;display:inline;float:none;font-weight:700;margin:0;padding:0}.elq-form #elq-FormLastRow{position:absolute;left:-80%;top:-80%}.elq-form .elq-label{display:inline-block;max-width:100%;font-weight:400;box-sizing:border-box;margin-bottom:0}.elq-form .elq-label-top{padding-bottom:3px}.elq-form .elq-item-label{max-width:100%;font-weight:400;box-sizing:border-box}.elq-form .list-order{margin-left:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elq-form .one-column{width:100%;clear:both}.elq-form .two-column{float:left;width:38%}.elq-form .three-column{float:left;width:30%}.elq-form .elq-item-textarea{resize:vertical;min-height:48px;max-height:360px;box-sizing:border-box}.elq-form .elq-item-input,.elq-form .elq-item-select,.elq-form .elq-item-textarea{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;font:inherit;margin:0}.elq-form .elq-item-select{text-transform:none}.elq-form .row.single-checkbox-row{margin-left:0}.elq-form .elq-field-style{padding-bottom:10px}.elq-form .elq-field-style input[type=submit]{-webkit-appearance:square-button}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.elq-form .loader{vertical-align:middle;display:inline-block;margin-left:10px;border:3px solid #f3f3f3;border-radius:50%;border-top:3px solid #3498db;width:20px;height:20px;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite}.elq-form input[type=checkbox],.elq-form input[type=radio]{margin:0}.elq-form .list-order input[type=radio]{margin-left:1px}.elq-form *,.elq-form :after,.elq-form :before{box-sizing:border-box}.elq-form html{font-size:10px;-webkit-tap-highlight-color:transparent}.elq-form body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857;color:#333;background-color:#fff}.elq-form button,.elq-form input,.elq-form select,.elq-form textarea{font-family:inherit;font-size:inherit;line-height:inherit}.elq-form a{color:#337ab7;text-decoration:none}.elq-form a:focus,.elq-form a:hover{color:#23527c;text-decoration:underline}.elq-form a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.elq-form figure{margin:0}.elq-form img{vertical-align:middle}.elq-form .img-responsive{display:block;max-width:100%;height:auto}.elq-form .img-rounded{border-radius:6px}.elq-form .img-thumbnail{padding:4px;line-height:1.42857;background-color:#fff;border:1px solid #ddd;border-radius:4px;transition:all .2s ease-in-out;display:inline-block;max-width:100%;height:auto}.elq-form .img-circle{border-radius:50%}.elq-form hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.elq-form .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.elq-form .sr-only-focusable:active,.elq-form .sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}.elq-form [role=button]{cursor:pointer}.elq-form .container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.elq-form .container:after,.elq-form .container:before{display:table;content:" "}.elq-form .container:after{clear:both}@media (min-width:768px){.elq-form .container{width:750px}}@media (min-width:992px){.elq-form .container{width:970px}}@media (min-width:1200px){.elq-form .container{width:1170px}}.elq-form .container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.elq-form .container-fluid:after,.elq-form .container-fluid:before{display:table;content:" "}.elq-form .container-fluid:after{clear:both}.elq-form .row{margin-right:-15px;margin-left:-15px}.elq-form .row:after,.elq-form .row:before{display:table;content:" "}.elq-form .row:after{clear:both}.elq-form .row-no-gutters{margin-right:0;margin-left:0}.elq-form .row-no-gutters [class*=col-]{padding-right:0;padding-left:0}.elq-form .col-lg-1,.elq-form .col-lg-2,.elq-form .col-lg-3,.elq-form .col-lg-4,.elq-form .col-lg-5,.elq-form .col-lg-6,.elq-form .col-lg-7,.elq-form .col-lg-8,.elq-form .col-lg-9,.elq-form .col-lg-10,.elq-form .col-lg-11,.elq-form .col-lg-12,.elq-form .col-md-1,.elq-form .col-md-2,.elq-form .col-md-3,.elq-form .col-md-4,.elq-form .col-md-5,.elq-form .col-md-6,.elq-form .col-md-7,.elq-form .col-md-8,.elq-form .col-md-9,.elq-form .col-md-10,.elq-form .col-md-11,.elq-form .col-md-12,.elq-form .col-sm-1,.elq-form .col-sm-2,.elq-form .col-sm-3,.elq-form .col-sm-4,.elq-form .col-sm-5,.elq-form .col-sm-6,.elq-form .col-sm-7,.elq-form .col-sm-8,.elq-form .col-sm-9,.elq-form .col-sm-10,.elq-form .col-sm-11,.elq-form .col-sm-12,.elq-form .col-xs-1,.elq-form .col-xs-2,.elq-form .col-xs-3,.elq-form .col-xs-4,.elq-form .col-xs-5,.elq-form .col-xs-6,.elq-form .col-xs-7,.elq-form .col-xs-8,.elq-form .col-xs-9,.elq-form .col-xs-10,.elq-form .col-xs-11,.elq-form .col-xs-12{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.elq-form .col-xs-1,.elq-form .col-xs-2,.elq-form .col-xs-3,.elq-form .col-xs-4,.elq-form .col-xs-5,.elq-form .col-xs-6,.elq-form .col-xs-7,.elq-form .col-xs-8,.elq-form .col-xs-9,.elq-form .col-xs-10,.elq-form .col-xs-11,.elq-form .col-xs-12{float:left}.elq-form .col-xs-1{width:8.33333%}.elq-form .col-xs-2{width:16.66667%}.elq-form .col-xs-3{width:25%}.elq-form .col-xs-4{width:33.33333%}.elq-form .col-xs-5{width:41.66667%}.elq-form .col-xs-6{width:50%}.elq-form .col-xs-7{width:58.33333%}.elq-form .col-xs-8{width:66.66667%}.elq-form .col-xs-9{width:75%}.elq-form .col-xs-10{width:83.33333%}.elq-form .col-xs-11{width:91.66667%}.elq-form .col-xs-12{width:100%}.elq-form .col-xs-pull-0{right:auto}.elq-form .col-xs-pull-1{right:8.33333%}.elq-form .col-xs-pull-2{right:16.66667%}.elq-form .col-xs-pull-3{right:25%}.elq-form .col-xs-pull-4{right:33.33333%}.elq-form .col-xs-pull-5{right:41.66667%}.elq-form .col-xs-pull-6{right:50%}.elq-form .col-xs-pull-7{right:58.33333%}.elq-form .col-xs-pull-8{right:66.66667%}.elq-form .col-xs-pull-9{right:75%}.elq-form .col-xs-pull-10{right:83.33333%}.elq-form .col-xs-pull-11{right:91.66667%}.elq-form .col-xs-pull-12{right:100%}.elq-form .col-xs-push-0{left:auto}.elq-form .col-xs-push-1{left:8.33333%}.elq-form .col-xs-push-2{left:16.66667%}.elq-form .col-xs-push-3{left:25%}.elq-form .col-xs-push-4{left:33.33333%}.elq-form .col-xs-push-5{left:41.66667%}.elq-form .col-xs-push-6{left:50%}.elq-form .col-xs-push-7{left:58.33333%}.elq-form .col-xs-push-8{left:66.66667%}.elq-form .col-xs-push-9{left:75%}.elq-form .col-xs-push-10{left:83.33333%}.elq-form .col-xs-push-11{left:91.66667%}.elq-form .col-xs-push-12{left:100%}.elq-form .col-xs-offset-0{margin-left:0}.elq-form .col-xs-offset-1{margin-left:8.33333%}.elq-form .col-xs-offset-2{margin-left:16.66667%}.elq-form .col-xs-offset-3{margin-left:25%}.elq-form .col-xs-offset-4{margin-left:33.33333%}.elq-form .col-xs-offset-5{margin-left:41.66667%}.elq-form .col-xs-offset-6{margin-left:50%}.elq-form .col-xs-offset-7{margin-left:58.33333%}.elq-form .col-xs-offset-8{margin-left:66.66667%}.elq-form .col-xs-offset-9{margin-left:75%}.elq-form .col-xs-offset-10{margin-left:83.33333%}.elq-form .col-xs-offset-11{margin-left:91.66667%}.elq-form .col-xs-offset-12{margin-left:100%}@media (min-width:768px){.elq-form .col-sm-1,.elq-form .col-sm-2,.elq-form .col-sm-3,.elq-form .col-sm-4,.elq-form .col-sm-5,.elq-form .col-sm-6,.elq-form .col-sm-7,.elq-form .col-sm-8,.elq-form .col-sm-9,.elq-form .col-sm-10,.elq-form .col-sm-11,.elq-form .col-sm-12{float:left}.elq-form .col-sm-1{width:8.33333%}.elq-form .col-sm-2{width:16.66667%}.elq-form .col-sm-3{width:25%}.elq-form .col-sm-4{width:33.33333%}.elq-form .col-sm-5{width:41.66667%}.elq-form .col-sm-6{width:50%}.elq-form .col-sm-7{width:58.33333%}.elq-form .col-sm-8{width:66.66667%}.elq-form .col-sm-9{width:75%}.elq-form .col-sm-10{width:83.33333%}.elq-form .col-sm-11{width:91.66667%}.elq-form .col-sm-12{width:100%}.elq-form .col-sm-pull-0{right:auto}.elq-form .col-sm-pull-1{right:8.33333%}.elq-form .col-sm-pull-2{right:16.66667%}.elq-form .col-sm-pull-3{right:25%}.elq-form .col-sm-pull-4{right:33.33333%}.elq-form .col-sm-pull-5{right:41.66667%}.elq-form .col-sm-pull-6{right:50%}.elq-form .col-sm-pull-7{right:58.33333%}.elq-form .col-sm-pull-8{right:66.66667%}.elq-form .col-sm-pull-9{right:75%}.elq-form .col-sm-pull-10{right:83.33333%}.elq-form .col-sm-pull-11{right:91.66667%}.elq-form .col-sm-pull-12{right:100%}.elq-form .col-sm-push-0{left:auto}.elq-form .col-sm-push-1{left:8.33333%}.elq-form .col-sm-push-2{left:16.66667%}.elq-form .col-sm-push-3{left:25%}.elq-form .col-sm-push-4{left:33.33333%}.elq-form .col-sm-push-5{left:41.66667%}.elq-form .col-sm-push-6{left:50%}.elq-form .col-sm-push-7{left:58.33333%}.elq-form .col-sm-push-8{left:66.66667%}.elq-form .col-sm-push-9{left:75%}.elq-form .col-sm-push-10{left:83.33333%}.elq-form .col-sm-push-11{left:91.66667%}.elq-form .col-sm-push-12{left:100%}.elq-form .col-sm-offset-0{margin-left:0}.elq-form .col-sm-offset-1{margin-left:8.33333%}.elq-form .col-sm-offset-2{margin-left:16.66667%}.elq-form .col-sm-offset-3{margin-left:25%}.elq-form .col-sm-offset-4{margin-left:33.33333%}.elq-form .col-sm-offset-5{margin-left:41.66667%}.elq-form .col-sm-offset-6{margin-left:50%}.elq-form .col-sm-offset-7{margin-left:58.33333%}.elq-form .col-sm-offset-8{margin-left:66.66667%}.elq-form .col-sm-offset-9{margin-left:75%}.elq-form .col-sm-offset-10{margin-left:83.33333%}.elq-form .col-sm-offset-11{margin-left:91.66667%}.elq-form .col-sm-offset-12{margin-left:100%}}@media (min-width:992px){.elq-form .col-md-1,.elq-form .col-md-2,.elq-form .col-md-3,.elq-form .col-md-4,.elq-form .col-md-5,.elq-form .col-md-6,.elq-form .col-md-7,.elq-form .col-md-8,.elq-form .col-md-9,.elq-form .col-md-10,.elq-form .col-md-11,.elq-form .col-md-12{float:left}.elq-form .col-md-1{width:8.33333%}.elq-form .col-md-2{width:16.66667%}.elq-form .col-md-3{width:25%}.elq-form .col-md-4{width:33.33333%}.elq-form .col-md-5{width:41.66667%}.elq-form .col-md-6{width:50%}.elq-form .col-md-7{width:58.33333%}.elq-form .col-md-8{width:66.66667%}.elq-form .col-md-9{width:75%}.elq-form .col-md-10{width:83.33333%}.elq-form .col-md-11{width:91.66667%}.elq-form .col-md-12{width:100%}.elq-form .col-md-pull-0{right:auto}.elq-form .col-md-pull-1{right:8.33333%}.elq-form .col-md-pull-2{right:16.66667%}.elq-form .col-md-pull-3{right:25%}.elq-form .col-md-pull-4{right:33.33333%}.elq-form .col-md-pull-5{right:41.66667%}.elq-form .col-md-pull-6{right:50%}.elq-form .col-md-pull-7{right:58.33333%}.elq-form .col-md-pull-8{right:66.66667%}.elq-form .col-md-pull-9{right:75%}.elq-form .col-md-pull-10{right:83.33333%}.elq-form .col-md-pull-11{right:91.66667%}.elq-form .col-md-pull-12{right:100%}.elq-form .col-md-push-0{left:auto}.elq-form .col-md-push-1{left:8.33333%}.elq-form .col-md-push-2{left:16.66667%}.elq-form .col-md-push-3{left:25%}.elq-form .col-md-push-4{left:33.33333%}.elq-form .col-md-push-5{left:41.66667%}.elq-form .col-md-push-6{left:50%}.elq-form .col-md-push-7{left:58.33333%}.elq-form .col-md-push-8{left:66.66667%}.elq-form .col-md-push-9{left:75%}.elq-form .col-md-push-10{left:83.33333%}.elq-form .col-md-push-11{left:91.66667%}.elq-form .col-md-push-12{left:100%}.elq-form .col-md-offset-0{margin-left:0}.elq-form .col-md-offset-1{margin-left:8.33333%}.elq-form .col-md-offset-2{margin-left:16.66667%}.elq-form .col-md-offset-3{margin-left:25%}.elq-form .col-md-offset-4{margin-left:33.33333%}.elq-form .col-md-offset-5{margin-left:41.66667%}.elq-form .col-md-offset-6{margin-left:50%}.elq-form .col-md-offset-7{margin-left:58.33333%}.elq-form .col-md-offset-8{margin-left:66.66667%}.elq-form .col-md-offset-9{margin-left:75%}.elq-form .col-md-offset-10{margin-left:83.33333%}.elq-form .col-md-offset-11{margin-left:91.66667%}.elq-form .col-md-offset-12{margin-left:100%}}@media (min-width:1200px){.elq-form .col-lg-1,.elq-form .col-lg-2,.elq-form .col-lg-3,.elq-form .col-lg-4,.elq-form .col-lg-5,.elq-form .col-lg-6,.elq-form .col-lg-7,.elq-form .col-lg-8,.elq-form .col-lg-9,.elq-form .col-lg-10,.elq-form .col-lg-11,.elq-form .col-lg-12{float:left}.elq-form .col-lg-1{width:8.33333%}.elq-form .col-lg-2{width:16.66667%}.elq-form .col-lg-3{width:25%}.elq-form .col-lg-4{width:33.33333%}.elq-form .col-lg-5{width:41.66667%}.elq-form .col-lg-6{width:50%}.elq-form .col-lg-7{width:58.33333%}.elq-form .col-lg-8{width:66.66667%}.elq-form .col-lg-9{width:75%}.elq-form .col-lg-10{width:83.33333%}.elq-form .col-lg-11{width:91.66667%}.elq-form .col-lg-12{width:100%}.elq-form .col-lg-pull-0{right:auto}.elq-form .col-lg-pull-1{right:8.33333%}.elq-form .col-lg-pull-2{right:16.66667%}.elq-form .col-lg-pull-3{right:25%}.elq-form .col-lg-pull-4{right:33.33333%}.elq-form .col-lg-pull-5{right:41.66667%}.elq-form .col-lg-pull-6{right:50%}.elq-form .col-lg-pull-7{right:58.33333%}.elq-form .col-lg-pull-8{right:66.66667%}.elq-form .col-lg-pull-9{right:75%}.elq-form .col-lg-pull-10{right:83.33333%}.elq-form .col-lg-pull-11{right:91.66667%}.elq-form .col-lg-pull-12{right:100%}.elq-form .col-lg-push-0{left:auto}.elq-form .col-lg-push-1{left:8.33333%}.elq-form .col-lg-push-2{left:16.66667%}.elq-form .col-lg-push-3{left:25%}.elq-form .col-lg-push-4{left:33.33333%}.elq-form .col-lg-push-5{left:41.66667%}.elq-form .col-lg-push-6{left:50%}.elq-form .col-lg-push-7{left:58.33333%}.elq-form .col-lg-push-8{left:66.66667%}.elq-form .col-lg-push-9{left:75%}.elq-form .col-lg-push-10{left:83.33333%}.elq-form .col-lg-push-11{left:91.66667%}.elq-form .col-lg-push-12{left:100%}.elq-form .col-lg-offset-0{margin-left:0}.elq-form .col-lg-offset-1{margin-left:8.33333%}.elq-form .col-lg-offset-2{margin-left:16.66667%}.elq-form .col-lg-offset-3{margin-left:25%}.elq-form .col-lg-offset-4{margin-left:33.33333%}.elq-form .col-lg-offset-5{margin-left:41.66667%}.elq-form .col-lg-offset-6{margin-left:50%}.elq-form .col-lg-offset-7{margin-left:58.33333%}.elq-form .col-lg-offset-8{margin-left:66.66667%}.elq-form .col-lg-offset-9{margin-left:75%}.elq-form .col-lg-offset-10{margin-left:83.33333%}.elq-form .col-lg-offset-11{margin-left:91.66667%}.elq-form .col-lg-offset-12{margin-left:100%}}.elq-form .row{display:inherit}.LV_invalid_field,input.LV_invalid_field:active,input.LV_invalid_field:hover,textarea.LV_invalid_field:active,textarea.LV_invalid_field:hover{outline:1px solid #c00}.LV_validation_message{font-weight:700;margin:0 0 0 5px}.LV_valid{display:none}.LV_invalid{color:#c00;font-size:10px}.submit-button-style{padding:7px 20px;border:1px solid #979797;border-radius:3px;background-color:#fff;color:#4a4a4a;cursor:pointer}.checkbox-aligned{margin-left:5px;display:inline}.form-element-layout{padding:5px 10px}.form-element-instruction{font-size:10px}.form-element-form-text{margin:0}.form-field-visible-xs-block{display:none}.elq-form-design-field .list-order input[type=radio]{margin-left:1px}@media (max-width:767px){.form-field-visible-xs-block{display:block}}.form-field-hidden-xs{display:block}@media (max-width:767px){.form-field-hidden-xs{display:none}}.custom-overlay{margin-left:2px;background:#fff;box-shadow:0 0 4px 0 #777;border-radius:2px;max-width:256px}
+      </style> <!-- EndFormCustomCSS --> <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Shared CSS 3.0 --> <!-- Favicons --> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7Bc15b0eb8-d001-45c0-a1d8-22d4321396e4%7D_apple-icon-57x57.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7Be3c8a072-dc02-4c12-8bba-5256ce624c75%7D_apple-icon-60x60.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B32c964d0-7382-44f5-9ad5-9f861b2fcee5%7D_apple-icon-72x72.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B566360d5-b694-447f-b192-8583d0b9bb4a%7D_apple-icon-76x76.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7Bbcd825d0-e479-4c7f-a0f3-1b46e2e6f695%7D_apple-icon-114x114.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B08085cce-589c-49fa-9f1a-ad6760f5bd26%7D_apple-icon-120x120.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7Be7858c2b-ebaf-4461-9acb-1c6f01b56a35%7D_apple-icon-144x144.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B170829f6-4458-4e73-ada1-b863940654a7%7D_apple-icon-152x152.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B66057195-dff2-4112-aa52-9f5001fe9860%7D_apple-icon-180x180.png" rel="apple-touch-icon"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7Bac3157e4-bd25-4cff-8554-9595db115224%7D_android-icon-192x192.png" rel="icon" type="image/png"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B0e3c3754-8605-4d36-878f-f6cb7f122c13%7D_favicon-32x32.png" rel="icon" type="image/png"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B3d7209ba-dcd9-4b7d-b1fa-2ec3cbe5fb6d%7D_favicon-96x96.png" rel="icon" type="image/png"> 
+  <link href="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7B9e8e989d-4c25-455d-80a0-d43e89ba21d1%7D_favicon-16x16.png" rel="icon" type="image/png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="https://img02.en25.com/EloquaImages/clients/UniversityofWindsor/%7Bacbbc25d-a58e-4168-8e49-e8c1a13a824f%7D_ms-icon-144x144.png">
+  <meta name="theme-color"><!-- Adobe Fonts CSS --> 
+  <link href="https://use.typekit.net/xat8fhq.css" rel="stylesheet"><!-- Bootstrap CSS --> 
+  <link href="https://img02.en25.com/Web/UniversityofWindsor/{0694b5dd-a9f0-4605-a0f0-7f6e330f93a1}_bootstrap.min.css" rel="stylesheet"><!-- Base Style 3.0 --> 
+  <link href="https://img02.en25.com/Web/UniversityofWindsor/{e933bdc9-cffb-4529-90f9-5f64595d0175}_style-3.0.css" rel="stylesheet"> <!-- Hotjar Tracking Code for https://future.uwindsor.ca/ --> 
+  <script>
+    	(function(h,o,t,j,a,r){
+        	h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        	h._hjSettings={hjid:2825743,hjsv:6};
+        	a=o.getElementsByTagName('head')[0];
+        	r=o.createElement('script');r.async=1;
+        	r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        	a.appendChild(r);
+    	})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script> 
+  <title>Master of Science in Translational Health Sciences - University of Windsor - Windsor, Ontario, Canada</title> 
+ </head> 
+ <body> <!-- UWindsor Header --> 
+  <div id="top-of-page">
+   &nbsp;
+  </div> <!--Global Banner--> 
+  <div class="global-banner blue-banner d-none"> 
+   <div class="container text-center"> 
+    <p class="text-uppercase"><a class="d-block" href="https://www.uwindsor.ca/returntocampus/?elqTrackId=9c2e6cbf83384ebeb30f74b9dbf8ff07&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">The University of Windsor is preparing for a <span class="yellow-text"><strong>safe return to campus.</strong> Learn More.</span></a></p> 
+   </div> 
+  </div> <!--Hidden Nav--> 
+  <div class="uwindsor-header-drawer" id="menu-region" style="display: none;"> 
+   <div class="container-fluid"> 
+    <div class="row"> 
+     <div class="col-md-12"> 
+      <div class="uwindsor-header-drawer-options">
+       <a class="support-uwindsor-button" href="http://www.uwindsor.ca/supportuwindsor?elqTrackId=02e2b90d58a7424491443a9c1e0c64a7&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Support UWindsor</a> 
+       <div class="menu-region-close">
+        Close <span class="close-icon">&nbsp;</span>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="row uwindsor-header-drawer"> 
+     <div class="col-lg-3">
+      <span class="menu-title">QUICK LINKS</span> 
+      <ul> 
+       <li><a href="https://uwindsor.ca/returntocampus?elqTrackId=6da73eaecfdb4e398724099ec54c4f6d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Return to Campus</a></li> 
+       <li><a href="https://uwindsor.ca/together?elqTrackId=e832282f764f499f9885ae3b3cf856cd&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Roadmap for Fall</a></li> 
+       <li><a href="http://www.uwindsor.ca/current-students?elqTrackId=1a58337b6a6342249bfd5138b53ffdc2&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Current Students</a></li> 
+       <li><a href="https://blackboard.uwindsor.ca/?elqTrackId=b6d1d34789d946b09fe4ca005e1d198d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Blackboard</a></li> 
+       <li><a href="https://student.uwindsor.ca?elqTrackId=38cbce3076fc4aacbf4c0bbf45b9f7df&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">UWinsite Student</a></li> 
+       <li><a href="http://www.uwindsor.ca/faculty-staff?elqTrackId=3a5bc0b6c307484483b6b2fc7f5e75fc&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Faculty + Staff</a></li> 
+       <li><a href="https://www.uwindsor.ca/finance/345/uwinsite-finance?elqTrackId=577f604a23a448b9afa4adb9874f9eba&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">UWinsite Finance</a></li> 
+       <li><a href="http://www.uwindsor.ca/alumni?elqTrackId=4c8be0c6a6de4425945f59dee79a1008&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Alumni + Donors</a></li> 
+       <li><a href="https://www.uwindsor.ca/cces/1333/employers?elqTrackId=66422367a854492d8bfe4ad96bd96b76&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Industry + Community Partners</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-3">
+      <span class="menu-title">About</span> 
+      <ul> 
+       <li class="0 first"><a href="https://www.uwindsor.ca/about-the-university?elqTrackId=bcf63f4e77694d9897606248c4fd306a&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">About UWindsor</a></li> 
+       <li class="1"><a href="https://www.uwindsor.ca/president/?elqTrackId=99743b633a8241c4951ae317febe34ca&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Office of the President</a></li> 
+       <li class="2 last"><a href="https://www.uwindsor.ca/vp-equity-diversity-inclusion/?elqTrackId=326a9f91efe44fa587c9064984e50273&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Equity, Diversity and Inclusion</a></li> 
+      </ul> 
+      <ul> 
+       <li class="0 first"><a href="https://future.uwindsor.ca/virtual-tours?elqTrackId=1b1c62514fb84bd192dbe4739b44df9f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Virtual Tour</a></li> 
+       <li class="1"><a href="http://www.uwindsor.ca/visit-us?elqTrackId=aac594e50a5b41babe7b67876119fe10&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Visitor Information</a></li> 
+       <li class="2 last"><a href="https://maps.mapsted.com/uwindsor?elqTrackId=46526aa908b7471a919cbd46152d7c7f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Campus Maps</a></li> 
+      </ul> 
+      <ul> 
+       <li class="0 first"><a href="http://www.uwindsor.ca/parking/?elqTrackId=d266f5b5872b475ba57683934e4350a6&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Parking</a></li> 
+       <li class="1 last"><a href="http://www.uwindsor.ca/viewmagazine/?elqTrackId=d1f6eb50b48f42d2a00515a78605a442&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">VIEW Magazine</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-3">
+      <span class="menu-title">Academics</span> <span>Programs</span> 
+      <ul> 
+       <li class="0 first"><a href="https://future.uwindsor.ca/program-listing?filter=Undergraduate&amp;elqTrackId=4e65a5f283e34f50a785c4c483f57442&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43#programs" target="_blank">Undergraduate Programs</a></li> 
+       <li class="1"><a href="https://future.uwindsor.ca/program-listing?filter=Graduate&amp;elqTrackId=2d183c36068f40ce86ba552efde99dd0&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43#programs" target="_blank">Graduate Programs</a></li> 
+       <li class="2"><a href="https://future.uwindsor.ca/international?elqTrackId=29f32f73b8084ca39b11047c50f28489&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">International Programs</a></li> 
+       <li class="3"><a href="https://www.uwindsor.ca/coop-workplace-partnerships/?elqTrackId=33db81dd89304753b7a6094c34037c3d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Co-operative Education</a></li> 
+       <li class="4 last"><a href="https://www.uwindsor.ca/continuingeducation/?elqTrackId=26ced911e34945d59fcb5c313ba67ad8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Continuing Education</a></li> 
+      </ul> <span>Support</span> 
+      <ul> 
+       <li class="0 first"><a href="http://uwindsor.ca/registrar?elqTrackId=ed9701eb45dd41c08967e4f5ac7fea84&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Office of the Registrar</a></li> 
+       <li class="1"><a href="http://uwindsor.ca/awards?elqTrackId=d8e1632185704c9eb32757d10978d648&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Financial Matters</a></li> 
+       <li class="2 last"><a href="https://www.uwindsor.ca/provost/?elqTrackId=a567e08051e945b08f8000474ba2f6e6&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Office of the Provost</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-3">
+      <span class="menu-title">Faculties</span> 
+      <ul> 
+       <li class="0 first"><a href="http://www.uwindsor.ca/fahss?elqTrackId=bc5193493f7a474887294b79fb03dc48&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Arts, Humanities, and Social Sciences</a></li> 
+       <li class="1"><a href="http://www.uwindsor.ca/law/?elqTrackId=ca9fd00f68024f76b4268bed474ea5b4&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Law</a></li> 
+       <li class="2"><a href="http://www.uwindsor.ca/education/?elqTrackId=77463c91e4464ddcb513cab25be29065&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Education</a></li> 
+       <li class="3"><a href="http://www.uwindsor.ca/nursing/?elqTrackId=ca82d47d72af4580ba2429ee8e5ec05b&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Nursing</a></li> 
+       <li class="4"><a href="http://www.uwindsor.ca/engineering/?elqTrackId=797f9de0a46e419ebffbc55736e0c83e&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Engineering</a></li> 
+       <li class="5"><a href="http://www.uwindsor.ca/odette/?elqTrackId=10e7d1b57b344e0186311e2680ca2dd7&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Business</a></li> 
+       <li class="6"><a href="http://www.uwindsor.ca/graduate-studies/?elqTrackId=2200a165ffa64e7eba1a4da873bb13b7&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Graduate Studies</a></li> 
+       <li class="7"><a href="http://www.uwindsor.ca/hk?elqTrackId=46e15d4e17bc4d22bf07249075b9c8f7&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Human Kinetics</a></li> 
+       <li class="8 last"><a href="http://www.uwindsor.ca/science?elqTrackId=90fd8ec28df948a49a301dea5df4354c&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Science</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="row uwindsor-header-drawer"> 
+     <div class="col-lg-3">
+      <span class="menu-title">Research</span> 
+      <ul> 
+       <li class="0 first"><a href="https://www.uwindsor.ca/vp-research/353/covid-19-research-and-innovation-guidance?elqTrackId=42237a6ece234c79812560cb171fe670&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">COVID-19 Research and Innovation Guidance</a></li> 
+       <li class="1"><a href="https://www.uwindsor.ca/vp-research/?elqTrackId=3a34ff4848454ba8b5f5fd194926126a&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Vice-President, Research &amp; Innovation</a></li> 
+       <li class="2"><a href="https://www.uwindsor.ca/research-innovation-services/?elqTrackId=087fbfd848984bb0a642ece3c528e30b&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Research &amp; Innovation Services</a></li> 
+       <li class="3 last"><a href="https://www.uwindsor.ca/research-partnerships/?elqTrackId=1c92fb17630c4138986c7dcbb117889e&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">Research Partnerships </a></li> 
+      </ul> 
+      <ul> 
+       <li class="0 first"><a href="https://www.uwindsor.ca/vp-research/319/research-appointments?elqTrackId=ad3fe150886647069c535f8d3adca6f4&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Research Appointments</a></li> 
+       <li class="1"><a href="https://www.uwindsor.ca/research-ethics-board/?elqTrackId=cef81fd83c2242aa87447ff697acb25c&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Research Ethics</a></li> 
+       <li class="2"><a href="https://www.uwindsor.ca/chemical-control-centre?elqTrackId=3af040afb8044ca8846ae5357c251e16&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Research Safety</a></li> 
+       <li class="3 last"><a href="https://www.uwindsor.ca/animal-care-committee/?elqTrackId=b55c85252ea7481eacd7693eb51b38ab&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Animal Care</a></li> 
+      </ul> 
+      <ul> 
+       <li class="0 first"><a href="https://www.uwindsor.ca/finance/research-finance?elqTrackId=5b7db944ca8940b1bda0a1adf145b160&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Research Finance</a></li> 
+       <li class="1"><a href="http://leddy.uwindsor.ca/?elqTrackId=a7e31f0929eb492980179df34675a4dc&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Leddy Library</a></li> 
+       <li class="2"><a href="http://scholar.uwindsor.ca/uwilldiscover/?elqTrackId=4274feda839d46cda9d9fdf02486c571&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">UWill Discover!</a></li> 
+       <li class="3 last"><a href="http://www.epicentreuwindsor.ca/?elqTrackId=dad9929496464059bdc2dc7dfbf0ac5f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">EPICentre</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-3">
+      <span class="menu-title">Student Life</span> 
+      <ul> 
+       <li class="0 first"><a href="https://www.uwindsor.ca/639668/around-university?elqTrackId=74a5d558443341d6946a702bd2d67c46&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">About Student Life</a></li> 
+       <li class="1"><a href="https://www.uwindsor.ca/event-calendar?elqTrackId=0ac557dcdc9840c7b1b8144a6d310da8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43">UWindsor Events</a></li> 
+       <li class="2"><a href="http://www.uwindsor.ca/soca/237/soca-events?elqTrackId=cf5a4494e954445692d2e7429211a59e&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">SoCA Concerts &amp; Events</a></li> 
+       <li class="3"><a href="http://golancers.ca/?elqTrackId=13dc651adcc6459a9d57f7912259399f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Lancers Varsity Sports</a></li> 
+       <li class="4 last"><a href="http://web2.uwindsor.ca/pac/universityplayers/?elqTrackId=d74ccba756524346a27b54451da3520d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">University Players</a></li> 
+      </ul> 
+      <ul> 
+       <li class="0 first"><a href="http://www.uwindsor.ca/recreation-and-fitness?elqTrackId=ab6669f69b454ae89822165ff5ba54af&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Athletics + Recreation Services</a></li> 
+       <li class="1"><a href="https://www.uwindsor.ca/studentaccessibility/?elqTrackId=eb3ed65c8560426b8aad33aeb1c7edbd&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Student Accessibility Services</a></li> 
+       <li class="2"><a href="http://www.uwindsor.ca/residence/?elqTrackId=384a33f6f04f4a038855a22797e0acd4&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Residence</a></li> 
+       <li class="3"><a href="http://www.uwindsor.ca/food/?elqTrackId=7590730f44104deb8e649b71a6f04f4f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Food Services</a></li> 
+       <li class="4 last"><a href="http://www.uwindsor.ca/156/lots-student-support-services?elqTrackId=3e136440381f4f5aaea7dafc1c5589d8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Student Support</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="row uwindsor-header-drawer-back-to-top"> 
+     <div class="col-lg-12">
+      <a href="#top-of-page">Back to Top <span class="arrow-icon">&nbsp;</span></a>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="uwindsor-header-overlay"> 
+   <div class="container-fluid"> 
+    <div class="uwindsor-header"> 
+     <h1 class="logo uwindsor-header-logo"><a href="http://www.uwindsor.ca?elqTrackId=d5fda8e46e8d403e972245411c2400d1&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank"><img alt="University of Windsor" class="uwindsor-logo-gray-text" src="https://img02.en25.com/Web/UniversityofWindsor/{eb985d37-643a-4112-86c2-3823bd8d77fe}_uwindsor-logo-2-line-horizontal-gray-text.png"> <img alt="University of Windsor" class="uwindsor-logo-white-text" src="https://img02.en25.com/Web/UniversityofWindsor/{c98ce867-6003-453f-bdd8-8a26848ebcaf}_uwindsor-logo-2-line-horizontal-white-text.png"> </a></h1> 
+     <div class="header-nav">
+      <a class="menu-button" href="#" id="menu-button"><span class="menu-button-text">Menu</span> <span class="menu-button-icon">&nbsp;</span> </a> <a class="search-button" href="http://www.uwindsor.ca/dailynews/uwin_search?elqTrackId=001d448edb2d4533b48a56372f67ea44&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Search</a> <a class="ask-uwindsor-button" href="http://ask.uwindsor.ca/?elqTrackId=cd5852cf31e94ac6a6d35616316d8aa4&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">ask.<span class="ask-uwindsor-text">UWindsor</span></a> <a class="future-students-button" href="http://www.uwindsor.ca/future?elqTrackId=8227e6054c104e8d8fc3eb199ac6f53a&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=43" target="_blank">Future Students</a>
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--Hero Banner--> 
+  <div class="blue-banner fullscreen-hero-banner img-fluid" style="background-image: url(https://img02.en25.com/Web/UniversityofWindsor/{de17c022-754b-4cab-90d0-92a9f2059e32}_master-of-science-in-translational-health-sciences-students-working-in-lab-hero-image.jpg); background-position: 80% 10%;" alt="Business Administration students working together"> 
+   <div class="container"> 
+    <div class="vertical-center mobile-vertical-bottom "> 
+     <div class="program-detail-header-title"> 
+      <div class="float-left program-title-background p-3 p-xl-5"> 
+       <h1 class="yellow-text" style="color: #FFCE00;">Master of Science in Translational Health Sciences</h1> <a onclick="displayMessage()" class="float-left action-btn small-btn blue-btn  mr-3" href="javascript:void(0);">Stay Connected</a> <a class="float-left action-btn small-btn white-btn" href="https://future.uwindsor.ca/apply-now?elqTrackId=3ceb4e33951a495bbb3c41007fb46bc8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=">Apply Now</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="generic white-banner uwindsor-crest-right-aligned-overlay"> <!--Internal Nav--> <!--Internal Navigation--> 
+   <div class="internal-nav uwindsor-crest-right-aligned-overlay"> 
+    <div class="container"> 
+     <div class="ask-uwindsor-logo">
+      <a class="chat-with-uwindsor" href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=202&amp;elqTrackId=cfb71f537bf24b86bc08402a0777de35&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Ask UWindsor <span>Live Chat</span> </a>
+     </div> 
+     <div class="drop-down-nav"> 
+      <div class="btn-group">
+       <button class="btn dropdown-toggle" id="internal-nav" type="button"><span class="d-none d-md-inline">Start Your Lancer Journey Here</span><span class="d-inline d-md-none">Start Here</span></button>
+      </div> 
+     </div> <a class="back-to-top-dark-gray" href="#" id="back-to-top" title="Back to top">Back to top</a>
+    </div> 
+   </div> <!--Internal Navigation - Future Student Journey--> 
+   <div class="dark-gray-banner uwindsor-crest-right-aligned-overlay py-5" id="internal-nav-menu" style="display:none;"> 
+    <div class="container"> 
+     <div class="row"> 
+      <div class="col-xl-4 col-lg-6 mx-auto col-sm-12 mb-2 mb-lg-4 mb-xl-5">
+       <img alt="Students working on a laptop together" class="d-none d-lg-block rounded-circle mx-auto mb-4 w-50" src="https://img02.en25.com/Web/UniversityofWindsor/{1136bb6a-71e6-461b-bcff-7e011986dee0}_womens-gender-studies-students.jpg"> 
+       <div class="accordion accordion-white" id="accordionExample1"> 
+        <div class="card"> 
+         <div class="card-header" id="heading-explore"> 
+          <h5 class="mb-0"><button class="btn btn-link" data-target="#collapse-explore" data-toggle="collapse" type="button">1. Explore</button></h5> 
+         </div> 
+         <div class="collapse" data-parent="#accordionExample" id="collapse-explore"> 
+          <div class="card-body"> 
+           <ul class="fancy-list-blue"> 
+            <li><a href="https://future.uwindsor.ca/program-listing?filter=Undergraduate&amp;elqTrackId=9d85cab94127463b89780c0b0f7d96cc&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503#programs" target="_blank">Undergraduate Programs</a></li> 
+            <li><a href="https://future.uwindsor.ca/program-listing?filter=Graduate&amp;elqTrackId=aced9b88a422413bb04410498351371f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503#programs" target="_blank">Graduate Programs</a></li> 
+            <li><a href="https://future.uwindsor.ca/program-listing?filter=Certificate&amp;elqTrackId=2790ac4ac8d248bbaf9ea73fca2ca8ed&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503#programs" target="_blank">Certificate &amp; Diploma Programs</a></li> 
+            <li><a href="http://www.uwindsor.ca/continuingeducation/?elqTrackId=5640d0b252fd4685912351f34e695e02&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Continuing Education</a></li> 
+            <li><a href="https://future.uwindsor.ca/transfer?elqTrackId=6418e246cd69480dbfb16fd8e545accb&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Transfer Students</a></li> 
+            <li><a href="https://future.uwindsor.ca/international?elqTrackId=1e8695b029fc43b5a027889d323aef59&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">International Students</a></li> 
+            <li><a href="http://www.uwindsor.ca/finance/fee-estimator?elqTrackId=6232d95cb88448eebc11b72d720c8747&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Tuition / Fee Estimator</a></li> 
+            <li><a href="https://future.uwindsor.ca/student-services-support?elqTrackId=b4f1d0705f844aaa925a1b002b41110e&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Student Support Services</a></li> 
+            <li><a href="https://future.uwindsor.ca/residence-food-services?elqTrackId=18d18f4f499f4312a35ce487e73e4505&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Residence &amp; Food Services</a></li> 
+            <li><a href="https://future.uwindsor.ca/experiential-learning?elqTrackId=4539f11839944188a5ec807471995cb3&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Experiential Learning &amp; Co-op</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-xl-4 col-lg-6 mx-auto col-sm-12 mb-2 mb-lg-4 mb-xl-5">
+       <img alt="Students working and chatting outside" class="d-none d-lg-block rounded-circle mx-auto mb-4 w-50" src="https://img02.en25.com/Web/UniversityofWindsor/{7189aa89-d23f-4e9b-b0f3-65bfa1692403}_computer-science-students.jpg"> 
+       <div class="accordion accordion-white" id="accordionExample2"> 
+        <div class="card"> 
+         <div class="card-header" id="heading-connect"> 
+          <h5 class="mb-0"><button class="btn btn-link" data-target="#collapse-connect" data-toggle="collapse" type="button">2. Connect</button></h5> 
+         </div> 
+         <div class="collapse" data-parent="#accordionExample" id="collapse-connect"> 
+          <div class="card-body"> 
+           <ul class="fancy-list-blue"> 
+            <li class="d-none"><a href="https://future.uwindsor.ca/custom-viewbook?elqTrackId=4d56509be73f41bc8edb1738af8d5375&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank"><strong>(NEW)</strong> Request Custom Viewbook</a></li> 
+            <li><a href="https://future.uwindsor.ca/start?elqTrackId=08065c54883446a8aa5c55ad9b232f6f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Request Program Information</a></li> 
+            <li><a href="https://future.uwindsor.ca/request-materials?elqTrackId=58128a7de9e046eca3cf4713de242b65&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Request Materials</a></li> 
+            <li><a href="https://future.uwindsor.ca/student-recruiters?elqTrackId=dd7b0b327f994467b0356346b904cf04&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Meet our Recruitment Team</a></li> 
+            <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=202&amp;elqTrackId=bd54e29c57254cc6a1f63f52ee1ef71d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Live Chat</a></li> 
+            <li><a href="https://future.uwindsor.ca/student-awards?elqTrackId=2dd5892a6d6f4605aac515e8b2f1ecf9&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Awards &amp; Financial Aid</a></li> 
+            <li><a href="https://future.uwindsor.ca/student-ambassadors?elqTrackId=bc07a05847604168aa78935c2174f48c&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Meet our Student Ambassadors</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-xl-4 col-lg-6 mx-auto col-sm-12 mb-2 mb-lg-4 mb-xl-5">
+       <img alt="Students walking in front of Dillon Hall" class="d-none d-lg-block rounded-circle mx-auto mb-4 w-50" src="https://img02.en25.com/Web/UniversityofWindsor/{da9554ba-6c42-4e3e-8d5f-9ddd0f8887dd}_students-at-dillon-hall.jpg"> 
+       <div class="accordion accordion-white" id="accordionExample3"> 
+        <div class="card"> 
+         <div class="card-header" id="heading-visit"> 
+          <h5 class="mb-0"><button class="btn btn-link" data-target="#collapse-visit" data-toggle="collapse" type="button">3. Visit</button></h5> 
+         </div> 
+         <div class="collapse" data-parent="#accordionExample" id="collapse-visit"> 
+          <div class="card-body"> 
+           <ul class="fancy-list-blue"> 
+            <li><a href="https://future.uwindsor.ca/campus-tours?elqTrackId=fc184debd89043109f02ed0f97c5bd2f&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Book a Campus Tour</a></li> 
+            <li><a href="https://future.uwindsor.ca/virtual-tours?elqTrackId=acc1ed7eddd84a9b8d8df6bccbc9f554&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Virtual Campus Tour</a></li> 
+            <li><a href="https://future.uwindsor.ca/student-services-support?elqTrackId=b4f1d0705f844aaa925a1b002b41110e&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Student Experience</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-xl-4 col-lg-6 mx-auto col-sm-12 mb-2 mb-lg-4 mb-xl-5">
+       <img alt="Students in the registrars office" class="d-none d-lg-block rounded-circle mx-auto mb-4 w-50" src="https://img02.en25.com/Web/UniversityofWindsor/{07372d9c-ff4a-416c-bb18-f5e165891423}_students-in-the-registrars-office.jpg"> 
+       <div class="accordion accordion-white" id="accordionExample4"> 
+        <div class="card"> 
+         <div class="card-header" id="heading-apply"> 
+          <h5 class="mb-0"><button class="btn btn-link" data-target="#collapse-apply" data-toggle="collapse" type="button">4. Apply</button></h5> 
+         </div> 
+         <div class="collapse" data-parent="#accordionExample" id="collapse-apply"> 
+          <div class="card-body"> 
+           <ul class="fancy-list-blue"> 
+            <li><a href="https://future.uwindsor.ca/apply-undergraduate-ontario-high-school-student?elqTrackId=b431862887914f529ab11e9d31be3561&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Undergraduate</a></li> 
+            <li><a href="https://future.uwindsor.ca/international?elqTrackId=2d65c46a78344b398a65b5499eee19d8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503#international-how-to-apply" target="_blank">International</a></li> 
+            <li><a href="https://www.uwindsor.ca/graduate-studies/354/apply?elqTrackId=e5e2e68df5b34a2d94f15776b6c76930&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Graduate</a></li> 
+            <li><a href="https://www.uwindsor.ca/education/apply?elqTrackId=b297482192cc4f0da7c61e8642f2e36d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Education</a></li> 
+            <li><a href="https://www.uwindsor.ca/law/569/application-procedure?elqTrackId=1aa0192617e24f60835aa5a80532e531&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Law</a></li> 
+            <li><a href="https://www.uwindsor.ca/continuingeducation/386/how-register?elqTrackId=301065417df948dd885dbf01e32d3aa6&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Continuing Education</a></li> 
+            <li><a href="https://future.uwindsor.ca/apply-english-pathway-program?elqTrackId=3752cc2829ad46a4a3f13a5c9e92d85a&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">English Pathway Program</a></li> 
+            <li><a href="https://future.uwindsor.ca/apply-undergraduate-transfer-student?elqTrackId=78693c8e50b9487db0bc0c181622f6f4&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Transfer Student</a></li> 
+            <li><a href="https://future.uwindsor.ca/apply-undergraduate-mature-student?elqTrackId=7000fe5241954182b8805811a726d187&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Mature Student</a></li> 
+            <li><a href="https://future.uwindsor.ca/apply-undergraduate-part-time-student?elqTrackId=fe1fb1103e4940fdb3a6a26de93a5b0d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Part-time Student</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-xl-4 col-lg-6 mx-auto col-sm-12 mb-2 mb-lg-4 mb-xl-5">
+       <img alt="Our mascot Winston giving a thumbs up" class="d-none d-lg-block rounded-circle mx-auto mb-4 w-50" src="https://img02.en25.com/Web/UniversityofWindsor/{feebb704-3832-475c-a26c-f88f5e19370a}_windston-thumbs-up.jpg"> 
+       <div class="accordion accordion-white" id="accordionExample5"> 
+        <div class="card"> 
+         <div class="card-header" id="heading-youre-in"> 
+          <h5 class="mb-0"><button class="btn btn-link" data-target="#collapse-youre-in" data-toggle="collapse" type="button">5. You're In!</button></h5> 
+         </div> 
+         <div class="collapse" data-parent="#accordionExample" id="collapse-youre-in"> 
+          <div class="card-body"> 
+           <ul class="fancy-list-blue"> 
+            <li><a href="http://www.uwindsor.ca/nextsteps?elqTrackId=3a4a58a7b32348e4ad6ac94b09240c4a&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Next Steps</a></li> 
+            <li><a href="http://www.uwindsor.ca/register?elqTrackId=7294f0a730404f228e9e596392be9cdd&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Plan Your Program</a></li> 
+            <li><a href="http://www.uwindsor.ca/headstart?elqTrackId=9e2a2632d9b449b08a504cffe44ac487&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Head Start Orientation</a></li> 
+            <li><a href="http://www.uwindsor.ca/orientation/298/windsor-welcome-week?elqTrackId=1b18bd356fb9480691419a848fbb7cdf&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Welcome Week</a></li> 
+            <li><a href="http://www.uwindsor.ca/finance/student-accounts?elqTrackId=a4f0ad4da8ca4079814ae5e48a9d9ee7&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Pay Tuition</a></li> 
+            <li><a href="https://maps.mapsted.com/uwindsor?elqTrackId=a7700d81f8d44552bc9a223370abec07&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Campus Map</a></li> 
+            <li><a href="https://future.uwindsor.ca/virtual-tours?elqTrackId=54ec93ae30c8435d9c28559643c02287&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Virtual Campus Tour</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-xl-4 col-lg-6 mx-auto col-sm-12 mb-2 mb-lg-4 mb-xl-5"> 
+       <div class="m-3"> 
+        <h3 class="small-text yellow-text">Helpful Links</h3> 
+        <hr class="yellow-hr mb-0"> 
+        <ul class="fancy-list-gray"> 
+         <li><a class="white-pointer-link" href="https://future.uwindsor.ca/future-students?elqTrackId=f49796a5aba2466f8f157405049e3bd0&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503#important-dates" target="_blank">Important Dates</a></li> 
+         <li><a class="white-pointer-link" href="http://ask.uwindsor.ca/app/chat/chat_launch?elqTrackId=c5708c9eb8e64aa5912275d0c46a5f3a&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Live Chat</a></li> 
+         <li><a class="white-pointer-link" href="http://ask.uwindsor.ca/?elqTrackId=de8f2142654e40d1b37144c0e18a4ff3&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Ask.UWindsor</a></li> 
+         <li><a class="white-pointer-link" href="https://future.uwindsor.ca/virtual-tours?elqTrackId=8c7d31c445ae444ab11cfc49dcf5afde&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1503" target="_blank">Virtual Campus Tour</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="internal-nav-close float-left float-md-right">
+      Close <span class="close-icon">&nbsp;</span>
+     </div> 
+    </div> 
+   </div> <!--Program Highlights --> 
+   <div id="program-highlights" class="mt-5"> 
+    <div class="container blue-banner uwindsor-crest-right-aligned-overlay"> 
+     <div class="row p-4"> 
+      <div class="col-6 col-xl-4 mb-2"> 
+       <div class="yellow-icon-circle-small round-image solid-white mx-auto"> 
+        <img src="https://img02.en25.com/Web/UniversityofWindsor/{e514b78c-87fa-4f4e-8967-73c5aba70833}_12-month-icon-small-dark-gray.png"> 
+       </div> 
+       <h4 class="white-text text-center">12 Month Program; From Start to Grad</h4> 
+      </div> 
+      <div class="col-6 col-xl-4 mb-2"> 
+       <div class="yellow-icon-circle-small round-image solid-white mx-auto"> 
+        <img src="https://img02.en25.com/Web/UniversityofWindsor/{df6cb964-fe83-4f81-9c0c-cfc51961b8ae}_over-200-icon-small-dark-gray.png"> 
+       </div> 
+       <h4 class="white-text text-center">&gt;200 Hours with local researchers in an Experiential Learning Placement</h4> 
+      </div> 
+      <div class="col-6 col-xl-4"> 
+       <div class="yellow-icon-circle-small round-image solid-white mx-auto"> 
+        <img src="https://img02.en25.com/Web/UniversityofWindsor/{2b7fee3d-cc5d-4bc8-a68f-bb203f970ee4}_jumping-person-icon-small-dark-gray.png"> 
+       </div> 
+       <h4 class="white-text  text-center">Great option for gap year between Undergrad &amp; Med School</h4> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <!--Program Highlights and Admission Requirements--> 
+   <div id="program-highlights-admission-requirements" class="content-region"> 
+    <div class="container"> 
+     <div class="row"> 
+      <div class="col-xl-7 pr-xl-5"> 
+       <h2 class="big-text dark-gray-text">Program Highlights &amp; Admission Requirements</h2> 
+       <div class=""> 
+        <p class="dark-gray-text">Calling all future health care workers! Are you looking for real-world experience in a clinical or laboratory research setting? Or perhaps you want to fill a gap year and strengthen your CV before applying to medical school. Translational Health Sciences is a new and rapidly growing research field that seeks to “translate” or bridge the gap between advances in laboratory medical research and health care in clinical practice. In a modern-day approach to healthcare, successful research-programs utilize a multidisciplinary team of scientists, health professionals, economists, and statisticians working together to solve complex health and social problems. There is a need to offer students a training path that incorporates clinical science, public health, and basic biomedical research to accelerate the application of biological breakthroughs to human health. To address this opportunity, and the deficit of educated students with these skills, the Faculty of Science is offering a professional Master of Science in Translational Health Sciences (“MSTHS”) program.</p> 
+        <p class="dark-gray-text">The program leverages partnerships between the Faculty of Science, the Faculty of Nursing, Windsor Regional Hospital (WRH), Windsor Cancer Research Group, WE Spark Health Institute, Hotel Dieu Grace Hospital and St. Clair College, to train a new generation of clinical researchers. The MSTHS program will leverage existing University of Windsor research strengths in cancer biology, environmental health, and neuroscience, as well as the expanding network of clinical research being done via the Windsor Cancer Research Group (WCRG) and WE Spark Health Institute.</p> 
+        <div id="master-of-science-in-translational-health-sciences-highlights" class="carousel slide light-gray-banner" data-interval="false"> <!-- Indicators --> 
+         <ul class="carousel-indicators"> 
+          <li data-target="#master-of-science-in-translational-health-sciences-highlights" data-slide-to="0" class="active"></li> 
+          <li data-target="#master-of-science-in-translational-health-sciences-highlights" data-slide-to="1"></li> 
+          <li data-target="#master-of-science-in-translational-health-sciences-highlights" data-slide-to="2"></li> 
+          <li data-target="#master-of-science-in-translational-health-sciences-highlights" data-slide-to="3"></li> 
+          <li data-target="#master-of-science-in-translational-health-sciences-highlights" data-slide-to="4"></li> 
+         </ul> <!-- The slideshow --> 
+         <div class="carousel-inner"> 
+          <div class="carousel-item active"> 
+           <div class="row justify-content-center p-4"> 
+            <div class="col-10 col-md-5 col-xl-4 mx-auto mx-xl-0 my-auto mb-3 ml-xl-3"> 
+             <img alt="Student looking through microscope" src="https://img02.en25.com/Web/UniversityofWindsor/{12befbd2-5dd6-423c-9803-a1b47a6c76b4}_student-looking-through-microscope.jpg" class="img-fluid w-100 mx-auto d-block float-none float-xl-right yellow-highlight-left-bottom mb-4"> 
+            </div> 
+            <div class="col-10 col-xl-6 p-xl-3 mx-auto mx-xl-0"> 
+             <p class="dark-gray-text"> The MSTHS professional program is designed to provide students with education and skills to enter a wide variety of career paths in translational health sciences. </p> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="carousel-item"> 
+           <div class="row justify-content-center p-4"> 
+            <div class="col-10 col-md-5 col-xl-4 mx-auto mx-xl-0 my-auto mb-3 ml-xl-3"> 
+             <img alt="Male and female students working in lab" src="https://img02.en25.com/Web/UniversityofWindsor/{7847b3ac-f424-470f-ae4b-b6957ddb28d4}_male-female-students-working-in-lab.jpg" class="img-fluid w-100 mx-auto d-block float-none float-xl-right yellow-highlight-left-bottom mb-4"> 
+            </div> 
+            <div class="col-10 col-xl-6 p-xl-3 mx-auto mx-xl-0"> 
+             <p class="dark-gray-text"> Students will gain the experience they need to find careers implementing clinical trials in industry, clinical, and academic settings, as well as work for government agencies and community organizations that engage in disease prevention and health promotion. </p> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="carousel-item"> 
+           <div class="row justify-content-center p-4"> 
+            <div class="col-10 col-md-5 col-xl-4 mx-auto mx-xl-0 my-auto mb-3 ml-xl-3"> 
+             <img alt="Students in a lecture" src="https://img02.en25.com/Web/UniversityofWindsor/{b5f32201-8b52-49a4-9c8c-10b727ee52ca}_students-in-a-lecture.jpg" class="img-fluid w-100 mx-auto d-block float-none float-xl-right yellow-highlight-left-bottom mb-4"> 
+            </div> 
+            <div class="col-10 col-xl-6 p-xl-3 mx-auto mx-xl-0"> 
+             <p class="dark-gray-text"> The MSTHS program includes traditional lecture-based courses in Cancer Cell Biology, Clinical Research Methods, Advanced Statistics, and Fundamentals of Oncology. </p> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="carousel-item"> 
+           <div class="row justify-content-center p-4"> 
+            <div class="col-10 col-md-5 col-xl-4 mx-auto mx-xl-0 my-auto mb-3 ml-xl-3"> 
+             <img alt="Student in lab" src="https://img02.en25.com/Web/UniversityofWindsor/{eb8eb1cd-861e-4f52-a6b8-2afa80d04934}_student-in-lab.jpg" class="img-fluid w-100 mx-auto d-block float-none float-xl-right yellow-highlight-left-bottom mb-4"> 
+            </div> 
+            <div class="col-10 col-xl-6 p-xl-3 mx-auto mx-xl-0"> 
+             <p class="dark-gray-text"> Additionally, MSTHS students will learn and gain experience through hands-on clinical studies with local researchers in our Experiential Learning Placement course. </p> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="carousel-item"> 
+           <div class="row justify-content-center p-4"> 
+            <div class="col-10 col-md-5 col-xl-4 mx-auto mx-xl-0 my-auto mb-3 ml-xl-3"> 
+             <img alt="Group of female students working in lab" src="https://img02.en25.com/Web/UniversityofWindsor/{b036310d-c356-4fa1-bd0e-e3f1742ba9ba}_group-of-female-students-working-in-lab.jpg" class="img-fluid w-100 mx-auto d-block float-none float-xl-right yellow-highlight-left-bottom mb-4"> 
+            </div> 
+            <div class="col-10 col-xl-6 p-xl-3 mx-auto mx-xl-0"> 
+             <p class="dark-gray-text"> Program graduates will have the training and knowledge necessary to become active and successful contributors to the many health industries related to translational health sciences. </p> 
+            </div> 
+           </div> 
+          </div> 
+         </div> <!-- Left and right controls --> <a class="carousel-control-prev justify-content-start pl-1" href="#master-of-science-in-translational-health-sciences-highlights" role="button" data-slide="prev"> <span class="carousel-control-prev-icon mr-sm-5" aria-hidden="true" style="filter: invert(100%);"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next justify-content-end pr-1" href="#master-of-science-in-translational-health-sciences-highlights" role="button" data-slide="next" style="filter: invert(100%);"> <span class="carousel-control-next-icon ml-sm-5" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> 
+        </div> 
+       </div> <!-- Admission Requirements Location Drop Down --> 
+       <div class="admission-requirements-by-location yellow-content-region mt-5"> 
+        <div class="admission-requirements-by-location-options"> 
+         <div class="canada-dropdown-content"> 
+          <h3 class="small-text">Admission Requirements</h3> 
+          <hr class=""> <!--Domestic Program Admission Requirements, Disclaimers, Equilvalence--> 
+          <ul class="fancy-list-gray"> 
+           <li class="pt-0">Two letters of reference (academic reference(s) or referee(s) that can speak to the pursuit of your academic credential e.g. Co-op supervisor).</li> 
+           <li>Students are required to be available for in-person instruction and clinical placements.</li> 
+           <li><strong>English proficiency requirements:</strong> IELTS 7.0 (with no IELTS band score less than 6.5) / TOEFL 94 IBT<br> View the <a href="https://www.uwindsor.ca/graduate-studies/1898/translational-health-sciences?elqTrackId=d4f28cc9be0d4e60bcab5a981c56ad9c&amp;elqaid=874&amp;elqat=2" target="_blank"><strong>Graduate Studies</strong></a> page for more information on admission requirements and English exemptions. </li> 
+           <li>Enrolment will be limited.</li> 
+          </ul> 
+          <br> 
+          <p class="small"> *<a href="https://future.uwindsor.ca/english-language-improvement-program?elqTrackId=a6b38a44732645abb15af680d3625d75&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=" target="_blank"><strong>English language improvement programs</strong></a> are available if you require extra training prior to entry into the academic program, or have received lower-than-required test scores.</p> 
+          <p class="d-none" style="display: block;"><small><sup>*</sup> Average over six Grade 12 academic courses.</small></p> 
+         </div> 
+        </div> 
+       </div> <a onclick="displayMessage()" class="float-left action-btn small-btn blue-btn mr-3" href="javascript:void(0);">Stay Connected</a> <a class="float-left action-btn small-btn yellow-btn" href="https://future.uwindsor.ca/apply-now?elqTrackId=3afb3cc602304757954221f9d1f155b8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=">Apply Now</a> 
+      </div> 
+      <div class="col-xl-5"> <iframe width="100%" height="315" src="https://www.youtube.com/embed/xsG2yutVsPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="d-none"></iframe> 
+       <div class="blue-banner uwindsor-crest-right-aligned-overlay blue-content-region mt-3"> 
+        <h3 class="small-text yellow-text">PROGRAM DETAILS</h3> 
+        <p class="white-text"><strong>Program Length:</strong> 3 Semesters (12 months) <br> <strong>Program Delivery:</strong> Face to Face<br> <strong>Faculty:</strong> Science &amp; Nursing <br> <strong>Intake:</strong> May (No Fall or Winter Intakes)<br> <strong>Deadline:</strong> April 1st for Domestic Students; March 1st for International Students) </p> 
+       </div> 
+       <div class="light-gray-content-region outdented-image-region mr-5 d-none"> 
+        <img alt="Jessica Garant" src="https://img02.en25.com/Web/UniversityofWindsor/{18228bb6-2c67-47c5-b0d4-0d6f33894fe3}_aeronautics-jessica-garant.jpg" class="round-image student-recruiter-image"> 
+        <p>"The Aeronautics program has provided me with a well-rounded education and leadership skills that I will take with me as I pursue my dream of flying for a commercial airline.”</p> 
+        <p><strong>Jessica Garant</strong> <br> BA (Honours) in Liberal Arts and Professional Studies: Aeronautics Leadership</p> 
+       </div> 
+       <div id="career-track-common-sectors" class=""> 
+        <div class="gray-banner content-region uwindsor-crest-right-aligned-overlay p-3"> 
+         <h2 class="small-text yellow-text pt-2 text-uppercase">Career Tracks</h2> 
+         <ul class="fancy-list-white"> 
+          <li class="pt-0">Doctor</li> 
+          <li>Health-Care Administrator</li> 
+          <li>Health and Safety Coordinator</li> 
+          <li>Genetic counsellor</li> 
+          <li>Lab technician</li> 
+          <li>Laboratory supervisor</li> 
+          <li>Medical director</li> 
+          <li>Medical researcher</li> 
+          <li>Medical writer</li> <span class="dots"></span> <span class="more-btn"> <li>Pharmacist</li> <li>Physician</li> <li>Policy advisor</li> <li>Professor</li> <li>Project manager</li> <li>Public health educator</li> <li>Research co-ordinator</li> <li>Environmental consultant</li> </span> 
+         </ul> 
+         <br class="clear"> <button onclick="toggleMore(this)" class="my-Btn btn blue-btn">Read more</button> 
+         <br class="clear"> 
+        </div> 
+       </div> 
+       <div class="box-shadow mt-3"> 
+        <div class="clear"> <a href="https://www.youtube.com/watch?v=2AqyJcybknQ&amp;elqTrackId=33d6d443cf6a450b98408087730eebbe&amp;elqaid=874&amp;elqat=2" target="_blank" class="campus-tour-banner essex-hall-of-research-core" alt="MSTHS Program Overview"></a> 
+        </div> <a href="https://www.youtube.com/watch?v=2AqyJcybknQ&amp;elqTrackId=5b1d18ffc36f4ccc9222dfe7dcec6dff&amp;elqaid=874&amp;elqat=2" target="_blank" class="blue-link-box"><span class="arrow">MSTHS Program Overview</span></a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--World Class Faculty--> 
+  <div class="blue-banner uwindsor-crest-right-aligned-overlay"> 
+   <div id="world-class-faculty" class="generic content-region welcome-centre-blur-lg"> 
+    <h1 class="yellow-text big-text text-center mb-5">World-Class Faculty</h1> 
+    <div id="world-class-faculty-carousel" class="carousel slide base-carousel mb-5" data-interval="false"> 
+     <ol class="carousel-indicators" style="filter: invert(100%);"> 
+      <li data-target="#world-class-faculty-carousel" data-slide-to="0" class="active"></li> 
+      <li data-target="#world-class-faculty-carousel" data-slide-to="1"></li> 
+     </ol> 
+     <div class="carousel-inner"> <!--Dr. Martin Crozier--> 
+      <div class="carousel-item p-4 active"> 
+       <div class="row "> 
+        <div class="col-6 col-xl-4 mx-auto mx-xl-0 mb-3"> 
+         <div class="px-xl-5"> 
+          <img src="https://img02.en25.com/Web/UniversityofWindsor/{43a42090-a098-4889-9067-5ed567aea55b}_martin-crozier.jpg" alt="Dr. Martin Crozier" class="round-image w-50 mx-auto mb-3 d-block float-none float-xl-right"> 
+         </div> 
+        </div> 
+        <div class="col-12 col-md-8 col-xl-6 p-4 mx-auto mx-xl-0 light-gray-bg"> 
+         <h3 class="dark-gray-text  pt-3">Dr. Martin Crozier</h3> 
+         <p class="dark-gray-text">Assistant Professor, Translational Health Science,<br>MSTHS Program Coordinator</p> 
+         <p class="dark-gray-text mb-xl-3">Thank you for taking time to learn more about our MSTHS program. As the program coordinator I am happy to answer any questions you might have. Feel free to reach out and contact me at <a href="mailto:mcrozier@uwindsor.ca"><strong>mcrozier@uwindsor.ca</strong></a>, or <a href="https://www.uwindsor.ca/science/biomedical-sciences/333/msc-translational-health-science-ths?elqTrackId=ade1bf3905354553bf0a5dd77a1323d8&amp;elqaid=874&amp;elqat=2" target="_blank"><strong>visit our program’s homepage to learn more about MSTHS</strong></a>.</p> 
+        </div> 
+       </div> 
+      </div> <!--Dr. Andrew Hubberstey--> 
+      <div class="carousel-item p-4"> 
+       <div class="row "> 
+        <div class="col-6 col-xl-4 mx-auto mx-xl-0 mb-3"> 
+         <div class="px-xl-5"> 
+          <img src="https://img02.en25.com/Web/UniversityofWindsor/{2707387a-2e78-4d95-b31e-8b57e089493d}_andrew-hubberstey.jpg" alt="Dr. Andrew Hubberstey" class="round-image w-50 mx-auto mb-3 d-block float-none float-xl-right"> 
+         </div> 
+        </div> 
+        <div class="col-12 col-md-8 col-xl-6 p-4 mx-auto mx-xl-0 light-gray-bg"> 
+         <h3 class="dark-gray-text  pt-3">Dr. Andrew Hubberstey</h3> 
+         <p class="dark-gray-text">Biomedical Science Department Chair</p> 
+         <p class="dark-gray-text mb-xl-3">The Department of Biomedical Sciences is excited about this novel MSc program which will link our graduate students with local clinical health research partners.</p> 
+         <p class="dark-gray-text mb-xl-3">Students will gain experience in relating basic and clinical research and learn how to analyze health related data and as a one-year MSc degree, this program will appeal to students with interests in health related careers or future health professional degrees.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> <a class="carousel-control-prev d-none d-md-flex" href="#world-class-faculty-carousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(100%);"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next d-none d-md-flex" href="#world-class-faculty-carousel" role="button" data-slide="next" style="filter: invert(100%);"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> 
+    </div> 
+   </div> 
+  </div> <!--Program Objectives & Courses--> 
+  <div id="career-your-oportunities" class="generic"> 
+   <div class="gray-banner content-region dillon-hall-gray-overlay-fixed important-dates"> 
+    <div class="container"> 
+     <div class="row"> <!--Program Objectives--> 
+      <div class="col-xl-6"> 
+       <h2 class="big-text yellow-text">Program Objectives</h2> 
+       <ul class="fancy-list-white"> 
+        <li>Successfully launch the careers of students as health professionals and/or research scientists by providing advanced skills in translating health care research.</li> 
+        <li>Prepare culturally and ethically responsive students who can think critically and translate evidence into practice in a health care setting.</li> 
+        <li>Produce student-led scholarship that impacts the health and wellness of individuals and communities.</li> 
+        <li>Foster strong partnerships between our local academic and clinical research institutions (e.g., the Faculty of Science, the Faculty of Nursing, Windsor Regional Hospital, Windsor Cancer Research Group, WE Spark Health Institute, St. Clair College, etc.).</li> 
+       </ul> 
+      </div> <!--Courses--> 
+      <div class="col-xl-6"> 
+       <h2 class="big-text yellow-text">Courses</h2> 
+       <div class="accordion mb-3" id="accordion-courses-accordion"> <!--Required Courses--> 
+        <div class="card"> 
+         <div class="card-header" id="heading-required-courses-accordion"> 
+          <h5 class="mb-0"> <button class="btn btn-link text-uppercase" data-target="#collapse-required-courses-accordion" data-toggle="collapse" type="button">Required Courses</button> </h5> 
+         </div> 
+         <div class="collapse explore-opportunities" data-parent="#accordion-required-courses-accordion" id="collapse-required-courses-accordion"> 
+          <div class="card-body white-banner"> 
+           <p class="dark-gray-text"><strong>Six (6) required courses including:</strong><br> <strong>BIOM 8710</strong>. Cancer Cell Biology (new course, three credits)<br> <strong>NURS-8830</strong>. Research Methods in Nursing (three credits)<br> <strong>NURS-8820</strong>. Advanced Statistics (three credits)<br> <strong>BIOM-8720</strong>. Fundamentals of Oncology (new course, three credits)<br> <strong>BIOM-8700</strong>. Professional Development Seminar in Translational Health Sciences (new course, one credit), students must enroll in this course in Summer, Fall, and Winter for one hour per week over three terms at 12 weeks/term, or 36 hours in total)<br> <strong>BIOM-8705</strong>. Experiential Learning Placement in Translational Health Sciences (new course, nine credits). Students must enroll in this course in Summer, Fall, and Winter; 9 credits/semester are as follows. 6 hours/wk. in clinic (weekly breakdown arranged in agreement with clinician and student(s)); 1 hour/wk. with clinician in reviewing project data and plan; 2 hours/wk. developing progress reports, addressing pitfalls, working on monthly report presentation and final report presentations; supervised by course instructor (see “Notes on New Courses” below and the course syllabus Appendix F). 6 hours in experiential learning placement/wk. X 12 wks./semester = 72 hours/semester. 72 hours/semester X 3 semester =216 hours of experiential learning placement, in a clinical research environment at Windsor Regional Hospital. The remaining 3 hours/wk. are spent in meetings with the supervising clinician and course instructor, to review progress and develop presentations associated with progression through the placement as described above. </p> 
+          </div> 
+         </div> 
+        </div> <!--Elective Courses--> 
+        <div class="card"> 
+         <div class="card-header" id="heading-elective-courses-accordion"> 
+          <h5 class="mb-0"> <button class="btn btn-link text-uppercase" data-target="#collapse-elective-courses-accordion" data-toggle="collapse" type="button">Elective Courses</button> </h5> 
+         </div> 
+         <div class="collapse explore-opportunities" data-parent="#accordion-elective-courses-accordion" id="collapse-elective-courses-accordion"> 
+          <div class="card-body white-banner"> 
+           <p class="dark-gray-text"><strong>Two elective courses selected from the following:</strong><br> <strong>BIOL-8008</strong>. Special Topics in Biological Sciences (Medical Genomics (three credits))<br> <strong>BIOL-8008</strong>. Special Topics in Biological Sciences (Tumour Immunology and Immunotherapy (three credits))<br> <strong>BIOC-8684</strong>. Cell Death and Diseases (three credits)<br> <strong>COMP-8580</strong>. Topics in Bioinformatics (three credits)<br> and many more. </p> 
+          </div> 
+         </div> 
+        </div> <!--Notes on New Courses--> 
+        <div class="card"> 
+         <div class="card-header" id="heading-notes-on-new-courses-accordion"> 
+          <h5 class="mb-0"> <button class="btn btn-link text-uppercase" data-target="#collapse-notes-on-new-courses-accordion" data-toggle="collapse" type="button">Notes on New Courses</button> </h5> 
+         </div> 
+         <div class="collapse explore-opportunities" data-parent="#accordion-notes-on-new-courses-accordion" id="collapse-notes-on-new-courses-accordion"> 
+          <div class="card-body white-banner"> 
+           <p class="dark-gray-text"> In the Professional Development Seminar course, students will work in groups to complete assignments developing creative solutions to challenges in translational health sciences. Students will also create an individual reflective portfolio that will document and track their progress in meeting the Program Learning Outcomes, as well as document their examination of and preparation for a variety of career pathways. </p> 
+           <p class="dark-gray-text"> In the Experiential Learning Placement course, students will work in groups on a translational health science research project, together with a research advisor (e.g., academic faculty or health care professional) and the Program Coordinator. At the start of the course, students will review research projects proposed by research advisors and rank these projects based upon their personal preferences and interests. Subsequently, the course instructor will consult students and research advisors to match their interests and needs. The course instructor will then connect groups of students with their research advisors and they will begin their placement. Using the project proposed by the research advisor as a starting point, each student group will then develop a research project proposal that will require them to apply their knowledge to select a study design, research methods, and obtain any regulatory approvals. The 216-hour placement will give students practical experience in many diverse aspects of clinical research that may include interacting with patients, complying with regulatory requirements, collecting data, analyzing data, and collaborating with diverse groups of scientists and health care professionals. Student will gain experience with both written and oral communication through the culminating final research report and scientific poster presentation at the program colloquium that will conclude the Experiential Learning Placement course. Students will spend approximately 72 hours per semester at their placement (72 hours/semester x 3 semesters = 216 hours) which equates to approximately 6 hours per week at their placement over the course of a 12-week semester. The requirement of the research project and needs of the research advisor will dictate whether students complete six hours/day/week at their placement or whether these six hours will be divided across multiple days. </p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="form-row action-btns"> <a onclick="displayMessage()" class="float-left action-btn small-btn blue-btn mr-3" href="javascript:void(0);">Stay Connected</a> <a class="float-left action-btn small-btn yellow-btn" href="https://future.uwindsor.ca/apply-now?elqTrackId=3afb3cc602304757954221f9d1f155b8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=">Apply Now</a> 
+     </div> 
+     <br class="clear"> 
+    </div> 
+   </div> 
+  </div> <!--Learn More Form--> 
+  <div id="connect-with-uwindsor" class="content-region light-blue-banner uwindsor-crest-right-aligned-overlay  "> 
+   <div class="container text-center"> 
+    <h2 class="big-text dark-blue-text">Learn More</h2> 
+    <p class="dark-blue-text">Sign up to receive more information about the University of Windsor!</p> 
+    <div class="row"> 
+     <div class="col-xl-8 mx-auto "> 
+      <div elqid="89" elqtype="UserForm" elqformname="UntitledForm-1560448838907">
+       <form method="post" name="UntitledForm-1560448838907" action="https://future.uwindsor.ca/e/f2?LP=874" onsubmit="return handleFormSubmit(this)" id="form89" class="elq-form">
+        <input value="UntitledForm-1560448838907" type="hidden" name="elqFormName">
+        <input value="127504789" type="hidden" name="elqSiteId">
+        <input name="elqCampaignId" type="hidden">
+        <div class="layout container-fluid">
+         <div class="row">
+          <div class="grid-layout-col">
+           <div class="layout-col col-sm-6 col-xs-12">
+            <div id="formElement0" class="elq-field-style form-element-layout row">
+             <div style="text-align:left;" class="col-sm-12 col-xs-12">
+              <label class="elq-label " for="fe1111">First Name<span class="elq-required">*</span></label>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+              <div class="row">
+               <div class="col-xs-12">
+                <div class="field-control-wrapper">
+                 <input type="text" class="elq-item-input" name="firstName" id="fe1111" value="" style="width:100%;">
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="grid-layout-col">
+           <div class="layout-col col-sm-6 col-xs-12">
+            <div id="formElement1" class="elq-field-style form-element-layout row">
+             <div style="text-align:left;" class="col-sm-12 col-xs-12">
+              <label class="elq-label " for="fe1112">Last Name<span class="elq-required">*</span></label>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+              <div class="row">
+               <div class="col-xs-12">
+                <div class="field-control-wrapper">
+                 <input type="text" class="elq-item-input" name="lastName" id="fe1112" value="" style="width:100%;">
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="row">
+          <div class="grid-layout-col">
+           <div class="layout-col col-sm-12 col-xs-12">
+            <div id="formElement2" class="elq-field-style form-element-layout row">
+             <div style="text-align:left;" class="col-sm-12 col-xs-12">
+              <label class="elq-label " for="fe1113">Email Address<span class="elq-required">*</span></label>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+              <div class="row">
+               <div class="col-xs-12">
+                <div class="field-control-wrapper">
+                 <input type="text" class="elq-item-input" name="emailAddress" id="fe1113" value="" style="width:100%;">
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="row">
+          <div class="grid-layout-col">
+           <div class="layout-col col-sm-12 col-xs-12">
+            <div id="formElement3" class="elq-field-style form-element-layout row">
+             <div class="col-sm-12 col-xs-12">
+              <div class="row">
+               <div class="col-xs-12">
+                <div>
+                 <input type="Submit" class="submit-button-style " value="Enquire Now" id="fe1114">
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <input type="hidden" name="primaryInterest" id="fe1115" value="">
+         <input type="hidden" name="degreeInterest" id="fe1288" value="">
+         <input type="hidden" name="sourceField" id="fe1307" value="Program Page">
+         <input type="hidden" name="sourceType" id="fe1308" value="Form">
+        </div>
+       </form>
+       <script type="text/javascript" src="https://img02.en25.com/i/livevalidation_standalone.compressed.js"></script>
+       <script>function handleFormSubmit(ele) { var submitButton = ele.querySelector('input[type=submit]'); var spinner = document.createElement('span'); spinner.setAttribute('class', 'loader'); submitButton.setAttribute('disabled', true); submitButton.style.cursor = 'wait'; submitButton.parentNode.appendChild(spinner); return true; }function resetSubmitButton(e){ var submitButtons = e.target.form.getElementsByClassName('submit-button'); for(var i=0;i<submitButtons.length;i++){  submitButtons[i].disabled = false; }  }function addChangeHandler(elements){  for(var i=0; i<elements.length; i++){   elements[i].addEventListener('change', resetSubmitButton); }  }var form = document.getElementById('form89'); addChangeHandler(form.getElementsByTagName('input')); addChangeHandler(form.getElementsByTagName('select')); addChangeHandler(form.getElementsByTagName('textarea'));var nodes = document.querySelectorAll('#form89 input[data-subscription]');  if (nodes) { for (var i = 0, len = nodes.length; i < len; i++) {var status = nodes[i].dataset ? nodes[i].dataset.subscription : nodes[i].getAttribute('data-subscription'); if(status ==='true') {nodes[i].checked = true;}}};var nodes = document.querySelectorAll('#form89 select[data-value]');   if (nodes) { for (var i = 0; i < nodes.length; i++) { var node = nodes[i]; var selectedValue = node.dataset ? node.dataset.value : node.getAttribute('data-value'); if (selectedValue) { for (var j = 0; j < node.options.length; j++) { if(node.options[j].value === selectedValue) { node.options[j].selected = 'selected';break;}}}}}this.getParentElement = function(list) { return list[list.length-1].parentElement};var dom2 = document.querySelector('#form89 #fe1111');var fe1111 = new LiveValidation(dom2, {validMessage: "", onlyOnBlur: false, wait: 300});fe1111.add(Validate.Custom, {against: function(value) {return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);}, failureMessage: "Value must not contain any URL's"});fe1111.add(Validate.Custom, {against: function(value) {return !value.match(/(<([^>]+)>)/ig);}, failureMessage: "Value must not contain any HTML"});fe1111.add(Validate.Length, {tooShortMessage:"Invalid length for field value", tooLongMessage: "Invalid length for field value",  minimum: 2, maximum: 35});fe1111.add(Validate.Presence, {failureMessage:"This field is required"});var dom3 = document.querySelector('#form89 #fe1112');var fe1112 = new LiveValidation(dom3, {validMessage: "", onlyOnBlur: false, wait: 300});fe1112.add(Validate.Custom, {against: function(value) {return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);}, failureMessage: "Value must not contain any URL's"});fe1112.add(Validate.Custom, {against: function(value) {return !value.match(/(<([^>]+)>)/ig);}, failureMessage: "Value must not contain any HTML"});fe1112.add(Validate.Length, {tooShortMessage:"Invalid length for field value", tooLongMessage: "Invalid length for field value",  minimum: 2, maximum: 35});fe1112.add(Validate.Presence, {failureMessage:"This field is required"});var dom4 = document.querySelector('#form89 #fe1113');var fe1113 = new LiveValidation(dom4, {validMessage: "", onlyOnBlur: false, wait: 300});fe1113.add(Validate.Presence, {failureMessage:"This field is required"});fe1113.add(Validate.Format, {pattern: /(^[A-Z0-9!#\$%&'\*\+\-\/=\?\^_`\{\|\}~][A-Z0-9!#\$%&'\*\+\-\/=\?\^_`\{\|\}~\.]{0,62}@(([A-Z0-9](?:[A-Z0-9\-]{0,61}[A-Z0-9])?)(\.[A-Z0-9](?:[A-Z0-9\-]{0,61}[A-Z0-9])?)+)$)/i, failureMessage: "A valid email address is required"});fe1113.add(Validate.Format, {pattern: /\.\.|\.@/i, failureMessage: "A valid email address is required", negate: "true"});</script>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--Current Marketing Push Safety Net--> 
+  <div class="generic"> 
+   <div class="blue-banner content-region riverfront-ambassadoe-bridge-blur"> 
+    <div class="container"> 
+     <div class="row mb-0 mb-lg-5 flex-column-reverse flex-md-row justify-content-between"> 
+      <div class="col-xl-5 pr-xl-5 mb-5 my-auto ml-xl-5"> 
+       <h3 class="big-text-no-cap yellow-text">Apply to<br> UWindsor <img src="https://img02.en25.com/Web/UniversityofWindsor/{30e42246-bfd6-424f-8d10-2ba64dc960a6}_light-blue-arrows-sm-right@2x.png" style="width: 60px;"></h3> 
+       <h4 class="small-text white-text">Step by step: <span class="yellow-text">How to Apply</span></h4> 
+       <hr class="white-hr"> 
+       <p class="white-text mb-4">Applying to a program can be a confusing process, we made this page to help you along the way. If at any point you need help feel free to reach out to us through <a class="yellow-text" href="https://ask.uwindsor.ca?elqTrackId=686b876f1e9f4b9e9ca8e35aecdfe3ed&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><strong>ask.UWindsor</strong></a>.</p> <a class="action-btn bright-blue-btn mr-2 ml-0" href="https://future.uwindsor.ca/apply-now?elqTrackId=47d2ecf933564a2ea1cf93dc2d42e196&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank">Apply</a> <a class="action-btn white-outline-btn mx-2" href="https://future.uwindsor.ca/program-listing?elqTrackId=75a33f85fb4941789cee4a807f470c5c&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank">Programs</a>
+      </div> 
+      <div class="col-xl-6 text-center mb-5">
+       <a href="https://future.uwindsor.ca/apply-now?elqTrackId=cde7c31b28314f34905b83724e985a90&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><img alt="Student applying to UWindsor on laptop" class="img-fluid " src="https://img02.en25.com/Web/UniversityofWindsor/{aa9b7dbe-dbdb-450c-bc68-4781152481b8}_student-applying-to-uwindsor-on-laptop.png"> </a>
+      </div> 
+     </div> 
+     <div class="row mb-3 mb-lg-5 justify-content-between"> 
+      <div class="col-xl-6 text-center mb-5">
+       <a href="https://future.uwindsor.ca/connect?elqTrackId=42aafc648ba5422dad79d0603b0be0dc&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><img alt="Student talking with a professor at a virtual event" class="img-fluid " src="https://img02.en25.com/Web/UniversityofWindsor/{df0fd4be-4363-4549-9f8d-c31bb653c3c1}_virtual-events-webinars-bubbles.png"></a> <a class="d-none" href="https://future.uwindsor.ca/new-student-registration-days?elqTrackId=a951ae59a1714299adec274b882ffd95&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><img alt="New Student Registration Days - June 16, 17 amd 19, 2021" class="img-fluid" src="https://img02.en25.com/Web/UniversityofWindsor/{32fab215-03c9-4213-b80e-beb16fdb8991}_NEW-FOOTER-NSRD.png"></a>
+      </div> 
+      <div class="col-xl-5 pr-xl-5 text-lg-right my-auto"> 
+       <h3 class="big-text-no-cap yellow-text "><img class="pr-xl-2 d-none d-xl-inline-block" src="https://img02.en25.com/Web/UniversityofWindsor/{2976cdeb-ff25-4b2c-aae7-290717a3859e}_light-pink-arrows-sm-left@2x.png" style="width: 60px;"> Events &amp;<br class="clear"> Webinars <img class="pr-xl-2 d-inline-block d-xl-none" src="https://img02.en25.com/Web/UniversityofWindsor/{5bbcfad8-afc9-404b-aa4d-791e38e2a958}_light-pink-arrows-sm-right@2x.png" style="width: 60px;"></h3> 
+       <hr class="white-hr"> 
+       <ul class="fancy-list-white"> 
+        <li><a class="white-text" href="https://future.uwindsor.ca/connect?elqTrackId=2229c406b22a407084e0dc619e251292&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><strong class="bright-blue-text">Connect With Us:</strong> Attend a webinar, book an appointment with a student recruiter or sign-up for an upcoming event!</a></li> 
+        <li><a class="white-text" href="https://future.uwindsor.ca/virtual-tours?elqTrackId=b2f956edd5cc4c28a78d8608ab0803f6&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><strong class="bright-blue-text">Guided Virtual Tour:</strong> Take a campus tour with a current UWindsor Student</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="row flex-column-reverse flex-md-row justify-content-between"> 
+      <div class="col-xl-5 pr-xl-5 ml-xl-5"> 
+       <h3 class="big-text-no-cap yellow-text">Questions?<br> Need Help? <img src="https://img02.en25.com/Web/UniversityofWindsor/{30e42246-bfd6-424f-8d10-2ba64dc960a6}_light-blue-arrows-sm-right@2x.png" style="width: 60px;"></h3> 
+       <h4 class="small-text white-text">There are multiple ways to connect with UWindsor to ask questions</h4> 
+       <hr class="white-hr"> 
+       <ul class="fancy-list-white"> 
+        <li><a class="white-text" href="https://outlook.office365.com/owa/calendar/StudentRecruitmentBookings@uwindsor.ca/bookings/" target="_blank"><strong class="bright-blue-text">Virtual Coffee with a Student Recruiter:</strong> Make an appointment to talk with a Student Recruiter</a></li> 
+        <li><a class="white-text" href="http://ask.uwindsor.ca/app/chat/chat_launch?elqTrackId=f6337646222d4e11b59cf10e79827fb6&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><strong class="bright-blue-text">ask.UWindsor Live Chat:</strong> Ask our Student Recruitment team questions in real time</a></li> 
+        <li><a class="white-text" href="http://ask.uwindsor.ca/?elqTrackId=db6541d5d96c4928aaf8dcb0186f0ae8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><strong class="bright-blue-text">ask.UWindsor:</strong> Search our knowledge base articles for answers to commonly asked questions</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-xl-6 text-center">
+       <a href="http://ask.uwindsor.ca/?elqTrackId=ad4d80a9d4044f2c8e59af44c4bacf97&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqCampaignId=&amp;elqcst=272&amp;elqcsid=1527" target="_blank"><img alt="Student talking with a Student Recruiter through video chat" class="img-fluid" src="https://img02.en25.com/Web/UniversityofWindsor/{46c3403e-d1b6-42e7-9916-89fef87c871f}_connect-with-uwindsor-bubbles.png"></a>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!-- Program Interest Modal --> 
+  <div id="program-page-form" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true" data-keyboard="true"> 
+   <div class="modal-dialog modal-lg"> <!-- Modal content--> 
+    <div class="modal-content dark-gray-text-form program-rfi-form-dialog"> 
+     <div class="modal-header d-none"> <button type="button" class="close" data-dismiss="modal">×</button> 
+      <h2 class="modal-title">Let's Talk About the Master of Science in Translational Health Sciences Program</h2> 
+     </div> 
+     <div class="modal-body p-0"> 
+      <div class="row"> 
+       <div class="col-xl-6 float-xl-right p-4 program-rfi-form-dialog-image-holder"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <img class="col-6 col-xl-10 mx-auto mt-0 mt-xl-5 d-none" style="z-index: -100;" src="https://img02.en25.com/Web/UniversityofWindsor/{8fc38f56-6d9e-44bb-9f3e-35cc95ff93fd}_viewbook-3d-model.png" alt="UWindsor Viewbook"> 
+       </div> 
+       <div class="col-xl-6 float-xl-left p-4"> 
+        <h2 class="small-text blue-text">Let's Talk About the Master of Science in Translational Health Sciences Program</h2> 
+        <p>We’re here to help you along the way. Contact us to learn more about our program options.</p> 
+        <div elqid="89" elqtype="UserForm" elqformname="UntitledForm-1560448838907">
+         <form method="post" name="UntitledForm-1560448838907" action="https://future.uwindsor.ca/e/f2?LP=874" onsubmit="return handleFormSubmit(this)" id="form89" class="elq-form">
+          <input value="UntitledForm-1560448838907" type="hidden" name="elqFormName">
+          <input value="127504789" type="hidden" name="elqSiteId">
+          <input name="elqCampaignId" type="hidden">
+          <div class="layout container-fluid">
+           <div class="row">
+            <div class="grid-layout-col">
+             <div class="layout-col col-sm-6 col-xs-12">
+              <div id="formElement0" class="elq-field-style form-element-layout row">
+               <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                <label class="elq-label " for="fe1111">First Name<span class="elq-required">*</span></label>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="row">
+                 <div class="col-xs-12">
+                  <div class="field-control-wrapper">
+                   <input type="text" class="elq-item-input" name="firstName" id="fe1111" value="" style="width:100%;">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="grid-layout-col">
+             <div class="layout-col col-sm-6 col-xs-12">
+              <div id="formElement1" class="elq-field-style form-element-layout row">
+               <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                <label class="elq-label " for="fe1112">Last Name<span class="elq-required">*</span></label>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="row">
+                 <div class="col-xs-12">
+                  <div class="field-control-wrapper">
+                   <input type="text" class="elq-item-input" name="lastName" id="fe1112" value="" style="width:100%;">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="row">
+            <div class="grid-layout-col">
+             <div class="layout-col col-sm-12 col-xs-12">
+              <div id="formElement2" class="elq-field-style form-element-layout row">
+               <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                <label class="elq-label " for="fe1113">Email Address<span class="elq-required">*</span></label>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="row">
+                 <div class="col-xs-12">
+                  <div class="field-control-wrapper">
+                   <input type="text" class="elq-item-input" name="emailAddress" id="fe1113" value="" style="width:100%;">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="row">
+            <div class="grid-layout-col">
+             <div class="layout-col col-sm-12 col-xs-12">
+              <div id="formElement3" class="elq-field-style form-element-layout row">
+               <div class="col-sm-12 col-xs-12">
+                <div class="row">
+                 <div class="col-xs-12">
+                  <div>
+                   <input type="Submit" class="submit-button-style " value="Enquire Now" id="fe1114">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <input type="hidden" name="primaryInterest" id="fe1115" value="">
+           <input type="hidden" name="degreeInterest" id="fe1288" value="">
+           <input type="hidden" name="sourceField" id="fe1307" value="Program Page">
+           <input type="hidden" name="sourceType" id="fe1308" value="Form">
+          </div>
+         </form>
+         <script type="text/javascript" src="https://img02.en25.com/i/livevalidation_standalone.compressed.js"></script>
+         <script>function handleFormSubmit(ele) { var submitButton = ele.querySelector('input[type=submit]'); var spinner = document.createElement('span'); spinner.setAttribute('class', 'loader'); submitButton.setAttribute('disabled', true); submitButton.style.cursor = 'wait'; submitButton.parentNode.appendChild(spinner); return true; }function resetSubmitButton(e){ var submitButtons = e.target.form.getElementsByClassName('submit-button'); for(var i=0;i<submitButtons.length;i++){  submitButtons[i].disabled = false; }  }function addChangeHandler(elements){  for(var i=0; i<elements.length; i++){   elements[i].addEventListener('change', resetSubmitButton); }  }var form = document.getElementById('form89'); addChangeHandler(form.getElementsByTagName('input')); addChangeHandler(form.getElementsByTagName('select')); addChangeHandler(form.getElementsByTagName('textarea'));var nodes = document.querySelectorAll('#form89 input[data-subscription]');  if (nodes) { for (var i = 0, len = nodes.length; i < len; i++) {var status = nodes[i].dataset ? nodes[i].dataset.subscription : nodes[i].getAttribute('data-subscription'); if(status ==='true') {nodes[i].checked = true;}}};var nodes = document.querySelectorAll('#form89 select[data-value]');   if (nodes) { for (var i = 0; i < nodes.length; i++) { var node = nodes[i]; var selectedValue = node.dataset ? node.dataset.value : node.getAttribute('data-value'); if (selectedValue) { for (var j = 0; j < node.options.length; j++) { if(node.options[j].value === selectedValue) { node.options[j].selected = 'selected';break;}}}}}this.getParentElement = function(list) { return list[list.length-1].parentElement};var dom2 = document.querySelector('#form89 #fe1111');var fe1111 = new LiveValidation(dom2, {validMessage: "", onlyOnBlur: false, wait: 300});fe1111.add(Validate.Custom, {against: function(value) {return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);}, failureMessage: "Value must not contain any URL's"});fe1111.add(Validate.Custom, {against: function(value) {return !value.match(/(<([^>]+)>)/ig);}, failureMessage: "Value must not contain any HTML"});fe1111.add(Validate.Length, {tooShortMessage:"Invalid length for field value", tooLongMessage: "Invalid length for field value",  minimum: 2, maximum: 35});fe1111.add(Validate.Presence, {failureMessage:"This field is required"});var dom3 = document.querySelector('#form89 #fe1112');var fe1112 = new LiveValidation(dom3, {validMessage: "", onlyOnBlur: false, wait: 300});fe1112.add(Validate.Custom, {against: function(value) {return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);}, failureMessage: "Value must not contain any URL's"});fe1112.add(Validate.Custom, {against: function(value) {return !value.match(/(<([^>]+)>)/ig);}, failureMessage: "Value must not contain any HTML"});fe1112.add(Validate.Length, {tooShortMessage:"Invalid length for field value", tooLongMessage: "Invalid length for field value",  minimum: 2, maximum: 35});fe1112.add(Validate.Presence, {failureMessage:"This field is required"});var dom4 = document.querySelector('#form89 #fe1113');var fe1113 = new LiveValidation(dom4, {validMessage: "", onlyOnBlur: false, wait: 300});fe1113.add(Validate.Presence, {failureMessage:"This field is required"});fe1113.add(Validate.Format, {pattern: /(^[A-Z0-9!#\$%&'\*\+\-\/=\?\^_`\{\|\}~][A-Z0-9!#\$%&'\*\+\-\/=\?\^_`\{\|\}~\.]{0,62}@(([A-Z0-9](?:[A-Z0-9\-]{0,61}[A-Z0-9])?)(\.[A-Z0-9](?:[A-Z0-9\-]{0,61}[A-Z0-9])?)+)$)/i, failureMessage: "A valid email address is required"});fe1113.add(Validate.Format, {pattern: /\.\.|\.@/i, failureMessage: "A valid email address is required", negate: "true"});</script>
+        </div> 
+        <p class="gray-text mt-3 mb-0"><small>By submitting this form, you are giving your consent for the University of Windsor to contact you regarding our educational programs and services. You may unsubscribe at any time.</small></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="modal-footer d-none"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--Modal Video Player--> 
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="true" data-backdrop="static"> 
+   <div class="modal-dialog modal-video-dialog mw-100"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button> 
+     </div> 
+     <div class="modal-body"> <iframe frameborder="0" allowfullscreen allow="autoplay"></iframe> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--UWindsor Footer--> 
+  <div class="uwindsor-footer clear"> 
+   <div class="container"> 
+    <div class="uwindsor-footer-sheild">
+     <img alt="UWindsor Sheild" src="https://img02.en25.com/Web/UniversityofWindsor/{281b5ddf-d2a0-4f4d-96f9-2593a537cb40}_uwindsor-sheild.png">
+    </div> 
+    <div class="uwindsor-footer-col uwindsor-marketing-tag-line">
+     <img alt="Windsor Proud" src="https://img02.en25.com/Web/UniversityofWindsor/{7e60cf23-0bc1-4d1d-9f02-0dca74b222fd}_windsor-proud-round-word-mark-white.png" class="w-50">
+    </div> 
+    <div class="uwindsor-footer-col"> 
+     <ul> 
+      <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=191&amp;elqTrackId=0256490ea87744bebf22d88acf5cb183&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44">Contact Us</a></li> 
+      <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=190&amp;elqTrackId=122713f348e1445d8b62bfd40d2740a8&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44">University Directory</a></li> 
+      <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=189&amp;elqTrackId=042007c54843458d9090abbdfe33a565&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44">Accessibility</a></li> 
+     </ul> 
+    </div> 
+    <div class="uwindsor-footer-col"> 
+     <ul> 
+      <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=188&amp;elqTrackId=2c5c042207d94afd82f3080e07ca1a27&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44">News Services for Media</a></li> 
+      <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=187&amp;elqTrackId=cdbecbc035a24041860e4860dd40f84d&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44">UWindsor mobile apps</a></li> 
+      <li><a href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=186&amp;elqTrackId=b3fa31a34b0d4b7783fc364a5408f155&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44">Terms &amp; Conditions</a></li> 
+     </ul> 
+    </div> 
+    <div class="uwindsor-footer-col">
+     <a class="emergency-sercices-for-students" href="https://s127504789.t.en25.com/e/er?s=127504789&amp;lid=185&amp;elqTrackId=cd9701c08a5b439881751b1b8993b7f7&amp;elq=00000000000000000000000000000000&amp;elqaid=874&amp;elqat=2&amp;elqcst=272&amp;elqcsid=44"><strong>Emergency Services for Students</strong></a>
+    </div> 
+   </div> 
+  </div> <!-- Optional JavaScript --> <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script> <!--Header Drawer (Open/Collapse)--> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{bdcf3e69-4203-42cc-b68a-23175288ff6b}_header-drawer.js"></script> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{dea65e63-57cc-40f5-ae4e-79ebf5368c58}_addition-scripts.js"></script> <!--Modal Video Player--> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{16e9c3dc-2ff6-40d8-b676-31757ccfa8bb}_modal-video.js"></script> <!--Applicant Location for Admission Requirementsv--> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{3ec21fb0-b652-4822-9224-6002e64f2ece}_applicant-location.js"></script> 
+  <script>
+    $('input[name="primaryInterest"]').eq(0).val("Translational Health Sciences");
+    $('input[name="primaryInterest"]').eq(1).val("Translational Health Sciences");
+    $('input[name="degreeInterest"]').eq(0).val("Graduate");
+    $('input[name="degreeInterest"]').eq(1).val("Graduate");
+  </script> <!--Program Interest Form Modal--> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{01adf97d-e13d-44e4-8bd6-ad814cf17a96}_program-form-modal.js"></script> <!--Program Page Form Spambot Filterer || Date Implemented: Feb 12 2020 --> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{9861ddcf-5aae-48ac-8c18-dc3b387c2fb9}_program_page_spam_filter.js"></script> <!--Toggle More/Less Text--> 
+  <script src="https://img02.en25.com/Web/UniversityofWindsor/{e4fc1372-3c1e-43eb-b8ec-e98a9d28ae0c}_toggle-more.js"></script> <!-- Global site tag (gtag.js) - Google Analytics --> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168708564-1">		</script> 
+  <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-168708564-1');
+    </script>  
+  <img style="display:none" src="https://s127504789.t.eloqua.com/visitor/v200/svrGP?pps=60&amp;siteid=127504789&amp;PURLSiteID=4&amp;optin=disabled&amp;PURLSiteAlternateDNSID=0&amp;LandingPageID=874&amp;PURLRecordID=0&amp;PURLGUID=00000000000000000000000000000000&amp;UseRelativePath=True&amp;elq={00000000-0000-0000-0000-000000000000}&amp;firstPartyCookieDomain=tracking.uwindsor.ca&amp;elqGUID=00000000-0000-0000-0000-000000000000&amp;elq_ck=0&amp;elqTrackId=adc1771139fe4a068d7867fbbe357f6a&amp;elqaid=581&amp;elqat=2&amp;elqCampaignId=" border="0" width="1" height="1" alt="">
+ </body>
+</html>

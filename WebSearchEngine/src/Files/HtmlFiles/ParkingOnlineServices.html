@@ -1,0 +1,540 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
+ <head> 
+  <title>Parking Online Services</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="version" content="AIMS Web 9.0.22.114"> 
+  <meta name="copyright" content="2017 EDC Corporation"> 
+  <link rel="stylesheet" type="text/css" href="https://parkingonline.uwindsor.ca/resources/index.php?cmd=get_css&amp;css=common.css&amp;version=726ba550bd1a3179d7fad15b40478b99"> 
+  <link rel="stylesheet" type="text/css" href="https://parkingonline.uwindsor.ca/resources/index.php?cmd=get_css&amp;css=tickets.ticket_search.css&amp;version=726ba550bd1a3179d7fad15b40478b99"> 
+  <style type="text/css">
+    body, #header {
+  background-color: #001221;
+  background-image: linear-gradient(to right, #000910 0%, #002F52 25%, #002F52 75%, #000910 100%);
+}
+
+#header #upper_header #upper_left_header .title_only_header .line_1 {
+  color: #fff;
+  font-size: 40px;
+}
+
+.panel-body {
+  max-height: 375px;
+  overflow-y: scroll;
+}
+
+#news_feed .panel-body {
+  max-height: 375px;
+  overflow-y: scroll;
+}
+
+#login_content.multiple .nav-pills>li>a .login_type_tab_title {
+  color: #ffffff;
+}
+
+#login_content.multiple .login_method .login_method_label {
+  color: #ffffff;
+}
+
+#login_content .login_type>form label {
+  color: #ffffff;
+}
+
+#login_content .login_type h2 {
+  color: #ffffff;
+}
+
+.nav-pills .active .icon>.sprite-image {
+    background-image: url("https://parkprodweb2.uwindsor.ca/resources/index.php?cmd=get_spritesheet&color=%23000000");
+}
+
+.nav-pills .icon>.sprite-image {
+    background-image: url("https://parkprodweb2.uwindsor.ca/resources/index.php?cmd=get_spritesheet&color=%23FFFFFF");
+}
+
+#account_menu_label, #vehicles_menu_label, #tickets_menu_label, #permits_menu_label, #fees_menu_label {
+  color:#ffffff;
+}
+
+.active #account_menu_label, .active #vehicles_menu_label, .active #tickets_menu_label, .active #permits_menu_label, .active #fees_menu_label{
+  color:#000;
+}
+
+#main_content {
+  color:#ffffff;
+}
+
+.datepicker-switch, .next, .prev {
+  color: #000;
+}
+
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: #001e35;
+}
+
+td, .panel-body, .modal {
+  color: #555555;
+}
+
+#permit_detail>div>a>h2, #ticket_detail>div>a>h2 {
+  color:#ffffff;
+}
+
+tfoot, #vehicles_view .vehicle_box{
+  color:#ffffff;
+}
+
+.text-success {
+    color: #00CE0E;
+}
+
+#home_screen .shortcut_buttons_container {
+  min-height: 195px;
+}
+
+form .radio_group, form .checkbox_group>.checkbox_item, tfoot>tr>td {
+  color:#ffffff;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+   background-color: #ffffff;
+}</style> 
+  <script type="text/javascript">
+    var URL_ROOT = 'https://parkingonline.uwindsor.ca/';
+    </script> 
+  <link rel="shortcut icon" type="image/png" href="https://parkingonline.uwindsor.ca/resources/index.php?cmd=get_favicon"> 
+ </head> 
+ <body> <a class="skip_to_main_content btn btn-primary" href="#main_content"> Skip to main content</a> 
+  <header aria-label="Page Header"> 
+   <div id="header" class="mini"></div> 
+   <div id="countdown_container" data-show_button_at="90" role="status"> 
+   </div> 
+   <script type="text/template" id="countdown_template">
+    <% if (num_locks > 0) { %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <% if (isoDateToMilliseconds(expire_time) > Date.now()) { %>
+                        <span id="countdown_time"></span>
+                        <span id="countdown_description">remaining to complete order</span>
+                    <% } else { %>
+                        Order Time Expired                    <% } %>
+                                            <button class="extend_btn btn btn-default btn-xs">I need more time</button>
+                                    </div>
+            </div>
+        </div>
+    <% } %>
+</script> 
+   <div id="items_removed_from_cart_by_lock_dialog" class="modal fade " role="alertdialog" tabindex="0"> 
+    <div class="modal-dialog"> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close aria-tooltip" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> 
+       <div class="h4 modal-title" role="heading">
+        Items removed from cart
+       </div> 
+      </div> 
+      <div class="modal-body" role="main">
+        Item(s) have become unavailable and have been removed from your cart 
+      </div> 
+      <div class="modal-footer" role="navigation"> <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </header> 
+  <script type="text/template" id="header_template">
+    <div id="upper_header">
+        <div class="container">
+            <div class="row">
+                <div id="upper_left_header" class="col-xs-7 col-sm-8">
+                    <a href='https://parkingonline.uwindsor.ca/'>
+                        <div class="logo_container title_only_header">
+    <img id="site_logo" src="https://parkingonline.uwindsor.ca/resources/index.php?cmd=get_site_logo" alt="Site Logo"/>
+    <div id="logo_text" >
+        <h1 id="header_line1" class="line_1">
+            Parking Online Services
+        </h1>
+    </div>
+</div>                    </a>
+                </div>
+                <div id="upper_right_header" class="col-xs-5 col-sm-4 text-right">
+                    <a id="shopping_cart_summary"
+                       href="https://parkingonline.uwindsor.ca/cart/index.php"
+                       class="aria-tooltip <% if(cart.num_cart_items > 0) { %>text-primary<% } %>"
+                       aria-label="Shopping cart <% if (cart.num_cart_items > 0) { %>contains <%= cart.num_cart_items %> item<% if (cart.num_cart_items > 1) { %>s<% } %> for <%= formatDecimal128Currency(cart.total) %> total<% } %>">
+                        <% if (cart.num_cart_items > 0) { %>
+                            <span id="num_cart_items" class="badge" aria-hidden="true"><%= cart.num_cart_items %></span>
+                        <% } %>
+                        <div class=" icon icon-black"><div class=" sprite-image icon-shopping_cart" aria-hidden="true"></div></div>
+                        <% if (cart.num_cart_items > 0) { %>
+                            <span id="cart_total" aria-hidden="true"><%= formatDecimal128Currency(cart.total) %></span>
+                        <% } %>
+                    </a>
+                                            <% if (user.logged_in) { %>
+                            <% if (user.can_logout) { %>
+                                <button type="button" id="login_logout_link" data-cmd="logout">Logout</button>
+                            <% } %>
+                        <% } else { %>
+                            <% if (!user.pvm_logged_in) { %>
+                                <button type="button" id="login_logout_link" data-cmd="login">Login</button>
+                            <% } %>
+                        <% } %>
+                                        <% if(user.pvm_logged_in) { %>
+                        <button type="button" id="login_logout_link" data-cmd="logout_pvm">Logout</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="lower_header">
+                <div class="container">
+            <div class="row">
+                <% if (user.logged_in) { %>
+                    <div class="col-xs-1 mobile_menu_container">
+                        <button id="mobile_menu"
+                                class="aria-tooltip"
+                                aria-expanded="false"
+                                aria-label="Toggle Main Menu">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </button>
+                    </div>
+                    <div id="logged_in_as" class="col-xs-11 text-right">
+                                                    <% if (account.p_contact != null && ((account.p_contact.first_name != null) || (account.p_contact.last_name != null))) { %>
+                                Logged in as <%- account.p_contact.first_name %> <%- account.p_contact.last_name %>
+                            <% } else if(account.account_number != null) { %>
+                                Logged in as account # <%- account.account_number %>
+                            <% } %>
+                                            </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</script> 
+  <div id="main_content_container" class="container"> 
+   <div class="row"> 
+    <div id="menu_placeholder" class="col-lg-3"></div> 
+    <script type="text/template" id="menu_template">
+    <%
+        if (user.logged_in && !$("#pvm_login_content").length) {
+            $("#main_content").removeClass('col-md-12').addClass("col-lg-9");
+    %>
+        <nav id="menu" class="navbar">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="<% if (url === URL_ROOT ) { %>active<% } %>"
+                    role="presentation" aria-labelledby="account_menu_label">
+                    <a href="https://parkingonline.uwindsor.ca/">
+                        <div class=" icon"><div class=" sprite-image icon-account" aria-hidden="true"></div></div>
+                        <span id="account_menu_label">Account</span>
+                    </a>
+                </li>
+                                    <li class="<% if (url === URL_ROOT + 'vehicles/index.php' ) { %>active<% } %>"
+                        role="presentation" aria-labelledby="vehicles_menu_label">
+                        <a href="https://parkingonline.uwindsor.ca/vehicles/index.php">
+                            <div class=" icon"><div class=" sprite-image icon-car" aria-hidden="true"></div></div>
+                            <span id="vehicles_menu_label">Vehicles</span>
+                            <% if (account_vehicles.length > 0) { %>
+                                <span class="badge"><%= account_vehicles.length %></span>
+                            <% } %>
+                        </a>
+                    </li>
+                                                    <li class="<% if (url === URL_ROOT + 'tickets/index.php' ) { %>active<% } %>"
+                        role="presentation" aria-labelledby="tickets_menu_label">
+                        <a href="https://parkingonline.uwindsor.ca/tickets/index.php">
+                            <div class=" icon"><div class=" sprite-image icon-ticket" aria-hidden="true"></div></div>
+                            <span id="tickets_menu_label">Tickets</span>
+                            <% if (unpaid_account_tickets.tickets.length > 0) { %>
+                                <span class="badge"><%= unpaid_account_tickets.tickets.length %></span>
+                            <% } %>
+                        </a>
+                    </li>
+                                                    <li class="<% if (url === URL_ROOT + 'permits/index.php' ) { %>active<% } %>"
+                        role="presentation" aria-labelledby="permits_menu_label">
+                        <a href="https://parkingonline.uwindsor.ca/permits/index.php">
+                            <div class=" icon"><div class=" sprite-image icon-permit" aria-hidden="true"></div></div>
+                            <span id="permits_menu_label">Permits</span>
+                            <% if (active_account_permits.permits.length > 0) { %>
+                                <span class="badge"><%= active_account_permits.permits.length %></span>
+                            <% } %>
+                        </a>
+                    </li>
+                                                    <li class="<% if (url === URL_ROOT + 'fees/index.php' ) { %>active<% } %>"
+                        role="presentation" aria-labelledby="fees_menu_label">
+                        <a href="https://parkingonline.uwindsor.ca/fees/index.php">
+                            <div class=" icon"><div class=" sprite-image icon-fee" aria-hidden="true"></div></div>
+                            <span id="fees_menu_label">Fees</span>
+                            <% if (unpaid_account_fees.fees.length > 0) { %>
+                                <span class="badge"><%= unpaid_account_fees.fees.length %></span>
+                            <% } %>
+                        </a>
+                    </li>
+                                
+                <% if(creditCardsEnabled) { %>
+                    <li class="<% if (url === URL_ROOT + 'creditcards/index.php' ) { %>active<% } %>"
+                        role="presentation" aria-labelledby="boottow_menu_label">
+                        <a href="https://parkingonline.uwindsor.ca/creditcards/index.php">
+                            <div class=" icon"><div class=" sprite-image icon-credit_card" aria-hidden="true"></div></div>
+                            <span id="boottow_menu_label">Credit Cards</span>
+                            <% if (typeof(credit_cards) !== "undefined" && credit_cards.length > 0) { %>
+                            <span class="badge"><%= credit_cards.length %></span>
+                            <% } %>
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+    <% } %>
+</script> 
+    <main id="main_content" class="col-md-12" aria-label="Main Content"> 
+     <div class="row"> 
+      <div id="ticket_search_full" class="col-md-12"> 
+       <div id="ticket_search"> 
+        <h2>Lookup Ticket</h2> 
+        <form id="ticket_search_form" class="ajax" method="post" action="https://parkingonline.uwindsor.ca/api/tickets/index.php?cmd=search_tickets"> 
+         <div class="col-sm-5 search_field"> 
+          <div id="field_ticket_number" class=" field textbox_field form-group required">
+           <label for="ticket_number" class=" control-label">Ticket #</label>
+           <div class="control-container">
+            <input id="ticket_number" name="ticket_number" type="text" class=" required  form-control" maxlength="14" required data-inputmask="'mask': '&amp;', 'repeat': 14">
+           </div>
+          </div> 
+         </div> 
+         <div class="col-sm-5 search_field"> 
+          <div id="field_plate_vin" class=" field textbox_field form-group required">
+           <label for="plate_vin" class=" control-label">Plate # or VIN</label>
+           <div class="control-container">
+            <input id="plate_vin" name="plate_vin" type="text" class=" required  form-control" maxlength="18" required data-inputmask="'mask': '&amp;', 'repeat': 18">
+           </div>
+          </div> 
+         </div> 
+         <div class="col-sm-2 search_field"> <button class="btn btn-primary" type="submit" id="search_ticket">Search</button> 
+         </div> 
+        </form> 
+       </div> 
+       <div id="ticket_search_results" class="col-md-12"></div> 
+       <script type="text/template" id="ticket_search_results_template">
+    <% if(typeof tickets !== 'undefined') { %>
+        <% var tickets = tickets; %>
+<% var other_tickets = other_tickets; %>
+
+<div class="action_datatable">
+    <div class="table_header">
+        <div class="table_title">
+            <% if(tickets.length > 0) { %>
+                <% if (type === 'unpaid_tickets') { %>
+                    <h2>All Unpaid Tickets:</h2>
+                <% } else { %>
+                    <h2>All Found Tickets:</h2>
+                <% } %>
+            <% } else { %>
+                <% if (type === 'unpaid_tickets') { %>
+                    <h3>Your account currently has no unpaid tickets</h3>
+                <% } else { %>
+                    <h3>Your account currently has no tickets</h3>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="header_buttons">
+            <% if (type === 'unpaid_tickets') { %>
+                                    <button type="button" class="btn btn-default" id="view_all">
+                        View All Tickets                    </button>
+                            <% } %>
+                    </div>
+    </div>
+
+    <% if(tickets.length > 0) { %>
+        <div class="table_body">
+            <div>
+                <table class="table table-striped table-responsive tickets_listing">
+                    <thead>
+                        <tr>
+                                                            <th class="checkbox-column">
+                                    <div id="field_checkall" class=" field checkbox_field form-group"><input type="checkbox" id="checkall" name="checkall" value="true" aria-label="Select all tickets" class="aria-tooltip" /></div>
+
+                                </th>
+                                                        <th>Ticket Number</th>
+                            <th class="hide-xs-column">Violation</th>
+                            <th class="currency-column">Balance</th>
+                            <th class="button-column">View</th>
+                        </tr>
+                    </thead>
+                    <% if(true || (isset(other_tickets) && other_tickets.length < 1)) { %>
+                        <tfoot>
+                            <tr>
+                                                                    <td class="checkbox-column">
+                                        <% if (num_unpaid_tickets > 0) { %>
+                                            <button type="button" id="pay_item"
+                                                    class="btn btn-primary aria-tooltip"
+                                                    aria-label="Pay the selected tickets">
+                                                Pay Now                                            </button>
+                                        <% } %>
+                                    </td>
+                                                                <td>&nbsp;</td>
+                                <td class="hide-xs-column">&nbsp;</td>
+                                <td class="currency-column">
+                                    Total:                                     <span id="item_total"><%= formatFloatCurrency(total) %></span>
+                                </td>
+                                <td class="button-column">&nbsp;</td>
+                            </tr>
+                        </tfoot>
+                    <% } %>
+                    <tbody>
+                        <% _.each(tickets, function(ticket) { %>
+                            <tr>
+                                                                    <td class="checkbox-column">
+                                        <% if (ticket.can_pay_online && ticket.discount_balance.$numberDecimal > 0 ) { %>
+                                            <div id="field_<%= ticket.ticketid %>" class=" field checkbox_field selected form-group"><input type="checkbox" id="<%= ticket.ticketid %>" name="<%= ticket.ticketid %>" value="true" checked="checked" aria-label="Select ticket # <%- ticket.ticket_number%>" class="item_checkbox aria-tooltip" data-ticketid="<%= ticket.ticketid%>" data-balance="<%= formatDecimal128(ticket.discount_balance) %>" /></div>
+
+                                        <% } %>
+                                    </td>
+                                                                <td><%- ticket.ticket_number%></td>
+                                <td class="hide-xs-column"><%- ticket.violation.type.display_text %></td>
+                                <td class="currency-column"><%= formatDecimal128Currency(ticket.discount_balance) %></td>
+                                <td class="button-column">
+                                    <a class="btn btn-default btn-xs aria-tooltip"
+                                       aria-label="View ticket #<%- ticket.ticket_number %>"
+                                       href="https://parkingonline.uwindsor.ca/tickets/index.php?cmd=detail&ticketid=<%= ticket.ticketid %>">
+                                        View                                    </a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+
+                <% if(false && isset(other_tickets) && other_tickets.length > 0) { %>
+                    <h2>Tickets On Account:</h2>
+                    <table class="table table-striped table-responsive tickets_listing">
+                        <thead>
+                            <tr>
+                                <td> </td>
+                                <th>Ticket Number</th>
+                                <th class="hide-xs-column">Violation</th>
+                                <th class="currency-column">Balance</th>
+                                <th class="button-column">View</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                                                    <td class="checkbox-column">
+                                        <% if (num_unpaid_tickets > 0) { %>
+                                        <button type="button" id="pay_item"
+                                                class="btn btn-primary aria-tooltip"
+                                                aria-label="Pay the selected tickets">
+                                            Pay Now                                        </button>
+                                        <% } %>
+                                    </td>
+                                                                <td>&nbsp;</td>
+                                <td class="hide-xs-column">&nbsp;</td>
+                                <td class="currency-column">
+                                    Total:                                     <span id="item_total"><%= formatFloatCurrency(total) %></span>
+                                </td>
+                                <td class="button-column">&nbsp;</td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <% _.each(other_tickets, function(ticket) { %>
+                                <tr>
+                                                                            <td class="checkbox-column">
+                                            <% if (ticket.can_pay_online && ticket.discount_balance.$numberDecimal > 0 ) { %>
+                                            <div id="field_<%= ticket.ticketid %>" class=" field checkbox_field selected form-group"><input type="checkbox" id="<%= ticket.ticketid %>" name="<%= ticket.ticketid %>" value="true" checked="checked" aria-label="Select account ticket # <%- ticket.ticket_number%>" class="item_checkbox aria-tooltip" data-ticketid="<%= ticket.ticketid%>" data-balance="<%= formatDecimal128(ticket.discount_balance) %>" /></div>
+
+                                            <% } %>
+                                        </td>
+                                                                        <td><%- ticket.ticket_number%></td>
+                                    <td class="hide-xs-column"><%- ticket.violation.type.display_text %></td>
+                                    <td class="currency-column"><%= formatDecimal128Currency(ticket.discount_balance) %></td>
+                                    <td class="button-column">
+                                        <a class="btn btn-default btn-xs aria-tooltip"
+                                           aria-label="View ticket #<%- ticket.ticket_number %>"
+                                           href="https://parkingonline.uwindsor.ca/tickets/index.php?cmd=detail&ticketid=<%= ticket.ticketid %>">
+                                            View                                        </a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</div>    <% } %>
+</script> 
+       <div id="no_tickets_found" class="modal fade " role="alertdialog" tabindex="0"> 
+        <div class="modal-dialog"> 
+         <div class="modal-content"> 
+          <div class="modal-header"> <button type="button" class="close aria-tooltip" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> 
+           <div class="h4 modal-title" role="heading">
+            No Tickets Found
+           </div> 
+          </div> 
+          <div class="modal-body" role="main">
+            No tickets found from search criteria 
+          </div> 
+          <div class="modal-footer" role="navigation"> <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button> 
+          </div> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </main> 
+   </div> 
+  </div> 
+  <div id="sub_content" class="container"> 
+  </div> 
+  <script src="https://parkingonline.uwindsor.ca/resources/js/common.js?version=726ba550bd1a3179d7fad15b40478b99"></script> 
+  <script src="https://parkingonline.uwindsor.ca/resources/js/tickets.ticket_search.js?version=726ba550bd1a3179d7fad15b40478b99"></script> 
+  <footer class="footer" aria-label="Page Footer"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-xs-12 col-sm-7"> <a href="https://parkingonline.uwindsor.ca/index.php?cmd=view_footer_link&amp;name=5f3d6f69e7a5c" target="_blank"> Return Policy </a> <a href="https://parkingonline.uwindsor.ca/index.php?cmd=view_footer_link&amp;name=5f3d6f7ee7a5d" target="_blank"> Delivery Policy </a> <a href="https://parkingonline.uwindsor.ca/index.php?cmd=view_footer_link&amp;name=5f3d6f90e7a5e" target="_blank"> Terms of Use </a> 
+     </div> 
+     <div class="col-xs-12 col-sm-5 text-right">
+       AIMS Web 9.0.22.114 ©2017 EDC Corporation 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <div id="form_validation_error_container"></div> 
+  <script id="form_validation_error_template" type="text/template">
+
+    
+<div id="form_validation_error" class="modal fade "
+     data-keyboard="false" data-backdrop="static"     role="alertdialog" tabindex="0">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                            <div class="modal-header">
+                                        <div class="h4 modal-title" role="heading">Invalid data detected</div>
+                </div>
+                                        <div class="modal-body" role="main">
+                    An error was found in your form, please ensure all required fields are populated before continuing.
+                </div>
+                                </div>
+    </div>
+</div>
+</script>
+  <div id="please_wait_dialog_container"></div> 
+  <script id="please_wait_dialog_template" type="text/template">
+
+    
+    
+<div id="<%= uniqid() %>" class="modal fade "
+     data-keyboard="false" data-backdrop="static"     role="alertdialog" tabindex="0">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                            <div class="modal-header">
+                                        <div class="h4 modal-title" role="heading"><%if (isset(title)) { %><%- title %><% } else { %>Please Wait...<% } %></div>
+                </div>
+                                        <div class="modal-body" role="main">
+                            <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-primary active" role="progressbar" style="width:100%"></div>
+        </div>
+    
+                </div>
+                                </div>
+    </div>
+</div>
+</script>  
+ </body>
+</html>

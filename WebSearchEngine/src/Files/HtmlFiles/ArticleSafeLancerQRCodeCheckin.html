@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/TDPortal/Content/Styles/font-awesome.min.css?v=20220402010858" rel="stylesheet" type="text/css" id="lnkFontAwesome">
+  <script src="/TDPortal/Content/Scripts/jquery/2.2.4/jquery.min.js?v=20220402010858"></script>
+  <script src="/TDPortal/Content/Scripts/jquery-migrate/1.4.1/jquery-migrate.min.js?v=20220402010858"></script>
+  <script src="/TDPortal/Content/Scripts/jquery-ui/1.12.1/jquery-ui-1.12.1.custom.timepicker.min.js?v=20220402010858"></script>
+  <link href="/TDPortal/Content/Styles/jquery-ui/1.12.1/jquery-ui.compiled.min.css?v=20220402010858" rel="stylesheet" type="text/css">
+  <link href="/TDPortal/Content/bootstrap/3.4.1/dist/css/bootstrap.min.css?v=20220402010858" rel="stylesheet" type="text/css" id="lnkBootstrapCSS">
+  <script src="/TDPortal/Content/bootstrap/3.4.1/dist/js/bootstrap.min.js?v=20220402010858"></script>
+  <link href="/TDClient/Styles/bootstrap_custom.min.css?v=20220402010856" rel="stylesheet" type="text/css">
+  <link href="/TDClient/Styles/TDStyles.min.css?v=20220402010856" rel="stylesheet" type="text/css">
+  <link href="https://uwindsor.teamdynamix.com/TDPortal/BE/Style/93/TDClient/1975?v=20200603125926" rel="stylesheet" type="text/css">
+  <script src="/TDPortal/Content/Scripts/tdx/TDJSFramework.compiled.min.js?v=20220402010858"></script>
+  <script src="/TDPortal/Content/Scripts/underscore/1.12.1/underscore-min.js?v=20220402010858"></script> 
+  <script src="/TDClient/Scripts/clientOS.min.js?v=20220402010856"></script> 
+  <script src="/TDClient/Scripts/collapseMe.min.js?v=20220402010856"></script> 
+  <script src="/TDClient/Scripts/tdsearchfilter.min.js?v=20220402010856"></script> 
+  <script src="/TDClient/Scripts/SiteSearch.min.js?v=20220402010856"></script> 
+  <script src="/TDPortal/Content/Scripts/tdx/elasticsearchAutocomplete/elasticsearchAutocomplete.min.js?v=20220402010858"></script> 
+  <link id="ctl00_ctl00_lnkFavicon" rel="shortcut icon" href="https://uwindsor.teamdynamix.com/TDPortal/BE/Icon/93/1975?v=20150226204704"> 
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-67479808-1"></script> 
+  <script>
+
+      $(function () {
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        // Be sure to set the proper cookie domain to the customer's full subdomain when sending the pageview hit.
+        gtag('config', 'UA-67479808-1', { 'cookie_domain': 'uwindsor.teamdynamix.com' });
+
+        });
+
+    </script> 
+  <script>
+
+      $(function () {
+        var masterUi = MasterUI({
+          isPostback: false,
+        baseUrl: '/TDClient/',
+        isTdGoogleAnalyticsEnabled: true,
+        isAuthenticated: false
+        });
+
+      $('#collapseMe').collapseMe({
+        toggleVisibilitySelector: '.navbar-toggle'
+      });
+
+    });
+
+      // The sub-nav menu uses padding-top to position itself below the header bar and main navigation sections. When the
+      // window is resized, there is a chance that the content of these header or nav sections wraps, causing the height
+      // to change, potentially covering the sub-nav menu, which is obviously a big usability problem. This function
+      // listens for when the window size or orientation is changing (and also when the window first loads), and adjusts
+      // the padding so that the sub-nav menu appears in the correct location.
+      $(window).bind('load ready resize orientationchange', function () {
+        var headerHeight = $('#divMstrHeader').height();
+        $('#navShim').css({
+          "padding-top": headerHeight
+        });
+
+        $('#content').css({
+          "padding-top": headerHeight,
+          "margin-top": headerHeight * -1
+        });
+      });
+  </script> 
+  <script src="/TDPortal/Content/select2/v3/select2.min.js?v=20220402012052"></script>
+  <link href="/TDPortal/Content/select2/v3/select2.compiled.min.css?v=20220402012052" rel="stylesheet" type="text/css" id="lnkSelect2"> 
+  <script src="/TDClient/Scripts/attachmentHandler.min.js?v=20220402010856"></script> 
+  <style type="text/css">
+    .honey-pot-div {
+      display: none;
+    }
+  </style> 
+  <script>
+
+    
+
+    function checkRecipients() {
+      if ($('#ctl00_ctl00_cpContent_cpContent_shareRecipients').val().trim() === "") {
+        alert('You must first enter a valid email.');
+        $('#divShareModal').modal('toggle');
+      }
+    }
+
+    function toggleFeedback(isHelpful) {
+      $('#divHelpfulComments').show();
+      $('#divHelpfulYesNo').hide();
+      $('#ctl00_ctl00_cpContent_cpContent_hdnIsHelpful').val(isHelpful);
+      $('#ctl00_ctl00_cpContent_cpContent_txtComments').focus();
+    }
+
+    function toggleFeedbackResult() {
+      $('#divWasHelpful, #divFeedbackRecorded, #divHelpfulComments, #divHelpfulYesNo').toggle();
+    }
+
+    // The following two functions were added as a result of ticket ID: 1392522. We are generating these buttons dynamically to
+    // prevent bots from clicking them and posting feedback on an article. Additionally, we have an input that is hidden from
+    // the user. If a bot enters text in that input, which it likely will (bots love filling out forms), then we don't accept the
+    // form submission
+    function generateFeedbackButtons() {
+      var $btnHelpfulYes = $('<button id="btnHelpfulYes" type="button" class="btn btn-primary gutter-left" onclick="toggleFeedback(1);">Yes</button>');
+      var $btnHelpfulNo = $('<button id="btnHelpfulNo" type="button" class="btn btn-primary gutter-left-sm" onclick="toggleFeedback(0);">No</button>');
+
+      $('#divWasHelpful').append($btnHelpfulYes);
+      $('#divWasHelpful').append($btnHelpfulNo);
+    }
+    function attemptAddFeedback(e) {
+      if ($('#honeyPot').val() !== '') {
+        e.preventDefault();
+        window.location.reload();
+      }
+    }
+
+    function cancelFeedback() {
+      $('#ctl00_ctl00_cpContent_cpContent_txtComments').val('');
+      $('#divHelpfulComments, #divHelpfulYesNo').toggle();
+    }
+
+    function confirmDeleteFeedback(id) {
+      if (confirm('Are you sure you want to delete this feedback? This cannot be undone.')) {
+        $('#ctl00_ctl00_cpContent_cpContent_hdnFeedbackID').val(id);
+        __doPostBack('ctl00$ctl00$cpContent$cpContent$btnDeleteFeedback', '');
+      }
+    }
+
+    function toggleAddressed(id, isAddressed) {
+      $('#ctl00_ctl00_cpContent_cpContent_hdnFeedbackID').val(id);
+      $('#ctl00_ctl00_cpContent_cpContent_hdnIsAddressed').val(isAddressed);
+      __doPostBack('ctl00$ctl00$cpContent$cpContent$btnToggleAddressed', '');
+    }
+
+    $(function () {
+      
+
+      generateFeedbackButtons();
+      $('[data-toggle="popover"]').popover();
+
+      var attachmentHandler = new TeamDynamix.AttachmentHandler({
+        containerSelector: '.js-article-attachments',
+        resultLabelSelector: '#ctl00_ctl00_cpContent_cpContent_lblResults_lblResults-label',
+        baseControllerUrl: '/TDClient/1975/Portal/Shared/Attachments',
+        antiForgeryToken: '2sExlmja3rfI14q6LI1zxeLscnbzBjt3kLkb910sMnad1ne5wauRh-1176BXMNb91PZ0pnjDW2JNevNSXpE_d_6Apks1:qBWlTXHDP9xvMbZL0eZ4cDiLn9LwQpaQnCKJ84-50S8F7aGkBVfEBvGvSVFY5UPeAucy6pZDKoOYmYE4C5zYczGxdT81',
+        itemId: 137377,
+        componentId: 26
+      });
+
+      // Don't try and update the table styles if the user wanted to opt out.
+      $('#ctl00_ctl00_cpContent_cpContent_divBody table:not(.SkipTableFixup)').each(function () {
+        var padding = $(this).attr('cellpadding');
+        var spacing = $(this).attr('cellspacing');
+
+        $(this).css("border-collapse", "separate");
+
+        if (spacing) {
+          $(this).css("border-spacing", spacing + "px");
+        }
+
+        $(this).find('td').each(function () { $(this).css('padding', padding + 'px') });
+      });
+
+      
+    });
+
+    
+</script> 
+  <meta property="og:title" content="SafeLancer QR Code Check-in"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://uwindsor.teamdynamix.com/TDClient/1975/Portal/KB/ArticleDet?ID=137377"> 
+  <meta property="og:image" content="https://uwindsor.teamdynamix.com/TDPortal/BE/Logo/93/1975"> 
+  <meta property="og:description" content="Overview of how to check in with your SafeLancer self assessment result, how to use the managers dashboard to review your staff's self assessment status, and common questions regarding visibility of information"> 
+  <meta property="og:site_name" content="University of Windsor - Knowledge Base"> 
+  <meta property="article:section" content="Web Services"> 
+  <meta property="article:published_time" content="2021-08-31T01:03Z"> 
+  <meta property="article:modified_time" content="2021-11-29T15:57Z"> 
+  <meta property="article:tag" content="safelancer"> 
+  <meta property="article:tag" content="qrcode">
+  <title>
+	Article - SafeLancer QR Code Check-in
+</title>
+ </head> 
+ <body> 
+  <form method="post" action="/TDClient/1975/Portal/KB/ArticleDet?ID=137377" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm"> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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"> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+   <script src="/TDClient/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZMSMQxVWLi4fik2rw1_u_hZsCNzwv5c621ov6_ZX_wzTt5vh-g2&amp;t=637729440413207958" type="text/javascript"></script> 
+   <script src="/TDClient/ScriptResource.axd?d=nv7asgRUU0tRmHNR2D6t1NXOAgTb3J37FC1L2PfbYYFmSPm-ANa7n6FP0x7BAsbHeL4jfY3ptd1q7zKKVI7DbuXZcwEoKOwj9WxCI1VrQlbWE1Trg1t1GmJDN43kQMJsB7X8tw2&amp;t=5f5a0597" type="text/javascript"></script> 
+   <script src="/TDClient/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvmVxW3-Ljsg_2Hna32smxrg-6ogyYAN3UTPsJQ8m1uwzn_kuf2Wpne6NSFmYui3h0wCQhJN3ZUiLTNkvhiIgZpq74-lKmofUPQGJ8own8RI2_mwAcmvlSj2WBnqwm5Wj4cyNvv81&amp;t=ffffffffd202a464" type="text/javascript"></script> 
+   <script src="/TDClient/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OLdGoo5BVWQ_Eo60QZTEhEcHeiVfwgY9tLCgzdZ5TRwvrwYEnOvujbNccOVLUfWtUg4HivSIsewg6JABxkBGEqVVV64eiRyCAsPDqh6tUioISUQKB74sWMO4Er2mHrWEIWs_sBM1&amp;t=ffffffffd202a464" type="text/javascript"></script> 
+   <script src="/TDClient/WebResource.axd?d=xtfVMqdF1exC2MBVkOJwMveStDR5kg3dbZWgIXMXZmB1xXom6CcIrWFgHa7jsp4qJuFW2L5XShudyzlBsIO3JhCfiU5HmL2BDz__mCv9dznmBlEMS7LvcYg6wTdPTrAXIXI2CvtjwlnpZd-j4Zpsx2wG_uA1&amp;t=637844444380000000" type="text/javascript"></script> 
+   <script src="/TDClient/WebResource.axd?d=sp7vCoAo-SSYfpsQ1sYBBeEDnwCGxDYEwZCM0ler88yoVZIPDXMk1C3XF2L2L0xrbB8Rvhli51TswRlmPIOCZgaY58lKhPr-Pv1jTFJ1oUAu7x6RDtNFZUxbtxs3KYQGLK6FpPD5bKuB0e0NmS9HkAqRVks1&amp;t=637844444380000000" type="text/javascript"></script> 
+   <script src="/TDClient/WebResource.axd?d=icMURy63hv40LPPfq4rTvmm-RfB_YkC6rEEF_2QOO68q3TseXYNBetRKKgBXJ8mn2e8UIgCPiV23HaQUZbjySMHqSgmYZgLcYltBqwD2_EK8aQ08zBuqc3ZBVZITQrbtn6w46dRxFLibMIQg0Aho73rn8Rpxrzg5YMG_JR0UOrUR0wlZ0&amp;t=637844444380000000" type="text/javascript"></script> 
+   <script src="/TDClient/WebResource.axd?d=1HpFfNpwNihNfEP1lyJHvdPVqbv8KRoFH4-_ZORUgPOP-bqmmtIJRvFQc7828Vf59O_-fdBXcnwdv-hYp5RptPuHmMR0kGQM0_3rS4Z7sKfC7jy9Cc_8fyfcUWa8psszacEQlAXHPXmNwyRymbGSywEmhrE1&amp;t=637844444380000000" type="text/javascript"></script> 
+   <script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+CKEditor_TextBoxEncode('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody', 0); if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="784CA02E"> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$smMain', 'aspnetForm', ['tctl00$ctl00$cpContent$cpContent$UpdatePanel1','','tctl00$ctl00$cpContent$cpContent$upFeedbackGrid','','tctl00$ctl00$cpContent$cpContent$UpdatePanel2','','tctl00$ctl00$cpContent$cpContent$lblResults$ctl00',''], ['ctl00$ctl00$cpContent$cpContent$btnSubmitComments','','ctl00$ctl00$cpContent$cpContent$btnToggleFavorite',''], [], 90, 'ctl00$ctl00');
+//]]>
+</script> 
+   <div id="ctl00_ctl00_upMain" style="display:none;"> 
+    <div id="ctl00_ctl00_pbMain" style="position: fixed; top: 50%; left: 0px; width: 100%; height: 1px; overflow: visible; z-index: 2000; display: block;">
+     <div style="margin-left: -125px; position: fixed; top: 50%; left: 50%; width: 250px; height: 90px;">
+      <div class="well shadow">
+       <h2 class="h4 gutter-top-none">Updating...</h2>
+       <div class="progress" style="margin-bottom: 0;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+       </div>
+      </div>
+     </div>
+    </div> 
+   </div> 
+   <header role="banner"> 
+    <div id="divMstrHeader" class="master-header NoPrint" style="background-color: #fff;"> 
+     <div class="logo-header-full hidden-xs"> 
+      <div class="pull-left"> <a href="#mainContent" class="sr-only sr-only-focusable">Skip to main content</a> 
+      </div> 
+      <div id="ctl00_ctl00_divPageHeader" class="container logo-header clearfix" style="padding: 5px;"> 
+       <div id="divLogo" class="pull-left logo-container"> <a href="http://www.uwindsor.ca" target="_blank"> <img src="/TDPortal/BE/Logo/93/0" alt="University of Windsor Logo" class="js-logo img-responsive"> </a> 
+       </div> 
+       <div class="master-header-right pull-right padding-top padding-bottom"> 
+        <div class="pull-left topLevelSearch input-group"> 
+         <div id="SiteSearch-dd957f7223ab46b48092577bc3fef0ad" class="gutter-bottom input-group site-search" style="max-width: 400px;"> 
+          <div id="SiteSearch-dropdown-dd957f7223ab46b48092577bc3fef0ad" class="input-group-btn"> <button type="button" id="SiteSearch-filter-dd957f7223ab46b48092577bc3fef0ad" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Filter your search by categories" data-component="all"> <span class="fa fa-globe"></span><span class="fa fa-fw fa-nopad fa-caret-down" aria-hidden="true"></span> <span class="sr-only"> Filter your search by category. Current category: <span class="js-current-component">All</span> </span> </button> 
+           <ul class="dropdown-menu"> 
+            <li> <a href="javascript:void(0);" data-component-text="All" data-component="all" data-component-icon="fa-globe" title="Search all areas"> <span class="fa fa-fw fa-nopad fa-globe" aria-hidden="true"></span> All </a> </li> 
+            <li role="separator" class="divider"></li> 
+            <li role="presentation"> <a role="menuitem" href="javascript:void(0);" data-component-text="Knowledge Base" data-component="kb" data-component-icon="fa-lightbulb-o" title="Search Knowledge Base"> <span class="fa fa-fw fa-nopad fa-lightbulb-o" aria-hidden="true"></span> Knowledge Base </a> </li> 
+            <li role="presentation"> <a role="menuitem" href="javascript:void(0);" data-component-text="Service Catalog" data-component="sc" data-component-icon="fa-compass" title="Search Service Catalog"> <span class="fa fa-fw fa-nopad fa-compass" aria-hidden="true"></span> Service Catalog </a> </li> 
+            <li role="presentation"> <a role="menuitem" href="javascript:void(0);" data-component-text="Questions" data-component="q" data-component-icon="fa-comments" title="Search Questions"> <span class="fa fa-fw fa-nopad fa-comments" aria-hidden="true"></span> Questions </a> </li> 
+           </ul> 
+          </div> 
+          <input id="SiteSearch-text-dd957f7223ab46b48092577bc3fef0ad" type="text" class="form-control" autocomplete="off" placeholder="Search the client portal" aria-label="Search the client portal" title="To search for items with a specific tag, enter the # symbol followed by the name of the tag.
+To search for items using exact match, place double quotes around your text."> <span class="input-group-btn"> <button id="SiteSearch-button-dd957f7223ab46b48092577bc3fef0ad" class="btn btn-default" type="button" title="Search"> <span class="fa fa-fw fa-nopad fa-search blue" aria-hidden="true"></span> <span class="sr-only">Search</span> </button> </span> 
+         </div> 
+         <script>
+  $(function() {
+    var siteSearch = new TeamDynamix.SiteSearch({
+      searchUrl: "/TDClient/1975/Portal/Shared/Search",
+      enableAutocompleteSearch: true,
+      autocompleteSearchUrl: '/TDClient/1975/Portal/Shared/AutocompleteSearch',
+      autocompleteResultsPosition: 'fixed',
+      autocompleteResultsZIndex: 1000,
+      searchTextBoxSelector: '#SiteSearch-text-dd957f7223ab46b48092577bc3fef0ad',
+      searchComponentFilterButtonSelector: '#SiteSearch-filter-dd957f7223ab46b48092577bc3fef0ad',
+      searchButtonSelector: '#SiteSearch-button-dd957f7223ab46b48092577bc3fef0ad',
+      searchFilterDropdownSelector: '#SiteSearch-dropdown-dd957f7223ab46b48092577bc3fef0ad',
+      showKnowledgeBaseOption: true,
+      showServicesOption: true,
+      showForumsOption: true,
+      autoFocusSearch: false
+    });
+  });
+  </script> 
+        </div> 
+        <div title="Sign In" class="pull-right gutter-top-sm"> <a href="/TDClient/1975/Portal/Login.aspx?ReturnUrl=%2fTDClient%2f1975%2fPortal%2fKB%2fArticleDet%3fID%3d137377">Sign In </a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <nav id="ctl00_ctl00_mainNav" class="navbar navbar-default themed tdbar" aria-label="Primary"> 
+      <div id="navContainer" class="container"> 
+       <div class="navbar-header"> <button type="button" class="pull-left navbar-toggle collapsed themed tdbar-button-anchored tdbar-toggle gutter-left" data-toggle="collapse" data-target=".navbar-collapse"> <span class="tdbar-button-anchored icon-bar"></span> <span class="tdbar-button-anchored icon-bar"></span> <span class="tdbar-button-anchored icon-bar"></span> <span class="sr-only">Show Applications Menu</span> </button> <a class="navbar-brand hidden-sm hidden-md hidden-lg themed tdbar-button-anchored truncate-be" href="#"> Client Portal </a> 
+       </div> 
+       <div id="td-navbar-collapse" class="collapse navbar-collapse"> 
+        <ul class="nav navbar-nav nav-collapsing" id="collapseMe"> 
+         <li class="themed tdbar-button-anchored hidden-sm hidden-md hidden-lg"> <a href="/TDClient/1975/Portal/Login.aspx?ReturnUrl=%2fTDClient%2f1975%2fPortal%2fKB%2fArticleDet%3fID%3d137377">Sign In</a> </li> 
+         <li id="divSearch" class="themed tdbar-button-anchored hidden-sm hidden-md hidden-lg"> <a href="/TDClient/1975/Portal/Shared/Search" title="search">Search</a> </li> 
+         <li id="divDesktopc6761c8c-7ac3-49af-a678-485e8a47f4fe" class="themed tdbar-button-anchored"> <a href="/TDClient/1975/Portal/Home/">Home</a> </li> 
+         <li id="divDesktop6752d70c-2547-4111-b28d-55e8a0f26f3d" class="themed tdbar-button-anchored"> <a href="/TDClient/1975/Portal/Home/?ID=6752d70c-2547-4111-b28d-55e8a0f26f3d">|</a> </li> 
+         <li id="divDesktopec55dfbf-78f6-48cf-86ae-b4b4cf201a44" class="themed tdbar-button-anchored"> <a href="/TDClient/1975/Portal/Home/?ID=ec55dfbf-78f6-48cf-86ae-b4b4cf201a44">Help</a> </li> 
+         <li id="divDesktop37b7390b-cc5d-4a6a-aa5c-49b8924066de" class="themed tdbar-button-anchored"> <a href="/TDClient/1975/Portal/Home/?ID=37b7390b-cc5d-4a6a-aa5c-49b8924066de">|</a> </li> 
+         <li id="divTDRequests" class="themed tdbar-button-anchored sr-focusable"> <a href="/TDClient/1975/Portal/Requests/ServiceCatalog">Services</a> </li> 
+         <li id="divTDKnowledgeBase" class="themed tdbar-button-anchored sr-focusable"> <a href="/TDClient/1975/Portal/KB/">Knowledge Base</a> </li> 
+         <li id="divTDQuestions" class="themed tdbar-button-anchored sr-focusable"> <a href="/TDClient/1975/Portal/Questions">Questions</a> </li> 
+         <li class="themed tdbar-button-anchored hidden-xs more-items-button" id="moreMenu"> <a data-toggle="dropdown" title="More Applications" href="javascript:;"> <span class="sr-only">More Applications</span> <span class="fa fa-ellipsis-h" aria-hidden="true"></span> </a> 
+          <ul class="dropdown-menu dropdown-menu-right themed tdbar" id="collapsed"></ul> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </nav> 
+    </div> 
+   </header> 
+   <div id="navShim" class="hidden-xs hidden-sm"></div> 
+   <main role="main"> 
+    <div id="content"> 
+     <div id="mainContent" tabindex="-1"></div> 
+     <nav id="divTabHeader" class="tdbar-sub NoPrint hidden-xs navbar-subnav" aria-label="Knowledge Base"> <a href="#kbContent" class="sr-only sr-only-focusable">Skip to Knowledge Base content</a> 
+      <div class="container clearfix"> 
+       <ul class="nav navbar-nav js-submenu" id="kbSubMenu" style="margin-left: -15px;"> 
+        <li> <a href="/TDClient/1975/Portal/KB/Search">Search <span class="sr-only">Articles</span></a> </li> 
+       </ul> 
+      </div> 
+     </nav> 
+     <div id="kbContent" class="container gutter-top gutter-bottom" tabindex="-1" style="outline:none;"> 
+      <input type="hidden" name="ctl00$ctl00$cpContent$cpContent$hdnFeedbackID" id="ctl00_ctl00_cpContent_cpContent_hdnFeedbackID"> 
+      <input type="hidden" name="ctl00$ctl00$cpContent$cpContent$hdnIsAddressed" id="ctl00_ctl00_cpContent_cpContent_hdnIsAddressed"> <span id="ctl00_ctl00_cpContent_cpContent_lblResults_ctl00" aria-live="polite" aria-atomic="true"><span id="ctl00_ctl00_cpContent_cpContent_lblResults_lblResults-label" class="red"></span></span> 
+      <div class="clearfix"> 
+       <ol class="breadcrumb pull-left"> 
+        <li><a href="/TDClient/1975/Portal/KB/">Knowledge Base</a></li>
+        <li class="active"><a href="/TDClient/1975/Portal/KB/?CategoryID=2721">Web Services</a></li>
+        <li class="active">SafeLancer QR Code Check-in</li> 
+       </ol> <span class="js-open-monitor" style="display: none;"></span> 
+      </div> 
+      <div class="row gutter-top"> 
+       <div id="divMainContent" class="col-md-8"> 
+        <h1 class="gutter-top" style="-ms-word-wrap: break-word; word-wrap: break-word;"> SafeLancer QR Code Check-in </h1> 
+        <div id="ctl00_ctl00_cpContent_cpContent_divTags"> <span class="sr-only">Tags</span> <span class="fa fa-tags gray gutter-right-sm" aria-hidden="true" title="Tags"></span> <a href="/TDClient/1975/Portal/KB/Search?SearchText=%2523safelancer" id="ctl00_ctl00_cpContent_cpContent_rptTags_ctl00_TagControl1_lnkDisplay" title="safelancer">safelancer</a> <span class="fa fa-circle gray gutter-right-sm font-xs vert-middle" aria-hidden="true"></span> <a href="/TDClient/1975/Portal/KB/Search?SearchText=%2523qrcode" id="ctl00_ctl00_cpContent_cpContent_rptTags_ctl02_TagControl1_lnkDisplay" title="qrcode">qrcode</a> 
+        </div> 
+        <div id="ctl00_ctl00_cpContent_cpContent_divBody" class="gutter-top break-word ckeShim clearfix">
+         <div style="background: rgba(238, 238, 238, 1); border: 1px solid rgba(204, 204, 204, 1); padding: 5px 10px"> 
+          <h3>QR Code Reader Not Working?</h3> 
+          <p><strong>Step 1</strong></p> 
+          <p>If you see a "Loading QR Scanner" message this can usually be cleared by tapping the <strong>Refresh </strong>icon on the device.</p> 
+          <p><strong>Step 2</strong></p> 
+          <p>If tapping the Refresh icon does not help or you are experiencing a different technical error with the QR code reader, please contact IT Services by calling: 519-253-3000 ext. <strong>4441</strong>. Provide the device number (ITS-#######) on the "QR Code Reader Not Working" poster posted close to the QR code reader.</p> 
+         </div> 
+         <h2>Checking into Campus QR Locations</h2> 
+         <p>Every designated entrance on campus has a QR code reader installed in order to record and validate that you have a&nbsp;<strong>green</strong>&nbsp;SafeLancer badge for the day.</p> 
+         <h2>1. Take the Self-Assessment in the Safe Lancer App</h2> 
+         <p>Each day, all individuals coming to campus will have to take a COVID-19 self-assessment using the Safe Lancer app. To do this on your phone, open the app, click Self-Assessment &gt; Self-Assessment Tool &gt; Start Self-Assessment.</p> 
+         <h3><img alt="" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=f3747829-5124-4525-b899-48e3dc6e8190.png" style="height: 534px; width: 300px; float: left; margin-right: 5px"></h3> 
+         <h3><img alt="" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=8760c3a5-c094-4ec1-84a6-ed3c502565b4.png" style="width: 300px; float: left; height: 534px"></h3> 
+         <p style="clear: both">After receiving an "<strong>Approved</strong>" self-assessment, continue to step 2.&nbsp;</p> 
+         <p>The service is available through your browser as well if you do not have a mobile phone:&nbsp;<a href="https://uwindsor.apparmor.com/WebApp/default.aspx?menu=Start+Web+Self+Assessment">https://uwindsor.apparmor.com/WebApp/default.aspx?menu=Start+Web+Self+Assessment</a></p> 
+         <h2>2. Locate a QR Code Scanner</h2> 
+         <p>Scanners are available at all designated entrances into buildings.</p> 
+         <p><img alt="" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=b58ad584-17ed-4b3f-b341-2ea3a0c533c4.png" style="border-width: 1px; border-style: solid; margin: 5px; width: 200px; height: 356px; float: left"></p> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h3>&nbsp;</h3> 
+         <h2>3.&nbsp;Retrieve your Assessment QR Code</h2> 
+         <p>You can retrieve your assessment by opening the Safe Lancer app, clicking Self-Assessment &gt; Self-Assessment Tool &gt; My Self-Assessment Status.</p> 
+         <p><img alt="" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=36dbf7ff-d6fd-4578-8f48-42537fae3e6f.png" style="border-width: 0; border-style: solid; margin-right: 5px; float: left; width: 300px; height: 534px"></p> 
+         <p><img alt="" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=0e9d9790-09d4-4a5d-a717-8c639fb2247a.png" style="border-width: 0; border-style: solid; margin: 0; width: 300px; height: 534px"></p> 
+         <h2>4. Scan your QR code to Check-in across campus</h2> 
+         <p>Present your QR code to the QR Code reader, there is a front-facing camera. Once successful, you will receive a green notice confirming "CHECK-IN SUCCESSFUL".&nbsp;You can use your QR code badge to check in&nbsp;for 24 hours&nbsp;across campus before it expires.&nbsp;</p> 
+         <p><img alt="Scanner Response Green Proceed " src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=4cd3f3cb-b85a-408a-a186-333c3cf42f1b.png" style="float: left; width: 450px; height: 219px; border-width: 1px; border-style: solid"></p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <h2>&nbsp;</h2> 
+         <h2>Other Scanner Responses</h2> 
+         <p><strong>Grey - Check-In Pending&nbsp;</strong></p> 
+         <p>Unable to verify your badge status. Please proceed if you have a green badge.&nbsp;</p> 
+         <p><img alt="Scanner Response Grey Pending" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=a87d2a2e-2b77-46e0-8c5f-6c9ad8e24c14.png" style="border-width: 1px; border-style: solid; float: left; width: 450px; height: 217px"></p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p><strong>Grey - Check-In Badge Expired</strong></p> 
+         <p>Your badge has expired. Please perform another self-assessment using the Safe Lancer app and check in again.</p> 
+         <p><img alt="Scanner Response Grey Expired" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=843421b4-74f1-4407-854e-0151fe616ae5.png" style="border-width: 1px; border-style: solid; float: left; width: 450px; height: 230px"></p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p><strong>Red - Check-In Denied</strong></p> 
+         <p>Your badge has been denied. Please leave campus immediately and self-isolate.&nbsp;</p> 
+         <p><img alt="Scanner Response Red Badge Denied" src="https://uwindsor.teamdynamix.com/TDPortal/Images/Viewer?fileName=d6439f4a-905f-47d8-94b9-ce9d8ab627ea.png" style="border-width: 1px; border-style: solid; float: left; width: 450px; height: 218px"></p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <h2>&nbsp;</h2>
+        </div> 
+        <div id="divFeedback2" class="well gutter-top-lg"> 
+         <div class="row" id="divHelpfulYesNo"> 
+          <div class="col-sm-7"> 
+           <div> <a href="/TDClient/1975/Portal/Login.aspx?ReturnUrl=%2fTDClient%2f1975%2fPortal%2fKB%2fArticleDet%3fID%3d137377">Sign in to leave feedback</a> 
+           </div> 
+          </div> 
+          <div class="col-sm-5 text-right"> 
+           <div id="ctl00_ctl00_cpContent_cpContent_UpdatePanel1" aria-live="polite" aria-atomic="true">
+             0 reviews 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="tab-content gutter-top gutter-bottom"> 
+         <div id="ctl00_ctl00_cpContent_cpContent_upFeedbackGrid"> <a id="ctl00_ctl00_cpContent_cpContent_btnToggleAddressed" tabindex="-1" class="hidden" aria-hidden="true" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$cpContent$cpContent$btnToggleAddressed&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Blank</a> <a id="ctl00_ctl00_cpContent_cpContent_btnDeleteFeedback" tabindex="-1" class="hidden" aria-hidden="true" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$cpContent$cpContent$btnDeleteFeedback&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Blank</a> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-md-4"> <a id="ctl00_ctl00_cpContent_cpContent_btnToggleFavorite" tabindex="-1" class="hidden" aria-hidden="true" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$cpContent$cpContent$btnToggleFavorite&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Blank</a> 
+        <div id="divDetails" class="panel panel-default gutter-top"> 
+         <div class="panel-heading"> 
+          <h3 class="panel-title">Details</h3> 
+         </div> 
+         <div class="panel-body"> 
+          <div id="ArticleID"> <span class="control-label gutter-bottom-xs">Article ID: </span> 137377 
+          </div> 
+          <div id="divAuthor" class="disp-group"> <span class="control-label gutter-bottom-xs">Created </span> 
+           <div> <span id="ctl00_ctl00_cpContent_cpContent_udtCreatedDate">Mon 8/30/21 9:03 PM</span><span id="ctl00_ctl00_cpContent_cpContent_lblCreatedBy"></span> 
+           </div> 
+          </div> 
+          <div id="ctl00_ctl00_cpContent_cpContent_divModified" class="disp-group"> <span class="control-label gutter-bottom-xs">Modified </span> 
+           <div> <span id="ctl00_ctl00_cpContent_cpContent_udtModifiedDate">Mon 11/29/21 10:57 AM</span><span id="ctl00_ctl00_cpContent_cpContent_lblModifiedBy"></span> 
+           </div> 
+          </div> 
+          <div class="js-custom-attributes-container"> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="ctl00_ctl00_cpContent_cpContent_divKB" class="panel panel-default"> 
+         <div class="panel-heading"> 
+          <h3 class="panel-title">Related Articles (2)</h3> 
+         </div> 
+         <div class="panel-body"> 
+          <div id="ctl00_ctl00_cpContent_cpContent_rptArticles_ctl00_ctlArticle_divContainer" class="gutter-top-sm gutter-bottom-lg"> 
+           <div class="clearfix"> 
+            <div class="pull-left font-md"> <a target="_blank" href="https://uwindsor.teamdynamix.com/TDClient/1975/Portal/KB/ArticleDet?ID=137590">Contractor UWin Account</a> 
+            </div> 
+            <div class="pull-right"> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="ctl00_ctl00_cpContent_cpContent_rptArticles_ctl01_ctlArticle_divContainer" class="gutter-top-sm gutter-bottom-lg"> 
+           <div class="clearfix"> 
+            <div class="pull-left font-md"> <a target="_blank" href="https://uwindsor.teamdynamix.com/TDClient/1975/Portal/KB/ArticleDet?ID=137438">How to view the UWindsor COVID-19 Assessment QR Scan Dashboard</a> 
+            </div> 
+            <div class="pull-right"> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="divAttachments" class="js-article-attachments"></div> 
+       </div> 
+      </div> 
+      <div id="ctl00_ctl00_cpContent_cpContent_divProgress" style="display: none; z-index: 60;"> 
+       <div id="ctl00_ctl00_cpContent_cpContent_pbMain" style="position: fixed; top: 50%; left: 0px; width: 100%; height: 1px; overflow: visible; z-index: 2000; display: block;">
+        <div style="margin-left: -125px; position: fixed; top: 50%; left: 50%; width: 250px; height: 90px;">
+         <div class="well shadow">
+          <h2 class="h4 gutter-top-none">Deleting...</h2>
+          <div class="progress" style="margin-bottom: 0;">
+           <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+          </div>
+         </div>
+        </div>
+       </div> 
+      </div> 
+      <div class="modal fade" id="divShareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> 
+       <div class="modal-dialog"> 
+        <div class="modal-content"> 
+         <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+          <h4 class="modal-title" id="myModalLabel"> <span class="fa fa-share-alt fa-fw" aria-hidden="true"></span>Share </h4> 
+         </div> 
+         <div class="modal-body"> 
+          <div class="form-group required"> <label class="control-label" for="ctl00_ctl00_cpContent_cpContent_shareRecipients">Recipient(s) <small>- separate email addresses with a comma</small></label> 
+           <input name="ctl00$ctl00$cpContent$cpContent$shareRecipients" type="text" id="ctl00_ctl00_cpContent_cpContent_shareRecipients" class="form-control"> 
+          </div> 
+          <div class="form-group"> <label for="ctl00_ctl00_cpContent_cpContent_shareBody" class="control-label">Message</label> 
+           <script type="text/javascript">
+
+  (function () {
+
+    window.addEventListener('CKEDITOR-config-loaded', function () {
+
+      if (window.CKEDITOR) {
+
+        setCKEditorConfigs();
+
+        // The "CKEDITOR-config-loaded" event is thrown after the CKEDITOR global variable has been created, but before the instance of CKEditor is ready.
+        // At this point attach a listener to the global variable for the instanceReady event so we can attach our nanospell scripts.
+        // Then manually call the startNanospell function on the instance to attach our css file after the plugin.js script has been attached. 
+        initialize();
+
+      }
+                       
+    });
+
+  })();
+
+  function setCKEditorConfigs() {
+
+    window.CKEDITOR.config['clientScripts'] = [{"scriptPath":["/TDPortal/Content/bootstrap/3.4.1/dist/js/bootstrap.min.js","https://uwindsor.teamdynamix.com/TDPortal/Content/Scripts/tdx/TDJSFramework.compiled.min.js"],"scriptDependencyPath":"/TDPortal/Content/Scripts/jquery/2.2.4/jquery.min.js"}];
+
+    window.CKEDITOR.config['clientStyles'] = ["/TDPortal/Content/bootstrap/3.4.1/dist/css/bootstrap.min.css","/TDClient/Styles/bootstrap_custom.min.css","/TDClient/Styles/TDStyles.min.css","https://uwindsor.teamdynamix.com/TDPortal/BE/Style/93/TDClient/1975"];
+
+    window.CKEDITOR.config['itemTemplates'] = '';
+
+  }
+
+  function initialize() {
+
+    window.CKEDITOR.on('instanceReady', function (evt) {
+
+      if (evt.editor.element.$.id == 'ctl00_ctl00_cpContent_cpContent_shareBody_txtBody') {
+
+        nanospell.ckeditor('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody', {
+          dictionary: 'en',
+          server: 'asp.net'
+        });
+
+        setTimeout(function () { evt.editor.startNanospell(); }, 200);
+
+        // Check if we should mark the editor as required
+        if ($(evt.editor.element.$).parents('div.required').length > 0) {
+          evt.editor.editable().setAttribute('aria-required', 'true');
+        }
+      }
+
+    });
+  }
+
+</script> <span class="sr-only">Press Alt + 0 within the editor to access accessibility instructions, or press Alt + F10 to access the menu.</span> <textarea name="ctl00$ctl00$cpContent$cpContent$shareBody$txtBody" rows="2" cols="20" id="ctl00_ctl00_cpContent_cpContent_shareBody_txtBody" style="height:175px;">
+Check out this article I found in the Client Portal knowledge base.&lt;br /&gt;&lt;br /&gt;&lt;a href="https://uwindsor.teamdynamix.com/TDClient/1975/Portal/KB/ArticleDet?ID=137377"&gt;https://uwindsor.teamdynamix.com/TDClient/1975/Portal/KB/ArticleDet?ID=137377&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;SafeLancer QR Code Check-in&lt;br /&gt;&lt;br /&gt;Overview of how to check in with your SafeLancer self assessment result, how to use the managers dashboard to review your staff's self assessment status, and common questions regarding visibility of information</textarea> <span id="ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor" style="display:none;"></span> 
+           <script src="/TDPortal/Content/nanospell/autoload.js?v=20220402010900"></script> 
+          </div> 
+         </div> 
+         <div class="modal-footer text-left"> <button onclick="checkRecipients(); if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate(''); __doPostBack('ctl00$ctl00$cpContent$cpContent$btnSendShare','')" id="ctl00_ctl00_cpContent_cpContent_btnSendShare" type="button" class="btn btn-primary"> <span class="fa fa-paper-plane-o" aria-hidden="true"></span><span class="padding-left-xs">Send</span> </button> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </main> 
+   <script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor"));
+//]]>
+</script> 
+   <script type="text/javascript">
+//<![CDATA[
+var ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor = document.all ? document.all["ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor"] : document.getElementById("ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor");
+ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor.controltovalidate = "ctl00_ctl00_cpContent_cpContent_shareBody_txtBody";
+ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor.focusOnError = "t";
+ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor.display = "None";
+ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor.enabled = "False";
+ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor.initialvalue = "";
+//]]>
+</script> 
+   <script type="text/javascript">
+//<![CDATA[
+setNavPosition('TDKnowledgeBase');window.CKEDITOR_BASEPATH = 'https://uwindsor.teamdynamix.com/TDPortal/Content/ckeditor/';
+//]]>
+</script> 
+   <script src="https://uwindsor.teamdynamix.com/TDPortal/Content/ckeditor/ckeditor.js?t=C6HH5UF" type="text/javascript"></script> 
+   <script type="text/javascript">
+//<![CDATA[
+var CKEditor_Controls=[],CKEditor_Init=[];function CKEditor_TextBoxEncode(d,e){var f;if(typeof CKEDITOR=='undefined'||typeof CKEDITOR.instances[d]=='undefined'){f=document.getElementById(d);if(f)f.value=f.value.replace(/</g,'&lt;').replace(/>/g,'&gt;');}else{var g=CKEDITOR.instances[d];if(e&&(typeof Page_BlockSubmit=='undefined'||!Page_BlockSubmit)){g.destroy();f=document.getElementById(d);if(f)f.style.visibility='hidden';}else g.updateElement();}};(function(){if(typeof CKEDITOR!='undefined'){var d=document.getElementById('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody');if(d)d.style.visibility='hidden';}var e=function(){var f=CKEditor_Controls,g=CKEditor_Init,h=window.pageLoad,i=function(){for(var j=f.length;j--;){var k=document.getElementById(f[j]);if(k&&k.value&&(k.value.indexOf('<')==-1||k.value.indexOf('>')==-1))k.value=k.value.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');}if(typeof CKEDITOR!='undefined')for(var j=0;j<g.length;j++)g[j].call(this);};window.pageLoad=function(j,k){if(k.get_isPartialLoad())setTimeout(i,0);if(h&&typeof h=='function')h.call(this,j,k);};if(typeof Page_ClientValidate=='function'&&typeof CKEDITOR!='undefined')Page_ClientValidate=CKEDITOR.tools.override(Page_ClientValidate,function(j){return function(){for(var k in CKEDITOR.instances){if(document.getElementById(k))CKEDITOR.instances[k].updateElement();}return j.apply(this,arguments);};});setTimeout(i,0);};if(typeof Sys!='undefined'&&typeof Sys.Application!='undefined')Sys.Application.add_load(e);if(window.addEventListener)window.addEventListener('load',e,false);else if(window.attachEvent)window.attachEvent('onload',e);})();CKEditor_Controls.push('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody');
+CKEditor_Init.push(function(){if(typeof CKEDITOR.instances['ctl00_ctl00_cpContent_cpContent_shareBody_txtBody']!='undefined' || !document.getElementById('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody')) return;CKEDITOR.replace('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody',{"contentsCss" : ['https://uwindsor.teamdynamix.com/TDPortal/Content/ckeditor/contents.css', '/TDPortal/Content/Styles/font-awesome.min.css'], "height" : "175", "htmlEncodeOutput" : true, "image_previewText" : " ", "removePlugins" : "elementspath,fontawesome,youtube", "toolbar" : "TDSimple"}); });
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":500,"dynamicLayout":true}, null, null, $get("ctl00_ctl00_upMain"));
+});
+
+document.getElementById('ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_ctl00_cpContent_cpContent_shareBody_rfvCkEditor'));
+}
+//]]>
+</script> 
+  </form> 
+  <footer role="contentinfo"> 
+   <div class="master-footer"> 
+    <div class="default-footer">
+      Powered by <a href="https://www.teamdynamix.com" target="_blank">TeamDynamix</a> | <a href="/TDClient/1975/Portal/SiteMap">Site Map</a> 
+    </div> 
+   </div> 
+  </footer> 
+  <script>
+
+    
+    
+
+      // Inject the Google Analytics isogram. This must happen here because it
+      // cannot be injected through an external javascript library.
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    
+
+      // Per Incident #6707155. Need to focus on img. pseudo-class :focus-within is not supported in IE
+      (function ($) {
+        var $anchor = $('#divLogo a');
+        var $beLogo = $('#divLogo a img');
+
+        $anchor.focus(function () {
+          $beLogo.addClass('accessibility-focus-on-logo');
+        })
+          .blur(function () {
+            $beLogo.removeClass('accessibility-focus-on-logo');
+          })
+      })(jQuery);
+
+  </script>  
+ </body>
+</html>

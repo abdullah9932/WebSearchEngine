@@ -1,0 +1,59 @@
+<html> 
+ <head> 
+  <title>AudienceView Professional</title> 
+  <link rel="shortcut icon" href="/images/favicon.ico?v=1"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="Cache-Control" content="private, no-cache, no-store, must-revalidate, proxy-revalidate"> 
+  <meta http-equiv="Pragma" content="no-cache"> 
+  <meta http-equiv="Expires" content="0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <meta name="buildType" content="production"> 
+  <meta name="buildDate" content="Tue Mar 08 2022 18:42:32 GMT+0000 (UTC)"> 
+  <meta name="buildNumber" content="'N/A'"> <!--scripts and styles injected--> 
+  <link href="/styles/main.css" rel="stylesheet">
+ </head> 
+ <body> <!-- integrate sift javascript --> 
+  <script type="text/javascript">
+	var apiUrl ="https://web.ovationtix.com/trs/api/rest";
+	var clientId = window.location.pathname.split("/")[1];
+	try{
+		var clientFraudProtection = getClientFraudProtection(clientId,apiUrl);
+		var _session_id ='';
+	}
+	catch(err){
+	}
+
+	function getClientFraudProtection(clientId,apiUrl) {
+		var clientFraudProtectionPath = '/clientinfo/fraudProtection?clientId='+clientId;
+		var url = apiUrl+clientFraudProtectionPath;
+		var ret='';	
+		
+		var xhr = new XMLHttpRequest();		
+		
+		xhr.open('GET', url, false);		
+		xhr.onerror = function () {			
+			throw new Error("error: "+xhr.statusText);
+		};
+		xhr.send('');
+		if (xhr.status === 200) {			
+			if(xhr.responseText.length>0){
+				ret=JSON.parse(xhr.responseText);
+			}
+		} else {			
+			throw new Error("Unexpected response received:"+xhr.status);
+		};
+		return ret;
+	}
+
+  </script> 
+  <div> 
+   <div id="main"></div> 
+  </div> 
+  <script type="text/javascript" src="/scripts/vendor.js"></script>
+  <script type="text/javascript" src="/scripts/core~main.js"></script>
+  <script type="text/javascript" src="/scripts/core.js"></script>
+  <script type="text/javascript" src="/scripts/main.js"></script> 
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html id="rlApp" ng-controller="IndexController as indexCtrl" lang="{{currentLangCode()}}" ng-class="[fontSize, screenDisplay]" dir="{{getLangDiraction()}}"> 
+ <head> 
+  <base href="/leganto/readinglist/"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8"> 
+  <title>{{title}}</title> 
+  <meta name="description" content="Leganto, the newest addition to the Ex Libris product suite, is an independent, cloud?based service for creating, maintaining, monitoring, evaluating, using, and sharing course readings."> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="./css/vendor/vendor.min.css?rev=1648628175081"> 
+  <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css"> <!-- Fonts --> 
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="./css/leganto.css?rev=1648628175081"> <!-- RTL --> 
+  <link rel="stylesheet" href="./css/leganto-rtl.css?rev=1648628175081" ng-if="lang=='he'"> 
+  <link rel="stylesheet" href="./css/styles-rtl.css?rev=1648628175081" ng-if="lang=='he'"> <!-- print CSS file --> 
+  <link rel="stylesheet" href="./css/print.css?rev=1648628175081" type="text/css" media="print"> <!-- Branding --> 
+  <link ng-if="myuser &amp;&amp; myuser.useCustomization" rel="stylesheet" href="{{'../../infra/branding/css/legantoTheme.css?version=' + myuser.version + '&amp;CacheTimestamp=' + myuser.CacheTimestamp + '&amp;institution=' + myuser.user.userDetails.institutionId | trusted}}"> <!-- IE fix --> 
+  <link rel="stylesheet" href="./css/ie-style.css?rev=1648628175081" ng-if="isIE()"> <!-- webfonts --> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn:400italic,400,700" rel="stylesheet" type="text/css"> <!-- Customize fonts option A--> 
+  <link ng-if="myuser &amp;&amp; myuser.customizationFont == 'a'" href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet"> 
+  <link ng-if="myuser &amp;&amp; myuser.customizationFont == 'a'" href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet"> <!-- Customize fonts option B--> 
+  <link ng-if="myuser &amp;&amp; myuser.customizationFont == 'b'" href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet"> 
+  <link ng-if="myuser &amp;&amp; myuser.customizationFont == 'b'" href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> <!-- Customize fonts option C--> 
+  <link ng-if="myuser &amp;&amp; myuser.customizationFont == 'c'" href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet"> 
+  <link ng-if="myuser &amp;&amp; myuser.customizationFont == 'c'" href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  <link rel="icon" type="image/ico" href="{{'/infra/branding/logo/fav-leganto.ico?version=' + myuser.version + '&amp;institution=' + myuser.user.userDetails.institutionId | trusted}}"> 
+ </head> 
+ <body id="indexBody" ng-class="{'edit-mode' : (open() &amp;&amp; inPage(['lists', 'collection', 'searchlists'])) || isNgAsideOpen(),
+     'touch-screen' : touchScreen, 'mobile-view' : campusm, 'leganto-welcome-page' : quickStart,
+	 'hide-header' : showheader,
+	 'mobile-sidebar' : isOpenMobileSideBar(),
+	 'fonts-a' : myuser.customizationFont == 'a',
+	 'fonts-b' : myuser.customizationFont == 'b',
+	 'fonts-c' : myuser.customizationFont == 'c',
+	 'ng-flex' : isNgAsideOpen()}" translate-cloak class="translate-cloak no-capitalization no-header-scroll"> <bootstrap-services (on-init)="angularInitialized()"></bootstrap-services> 
+  <div id="fb-root"></div> 
+  <div class="SkipLinks main-links" tabindex="0"> <a href="#aside" tabindex="0">{{'accessibility.skip.link.sidebar' | translate}}</a> | <a href="#PageContent" tabindex="0">{{'accessibility.skip.link.content' | translate}}</a> 
+  </div> <a id="top"></a> <!-- Title bar --> 
+  <header ng-if="!hideTopPanel" id="PageHeader" role="banner"> 
+   <div ng-if="!selectCitation" class="navbar navbar-inverse navbar-fixed-top" ng-include="'partials/include/indexTitle.html'" ng-style="!myuser.useCustomization &amp;&amp; {'border-bottom-color' : myuser.cusBranding.backcolor, 'background-color' : myuser.cusBranding.topcolor}"></div> 
+  </header> <!-- page blocker when loading --> 
+  <div class="loader-blocker" ng-show="legantoBusy" ng-if="!quickStart"> <!-- loading message + loader --> 
+   <div class="loader-element inverse"> 
+    <div ng-include="'partials/include/loader.html'"></div> 
+    <div class="loader-text">
+     {{'general.holdOn' | translate}}
+    </div> 
+   </div> 
+  </div> 
+  <div ng-cloak class="scroll-container container-fluid main-view" id="scroll-container-id" ng-class="{'has-aside-block' : !isNg() &amp;&amp; hasAsideBlock()}"> 
+   <div class="scroll-container-content" id="container-content" ng-class="{'no-header-page' : selectCitation, 'no-padding' : hideTopPanel}"> 
+    <img ng-src="{{beaconUrl}}" style="display:none" alt="Invisible beacon image"> 
+    <main class="main main-content-holder" ng-class="{'full-height-main' : hideTopPanel}" role="main" id="main"> 
+     <div class="view" ng-class="{'quick-start-container' : quickStart , 'full-view-single' : viewer }" ng-view></div> <rl-side-panel rlresizeright="sidePanel" ng-if="isNg()" class="rl-side-panel"></rl-side-panel> 
+    </main> 
+   </div> <rl-selection-toolbar ng-if="selectCitation" [list]="getCurrentList()" [type]="selectCitation" (invalid-selection)="displayErrorMessage($event)"></rl-selection-toolbar> 
+  </div> <!-- inject:js --> 
+  <script src="../bundles/vendor.min.js?rev=1648628175081"></script> 
+  <script src="../dist/js/app.js?rev=1648628175081"></script> 
+  <script src="../bundles/templates.js?rev=1648628175081"></script> 
+  <script src="../bundles/local.js?rev=1648628175081"></script> 
+  <script src="../bundles/angular-vendor.js?rev=1648628175081"></script> 
+  <script src="../bundles/build/runtime.js?rev=1648628175081"></script> 
+  <script src="../bundles/build/scripts.js?rev=1648628175081"></script> 
+  <script src="../bundles/build/main.js?rev=1648628175081"></script> <!-- endinject --> <!-- new files --> 
+  <script ng-if="analytics">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</script>  
+ </body>
+</html>

@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import ExternalClasses.RadixSort;
 import ExternalClasses.StdOut;
 
 public class SearchTextFiles {
@@ -13,14 +14,15 @@ public class SearchTextFiles {
 		String [] words;
 		String fileName = "";
 		boolean fileExist = false;
-		HashMap <String,Integer> resultReturned = new HashMap();
+		int len;
 		HashMap<String,Integer> listOfFrequencies = new HashMap<String,Integer>();
 		
 		//removing stopwords from the input query
 		words = SearchKeywords.getKeywordsAndRemoveStopWords(query);
+		len = words.length;
 		
-		//sorting the words using builtin sort function of java to sort the keywords for storage
-		Arrays.sort(words);
+		//sorting the input using radix sort because the length of input is short
+		RadixSort.radixSortA(words, len);
 		
 		//creating filename with search words
 		for (String word : words) 

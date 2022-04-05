@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en-CA"> 
+ <head> 
+  <title>University of Windsor MySuccess - mySuccess Login</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" href="/site/images/favicon.ico" type="image/x-icon"> 
+  <link rel="shortcut icon" href="/site/images/favicon.ico" type="image/x-icon"> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/bootstrap/core/css/bootstrap.min-231.css" rel="stylesheet" type="text/css"> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/bootstrap/core/css/bootstrap-responsive.min-231.css" rel="stylesheet" type="text/css"> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/bootstrap/bootstrap-modal/css/bootstrap-modal-233.css" rel="stylesheet" type="text/css"> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/bootstrap/font-awesome/css/font-awesome.min-231.css" rel="stylesheet" type="text/css"> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/bootstrap/jqueryui-bootstrap-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css"> 
+  <link href="/core/orbis/css/bootstrap/bootstrap.mods-287.css" rel="stylesheet" type="text/css"> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/css/protip.min.css" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"> 
+  <link href="/core/orbis/css/core-253.css" rel="stylesheet" type="text/css"> 
+  <link href="/core/orbis/css/bootstrap/update-102.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/scripts/jquery/jquery-1.9.1.min.js"></script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/orbisScriptManager/0.2/orbisScriptManager.js"></script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/scripts/jquery/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/bootstrap/core/js/bootstrap.min-231.js"></script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/bootstrap/bootstrap-modal/js/bootstrap-modalmanager-233.js"></script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/bootstrap/bootstrap-modal/js/bootstrap-modal-233.js"></script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/scripts/ckeditor-4.5.6/ckeditor.js"></script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/scripts/ckeditor-4.5.6/adapters/jquery-232.js"></script> 
+  <script type="text/javascript" src="/core/ckfinder/ckfinder-2.4.2-custom.js"></script> 
+  <link href="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/css/animate.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript">
+	var orbisLocale = "en";
+	var isL1 = true;
+	var isL2 = false;
+	var i18n = {
+		answered: "Answered",
+		answeredFilterDescription: "Shows answered chats",
+		unanswered: "Unanswered",
+		unansweredFilterDescription: "Shows unanswered chats",
+		unclaimedFilterDescription: "Shows chats with no claimants",
+		claimedByMeFilterDescription: "Shows chats you\'ve claimed",
+		claimedByMe: "Claimed By Me",
+		unclaimed: "Unclaimed",
+		noChatsToShow: "No chats to show",
+		helpQueue: "Help Queue",
+		participantType: "Participant Type",
+		participant: "Participant",
+		sent: "Sent",
+		claim: "Claim",
+		unclaim: "Unclaim",
+		claimed: "Claimed By",
+		title: "Title",
+		groupInterview: "Group Interview",
+		close: "Close",
+		confirm: "Confirm",
+		kickUser: "Remove Participant",
+		kickConfirm: "Are you sure you want to remove this participant?",
+		numOfAdminsOnline: "{num} Admin(s) Online",
+		viewInterviewees: "View Interviewees",
+		viewRegistrants: "View Registrants",
+		online: "Online",
+		offline: "Offline",
+		registrants: "Registrants",
+		presenters: "Presenters",
+		category: "Category",
+		presentedBy: "Presented by {presenters}",
+		interviewerEmailAlreadyInUse: "This email is already being used by another interviewer.",
+		joinButtonPastTooltip: "The meeting is over. You can\'t join past meetings.",
+		joinButtonFutureTooltip: "Please wait for the meeting to start.",
+		youSentAMessage: "You",
+		schedule: "Schedule",
+		helpNeeded: "Help Needed",
+		helpNeededFilterDescription: "Shows meetings where at least one of the participants has sent a help message that hasn\'t been responded to",
+		lateParticipant: "Late Participant",
+		lateParticipantFilterDescription: "Shows meetings where at least one of the participants is late",
+		notReady: "Participant Not Ready",
+		notReadyFilterDescription: "Shows meetings that start in the next {beforeBufferMinutes} minute(s) where at least one participant hasn\'t joined yet",
+		upcoming: "Upcoming",
+		upcomingFilterDescription: "Shows current and upcoming meetings",
+		searchPlaceholder: "Search...",
+		event: "Meeting",
+		actions: "Actions",
+		noEventsToShow: "No meetings to show.",
+		appointmentWith: "Appointment with {user}",
+		join: "Join",
+		information: "Information",
+		time: "Time",
+		organization: "Organization",
+		job: "Job Posting",
+		jobs: "Job Postings",
+		interviewer: "Interviewer",
+		interviewee: "Interviewee",
+		interviewees: "Interviewees",
+		saType: "Appointment Type",
+		provider: "Provider",
+		customer: "Attendee",
+		chat: "Chat",
+		sendAMessage: "Send a message...",
+		sendMessage: "Send message",
+		interviewWith: "Interview with {user}",
+		i14581551: "Are you sure you want to delete this task?",
+		i55453541: "Are you sure you want to delete this note?",
+		i34534531: "Are you sure you want to delete this time-slot?",
+		i98413981: "deleteInterviewer - unsuccessful",
+		i74513741: "ERROR",
+		i882266335: "Delete this time-slot",
+		i909878654: "Delete this interviewer",
+		u876543678: "Edit this interviewer",
+		x894392000: "Add day for this interviewer",
+		d888987896: "Are you sure you want to delete this Interviewer?",
+		u71664225: "Delete this group?",
+		s60971652: "Could not add new group - invalid parameters.",
+		a05352565: "ERROR",
+		d76200733: "Columns",
+		w73107591: "Reorder Columns",
+		l43035401: "View Details",
+		q40274238: "View More Details",
+		i74855411: "No Restrictions.",
+		a40369725: "SELECT ALL",
+		c53266207: "There has been a communication error with the server(1). Please try again.",
+		g92510331: "There has been a communication error with the server(2). Please try again.",
+		x410443028: "There has been a communication error with the server(3). Please try again.",
+		o312666927: "Alert",
+		e037553076: "Please Wait...",
+		h17743726: "Are you sure?",
+		m536012143: "MAX CHARS",
+		w24268703: "CHARS REMAINING",
+		u93742358: "You have inputed incorrect parameters within the checkboxWidget plugin.",
+		j07234968: "Fetching news feed",
+		i413033843: "News feed unavailable!",
+		s55118689: "Click here for more information",
+		q8366135: "OK",
+		n968294344: "Confirmation",
+		cl1723834: "Close",
+		z121936338: "Cancel",
+		i56321831: "Save",
+		i59165711: "Delete",
+		j20071968: "Success",
+		j20071969: "Information",
+		j20071970: "Warning",
+		j20071971: "Error",
+		h76451855: "No data to display",
+		x86501475: "The student doesn\'t have a valid address.",
+		x54414921: "The opportunity doesn\'t have a valid address.",
+		x30489942: "The industry partner doesn\'t have a valid address.",
+		filter: "Filter: ",
+		selected: "selected",
+		hc_noData: "No data to display",
+		hc_zoom: "Reset Zoom",
+		hc_shortMonthsJan: "Jan",
+		hc_shortMonthsFeb: "Feb",
+		hc_shortMonthsMar: "Mar",
+		hc_shortMonthsApr: "Apr",
+		hc_shortMonthsMay: "May",
+		hc_shortMonthsJun: "Jun",
+		hc_shortMonthsJul: "Jul",
+		hc_shortMonthsAug: "Aug",
+		hc_shortMonthsSep: "Sep",
+		hc_shortMonthsOct: "Oct",
+		hc_shortMonthsNov: "Nov",
+		hc_shortMonthsDec: "Dec",
+		hc_longMonthsJan: "January",
+		hc_longMonthsFeb: "February",
+		hc_longMonthsMar: "March",
+		hc_longMonthsApr: "April",
+		hc_longMonthsMay: "May",
+		hc_longMonthsJun: "June",
+		hc_longMonthsJul: "July",
+		hc_longMonthsAug: "August",
+		hc_longMonthsSep: "September",
+		hc_longMonthsOct: "October",
+		hc_longMonthsNov: "November",
+		hc_longMonthsDec: "December",
+		hc_weekdaysSun: "Sunday",
+		hc_weekdaysMon: "Monday",
+		hc_weekdaysTue: "Tuesday",
+		hc_weekdaysWed: "Wednesday",
+		hc_weekdaysThu: "Thursday",
+		hc_weekdaysFri: "Friday",
+		hc_weekdaysSat: "Saturday",		
+		hc_loading: "Loading...",
+		hc_decimalPoint: ".",
+		hc_downloadCSV: "Download CSV",
+		hc_downloadJPEG: "Download JPEG",
+		hc_downloadPDF: "Download PDF",
+		hc_downloadPNG: "Download PNG",
+		hc_downloadSVG: "Download SVG",
+		hc_downloadXLS: "Download XLS",
+		hc_viewData: "View data table",
+		hc_contextButtonTitle: "Chart Context Menu",
+		hc_printChart: "Print Chart",
+		availExp: "Available experiences by type",
+		activityTime: "Timeline of activity",
+		expW0: "Experiences with 0 participants",
+		last30: "Last 30 days",
+		totalOpp: "Total opportunities: ",
+		chooseFile: "Choose a file",
+        charLimReached: "Character limit reached, the text has been truncated."
+	};
+</script> 
+  <script type="text/javascript">
+	var ResourcesURL = "https://orbisv4head.blob.core.windows.net";
+	
+	ckFinder(ResourcesURL + '/core/ckfinder');
+</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/scripts/json/json2-231.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/scripts/json/json2-231.js');</script> 
+  <script type="text/javascript" src="/core/orbis/scripts/orbis-361.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/orbis/scripts/orbis-361.js');</script> 
+  <script type="text/javascript" src="/core/orbis/scripts/update-5.js"></script> 
+  <script type="text/javascript">
+	document.title = "University of Windsor MySuccess - mySuccess Login";
+</script> 
+  <script type="text/javascript">
+	$.datepicker.setDefaults(orbisApp.defaultDatePickerOpts);
+	$.ajaxPrefilter(function( options, originalOptions, jqXHR ) { 
+		if ( options.dataType == 'script' || originalOptions.dataType == 'script' ) { 
+			options.cache= true;
+		} 
+	});
+	orbisApp.checkboxWidgetProperties = {
+		showFilter : true,
+		showFilterOnNumberOfCheckboxes : 0,
+		widgetPropertiesLoaded : false
+	}
+	
+	orbisApp.actions = {
+		loadVcChatTable: "_-_-qHS6vW4OcmNNsYJcL8FazNrp1CiPF_h8hWovlrUMDZC4eeFYZAIpD3tnNMWcX736VYQ4Oo2yGVBx9jBfqu_ZeHJGXWvicOwa9z7QAGiO6vLvINYnJmuAYxCS9sFY7RWJrNCekUF0mCxzw4mvsWnA7iO8IeBVh8IfgGi6wnWslVJK2WrWHqQgDCDCQqA-YdnUzD39vf9PK85iN9hDnrXxTPel",
+		loadChatClaimants: "_-_-bmRLvf6hlPhae8fPWhq-uLnMmSXojxDr7IJcbAdtfc7OEhink_RPhTtGMOD6dK3kdy27H2OSv5pesn1a0UCaijI9QZX1SPL8lbtVD3VCjp_MOymPVEKvDL7uUwGZ4CQhdTlZ4YGKvhkEv6MrcNQE-g87JJ-GehxVA7tZAcd__1EyF8JC4vQD_YXjVpn8DlvUjgXD_QKLAvHWsLF9Ry1nvv7RLic",
+		claimChat: "_-_-8SYYWKYTpY2-0cqTVUjlYChTidUbrUx14QM3Dai8oYWqH3s6-MoYbpTI_V4s9OmQqa_QNi6nkTTBn2HlFzwHxsvW7PUcoSL_duE4EO3l5Jhj55LwnXG69cJ_gNvCKB6lMe-fseBYkbIgY4MoiguDp2gvCNplOBBI6iY238HauUN4DK5i3_NIbUGHse9bcdY-QnHoYLiM6P7TinWG",
+		unclaimChat: "_-_-2m4LAHwf11oifEwENpe9r_Rf-RUJrYGFOM30iUIO6cBpkUrCOgm6h-aoDuIOpbYDehV2gTF5KkCqnqOKQ1zx9HmE7kIhiQwrL6cJlweA1JF6Z0Q8Vn1dOBuTvdpddCUoYB9IKQbZ-kFI8F3qHmLdypQoq9E3fOrsXCY54S8idD5Vm4euypSB9oaXNybWlqoCh2tA7d-5ShrHzCrYEZ0",
+		loadVcHelpState: "_-_-uHr1ReJEYMrDTDcf7ezLKDo2hCzD8N0UysttqtN7t3zitWuAeaVGIfUwxKP9LFQZlDi4X3RoEpy2IRgBGzFZAIOipCrhx6wFIIqs2nRqTHhnB10tfceuDlcoKQIBcUMWSCVzl0Ax3EU91-b-SjkVk_XdFettfjG4uJROuQEmaBHLjmzySSZWvKqkua710dMiPsVXZClJSckezJuVVq6gEerA",
+		loadVcOnlineScheduleState: "_-_-psETB_4tHzkR-WRo_QNUoW3ORJQ2hv0_mBNn6vJY-msxFjEMqt7u1L_8XYHfoXhgOvoIwLBJcf5hT3aNdHL8D-l7Gz2TMYLk_Yc9tSyMvqeb8e_4T0GrPmTZkkWYstet0LXOjxPLwiP8jJO7HHv8oC1y2yVS4GZa05b-ENQqU3_OqKvCEwFt02QthSlaMjRo5gbGBwDv6Q4bDnOHYcd5XOs5tvW8ucSKxsigzg",
+		displayGlobalEventDetails: "_-_-qX-jpS94tnY37Xa0_rfdWabvz52hqbNIQ712oBGbP5dIujOXpa9pOzzEa2XDkZxOIJYzJEox-bd3cjPVSKsWT12ifzpyCMo3T3y1WE_yybjJ98eOId2fb3JZAOkbT2Fn9u-NVok7e3OWFbqacpELQF6Y9AAaDjIFv2HwNdQK-YjfRMR3l-aHncF2_CBnvX6jWEcTqxJIhs4K9KM5GPFes3O6nfhsR7WDcIEevw",
+		displaySlot: "_-_-c4ag-t2BYn9nKr4ldaChzTBoSl5_3qFsKWCbcDLDCkgqgHFJlEtVCAn_q6F2B_fm3xrp8y6DJlttW3Iwgm5mHckuS9IbS0ZfGgiK0AfAjZC6APzIDaISguoDBAIYeWvsXys-pMYacJH3HDfnjXFa--Fd06CcTqvzSYjvsaP9yt3YXgiIW0CRj7PAZRVFYafnSjzkggwsbsxpKoCk1DU",
+		displayInterviewSchedule: "_-_-UaaSCl6Bbf-vTXIaWNQjjw5LrqSqVHimDDN4mIf7zDvSk7I9QBGXmJuaWkcO_NWl9Ts7J2zH9d-NTbB4O3NebYZ6iNE_88qkTK39scAaLDRafBrzD5S8HzFAWNZRwrT6cXGCFOtb888IGD6txoSgmctyV3yVKtBqzxJd4jBvBMmn4yOtx8mLi4Ej4Ez5pTg29uOppCUHpWP4hniYlWn1WoNuqN8ooUvYgoaT",
+		loadIsHelpChatEnabled: "_-_-ZLSNobOSSy6MMhjMLu4XljedrRGmD840Qv-2c1YWOsQtDQIfZ-rkCu-MFXJat0s8xqKuBVSZ_snzQCpt7d1ILyVo9xfcqlKTajFPJpPhXRAYAEqVxzR2MdHIAb4DhyZ5Psl5F5-6untKBb22DUvAYWGwC_UDmzdDVHZ4zljppOtmnnASvOZrBTNyJArRdoC4KiF8BmxWHU405rF4C5vShcV-mpkQxGtB",
+		loadVcAdminsOnlineCount: "_-_-EwQpqvwM13ISd6joNj32G4tY_UJ2jCxlM1lg8khH7c8kO_3nCeC6MLbFbuc_HTkmZFY7qkpVTUa2Rs2Xh-SDjdtWJt6W684XuT1Ub_zSAmkOv__1BJzu4WwLZ0j1hOTePHVPgTLKfDa-BkwYbs6H4FkDDDQ5JONBGtj0Cvgb37Bl5g30Xjy6oVsrePSv0HE2RtSpb5dcm9aqyVvssIu9CM0uVSzHiDLc0bI",
+		getVcSessionState: "_-_-dIgO9VBR8Ja5qNHI089q3SdwsSba4tWmpC7GponjjmMadnkztt175yK1VYE0hwXbp0a2WyO7OAIm6h2vIRf2fNnHafAXGcSj_Q0_aIcJq79mUiDCOx8kqhEPbxtD6mUKqZHbFm7PQWvqEp-1MFfI7a4bPv_EBnb5HAD1oHAmI8Y6cgJeZEfaoDewIA0aRQn4nqnKRB7Ov4CI97_gt_KfSAqqDZg",
+		displayPosting: '_-_-Yh4qAkQ_t3-vfhSYaQhZSu7VLrLdJvqnDx790e7aWUBETUsGYHxSEjRnBTsNfJ5gsL44jp__UI64nBVV4VECkiA0AtknZgrsHZJF_CDVcmkkmqXWFWYLE_2epg3szYkQS0DLaYVw4eaUZi4QtQ7FZAoGY422IQ8LraF5GQoH5ptr3ToWbHVijliKQmTYv38TV2t3HjVVuP2Qz2aH0pY7Wzk',
+		renderHelpTags : "_-_-lFoBVp8Q6fwwdNkMyO-gwgc-nGS0yMz0ZLEBCf6qirHsE-g3RaNyf_zr7VdUlY5wHnXHhivSHrBH7uaVLnv0NVSo5yANMqC4RHNN1sTtmOizNuILEdkzOvcFTSU6cA6IbsoKnwgVPgIReU3TxFJc3bJ2Z02zbdYyXx6KhPcU3ALzVpdj-FPUXoH6-9vSQtNx_MIrx3LHpSQ9pEazftGlizRoJUeqRxc7",
+		populateMsgEditorBody : "_-_-jqWFN6lS3ImKWcph9XtdjHTSHx4Ig4mvBkmpf0hyjIWNqGjJkwL_3HjVUk7wI6n8Zb-XqlWAwVKOfYWvs-47UDqp1UN-gaafmrREGTSSnx5BZZq8Ct1mpEBDJH_nrwuzvtrB5ew7XNtSUvCDmYqV3rv8ogYuodjoISh3C2JMGgOVn7NqFe87GHHEuOMiC2Bq1SaDnWxl_ppkg4VGHoMMJCVpJqyleg",
+		rssWidget : "_-_-0kEl-ldyXGawEHv5uexDlxIm2a711khsCZ-VoegaF7FmCC14ZsUbfKoZd-G4uW_nxPEw_5KkBhn8ReJj2zL4xfQmzn1WfGHj3WTPAhceChYQKSYhyiHfxL3wNkLoO4hA7UKxDtKPqHq6tmzdUA7VfP_Vng9XBdpn2Lghoq2vftFjK2V3UnAmjADAMICtXSNeEAM96jJz2W6rGIGjx2jl",
+		isPlaceable: "_-_-CCUx8k-gcmByeNhHsvnhTGjr2keAi0DuSoOyKtCPunu-Mf8KJu9X0M2gDbxm7YXEkAHwzMsJTH6y8zI5s5RwtGYI_oHQXIarySit8vDwk16ikNFtnRxobeaS7uakhjaeAQSfmgcxPO01R7Gl-ftg4TOJ19hiCUIGn3iJ-sHb1SCo_odovIMIoCOeTgQfhkCUz-oOwlT2Wuxa7CieuenHM8jw",
+		expStudentGeoDatum: "_-_-WbMKFMAEFffW4sEsUz11kHQGPDGA-D1NlOuV1mnxatNa3A2kqPU6fmBBslhfN2S3iGRZwatUttwIH_Z6mLg8E3GjKnpnfM3PRj2ecMra2XUQHBVXTxokzv9u9xD2GqyVQd3h7cO79IcTwaUNOvBdyvLD4JAUxbEYbxJxM2MnsG_qyrktHcRGKanDlnwwWSK8CHiPLSCGfKVJgfygQILgymW9tBgU",
+		expPostingGeoDatum: "_-_-3qKeKpueA9gfuyxN-IyWZHTfmgIrTfC7imKfDqNRChnr7SiIzTFUhbgP7pEZsVRokn9lv5fbY-kvnD6D1uC6tBwnOMi2xGcMfDYEmFXMTwhvjU0OufoQ1SzR4jHS6iIyvL88hZkqaOrL84VIInZy3yYpuee8Fqxi_s9jpV5xz7BO_t9XmycdvzyqqCB4xKwP416fEJSLn5vTrFaLUUKW7UAdIpFZ",
+		expIndustryPartnerGeoDatum: "_-_-FyJa9Y68bpjTOS-yUN05-4HqKW_AOiZm-jZwNxw63k_-wbUivFSSzlXkMf3BsfJX3moTNW92iIlwPhrzywEiSZRid57yCNep9csIaJW87iduCmXtowhnjcDE8X1K0jJpkgQdwO6OS6e_dONm_au8LTaNyVeWarz79ua6mVu2V38oTBdOrUPLCPH1zTy4OuCHCZ6JDYpia4N0TU8s8zqSvnbeHWrnuvdsUw7w6lo",
+		sendChatMessage: "_-_-2-CeB7xkjhIxhWew1eOo12AsX67bdVxkYiohqZ5WVG0NhzYA7TJaJorv9r1j4sMMdr7aMtqCDyTbZGuGy3qOPbMjy4aMusbtydtCNLh22MsVdUDk98_qVaog9wKVDfH01lJM62iP4ZQmRu2VtVFRZAZNkcarIfuQyYiUYOsO5AmauIeW4-9k93T-z4McfKNFn0xG_25VzMnMysjxZZfcXTgZ",
+		createChat: "_-_-AOr9s0kSAP_sri7Ygku7x1yHRYVPTqLPY6nNE5b9P1Wes8LRKLuiLp4_STxb7Xh0pH_BbyMyHjVf0xIjn_R1Y5X69ItJ_FqxlLhesoBOyyPKNnfhZzpT7Qo7T8euu8prIp4xVQrFlQrf9zTGo1T-9euldTurYSwT-ulNzfzNw3R7DGFEj2Y0aGaK0MwmfohPkvUU2KPr3B5b6dwBvA",
+		loadChat: "_-_--2Jopvoly3xn_fvaANCHBruq7o_SpbDgcdYhSS-4Dy3nDyNjZiKrKjpodbd5jNImbzr6WypQ4VDTEjK5lGrFd5mYOQ_WClebXhuEXbw9RRKHYntbWyTCJ2pkOsUmcEU5KoBKcKmSOOF3RvghX9bW1WMQ4zZpGyArAZ-JLLN0QDzkTikyXWG1Eg8J-PfLnQwGcm5EPn-eqDAZv1Q",
+		loadVcOnlineSchedule: "_-_-kx5uhQ5_Q4WDBynVYzZBuGLK3B2UHDnAtpyfAruC8kQ54zBTYneIkG8AjOUuLkkZ3fcsbbAWVjPvPh9RFIuhQFZKZODO9BxV-iocK88aEfG0Aa0HJ74iOTxT_SVVNjISoWXJFHFZgPA3jy5zg-7CsnSPMHum0fNpcehBEDJWRugUPULn9qZtp1w1qy-b7IEhLX84nFKRg3_Uri7EcTcVeU-dUUp7MTM",
+		createVcSessionUserChat: '_-_-ncqmd51anEZDJ9L5wTLLssF0xg5Dzu0GmWrsJ59kmfgI8XSRKy-MyXQ9NrQEzgKIa3sf-WameWDQGeFHCGKeMR_vlrRdDwDsMwahzO2mx93FspsqWpp-sK0Qr_0JX12dj8eC-S8Trjj3ntlNVMC9QGINMhpy1RkvmLLRV32CIQUXYpmAIupvDIfi7B67IBKaiN6LF5nhMohksZgpxE7EKK_s9bUuAykbLRs',
+		startVideoConferenceSession: '_-_-DEALWsYNfpvaOwrgLHFM5L3IxOJLr78wYMN4j1LGetcV84qjivQeOHT4W31u_mY0xY98aMPS9PDjUW8Lp0-3_xSTCVLSZsPDw2-UCqCzW2TRt93WUNI7MDjYzkWATabyLojyRAyjWnlsUKMoKg5uMBomqGAJOCCWEcuo8Lj1EGM5VDs1RQJUVYpXhKbLWzDSkfJFv_pUPcuYkAjq8yWCQNu5x7snV55LAXHN4uQU'
+	};
+</script> 
+  <script type="text/javascript">
+	var orbisAppLocalized = {
+		locale : "en",
+		dateTimeFormats : {
+			php : {
+				dateShort : "m/d/Y",
+				timeShort : "g:i A"
+			},
+			java : {
+				dateShort : "MM/dd/yyyy",
+				timeShort : "hh:mm a",
+				timeShort2 : "h:mm a"
+			}
+		},
+		
+		translations : {
+			htmlStructures : {
+				modals : {
+					confirmModal : {
+						confirmation : "Confirmation",
+						yes : "Yes",
+						no : "No"
+					},
+					alertModal : {
+						alert : "Alert",
+						ok : "ok"
+					}
+				}
+			},
+			functions : {
+				checkAjaxResponse : {
+					c53266207: "There has been a communication error with the server(1). Please try again.",
+					g92510331: "There has been a communication error with the server(2). Please try again.",
+					x410443028: "There has been a communication error with the server(3). Please try again."
+				},
+				showLoadingOverlay : {
+					loading : "Loading..."
+				}
+			},
+			tags : {
+				uiCheckboxGroup : {
+					youMustSelectAtLeastOneItem: "You must select at least one item"
+				},
+				uiCalendar : {
+					filters: "Filters",
+					updateEventError: "There has been an error updating the event.",
+					failedEventFeaturesError: "Event change randomly failed to show off some failed features."
+				},
+				uiFileUpload : {
+					chooseFile: "Choose a file",
+					removeFileConfirmation: "Are you sure you want to delete the uploaded file?",
+					fileUploadFailed: "File upload failed",
+					fileFormatIsNotPermitted: "The file format \'.{0}\' is not permitted for upload",
+					maxFileSizeExceeded: "Max file size of {0} exceeded"
+				}
+			}
+		},
+		
+		resourceURL : 'https://orbisv4head.blob.core.windows.net'
+	};
+	
+	var spiralRobotMigration = {
+		stopClickGuard: true
+	};
+	
+	
+</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/js/sprintf.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/js/sprintf.min.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/orbisApp/0.41/OrbisApp.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/spiralRobot/scripts/orbisApp/0.41/OrbisApp.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/orbisAppLegacy/0.1/legacy.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/spiralRobot/scripts/orbisAppLegacy/0.1/legacy.js');</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/jquery.validate.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/jquery.validate.min.js');</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/localization/messages_en.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/localization/messages_en.min.js');</script> 
+  <script type="text/javascript">orbisScriptManager.loadScript('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/jquery.validate.min.js');</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/additional-methods.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/validate/1.15.0/additional-methods.min.js');</script> 
+  <script type="text/javascript" src="/core/orbis/scripts/orbisValidationRules.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/orbis/scripts/orbisValidationRules.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/prototype/hammerjs/2.0.8/hammer.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/spiralRobot/scripts/prototype/hammerjs/2.0.8/hammer.min.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/prototype/webAnimationjs/2.3.1/web-animations.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/spiralRobot/scripts/prototype/webAnimationjs/2.3.1/web-animations.min.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/prototype/muuri/0.7.1/muuri.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/spiralRobot/scripts/prototype/muuri/0.7.1/muuri.min.js');</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/perfect-scrollbar/1.4.0/perfect-scrollbar.min.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/perfect-scrollbar/1.4.0/perfect-scrollbar.min.js');</script> 
+  <script type="text/javascript">$('head title, .addComponent').filter(':last').after($('<link/>', {rel: 'stylesheet',type: 'text/css', href: 'https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/perfect-scrollbar/1.4.0/perfect-scrollbar.css', class:'addComponent'}));</script> 
+  <script type="text/javascript" src="https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/perfect-scrollbar/1.4.0/perfectScrollbarJqueryWrapper.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('https://orbisv4head.blob.core.windows.net/core/spiralRobot/lib/perfect-scrollbar/1.4.0/perfectScrollbarJqueryWrapper.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/jqueryExtensions/0.9/JQueryExtensions.js" charset="UTF-8"></script> 
+  <script type="text/javascript">orbisScriptManager.scriptLoaded('/core/spiralRobot/scripts/jqueryExtensions/0.9/JQueryExtensions.js');</script> 
+  <script type="text/javascript" src="/core/spiralRobot/scripts/SpiralRobotTagLib-31052021.js"></script> 
+  <script type="text/javascript">
+	orbisAppSr.actions = {
+		handleUiState: '_-_-maMLRYt7kuLJloejL28JgVr2t-iZ4f7ssF95RfKLApVMs3IBBZwNkJ56iJgo3XGVUn3ruY1n4UcuflQ4G08TlZ6VbfL0O6_zxCTFl0XP71IDQ4PYbklwCP-P5RrdARGgp0D0H76NzduCOSP-Va7_-7lnG6T-d39swsnoVdMzrtkOMRtrasEMkJmO0KsSLVsWLh9jaFuQ_sHHPIoMNSkt'
+	};
+	
+	orbisAppSr.uiState = {};
+	
+	
+	
+</script> 
+  <link rel="stylesheet" href="/core/spiralRobot/css/spiralRobotBootstrapMix/0.3/index.outcome.myAccount.css" type="text/css"> 
+  <style>
+	/*Top Header Bar*/
+.header--branding {
+background-color: #fff !important;
+}
+
+/*Mobile Left Nav (should match Left Nav)*/
+.navigation--mobile {
+background-color: #005596 !important;
+}
+
+/*Left Nav (should match mobile)*/
+.header--side-nav, .is--spiral--robot .header--side-nav {
+ background: #005596 !important;
+ width: 100%;
+ z-index: 40;
+ box-shadow: 2px 4px 3px 1px rgba(0, 0, 0, 0.22);
+ transition: all 300ms ease;
+}
+
+/*Active tab for top Admin Header*/
+.is--spiral--robot .header--admin.has--tabs .items.active {
+ background-color: #005596 !important;
+}
+
+/* Link Background (nav) (active) */
+html.is--spiral--robot .nav--my-account a.is--active, .is--spiral--robot .nav--my-account a.is--active {
+ background-color: #585858 !important;
+}
+
+/* Link Background (nav) (hover) */
+html.is--spiral--robot .nav--my-account a:hover, .is--spiral--robot .nav--my-account a:hover {
+ background-color: #585858 !important;
+}
+
+
+
+/* Old Branding */
+.sidebar-nav {
+	background-color: #005596;
+	border: 10px solid #005596;
+}
+
+.sectionRow {
+background-color: #005596;
+}
+
+.sectionRow .nav-tabs&gt;li&gt;a {
+background: none repeat scroll 0 0 #fd0;
+}
+
+.sectionRow .nav-tabs&gt;li&gt;a {
+color: #330072;
+}
+
+.account-name {
+color: #fff;
+}
+
+
+.headerBackground {
+background-color: #005596;
+background-image: none;
+}
+
+.boxcontent {
+font-size: 14px !important;
+}
+
+.nbs--fixed-nav .nav-tabs&gt;li&gt;a {
+ background: none;
+ border: none;
+ line-height: 60px;
+ padding: 0px 8px;
+}
+
+#brandingNav .navbar-inner {
+ background-color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-inner {
+ background-color: #005596;
+ background-image: none;
+ border-color: #005596;
+ padding: 10px;
+}
+
+.navbar-inverse .navbar-inner-public {
+ background-color: #005596;
+ background-image: none;
+ border-color: #005596;
+ padding: 10px;
+}
+
+.orbisFooter {
+ background-color: #000000;
+}
+
+@media (min-width: 1024px){
+ .nbs--fixed-nav .nav-list li a .caret{
+ border-top: 4px solid inherit;
+ border-top-color: inherit;
+ border-bottom-color: inherit;
+ }
+}
+
+.bs--hide__column {
+ background: #005596;
+}
+
+.nav .dropdown-toggle .caret{
+ margin-top:8px;
+ margin-left:4px;
+}
+
+.img--branding-left {
+ height: 60px;
+ float: left;
+ margin-top: -14px;
+}
+
+.img--branding-right {
+ height: 60px;
+ position: absolute;
+ right: 12px;
+ margin-top: -14px;
+}
+
+/* Mobile Header Icon Colors */
+button.js--btn-search{
+ color:#330072;
+}
+
+.navbar .btn-navbar .icon-bar{
+ background-color:#005596;
+}
+
+
+@media (max-width: 767px) {
+.sidebar-nav .nav-list {
+ background: #005596;
+}
+}
+
+@media (min-width: 980px){
+ .public .nbs--fixed-nav{
+ right: 0px;
+ background:#005596; 
+ }
+}
+ .sidebar-nav {
+ border:none;
+}
+@media (min-width: 980px){
+ .span3 .sidebar-nav .nav-list {
+ box-sizing:border-box;
+ }
+ .span3 .nav-list&gt;li&gt;a{
+ margin-left:0;
+ margin-right:0;
+ }
+}
+
+/* Just nudge their logo a bit to remove gaps */
+.img--branding-left{
+ transform: translate(-10px, 4px);
+}
+ 
+/* This will protect the aspect ratio of your img */
+
+.postings__header__logo {
+ 
+ flex-basis: auto !important;
+ 
+ min-width: auto !important;
+ 
+ width: auto !important;
+
+}
+
+/* This will change the background colour of the campus connect postings header*/
+
+.postings__header{
+ 
+ /* Don't forget to change me */
+ 
+ background:#ffffff!important;
+}
+</style> 
+  <title>University of Windsor MySuccess - mySuccess Login</title>
+  <script type="text/javascript">
+    var shi = "";
+	var alreadyHidden = false;
+	var showMenuLabel = "Show Menu";
+	var hideMenuLabel = "Hide Menu";
+    
+    $(document).ready(function() {
+			hideSidebar();
+	});
+    
+    $(window).on("resize", hideSidebar);
+    
+    function hideSidebar()
+    {
+        if($(window).width() <= 767)
+        {
+        	if (!alreadyHidden)
+        	{
+	            alreadyHidden = true;
+				toggleFullScreenModee();
+        	}
+        }
+        else if (alreadyHidden)
+        {
+        	toggleFullScreenModee();
+       	}
+        else if ($('#sideHorizMenuDiv1').length == 1)
+        {
+        	shi = document.getElementById('sideHorizMenuDiv1').innerHTML;
+			$('#sideHorizMenuDiv1').remove();
+       	}
+    }
+    
+	function toggleFullScreenModee()
+	{
+		if ($(window).width() > 767)
+		{
+			alreadyHidden = false;
+		}
+		if (!alreadyHidden)
+		{
+			// mobile display to desktop display open menu
+			if ($('#sideHorizMenuDiv1').length == 1)
+			{
+				shi = document.getElementById('sideHorizMenuDiv1').innerHTML;
+				$('#sideHorizMenuDiv1').remove();
+				$('<div id="sideHorizMenuDiv" class="span2"></div>').prependTo("div#mainMainDiv");
+				$('#sideHorizMenuDiv').html(shi);
+				$('#mainContentDiv').removeClass("span12");
+				$('#mainContentDiv').addClass("span10");
+				$('#showHideMenuTagDiv').html(hideMenuLabel);
+			}
+			// desktop display open menu to desktop display closed menu
+			else if ($('#sideHorizMenuDiv').length == 1)
+			{
+				shi = document.getElementById('sideHorizMenuDiv').innerHTML;
+				$('#sideHorizMenuDiv').remove();
+				$('#mainContentDiv').removeClass("span10");
+				$('#mainContentDiv').addClass("span12");
+				$('#showHideMenuTagDiv').html(showMenuLabel);
+			}
+			// desktop display closed menu to desktop display open menu
+			else
+			{
+				$('<div id="sideHorizMenuDiv" class="span2"></div>').prependTo("div#mainMainDiv");
+				$('#sideHorizMenuDiv').html(shi);
+				$('#mainContentDiv').removeClass("span12");
+				$('#mainContentDiv').addClass("span10");
+				$('#showHideMenuTagDiv').html(hideMenuLabel);
+			}
+		}
+		else
+		{
+			// desktop display open menu to mobile display
+			if ($('#sideHorizMenuDiv').length == 1)
+			{
+				shi = document.getElementById('sideHorizMenuDiv').innerHTML;
+				$('#sideHorizMenuDiv').remove();
+				$('#mainContentDiv').removeClass("span10");
+				$('#mainContentDiv').addClass("span12");
+				$('#showHideMenuTagDiv').html(showMenuLabel);
+				$('<div id="sideHorizMenuDiv1"></div>').prependTo("div#navbarForSideMenu");
+				$('#sideHorizMenuDiv1').html(shi);
+			}
+			// desktop display closed menu to mobile display
+			else if ($('#sideHorizMenuDiv1').length == 0)
+			{
+				$('<div id="sideHorizMenuDiv1"></div>').prependTo("div#navbarForSideMenu");
+				$('#sideHorizMenuDiv1').html(shi);
+			}
+		}
+		$.post("/login.htm", {
+			action : '_-_-AiOt1M6ygLdOpMTAmf_EiCUhhzqYntveSHca3ySyFhfIMKNDcXFu97tYOKXNsZHX08TWQNWLPuH9QH2VFRrmGdOzZsfbfWAHm1qSkxnEgmqSE4cc9Wt1GF4febTrv9hpQxiVk27J33W6gAx9uJyaaUI6kX36l-f0uaDzI1oEkJfb2FwB0IkXrapSTQ0gE3cCIsz3TQU_r9jaysK1sgytg6EHIqrMhIc',
+			menu: shi
+		});
+	}
+</script>
+ </head>     
+ <body> 
+  <style>
+	/*Top Header Bar*/
+.header--branding {
+background-color: #fff !important;
+}
+
+/*Mobile Left Nav (should match Left Nav)*/
+.navigation--mobile {
+background-color: #005596 !important;
+}
+
+/*Left Nav (should match mobile)*/
+.header--side-nav, .is--spiral--robot .header--side-nav {
+ background: #005596 !important;
+ width: 100%;
+ z-index: 40;
+ box-shadow: 2px 4px 3px 1px rgba(0, 0, 0, 0.22);
+ transition: all 300ms ease;
+}
+
+/*Active tab for top Admin Header*/
+.is--spiral--robot .header--admin.has--tabs .items.active {
+ background-color: #005596 !important;
+}
+
+/* Link Background (nav) (active) */
+html.is--spiral--robot .nav--my-account a.is--active, .is--spiral--robot .nav--my-account a.is--active {
+ background-color: #585858 !important;
+}
+
+/* Link Background (nav) (hover) */
+html.is--spiral--robot .nav--my-account a:hover, .is--spiral--robot .nav--my-account a:hover {
+ background-color: #585858 !important;
+}
+
+
+
+/* Old Branding */
+.sidebar-nav {
+	background-color: #005596;
+	border: 10px solid #005596;
+}
+
+.sectionRow {
+background-color: #005596;
+}
+
+.sectionRow .nav-tabs&gt;li&gt;a {
+background: none repeat scroll 0 0 #fd0;
+}
+
+.sectionRow .nav-tabs&gt;li&gt;a {
+color: #330072;
+}
+
+.account-name {
+color: #fff;
+}
+
+
+.headerBackground {
+background-color: #005596;
+background-image: none;
+}
+
+.boxcontent {
+font-size: 14px !important;
+}
+
+.nbs--fixed-nav .nav-tabs&gt;li&gt;a {
+ background: none;
+ border: none;
+ line-height: 60px;
+ padding: 0px 8px;
+}
+
+#brandingNav .navbar-inner {
+ background-color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-inner {
+ background-color: #005596;
+ background-image: none;
+ border-color: #005596;
+ padding: 10px;
+}
+
+.navbar-inverse .navbar-inner-public {
+ background-color: #005596;
+ background-image: none;
+ border-color: #005596;
+ padding: 10px;
+}
+
+.orbisFooter {
+ background-color: #000000;
+}
+
+@media (min-width: 1024px){
+ .nbs--fixed-nav .nav-list li a .caret{
+ border-top: 4px solid inherit;
+ border-top-color: inherit;
+ border-bottom-color: inherit;
+ }
+}
+
+.bs--hide__column {
+ background: #005596;
+}
+
+.nav .dropdown-toggle .caret{
+ margin-top:8px;
+ margin-left:4px;
+}
+
+.img--branding-left {
+ height: 60px;
+ float: left;
+ margin-top: -14px;
+}
+
+.img--branding-right {
+ height: 60px;
+ position: absolute;
+ right: 12px;
+ margin-top: -14px;
+}
+
+/* Mobile Header Icon Colors */
+button.js--btn-search{
+ color:#330072;
+}
+
+.navbar .btn-navbar .icon-bar{
+ background-color:#005596;
+}
+
+
+@media (max-width: 767px) {
+.sidebar-nav .nav-list {
+ background: #005596;
+}
+}
+
+@media (min-width: 980px){
+ .public .nbs--fixed-nav{
+ right: 0px;
+ background:#005596; 
+ }
+}
+ .sidebar-nav {
+ border:none;
+}
+@media (min-width: 980px){
+ .span3 .sidebar-nav .nav-list {
+ box-sizing:border-box;
+ }
+ .span3 .nav-list&gt;li&gt;a{
+ margin-left:0;
+ margin-right:0;
+ }
+}
+
+/* Just nudge their logo a bit to remove gaps */
+.img--branding-left{
+ transform: translate(-10px, 4px);
+}
+ 
+/* This will protect the aspect ratio of your img */
+
+.postings__header__logo {
+ 
+ flex-basis: auto !important;
+ 
+ min-width: auto !important;
+ 
+ width: auto !important;
+
+}
+
+/* This will change the background colour of the campus connect postings header*/
+
+.postings__header{
+ 
+ /* Don't forget to change me */
+ 
+ background:#ffffff!important;
+}
+</style> 
+  <div class="headerBackground"> 
+   <div class="sectionRow"> 
+    <div class="row-fluid headbkg"> 
+     <div class="span8"> <a href="/home"><img src="/content/documents/Image/logos/mySuccessMain.jpg"></a> 
+     </div> 
+     <div class="span4"> 
+      <div class="pull-right"> 
+       <img src="/content/documents/Image/logos/mySuccess2.jpg"> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <!--<div class="topMenu-background-full">
+		<div class="container">
+			<div class="navbar navbar-inverse">
+				<div class="navbar-inner">
+					<div class="row-fluid">
+						<ul class="nav">
+							
+		
+
+
+
+
+
+
+			
+				
+			
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>--> 
+  </div> 
+  <br> 
+  <div class="container"> 
+   <div class="row-fluid"> 
+    <div class="span12"> 
+     <div class="orbisModuleHeader"> 
+      <div class="row-fluid"> 
+       <div class="span10"> 
+        <h1 class="sel_testHeadingPage"> Welcome to mySuccess </h1> 
+       </div> 
+       <div class="span2"> 
+        <div class="pull-right"> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="box boxContent"> 
+      <div class="customContentContainer withOutHeader"> 
+       <img alt="" src="/content/documents/Image/Banner1properaspectratio.jpg" style="width: 100%; height: auto;"> 
+       <div class="row-fluid" style="margin-top:24px;"> 
+        <div class="span3"> 
+         <div class="box"> 
+          <div class="boxTitle">
+            Students / Alumni 
+          </div> 
+          <div class="boxContent">
+            To access mySuccess, please log in using your UWin ID and password. 
+           <br> &nbsp; 
+          </div> 
+          <div class="boxContent"> 
+           <p style="margin-left: 40px;"><a class="btn btn-primary" href="https://success.uwindsor.ca/Shibboleth.sso/Login?entityID=https://uwinid.uwindsor.ca/idp/shibboleth&amp;target=https://success.uwindsor.ca/secure/ssoStudent.htm">Students</a>&nbsp;<a class="btn btn-primary" href="https://success.uwindsor.ca/Shibboleth.sso/Login?entityID=https://uwinid.uwindsor.ca/idp/shibboleth&amp;target=https://success.uwindsor.ca/secure/ssoAlumni.htm">Alumni</a></p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="span3"> 
+         <div class="box"> 
+          <div class="boxTitle">
+            Employer 
+          </div> 
+          <div class="boxContent">
+            To access mySuccess, please log in or register below. 
+           <br> &nbsp; 
+          </div> 
+          <div class="boxContent"> 
+           <p style="margin-left: 40px;"><a class="btn btn-primary" href="/employer/login.htm">Login</a>&nbsp;<a class="btn" href="/employer/register.htm">Register</a>&nbsp;</p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="span3"> 
+         <div class="box"> 
+          <div class="boxTitle">
+            UWindsor Faculty / Staff 
+          </div> 
+          <div class="boxContent">
+            To access mySuccess, please log in using your UWin ID and password. 
+           <br> &nbsp; 
+          </div> 
+          <div class="boxContent"> 
+           <p style="margin-left: 40px;"><a class="btn btn-primary" href="/facultystaff/login.htm">Login</a></p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="span3"> 
+         <div class="box"> 
+          <div class="boxTitle">
+            Portal Staff 
+          </div> 
+          <div class="boxContent">
+            To access mySuccess, please log in with credentials that have been provided to you. 
+           <br> &nbsp; 
+          </div> 
+          <div class="boxContent"> 
+           <p style="margin-left: 40px;"><a class="btn btn-primary" href="/portalStaff.htm">Login</a></p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <br> 
+   <br> 
+   <br> 
+   <br> 
+  </div> 
+  <div class="orbisFooter" style="position: fixed;"> 
+   <div class="container-fluid"> 
+    <div class="row-fluid"> 
+     <div class="span6">
+       © 2022 Orbis Communications Inc. - Orbis Career / Co-op Portal Professional 
+     </div> 
+     <div class="span4 pull-right"> 
+      <div class="footerlink"> 
+       <div class="pull-right"> <a href="/login/">Login</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+ </body>
+</html>
