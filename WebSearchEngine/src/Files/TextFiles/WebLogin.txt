@@ -1,2 +1,0 @@
-https://blackboard.uwindsor.ca/webapps/bb-auth-provider-cas-BBLEARN/execute/casLogin?cmd=login&authProviderId=_13_1&redirectUrl=https%3A%2F%2Fblackboard.uwindsor.ca%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab
-web login uwinid password login for security reasons, please remember to log out and close all windows of your web browser when you are done accessing services that require authentication. ? first time here? ? manage uwin account. ? forgot your password? ? need help? university of windsor

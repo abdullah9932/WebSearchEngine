@@ -24,7 +24,7 @@ public class SearchKeywords {
 		String[] words;
 		
 		//reading file stopwords
-		In in = new In("src/Files/stopwords.txt");	
+		In in = new In(System.getProperty("user.dir") +"\\src\\Files\\stopwords.txt");	
 		
 		//converting string to lower case
 		inputText = inputText.toLowerCase();
@@ -112,10 +112,10 @@ public class SearchKeywords {
 		HashMap<String,Integer> wordsFrequencyList = new HashMap<String, Integer>();
 	    
 		//directory path
-		directory = new File("src/Files/TextFiles"); 
+		directory = new File(System.getProperty("user.dir") +"\\src\\Files\\TextFiles"); 
 		
 		//path for each files
-		filePath = "src/Files/TextFiles/";
+		filePath = System.getProperty("user.dir") +"\\src\\Files\\TextFiles\\";
 		
 		//list of files present in the directory
 		filesList = directory.listFiles();
@@ -184,7 +184,7 @@ public class SearchKeywords {
 
 		//initializing variables
 		String fileName = "";
-		String filePath = "src/Files/SearchedQuery/";
+		String filePath = System.getProperty("user.dir") +"\\src\\Files\\SearchedQuery\\";
 		String finalPath;
 		
 		//creating filname with searchquery
@@ -220,7 +220,7 @@ public class SearchKeywords {
 	{
 		//initializing variables
 		String fileName = "";
-		String filePath = "src/Files/SearchedQuery/";
+		String filePath = System.getProperty("user.dir") +"\\src\\Files\\SearchedQuery\\";
 		String finalPath;
 		
 		for (String str : words) {

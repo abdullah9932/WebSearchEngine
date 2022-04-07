@@ -23,7 +23,7 @@ import org.jsoup.select.Elements;
 public class WebCrawler {
 	//HashSet is used as it prevents the duplicate value
 	private static Set<String> crawledURLS = new HashSet<String>();
-	private static int maxLimit = 1500; //depth is 2 as our system took more time above that to crawl
+	private static int maxLimit = 2; //depth is 2 as our system took more time above that to crawl
 	private static String urlRegex = "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)";
 
 	public static void crawlerStart(String URL, int limit) throws IOException {
@@ -35,13 +35,14 @@ public class WebCrawler {
 			try {
 				Document getDoc = Jsoup.connect(URL).get();
 				limit++;
+				savingDoc(getDoc,URL);
 				if (limit < maxLimit) {
 					Elements elementsLinks = getDoc.select("a[href]");
 					 for(Element element : elementsLinks){
 					       
 					        crawlerStart(element.absUrl("href"), limit);
 					        if (!crawledURLS.contains(element.absUrl("href"))) {
-					        	savingDoc(getDoc,URL);
+					        	
 					        	System.out.println(element.absUrl("href"));
 					        	crawledURLS.add(element.absUrl("href")); 
 					        	urlsFile.println(element.absUrl("href"));

@@ -1,2 +1,0 @@
-https://uwindsor.alma.exlibrisgroup.com/leganto/public/01UTON_UW/searchlists?auth=CAS
-{{title}} {{'accessibility.skip.link.sidebar' | translate}} | {{'accessibility.skip.link.content' | translate}} {{'general.holdon' | translate}}

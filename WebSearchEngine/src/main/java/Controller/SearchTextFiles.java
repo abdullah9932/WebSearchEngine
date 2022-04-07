@@ -34,7 +34,7 @@ public class SearchTextFiles {
 		fileName = fileName + ".dat";
 		
 		//creating file object 
-		File directory = new File("src/Files/SearchedQuery"); 
+		File directory = new File(System.getProperty("user.dir") +"\\src\\Files\\SearchedQuery"); 
 		
 		//listing all the files present in the directory
         File[] files = directory.listFiles();

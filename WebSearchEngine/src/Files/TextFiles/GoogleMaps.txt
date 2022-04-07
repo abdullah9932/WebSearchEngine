@@ -1,2 +1,0 @@
-https://www.google.ca/maps/place/University+Of+Windsor+Welcome+Centre/@42.3045866,-83.0653591,15z/data=!4m5!3m4!1s0x0:0xee867e724d1f3608!8m2!3d42.3045866!4d-83.0653591
-google maps  when you have eliminated the javascript, whatever remains must be an empty page. enable javascript to see google maps.

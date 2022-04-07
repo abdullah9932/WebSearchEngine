@@ -44,7 +44,7 @@ public class WebEngine {
 	}
 
 	public static void main(String[] args) throws Exception {
-	/*
+
 		System.out.println("Welcome to Forage-X Engine\n");
 		System.out.println("*************************************************************************\n");
 		System.out.println("Enter the URL you want to crawl");
@@ -67,7 +67,7 @@ public class WebEngine {
 			
 		}
 		
-			*/
+/*
 
 		//searching and returning result in hashmap with its values
 		HashMap<String, Integer> result = new HashMap();
@@ -78,6 +78,7 @@ public class WebEngine {
 		String query = scan.nextLine();
 		SearchTextFiles search = new SearchTextFiles();
 		result = search.searchString(query);
+		
 		//iterating in hashmap
 		StdOut.println("Search Result of Query "+query+" is as follows:");
 		StdOut.println();
@@ -107,6 +108,7 @@ public class WebEngine {
 		{
 			StdOut.println("run edit distance");
 		}
+		*/
 	}	
 }
 	
