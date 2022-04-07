@@ -5,10 +5,11 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import Crawler.WebCrawler;
 import ExternalClasses.StdOut;
 
 public class WebEngine {
-
+	public static String mainPath = "C:\\\\abdullah\\\\semester1\\\\Project\\\\WebSearchEngine\\\\WebSearchEngine";
 	private static Scanner inputURL = new Scanner(System.in);
 	
 	//checking validity of URL

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<%@ page import="Controller.SearchTextFiles"%>
+<%@ page import="Search.SearchTextFiles"%>
 <%@ page import="ExternalClasses.StdOut"%>
 <%@ page import="java.util.HashMap" %>
 <!DOCTYPE html>
@@ -20,6 +20,7 @@
 
 <%
 String n = request.getParameter("Search");
+
 if(!(n == null || (n.equals(""))))
 {
 	String query = n;
@@ -36,25 +37,23 @@ if(!(n == null || (n.equals(""))))
 
 	<p>Search Result of Query " <%=query %>" is : </p>
 	<p>Time Taken to search <strong><%=end-start %> ms</strong></p>
+	
 	<%
 	int i = 0;
 	for (HashMap.Entry<String, Integer> entry : result.entrySet()) 
 	{
 		if(i < 10)
 		{
-			if(entry.getValue()!= 0)
+			if(entry.getValue()!= 0 && entry.getKey() != null)
 			{
 				value = entry.getValue().toString();
 				key = entry.getKey();
-				%>
-				<table>
-				<tr>
-				<td><p><strong>URL:</strong><%=key %></p> </td>
-				</tr>
-				<tr>
-				<td><h4>Occurences:<h4><%=value %> </td>
-				</tr>
-				</table>
+	%>
+	<table>
+	<tr>
+	<td><%=i+1%>)  <a href=<%=key %>><%=key %></a> </td>
+	</tr>
+	</table>
 				<% 
 				checkResultIsNotEmpty = false;
 				haveResults = true;
@@ -74,10 +73,10 @@ if(!(n == null || (n.equals(""))))
 	if (checkResultIsNotEmpty == true && haveResults == false)
 	{
 	%>
-		<h1>Run Edit Distance</h1>
-		<%
+	<h1>Run Edit Distance</h1>
+	<%
 	}
 }
-%>
+	%>
 </body>
 </html>

@@ -1,5 +1,13 @@
 package ExternalClasses;
 
+/*************************************************************************
+ *  Compilation:  javac In.java
+ *  Execution:    java In   (basic test --- see source for required files)
+ *
+ *  Reads in data of various types from standard input, files, and URLs.
+ *
+ *************************************************************************/
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +24,8 @@ import java.util.regex.Pattern;
 public final class In {
     
     private Scanner scanner;
+
+    /*** begin: section (1 of 2) of code duplicated from In to StdIn */
     
     // assume Unicode UTF-8 encoding
     private static final String CHARSET_NAME = "UTF-8";
