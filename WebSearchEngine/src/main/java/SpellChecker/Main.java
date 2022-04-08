@@ -15,11 +15,11 @@ public class Main {
 		String filePath,txtFileName,pathOfFile;
 		
 		//directory path
-		directory = new File(WebEngine.mainPath +"\\src\\Files\\TextFiles"); 
+		directory = new File(WebEngine.mainPath +"/src/Files/TextFiles"); 
 				
 		//path for each files
-		filePath = WebEngine.mainPath +"\\src\\Files\\TextFiles\\";
-				
+		filePath = WebEngine.mainPath +"/src/Files/TextFiles/";
+		
 		//list of files present in the directory
 		filesList = directory.listFiles();
 				

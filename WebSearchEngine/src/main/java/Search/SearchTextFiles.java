@@ -7,6 +7,7 @@ import java.util.HashMap;
 import Controller.WebEngine;
 import ExternalClasses.RadixSort;
 import ExternalClasses.StdOut;
+import Ranking.PageRanking;
 
 public class SearchTextFiles {
 	
@@ -68,10 +69,10 @@ public class SearchTextFiles {
 			listOfFrequencies = new HashMap<String,Integer>();
 			
 			//get list of frequencies into hashmap
-			listOfFrequencies = SearchKeywords.getlistOfFrequencies(words);
+			listOfFrequencies = PageRanking.getlistOfFrequencies(words);
 			
 			//sort the hashmap into descending order
-			listOfFrequencies = SearchKeywords.sortHashMapInDescending(listOfFrequencies);
+			listOfFrequencies = PageRanking.sortHashMapInDescending(listOfFrequencies);
 
 			//store the hashmap for future use
 			SearchKeywords.storeHashMapInFile(listOfFrequencies, words);

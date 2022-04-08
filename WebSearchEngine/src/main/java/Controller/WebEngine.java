@@ -7,9 +7,11 @@ import java.util.Scanner;
 
 import Crawler.WebCrawler;
 import ExternalClasses.StdOut;
+import Search.SearchTextFiles;
+import SpellChecker.Spell_1;
 
 public class WebEngine {
-	public static String mainPath = "C:\\\\abdullah\\\\semester1\\\\Project\\\\WebSearchEngine\\\\WebSearchEngine";
+	public static String mainPath = "C:/abdullah/semester1/Project/WebSearchEngine/WebSearchEngine";
 	private static Scanner inputURL = new Scanner(System.in);
 	
 	//checking validity of URL
@@ -46,6 +48,7 @@ public class WebEngine {
 
 	public static void main(String[] args) throws Exception {
 
+
 		System.out.println("Welcome to Forage-X Engine\n");
 		System.out.println("*************************************************************************\n");
 		System.out.println("Enter the URL you want to crawl");
@@ -67,50 +70,153 @@ public class WebEngine {
 			System.out.println("\n*************************************************************************\n");
 			
 		}
-		
-/*
 
-		//searching and returning result in hashmap with its values
-		HashMap<String, Integer> result = new HashMap();
-		boolean checkResultIsNotEmpty = false;
-		boolean haveResults = false;
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter Search Query");
-		String query = scan.nextLine();
-		SearchTextFiles search = new SearchTextFiles();
-		result = search.searchString(query);
-		
-		//iterating in hashmap
-		StdOut.println("Search Result of Query "+query+" is as follows:");
-		StdOut.println();
-		int i = 0;
-		for (HashMap.Entry<String, Integer> entry : result.entrySet()) 
+		boolean searchAgain = false;
+		while(searchAgain == false)
 		{
-			if(i < 10)
+			//searching and returning result in hashmap with its values
+			HashMap<String, Integer> result = new HashMap();
+			boolean checkResultIsNotEmpty = false;
+			boolean haveResults = false;
+			double start, end;
+			Scanner scan = new Scanner(System.in);
+			
+			StdOut.println("\n");
+			StdOut.println("*************************************************************************\n");
+			StdOut.println("Enter Your Search Query\n");
+			StdOut.println("*************************************************************************");
+			StdOut.print("Input:");
+			String query = scan.nextLine();
+			SearchTextFiles search = new SearchTextFiles();
+			start = System.currentTimeMillis();
+			result = search.searchString(query);
+			end = System.currentTimeMillis();
+			
+			//iterating in hashmap
+			StdOut.println();
+			StdOut.println("*************************************************************************\n");
+			StdOut.println("Search Result of Query "+query+" is as follows:\n");
+			StdOut.println("*************************************************************************");
+			StdOut.println();
+			
+			int i = 0;
+			for (HashMap.Entry<String, Integer> entry : result.entrySet()) 
 			{
-				if(entry.getValue()!= 0)
+				if(i < 10)
 				{
-					StdOut.println("url:"+entry.getKey());
-					StdOut.println("frequency:"+entry.getValue());
-					checkResultIsNotEmpty = false;
-					haveResults = true;
-					i++;
+					if(entry.getValue()!= 0)
+					{
+						StdOut.println("url:"+entry.getKey());
+						StdOut.println("frequency:"+entry.getValue());
+						checkResultIsNotEmpty = false;
+						haveResults = true;
+						i++;
+					}
+						
+					else
+					{
+						checkResultIsNotEmpty = true;
+						break;
+					}
 				}
-					
-				else
-				{
-					checkResultIsNotEmpty = true;
-					break;
-				}
+			}	
+			StdOut.println("Total time taken to search:"+(end-start)+"ms");
+			StdOut.println();
+			
+			if (checkResultIsNotEmpty == true && haveResults == false)
+			{
+				StdOut.print("Output:");
+				StdOut.println("No Result Found");
+				StdOut.println();
+				StdOut.println("Running Spell Correction...");
+	
+	            String dictionaryFileName = WebEngine.mainPath + ("/src/Files/dictionary.txt");
+	
+	            Spell_1 corrector = new Spell_1();
+	            
+	            corrector.dict_file(dictionaryFileName);
+	
+	            String suggestion = corrector.suggestSimilarWord(query);
+	
+	            if (suggestion == null) {
+	
+	                suggestion = "No similar word found";
+	
+	            }
+	
+	            StdOut.println("Did you mean: " + suggestion);
+	
+	            StdOut.println("Type Yes to proceed with the suggestion");
+	            StdOut.print("Input:");
+	
+	            String yes = scan.nextLine();
+	
+	            if(yes.toLowerCase().equals("yes")) {
+	
+	            	result = search.searchString(suggestion);
+	    			
+	    			//iterating in hashmap
+	    			StdOut.println();
+	    			StdOut.println("*************************************************************************\n");
+	    			StdOut.println("Search Result of Query "+suggestion+" is as follows:\n");
+	    			StdOut.println("*************************************************************************");
+	    			StdOut.println();
+	    			int j = 0;
+	    			for (HashMap.Entry<String, Integer> entry : result.entrySet()) 
+	    			{
+	    				if(j < 10)
+	    				{
+	    					if(entry.getValue()!= 0)
+	    					{
+	    						StdOut.println("url:"+entry.getKey());
+	    						StdOut.println("frequency:"+entry.getValue());
+	    						checkResultIsNotEmpty = false;
+	    						haveResults = true;
+	    						j++;
+	    					}
+	    						
+	    					else
+	    					{
+	    						checkResultIsNotEmpty = true;
+	    						break;
+	    					}
+	    				}
+	    			}	
+	
+	            }
+	
+	            else {
+	
+	                StdOut.println("User did not agree with the suggestion");
+	
+	            }
+			}	
+			StdOut.println();
+			StdOut.println("Total time taken to search:"+(end-start)+"ms");
+			StdOut.println();
+			StdOut.println("*************************************************************************");
+			StdOut.println("Do you want to search again?");
+			StdOut.println("type y for yes and n for no");
+			StdOut.print("Input:");
+			String input = scan.nextLine();
+			if (input.toLowerCase().contains("n"))
+			{
+				searchAgain = true;
+				StdOut.println();
+				StdOut.println("Exiting Search Engine...");
 			}
-		}	
-		
-		if (checkResultIsNotEmpty == true && haveResults == false)
-		{
-			StdOut.println("run edit distance");
+			
+			else if(input.toLowerCase().contains("y"))
+			{
+				searchAgain = false;
+			}
+			
+			else
+			{
+				StdOut.println("Wrong Input");
+			}
 		}
-		*/
-	}	
+	}
 }
 	
 	
